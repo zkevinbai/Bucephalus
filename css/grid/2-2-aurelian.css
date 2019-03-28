@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.project-image{
+.aurelian-image{
     grid-column: 2;
     grid-row: 2;
 
@@ -18,32 +18,32 @@
     margin: 3px;
 }
 
-.project-image img{
+.aurelian-image img{
     height: 210px;
     border-radius: 15px;
     box-shadow: 0 0 3px;
 }
 
-.project-text{
+.aurelian-text{
     grid-column: 3;
     grid-row: 2;
 
     text-align: center;
 }
 
-.project-text h1{
+.aurelian-text h1{
     font-family: "raleway";
     font-weight: 400;
     font-size: 35px;
 }
 
-.project-text h2{
+.aurelian-text h2{
     font-family: "raleway";
     font-weight: 200;
     font-size: 18px;
 }
 
-.project-links{
+.aurelian-links{
 font-family: "raleway";
     font-weight: 300;
     font-size: 35px;
@@ -56,11 +56,11 @@ font-family: "raleway";
     padding: 3px;
 }
 
-.project-links a {
+.aurelian-links a {
     color: black;
 }
 
-.project-links a:hover{
+.aurelian-links a:hover{
     color: rgb(86,194,255);
     text-decoration: underline;
 }
