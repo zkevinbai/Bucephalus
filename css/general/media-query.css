@@ -1,8 +1,20 @@
 
-@media (max-width: 700px) {
+/* Tablet */
+@media (max-width: 1000px) {
     body{
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(6, 1fr);
+    }
+
+    .logo{
+        font-size: 75px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .logo{
+        font-size: 65px;
     }
 }
