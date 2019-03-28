@@ -26,13 +26,14 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
+    justify-items: start;
+    justify-content: space-evenly;
 }
 
 .link-item {
     display: grid;
-    grid-template-columns: 0.5fr 1fr;
+    grid-template-columns: 35px 1fr;
     grid-template-rows: 1fr;
-
 }
 
 .link-item a {
