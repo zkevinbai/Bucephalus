@@ -7,6 +7,12 @@
 .introduction-tech{
     grid-column: 2;
     grid-row: 2;
+
+    text-align: start;
+
+    font-family: "caveat";
+    font-weight: 400;
+    font-size: 45px;
 }
 
 .technologies{
@@ -47,4 +53,11 @@
 
 .redux img{
     height: 42px;
+    user-select: none;
+    user-drag: none; 
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
