@@ -17,7 +17,6 @@ body{
     justify-items: center;
     align-items: center;
 
-    margin: 5px;
     border-radius: 15px;
 }
 
@@ -33,6 +32,7 @@ body{
 
 .red{
     background: rgb(255,150,141);
+    background-image: linear-gradient(to bottom right,rgb(255,150,141), rgb(255,252,103), rgb(86,194,255));
 }
 
 .blue{
