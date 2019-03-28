@@ -39,3 +39,12 @@
 .link-item a {
     color: black;
 }
+
+.link-item:hover{
+    color: rgb(242, 242, 242);
+}
+
+.link-item a:hover{
+    color: rgb(198, 234, 255);
+    text-decoration: underline;
+}
