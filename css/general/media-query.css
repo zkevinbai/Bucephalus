@@ -5,6 +5,10 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(6, 1fr);
+
+        height: 1500px;
+        background-image: linear-gradient(to bottom right,rgb(255, 210, 206), rgb(255, 254, 180), rgb(183, 229, 255));
+        background-size: cover;
     }
 
     .logo{
@@ -14,7 +18,5 @@
 
 /* Mobile */
 @media (max-width: 700px) {
-    .logo{
-        font-size: 65px;
-    }
+
 }
