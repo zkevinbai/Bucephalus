@@ -5,12 +5,25 @@ body{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
+
+    background-image: linear-gradient(to bottom right,rgb(255,150,141), rgb(255,252,103), rgb(86,194,255));
 }
 
 /* STRUCTURE ---------------------------------------------------------------- */
 
+.top-left-corner{
+    background-image: linear-gradient(to bottom right,rgb(255,150,141), rgb(255,252,103), rgb(86,194,255));
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    margin: 5px;
+    border-radius: 15px;
+}
+
 .logo{
-    background-image: linear-gradient(to bottom right,rgb(255,150,141), rgb(255,252,103));
+    font-family: "lobster";
+    font-size: 85px;
 }
 
 .colorbox{
@@ -20,16 +33,18 @@ body{
 
 .red{
     background: rgb(255,150,141);
-    background-image: linear-gradient(to bottom right,rgb(255,150,141), rgb(255,252,103));
 }
 
 .blue{
     background: rgb(86,194,255);
-    background-image: linear-gradient(to bottom right,rgb(255,150,141), rgb(255,252,103));
 }
 
 .yellow{
     background: rgb(255,252,103);
-    background-image: linear-gradient(to bottom right, rgb(255,252,103), rgb(86,194,255));
 }
 
+
+/*     
+    background-image: linear-gradient(to bottom right,rgb(255,150,141), rgb(255,252,103));
+    background-image: linear-gradient(to bottom right, rgb(255,252,103), rgb(86,194,255));
+ */
