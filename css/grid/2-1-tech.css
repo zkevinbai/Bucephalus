@@ -1,9 +1,18 @@
+.two-one{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 0.1fr 1fr 0.1fr;
+}
+
 .introduction-tech{
 }
 
 .technologies{
+    grid-column: 2;
+    grid-row: 2;
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
 
     justify-items: center;
