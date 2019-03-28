@@ -9,6 +9,14 @@ body{
     background-image: linear-gradient(to bottom right,rgb(255,150,141), rgb(255,252,103), rgb(86,194,255));
 }
 
+@media (max-width: 700px) {
+    body{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+    }
+}
+
 /* STRUCTURE ---------------------------------------------------------------- */
 
 .colorbox{
