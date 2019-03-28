@@ -29,6 +29,20 @@
     grid-row: 2;
 }
 
-.project-links{
+.project-text h1{
+    font-family: "raleway";
+    font-weight: 400;
+    font-size: 35px;
+}
 
+.project-text h2{
+    font-family: "raleway";
+    font-weight: 100;
+    font-size: 18px;
+}
+
+.project-links{
+    font-family: "raleway";
+    font-weight: 300;
+    font-size: 35px;
 }
