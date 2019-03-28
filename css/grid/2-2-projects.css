@@ -42,7 +42,22 @@
 }
 
 .project-links{
-    font-family: "raleway";
+font-family: "raleway";
     font-weight: 300;
     font-size: 35px;
+
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+    box-shadow: 0 0 3px;
+
+    padding: 3px;
+}
+
+.project-links a {
+    color: black;
+}
+
+.project-links a:hover{
+    color: rgb(86,194,255);
+    text-decoration: underline;
 }
