@@ -31,16 +31,15 @@ body{
 }
 
 .red{
-    background: rgb(255,150,141);
-    background-image: linear-gradient(to bottom right,rgb(255,150,141), rgb(255,252,103), rgb(86,194,255));
+    background-image: linear-gradient(to bottom right,rgb(255,150,141), rgb(255, 65, 50));
 }
 
 .blue{
-    background: rgb(86,194,255);
+    background-image: linear-gradient(to bottom right,rgb(86,194,255), rgb(1, 162, 255));
 }
 
 .yellow{
-    background: rgb(255,252,103);
+    background-image: linear-gradient(to bottom right,rgb(255,252,103), rgb(247, 243, 31));
 }
 
 
