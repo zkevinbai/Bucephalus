@@ -47,10 +47,12 @@
 }
 
 .link-item:hover{
-    color: rgb(242, 242, 242);
+    /* color: rgb(242, 242, 242); */
+    color: rgb(86,194,255);
 }
 
 .link-item a:hover{
-    color: rgb(198, 234, 255);
+    /* color: rgb(198, 234, 255); */
+    color: rgb(86,194,255);
     text-decoration: underline;
 }
