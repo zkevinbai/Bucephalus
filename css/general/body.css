@@ -18,6 +18,9 @@ body{
     align-items: center;
 
     border-radius: 15px;
+    margin: 5px;
+    border: 5px solid black;
+    border-radius: 15px;
 }
 
 .logo{
@@ -28,6 +31,7 @@ body{
 .colorbox{
     margin: 5px;
     border: 5px solid black;
+    border-radius: 15px;
 }
 
 .red{
@@ -41,9 +45,3 @@ body{
 .yellow{
     background-image: linear-gradient(to bottom right,rgb(255,252,103), rgb(247, 243, 31));
 }
-
-
-/*     
-    background-image: linear-gradient(to bottom right,rgb(255,150,141), rgb(255,252,103));
-    background-image: linear-gradient(to bottom right, rgb(255,252,103), rgb(86,194,255));
- */
