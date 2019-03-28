@@ -13,7 +13,6 @@
     font-family: "raleway";
     font-weight: 500;
     font-size: 35px;
-    color: rgb(255, 255, 255);
 }
 
 .links {
@@ -34,4 +33,9 @@
     display: grid;
     grid-template-columns: 0.5fr 1fr;
     grid-template-rows: 1fr;
+
+}
+
+.link-item a {
+    color: black;
 }
