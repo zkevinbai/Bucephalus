@@ -7,12 +7,12 @@
 .introduction-tech{
     grid-column: 2;
     grid-row: 2;
-
+    align-self: center;
     text-align: start;
 
-    font-family: "caveat";
-    font-weight: 400;
-    font-size: 45px;
+    font-family: "raleway";
+    font-weight: 300;
+    font-size: 35px;
 }
 
 .technologies{
@@ -23,6 +23,7 @@
     border-radius: 15px;
     padding-top: 5px;
     box-shadow: 0 0 3px;
+    margin: 3px;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
