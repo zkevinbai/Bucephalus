@@ -47,14 +47,18 @@
 .aurelian-links{
 font-family: "raleway";
     font-weight: 300;
-    font-size: 35px;
+    font-size: 25px;
 
     background: rgba(255, 255, 255, 0.25);
     border-radius: 15px;
     box-shadow: 0 0 3px;
 
-    margin: 5px;
-    padding: 3px;
+    margin: 15px;
+    padding: 5px;
+    
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    align-content: space-evenly;
 }
 
 .aurelian-links a {
