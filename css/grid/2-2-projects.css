@@ -27,6 +27,8 @@
 .project-text{
     grid-column: 3;
     grid-row: 2;
+
+    text-align: center;
 }
 
 .project-text h1{
@@ -50,6 +52,7 @@ font-family: "raleway";
     border-radius: 15px;
     box-shadow: 0 0 3px;
 
+    margin: 5px;
     padding: 3px;
 }
 
