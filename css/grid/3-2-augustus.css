@@ -52,8 +52,12 @@ font-family: "raleway";
     border-radius: 15px;
     box-shadow: 0 0 3px;
 
-    margin: 5px;
-    padding: 3px;
+    margin: 15px;
+    padding: 5px;
+    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-content: space-evenly;
 }
 
 .augustus-links a {
