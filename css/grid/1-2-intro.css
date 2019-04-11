@@ -21,7 +21,7 @@
 
     font-family: "raleway";
     font-weight: 300;
-    font-size: 35px;
+    font-size: 25px;
 
     background: rgba(255, 255, 255, 0.25);
     border-radius: 15px;
@@ -32,13 +32,13 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
-    justify-items: start;
-    justify-content: space-evenly;
+    justify-items: middle;
 }
 
 .link-item {
     display: grid;
     grid-template-columns: 35px 1fr;
+    grid-template-columns: 28px 1fr;
     grid-template-rows: 1fr;
 }
 
