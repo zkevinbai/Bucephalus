@@ -19,7 +19,10 @@
     }
 
     .one-two {
-
+        grid-template-columns: 0.01fr 1fr 0.01fr;    
+        grid-template-rows: 0.15fr 1fr 1fr 0.15fr;   
+        justify-items: center;
+        align-items: center; 
     }
 }
 
