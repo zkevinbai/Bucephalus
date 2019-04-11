@@ -13,10 +13,13 @@
         font-size: 75px;
     }
 
-    .links {
-        width: 150vw;
+    .link-item {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 
-        
+    .one-two {
+
     }
 }
 
