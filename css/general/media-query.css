@@ -1,6 +1,6 @@
 
-/* Tablet */
-@media (max-width: 1000px) {
+/* Tablet & Small Computers */
+@media (max-width: 1166px) {
     body{
         display: grid;
         grid-template-columns: 1fr;
