@@ -24,6 +24,14 @@
         justify-items: center;
         align-items: center; 
     }
+
+    .alexandria-image img{
+        height: 210px;
+    }
+
+    .augustus-image img{
+        height: 210px;
+    }
 }
 
 /* Mobile */
