@@ -39,6 +39,14 @@
         grid-template-columns: repeat(2, 1fr);
         align-content: space-evenly;
     }
+
+    .aurelian-image{
+        grid-column: 3;
+    }
+    
+    .aurelian-text{
+        grid-column: 2;
+    }
 }
 
 /* Mobile */
