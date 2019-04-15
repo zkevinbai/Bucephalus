@@ -26,15 +26,6 @@
         align-items: center; 
     }
 
-    /* website photos */
-    .alexandria-image img{
-        height: 210px;
-    }
-
-    .augustus-image img{
-        height: 210px;
-    }
-
     /* aurelian */
     .aurelian-links{        
         grid-template-rows: 1fr;
@@ -42,29 +33,47 @@
     }
 
     .aurelian-image{
-        grid-column: 3;
+        grid-column: 2;
     }
 
     .aurelian-text{
+        grid-column: 3;
+    }
+
+    /* Alexandria */
+    .alexandria-image img{
+        height: 210px;
+    }
+
+    .three-one{
+        grid-template-columns: 0.1fr 1fr 2fr 0.1fr;
+    }
+
+    .alexandria-image{
+        grid-column: 3;
+    }
+
+    .alexandria-text{
         grid-column: 2;
     }
 
-    /* tech */
-    .two-one{
+    /* Augustus */
+    .augustus-image img{
+        height: 210px;
+    }
+
+    .three-two{
         grid-template-columns: 0.1fr 2fr 1fr 0.1fr;
     }
 
-    .introduction-tech{
-        grid-column: 3;
-        grid-row: 2;
-
-        margin-left: 5px;
-    }
-
-    .technologies{
+    .augustus-image{
         grid-column: 2;
-        grid-row: 2;
     }
+
+    .augustus-text{
+        grid-column: 3;
+    }
+
 }
 
 /* Mobile */
