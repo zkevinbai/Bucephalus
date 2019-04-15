@@ -32,6 +32,13 @@
     .augustus-image img{
         height: 210px;
     }
+
+    .aurelian-links{        
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        align-content: space-evenly;
+    }
 }
 
 /* Mobile */
