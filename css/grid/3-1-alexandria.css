@@ -15,12 +15,14 @@
     box-shadow: 0 0 3px;
 
     padding: 10px;
+    justify-self: center;
 }
 
 .alexandria-image img{
     height: 150px;
     border-radius: 15px;
     box-shadow: 0 0 3px;
+
 }
 
 .alexandria-text{
