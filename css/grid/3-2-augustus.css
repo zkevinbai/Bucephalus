@@ -1,5 +1,6 @@
 .three-two{
     display: grid;
+    /* grid-template-columns: 0.1fr 2fr 2fr 0.1fr; */
     grid-template-columns: 0.1fr 2fr 1fr 0.1fr;
     grid-template-rows: 0.1fr 1fr 0.1fr;
 
@@ -19,6 +20,7 @@
 }
 
 .augustus-image img{
+    /* height: 185px; */
     height: 150px;
     border-radius: 15px;
     box-shadow: 0 0 3px;
