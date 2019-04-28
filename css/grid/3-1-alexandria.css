@@ -1,6 +1,8 @@
 .three-one{
     display: grid;
-    grid-template-columns: 0.1fr 1fr 2fr 0.1fr;
+    grid-template-columns: 0.1fr 2fr 2fr 0.1fr;
+    /* grid-template-columns: 0.1fr 1fr 2fr 0.1fr; */
+
     grid-template-rows: 0.1fr 1fr 0.1fr;
 
     align-items: center;
@@ -19,7 +21,8 @@
 }
 
 .alexandria-image img{
-    height: 150px;
+    height: 185px;
+    /* height: 150px; */
     border-radius: 15px;
     box-shadow: 0 0 3px;
 
