@@ -88,6 +88,12 @@
         font-size: 49px;
     }
 
+    /* aurelian */
+    .aurelian-links{        
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     /* Alexandria */
     .three-one{
         grid-template-columns: 0.1fr 2fr 2fr 0.1fr;
