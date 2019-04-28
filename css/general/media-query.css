@@ -77,6 +77,7 @@
 }
 
 /* Big Screens */
+
 @media (min-width: 1900px) {
     /* logo */
     .logo{
@@ -95,20 +96,20 @@
     }
 
     /* Alexandria */
-    .three-one{
+    /* .three-one{
         grid-template-columns: 0.1fr 2fr 2fr 0.1fr;
     }
 
     .alexandria-image img{
         height: 210px;
-    }
+    } */
 
     /* Augustus */
-    .three-two{
+    /* .three-two{
         grid-template-columns: 0.1fr 2fr 2fr 0.1fr;
     }
 
     .augustus-image img{
         height: 210px;
-    }
+    } */
 }
