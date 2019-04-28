@@ -78,6 +78,11 @@
 
 /* Big Screens */
 @media (min-width: 1900px) {
+    /* introduction */
+    .introduction-me{
+        font-size: 49px;
+    }
+
     /* Alexandria */
     .three-one{
         grid-template-columns: 0.1fr 2fr 2fr 0.1fr;
