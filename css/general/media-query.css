@@ -76,7 +76,23 @@
 
 }
 
-/* Mobile */
-@media (max-width: 700px) {
+/* Big Screens */
+@media (min-width: 1900px) {
+    /* Alexandria */
+    .three-one{
+        grid-template-columns: 0.1fr 2fr 2fr 0.1fr;
+    }
 
+    .alexandria-image img{
+        height: 210px;
+    }
+
+    /* Augustus */
+    .three-two{
+        grid-template-columns: 0.1fr 2fr 2fr 0.1fr;
+    }
+
+    .augustus-image img{
+        height: 210px;
+    }
 }
