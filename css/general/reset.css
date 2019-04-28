@@ -39,4 +39,5 @@ button {
     margin: none; 
     padding: none;
 	background: transparent;
+	-webkit-appearance: none;
 }
