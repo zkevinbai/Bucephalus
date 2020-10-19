@@ -1,9 +1,13 @@
 import React from 'react';
 
+import Gridbox from './Grid/Gridbox';
+
 function App() {
   return (
     <div>
-      body
+      <Gridbox
+        ShouldEmphasizeLeft={true}
+      />
     </div>
   );
 }

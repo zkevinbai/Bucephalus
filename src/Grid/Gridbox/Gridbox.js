@@ -1,11 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const Gridbox = () => {
+export const Gridbox = ({
+    LeftComponent,
+    RightComponent,
+    ShouldEmphasizeLeft,
+}) => {
+    debugger;
+
+    if (ShouldEmphasizeLeft) {
+        return (
+            <div>
+                I am a left emphasized gridbox
+            </div>
+        )
+    }
 
     return (
         <div>
-            hello world
+            I am a gridbox
         </div>
     );
 }
