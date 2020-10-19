@@ -1,3 +1,3 @@
-import Gridbox from './Gridbox';
+import GridBox from './GridBox';
 
-export default Gridbox;
+export default GridBox;

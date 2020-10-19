@@ -18,7 +18,7 @@ const TestDiv = styled.div`
     background: blue;
 `
 
-export const Gridbox = ({
+export const GridBox = ({
     LeftComponent,
     RightComponent,
     ShouldEmphasizeLeft,
@@ -27,7 +27,7 @@ export const Gridbox = ({
         return (
             <Root>
                 <div>
-                    I am a left emphasized gridbox
+                    I am a left emphasized gridBox
                 </div>
                 <TestDiv />
             </Root>
@@ -36,9 +36,9 @@ export const Gridbox = ({
 
     return (
         <div>
-            I am a gridbox
+            I am a gridBox
         </div>
     );
 }
 
-export default Gridbox;
+export default GridBox;
