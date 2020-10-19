@@ -8,6 +8,9 @@ function App() {
       <GridBox
         ShouldEmphasizeLeft={true}
       />
+      <GridBox
+        ShouldEmphasizeLeft={false}
+      />
     </div>
   );
 }
