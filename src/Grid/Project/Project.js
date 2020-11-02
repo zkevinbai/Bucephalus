@@ -12,7 +12,6 @@ const Root = styled.div`
     padding: 0.5rem;
 
     align-items: center;
-
     font-family: "raleway";
 `;
 
