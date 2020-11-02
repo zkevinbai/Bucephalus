@@ -18,11 +18,12 @@ const Root = styled.div`
 const TestRedDiv = styled.div`
     height: 100%;
     background: red;
-`
+`;
+
 const TestBlueDiv = styled.div`
     height: 100%;
     background: blue;
-`
+`;
 
 export const GridBox = ({
     LeftComponent,
