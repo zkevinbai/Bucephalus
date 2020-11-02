@@ -26,8 +26,6 @@ const TestBlueDiv = styled.div`
 `;
 
 export const GridBox = ({
-    LeftComponent,
-    RightComponent,
     ShouldEmphasizeLeft,
 }) => {
     return (
