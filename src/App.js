@@ -1,6 +1,7 @@
 import React from 'react';
 
 import GridBox from './Grid/GridBox';
+import ProjectDisplay from './Grid/ProjectDisplay';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <GridBox
         ShouldEmphasizeLeft={false}
       />
+      <ProjectDisplay/>
     </div>
   );
 }
