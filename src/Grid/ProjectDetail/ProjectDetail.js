@@ -56,16 +56,16 @@ const Link = styled.a`
 `;
 
 export const ProjectDetail = ({
-    Title,
-    Description,
+    TitleCopy,
+    DescriptionCopy,
     GithubLink,
     LiveLink,
 }) => {
     return (
         <Root>
             <Header>
-                <Title>{Title}</Title>
-                <Description>{Description}</Description>
+                <Title>{TitleCopy}</Title>
+                <Description>{DescriptionCopy}</Description>
             </Header>
             <Links>
                 <Link href={GithubLink}>Github</Link>
