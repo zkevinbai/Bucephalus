@@ -3,10 +3,13 @@ import styled from 'styled-components';
 
 const Root = styled.div`
     display: grid;
-    /* grid-template-columns: 0.1fr 2fr 2fr 0.1fr; */
-    grid-template-columns: 0.1fr 1fr 2fr 0.1fr;
+    /* grid-template-columns: 2fr 2fr  */
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
 
-    grid-template-rows: 0.1fr 1fr 0.1fr;
+    height: 5rem;
+    width: 15rem;
+    padding: 0.5rem;
 
     align-items: center;
 
@@ -14,9 +17,6 @@ const Root = styled.div`
 `;
 
 const Header = styled.div`
-    grid-column: 3;
-    grid-row: 2;
-
     text-align: center;
 `;
 
@@ -44,10 +44,10 @@ const Links = styled.div `
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    align-content: space-evenly;
+    justify-items: center;
 `;
 
-const Link = styled.div`
+const Link = styled.a`
     color: black;
 
     :hover{
@@ -56,7 +56,7 @@ const Link = styled.div`
     }
 `;
 
-export const GridBox = () => {
+export const Project = () => {
     return (
         <Root>
             <Header>
@@ -71,4 +71,4 @@ export const GridBox = () => {
     );
 }
 
-export default GridBox;
+export default Project;

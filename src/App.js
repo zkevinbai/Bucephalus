@@ -1,7 +1,7 @@
 import React from 'react';
 
 import GridBox from './Grid/GridBox';
-import ProjectDisplay from './Grid/ProjectDisplay';
+import ProjectDisplay from './Grid/Project';
 
 function App() {
   return (
