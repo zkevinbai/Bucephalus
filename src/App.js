@@ -6,13 +6,19 @@ import ProjectDetail from './Grid/ProjectDetail';
 function App() {
   return (
     <div>
-      <GridBox
+      {/* <GridBox
         ShouldEmphasizeLeft={true}
       />
       <GridBox
         ShouldEmphasizeLeft={false}
-      />
-      <ProjectDetail/>
+      /> */}
+      <GridBox
+        ShouldEmphasizeLeft={false}
+      >
+        <ProjectDetail />
+        <ProjectDetail />
+      </GridBox>
+      {/* <ProjectDetail/> */}
     </div>
   );
 }

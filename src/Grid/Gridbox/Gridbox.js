@@ -15,25 +15,15 @@ const Root = styled.div`
     align-items: center;
 `;
 
-const TestRedDiv = styled.div`
-    height: 100%;
-    background: red;
-`;
-
-const TestBlueDiv = styled.div`
-    height: 100%;
-    background: blue;
-`;
-
 export const GridBox = ({
     ShouldEmphasizeLeft,
+    children
 }) => {
     return (
         <Root
             ShouldEmphasizeLeft={ShouldEmphasizeLeft}
         >
-            <TestRedDiv />
-            <TestBlueDiv />
+            {children}
         </Root>
     );
 }
