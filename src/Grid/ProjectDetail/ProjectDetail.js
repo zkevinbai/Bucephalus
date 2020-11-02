@@ -55,16 +55,21 @@ const Link = styled.a`
     }
 `;
 
-export const ProjectDetail = () => {
+export const ProjectDetail = ({
+    Title,
+    Description,
+    GithubLink,
+    LiveLink,
+}) => {
     return (
         <Root>
             <Header>
-                <Title>Aurelian</Title>
-                <Description>personal finance visualization using sankey diagrams</Description>
+                <Title>{Title}</Title>
+                <Description>{Description}</Description>
             </Header>
             <Links>
-                <Link href="https://github.com/zkevinbai/Aurelian">Github</Link>
-                <Link href="https://aurelian.app">Live</Link>
+                <Link href={GithubLink}>Github</Link>
+                <Link href={LiveLink}>Live</Link>
             </Links>
         </Root>
     );
