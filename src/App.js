@@ -1,7 +1,7 @@
 import React from 'react';
 
 import GridBox from './Grid/GridBox';
-import ProjectDisplay from './Grid/Project';
+import ProjectDetail from './Grid/ProjectDetail';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <GridBox
         ShouldEmphasizeLeft={false}
       />
-      <ProjectDisplay/>
+      <ProjectDetail/>
     </div>
   );
 }

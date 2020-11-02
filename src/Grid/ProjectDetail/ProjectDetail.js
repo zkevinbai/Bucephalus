@@ -55,7 +55,7 @@ const Link = styled.a`
     }
 `;
 
-export const Project = () => {
+export const ProjectDetail = () => {
     return (
         <Root>
             <Header>
@@ -70,4 +70,4 @@ export const Project = () => {
     );
 }
 
-export default Project;
+export default ProjectDetail;
