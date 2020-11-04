@@ -41,20 +41,18 @@ const Links = styled.div`
     justify-items: middle;
 `;
 
-const LinkItem = styled.div`
+const LinkItem = styled.a`
     display: grid;
     grid-template-columns: 35px 1fr;
     grid-template-columns: 28px 1fr;
     grid-template-rows: 1fr;
 
-    color: black;
+    color: black;   
 
-    i:hover {
+    :hover{
         color: rgb(86, 194, 255);
     }
-
-    a:hover{
-        color: rgb(86, 194, 255);
+    p:hover{
         text-decoration: underline;
     }
 `;
@@ -103,10 +101,11 @@ export const ContactInformation = () => {
                         itemLink,
                     }) => (
                         <LinkItem
+                            href={itemLink}
                             key={itemCopy}
-                        >
-                            <i className={itemIcon}/>
-                            <a href={itemLink}>{itemCopy}</a>
+                        >                            
+                            <i className={itemIcon} />
+                            <p>{itemCopy}</p>
                         </LinkItem>
                     ))
                 }

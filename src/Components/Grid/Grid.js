@@ -10,6 +10,13 @@ const Root = styled.div`
     grid-template-rows: repeat(3, 1fr);
 
     background-image: linear-gradient(to bottom right, rgb(255, 210, 206), rgb(255, 254, 180), rgb(183, 229, 255));
+
+    @media (max-width: 1166px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+
+        background-image: linear-gradient(to bottom,rgb(255, 210, 206), rgb(255, 254, 180), rgb(183, 229, 255), rgb(255, 210, 206));
+    }
 `;
 
 export const Grid = ({
