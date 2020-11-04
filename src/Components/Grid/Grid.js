@@ -10,7 +10,8 @@ const Root = styled.div`
     grid-template-rows: repeat(3, 1fr);
 
     /* background-image: linear-gradient(to bottom right,rgb(255,150,141), rgb(255,252,103), rgb(86,194,255)); */
-    background-image: linear-gradient(to bottom right,rgb(255, 210, 206), rgb(255, 254, 180), rgb(183, 229, 255));
+    background-image: linear-gradient(to bottom right, rgb(255, 210, 206), rgb(255, 254, 180), 
+    rgb(183, 229, 255));
 `;
 
 export const Grid = ({

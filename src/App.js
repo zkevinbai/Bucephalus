@@ -3,6 +3,7 @@ import React from 'react';
 import {
   Grid,
   GridBox,
+  Name,
   ProjectDetail,
  } from './Components';
 
@@ -36,9 +37,7 @@ const projects = [
 function App() {
   return (
     <Grid>
-      <div>
-        name
-      </div>
+      <Name/>
       <div>
         contact
       </div>
