@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import GridBox from '../GridBox';
 
 const Root = styled.div`
-    padding: 1rem 3rem 1rem 3rem;
+    padding: 2.5rem 3rem 0rem 3rem;
 `;
 
 const Title = styled.div`
@@ -23,7 +23,7 @@ const Technologies = styled.div`
     box-shadow: 0 0 3px;
     
     padding: 5px;
-    margin-left: 0.5rem;
+    margin-left: 4rem;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
