@@ -1,3 +1,4 @@
+export Contact from './Contact';
 export Grid from './Grid';
 export GridBox from './GridBox';
 export Name from './Name';
