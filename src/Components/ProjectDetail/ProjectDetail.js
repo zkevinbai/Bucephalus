@@ -10,6 +10,7 @@ const Root = styled.div`
     height: 5rem;
     width: 15rem;
     padding: 0.5rem;
+    padding-bottom: 3rem;
 
     align-items: center;
     font-family: "raleway";
