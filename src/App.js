@@ -1,8 +1,10 @@
 import React from 'react';
 
-import Grid from './Components/Grid/';
-import GridBox from './Components/GridBox';
-import ProjectDetail from './Components/ProjectDetail';
+import {
+  Grid,
+  GridBox,
+  ProjectDetail,
+ } from './Components';
 
 const AurelianDetail = {
   TitleCopy: 'Aurelian',
