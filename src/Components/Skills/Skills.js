@@ -3,6 +3,10 @@ import styled from 'styled-components';
 
 import GridBox from '../GridBox';
 
+const Root = styled.div`
+    padding: 1rem 3rem 1rem 3rem;
+`;
+
 const Title = styled.div`
     align-self: center;
     text-align: start;
@@ -11,6 +15,7 @@ const Title = styled.div`
     font-size: 35px;
     font-family: "raleway";
 `;
+
 const Technologies = styled.div`
     background: rgba(255, 255, 255, 0.5);
     border-radius: 15px;
@@ -59,7 +64,7 @@ const TechnologyList = [
     'devicon-git-plain colored',
     'devicon-rails-plain colored',
     'devicon-mongodb-plain colored',
-]
+];
 /*
 things i'd like to add
 ---
@@ -70,24 +75,26 @@ redux
 
 export const Skills = () => {
     return (
-        <GridBox
-            ShouldEmphasizeLeft={true}
-        >
-            <Title>
-                Technologies and Frameworks
-            </Title>
-            <Technologies>
-                {
-                    TechnologyList.map((icon) => (
-                        <TechnologyItem
-                            key={icon}
-                        >
-                            <i className={icon}/>
-                        </TechnologyItem>
-                    ))
-                }
-            </Technologies>
-        </GridBox>
+        <Root>
+            <GridBox
+                ShouldEmphasizeLeft={false}
+            >
+                <Title>
+                    Technologies and Frameworks
+                </Title>
+                <Technologies>
+                    {
+                        TechnologyList.map((icon) => (
+                            <TechnologyItem
+                                key={icon}
+                            >
+                                <i className={icon}/>
+                            </TechnologyItem>
+                        ))
+                    }
+                </Technologies>
+            </GridBox>
+        </Root>
     );
 }
 
