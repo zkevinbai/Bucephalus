@@ -12,7 +12,7 @@ const Root = styled.div`
     margin: 3px;
     justify-self: center;
 
-    .img{
+    img {
         height: 210px;
         border-radius: 15px;
         box-shadow: 0 0 3px;
@@ -24,7 +24,6 @@ export const ProjectPhoto = ({
 }) => {
     return (
         <Root>
-            {/* <img src={require('./aurelian.png')} alt={PhotoCopy}></img> */}
             <img src={require(baseURL + TitleCopy + '.png')} alt={TitleCopy + ' screenshot'} />
         </Root>
     );
