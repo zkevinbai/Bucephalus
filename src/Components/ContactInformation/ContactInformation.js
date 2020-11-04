@@ -33,7 +33,7 @@ const Links = styled.div`
     border-radius: 15px;
     box-shadow: 0 0 3px;
 
-    padding: 5px;
+    padding: 0.5rem;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
