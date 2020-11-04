@@ -40,10 +40,8 @@ function App() {
   return (
     <Grid>
       <Name/>
-      <Contact/>
-      <div>
-        skills
-      </div>
+      <ContactInformation/>
+      <Skills/>
       {
         projectsList.map((projectDetail) => {
           return (
