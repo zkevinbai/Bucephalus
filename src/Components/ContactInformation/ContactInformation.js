@@ -8,7 +8,7 @@ const Root = styled.div`
     justify-items: center;
     align-items: center;
 
-    padding-left: 2rem;
+    padding: 3rem 2rem 3rem 2rem;
 
     font-family: "raleway";
 `;
