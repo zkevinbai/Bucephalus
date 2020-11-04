@@ -84,8 +84,10 @@ export const Skills = () => {
             <Technologies>
                 {
                     TechnologyList.map((icon) => (
-                        <TechnologyItem>
-                            <i class={icon}/>
+                        <TechnologyItem
+                            key={icon}
+                        >
+                            <i className={icon}/>
                         </TechnologyItem>
                     ))
                 }

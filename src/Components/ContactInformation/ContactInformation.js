@@ -3,25 +3,27 @@ import styled from 'styled-components';
 
 const Root = styled.div`
     display: grid;
-    grid-template-columns: 0.15fr 1fr 0.15fr;
-    grid-template-rows: 0.15fr 1fr 1fr 0.15fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
     justify-items: center;
     align-items: center;
+
+    padding-left: 2rem;
 
     font-family: "raleway";
 `;
 
 const Title = styled.div`
-    grid-row: 2;
-    grid-column: 2;
+    grid-row: 1;
+    grid-column: 1;
 
     font-weight: 700;
     font-size: 39px;
 `;
 
 const Links = styled.div`
-    grid-row: 3;
-    grid-column: 2;
+    grid-row: 2;
+    grid-column: 1;
 
     font-family: "raleway";
     font-weight: 300;
@@ -102,8 +104,10 @@ export const ContactInformation = () => {
                         itemCopy,
                         itemLink,
                     }) => (
-                        <LinkItem>
-                            <i class={itemIcon}/>
+                        <LinkItem
+                            key={itemCopy}
+                        >
+                            <i className={itemIcon}/>
                             <a href={itemLink}>{itemCopy}</a>
                         </LinkItem>
                     ))

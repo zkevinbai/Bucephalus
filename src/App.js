@@ -46,6 +46,7 @@ function App() {
         projectsList.map((projectDetail) => {
           return (
             <GridBox
+              key={projectDetail.TitleCopy}
               ShouldEmphasizeLeft={false}
             >
               <ProjectDetail
