@@ -52,8 +52,17 @@ const LinkItem = styled.a`
     :hover{
         color: rgb(86, 194, 255);
     }
-    p:hover{
-        text-decoration: underline;
+
+    i {
+        align-self: center;
+        justify-self: start;
+    }
+
+    p {
+        padding-left: 0.25rem;
+        :hover{
+            text-decoration: underline;
+        }
     }
 `;
 
