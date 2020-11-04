@@ -1,5 +1,5 @@
 /* eslint-disable */
-export Contact from './Contact';
+export ContactInformation from './ContactInformation';
 export Grid from './Grid';
 export GridBox from './GridBox';
 export Name from './Name';

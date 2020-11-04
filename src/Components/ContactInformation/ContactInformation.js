@@ -90,7 +90,7 @@ const ContactList = [
     linkedinDetails,
 ];
 
-export const Contact = () => {
+export const ContactInformation = () => {
     return (
         <Root>
             <Title>
@@ -113,4 +113,4 @@ export const Contact = () => {
     );
 }
 
-export default Contact;
+export default ContactInformation;
