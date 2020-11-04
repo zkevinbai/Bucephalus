@@ -42,7 +42,7 @@ const TechnologyItem = styled.div`
     width: 65px;
     
     padding: 3px;
-    margin: 2px;
+    margin: 0.15rem;
 
     border-radius: 100%;
     box-shadow: 0 0 3px;
