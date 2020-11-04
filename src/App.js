@@ -1,10 +1,12 @@
 import React from 'react';
 
 import {
+  Contact,
   Grid,
   GridBox,
   Name,
   ProjectDetail,
+  Skills,
  } from './Components';
 
 const AurelianDetail = {
@@ -28,7 +30,7 @@ const AugustusDetail = {
   LiveLink: 'https://Augustus.ink/#/',
 }
 
-const projects = [
+const projectsList = [
   AurelianDetail,
   AlexandriaDetail,
   AugustusDetail,
@@ -38,14 +40,12 @@ function App() {
   return (
     <Grid>
       <Name/>
-      <div>
-        contact
-      </div>
+      <Contact/>
       <div>
         skills
       </div>
       {
-        projects.map((projectDetail) => {
+        projectsList.map((projectDetail) => {
           return (
             <GridBox
               ShouldEmphasizeLeft={false}

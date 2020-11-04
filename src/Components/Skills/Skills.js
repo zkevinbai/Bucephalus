@@ -83,21 +83,21 @@ const linkedinDetails = {
     itemLink: 'https://www.linkedin.com/in/zkevinbai/',
 };
 
-const ContactList = [
+const SkillsList = [
     aboutDetails,
     emailDetails,
     githubDetails,
     linkedinDetails,
 ];
 
-export const Contact = () => {
+export const Skills = () => {
     return (
         <Root>
             <Title>
                 Full Stack Software Engineer
             </Title>
             <Links>
-                {ContactList.map(({
+                {SkillsList.map(({
                         itemIcon,
                         itemCopy,
                         itemLink,
@@ -113,4 +113,4 @@ export const Contact = () => {
     );
 }
 
-export default Contact;
+export default Skills;
