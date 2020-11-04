@@ -17,12 +17,13 @@ const Title = styled.div`
 `;
 
 const Technologies = styled.div`
+    width: 100%;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 15px;
     box-shadow: 0 0 3px;
     
     padding: 5px;
-    margin: 3px;
+    margin-left: 0.5rem;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
