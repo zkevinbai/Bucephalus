@@ -1,14 +1,8 @@
 import React from 'react';
 
-import GridBox from './Grid/GridBox';
-import ProjectDetail from './Grid/ProjectDetail';
-
-const AlexandriaDetail = {
-  TitleCopy: 'Alexandria',
-  DescriptionCopy: 'book search engine and book tracker',
-  GithubLink: 'https://github.com/zkevinbai/Alexandria',
-  LiveLink: 'https://alexandria-book.herokuapp.com/#/',
-}
+import Grid from './Components/Grid/';
+import GridBox from './Components/GridBox';
+import ProjectDetail from './Components/ProjectDetail';
 
 const AurelianDetail = {
   TitleCopy: 'Aurelian',
@@ -17,20 +11,55 @@ const AurelianDetail = {
   LiveLink: 'https://aurelian.app',
 }
 
+const AlexandriaDetail = {
+  TitleCopy: 'Alexandria',
+  DescriptionCopy: 'book search engine and book tracker',
+  GithubLink: 'https://github.com/zkevinbai/Alexandria',
+  LiveLink: 'https://alexandria-book.herokuapp.com/#/',
+}
+
+const AugustusDetail = {
+  TitleCopy: 'Augustus',
+  DescriptionCopy: 'book search engine and book tracker',
+  GithubLink: 'https://github.com/zkevinbai/Augustus',
+  LiveLink: 'https://Augustus.ink/#/',
+}
+
+const projects = [
+  AurelianDetail,
+  AlexandriaDetail,
+  AugustusDetail,
+];
+
 function App() {
   return (
-    <div>
-      <GridBox
-        ShouldEmphasizeLeft={false}
-      >
-        <ProjectDetail
-          {...AlexandriaDetail}
-        />
-        <ProjectDetail 
-          {...AurelianDetail}
-        />
-      </GridBox>
-    </div>
+    <Grid>
+      <div>
+        name
+      </div>
+      <div>
+        contact
+      </div>
+      <div>
+        skills
+      </div>
+      {
+        projects.map((projectDetail) => {
+          return (
+            <GridBox
+              ShouldEmphasizeLeft={false}
+            >
+              <ProjectDetail
+                {...projectDetail}
+              />
+              <ProjectDetail
+                {...projectDetail}
+              />
+            </GridBox>
+          )
+        })
+      }
+    </Grid>
   );
 }
 
