@@ -49,13 +49,11 @@ const LinkItem = styled.div`
 
     color: black;
 
-    :hover {
-        color: rgb(242, 242, 242);
+    i:hover {
         color: rgb(86, 194, 255);
     }
 
     a:hover{
-        color: rgb(198, 234, 255);
         color: rgb(86, 194, 255);
         text-decoration: underline;
     }
