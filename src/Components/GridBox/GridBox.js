@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const Root = styled.div`
     display: grid;
+    padding: 1rem;
     grid-template-columns: ${({ ShouldEmphasizeLeft }) => (
         ShouldEmphasizeLeft ? '2fr 1fr' : '1fr 2fr' )
     };
