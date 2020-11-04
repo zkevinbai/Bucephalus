@@ -3,14 +3,13 @@ import styled from 'styled-components';
 
 const Root = styled.div`
     display: grid;
-    /* grid-template-columns: 2fr 2fr  */
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr;
 
     height: 5rem;
     width: 15rem;
     padding: 0.5rem;
-    padding-bottom: 3rem;
+    padding-bottom: 5rem;
 
     align-items: center;
     font-family: "raleway";
