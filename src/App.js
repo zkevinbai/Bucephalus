@@ -50,8 +50,8 @@ function App() {
               key={projectDetail.TitleCopy}
               ShouldEmphasizeLeft={false}
             >
-              <ProjectDetail
-                {...projectDetail}
+              <ProjectPhoto
+                TitleCopy={projectDetail.TitleCopy}
               />
               <ProjectDetail
                 {...projectDetail}
