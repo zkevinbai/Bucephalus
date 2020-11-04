@@ -15,6 +15,7 @@ const AurelianDetail = {
   DescriptionCopy: 'personal finance visualization using sankey diagrams',
   GithubLink: 'https://github.com/zkevinbai/Aurelian',
   LiveLink: 'https://aurelian.app',
+  ShouldEmphasizeLeft: true,
 }
 
 const AlexandriaDetail = {
@@ -22,6 +23,7 @@ const AlexandriaDetail = {
   DescriptionCopy: 'book search engine and book tracker',
   GithubLink: 'https://github.com/zkevinbai/Alexandria',
   LiveLink: 'https://alexandria-book.herokuapp.com/#/',
+  ShouldEmphasizeLeft: true,
 }
 
 const AugustusDetail = {
@@ -29,6 +31,7 @@ const AugustusDetail = {
   DescriptionCopy: 'book search engine and book tracker',
   GithubLink: 'https://github.com/zkevinbai/Augustus',
   LiveLink: 'https://Augustus.ink/#/',
+  ShouldEmphasizeLeft: false,
 }
 
 const projectsList = [
@@ -48,14 +51,26 @@ function App() {
           return (
             <GridBox
               key={projectDetail.TitleCopy}
-              ShouldEmphasizeLeft={false}
+              ShouldEmphasizeLeft={projectDetail.ShouldEmphasizeLeft}
             >
-              <ProjectPhoto
-                TitleCopy={projectDetail.TitleCopy}
-              />
-              <ProjectDetail
-                {...projectDetail}
-              />
+              {
+                projectDetail.ShouldEmphasizeLeft ?
+                  (<>
+                    <ProjectPhoto
+                      TitleCopy={projectDetail.TitleCopy}
+                    />
+                    <ProjectDetail
+                      {...projectDetail}
+                    />
+                  </>) : (<>
+                    <ProjectDetail
+                      {...projectDetail}
+                    />
+                    <ProjectPhoto
+                      TitleCopy={projectDetail.TitleCopy}
+                    />
+                  </>)
+              }
             </GridBox>
           )
         })
