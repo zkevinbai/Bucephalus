@@ -1,3 +1,3 @@
 export Grid from './Grid';
-export GridBox from './Gridbox';
+export GridBox from './GridBox';
 export ProjectDetail from './ProjectDetail';
