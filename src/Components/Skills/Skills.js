@@ -53,14 +53,25 @@ const TechnologyItem = styled.div`
 
 const TechnologyList = [
     'devicon-javascript-plain colored',
-    'devicon-html5-plain-wordmark colored',
-    'devicon-css3-plain-wordmark colored',
+    'devicon-html5-plain colored',
+    'devicon-css3-plain colored',
     'devicon-react-original colored',
     'devicon-d3js-plain colored',
     'devicon-express-original colored',
     'devicon-nodejs-plain colored',
-    'devicon-postgresql-plain-wordmark colored',
+    'devicon-postgresql-plain colored',
+    'devicon-ruby-plain colored',
+    'devicon-git-plain colored',
+    'devicon-rails-plain colored',
+    'devicon-mongodb-plain colored',
 ]
+/*
+things i'd like to add
+---
+styled components
+graphql
+redux
+*/
 
 export const Skills = () => {
     return (
