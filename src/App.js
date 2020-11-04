@@ -6,6 +6,7 @@ import {
   GridBox,
   Name,
   ProjectDetail,
+  ProjectPhoto,
   Skills,
  } from './Components';
 
