@@ -2,17 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Root = styled.div`
-    height: 5rem;
-    width: 15rem;
-    padding: 0.5rem;
-
     display: grid;
     grid-template-columns: ${({ ShouldEmphasizeLeft }) => (
-        ShouldEmphasizeLeft ? '1fr 2fr' : '2fr 1fr' )
+        ShouldEmphasizeLeft ? '2fr 1fr' : '1fr 2fr' )
     };
     grid-template-rows: 1fr;
 
     align-items: center;
+    justify-items: center;
 `;
 
 export const GridBox = ({

@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import GridBox from '../GridBox';
 
 const Title = styled.div`
-    grid-column: 2;
-    grid-row: 2;
     align-self: center;
     text-align: start;
 
@@ -14,9 +12,6 @@ const Title = styled.div`
     font-family: "raleway";
 `;
 const Technologies = styled.div`
-    grid-column: 3;
-    grid-row: 2;
-
     background: rgba(255, 255, 255, 0.5);
     border-radius: 15px;
     box-shadow: 0 0 3px;
@@ -76,7 +71,7 @@ redux
 export const Skills = () => {
     return (
         <GridBox
-            ShouldEmphasizeLeft={false}
+            ShouldEmphasizeLeft={true}
         >
             <Title>
                 Technologies and Frameworks
