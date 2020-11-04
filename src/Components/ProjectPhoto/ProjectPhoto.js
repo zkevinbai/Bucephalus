@@ -13,7 +13,7 @@ const Root = styled.div`
     justify-self: center;
 
     img {
-        height: 210px;
+        height: 14rem;
         border-radius: 15px;
         box-shadow: 0 0 3px;
     }

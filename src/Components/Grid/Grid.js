@@ -12,6 +12,7 @@ const Root = styled.div`
     background-image: linear-gradient(to bottom right, rgb(255, 210, 206), rgb(255, 254, 180), rgb(183, 229, 255));
 
     @media (max-width: 1166px) {
+        height: 100%;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(6, 1fr);
 
