@@ -5,9 +5,9 @@ import GridBox from '../GridBox';
 
 const Root = styled.div`
     padding-top: 2.5rem;
-    padding-right: 2;
+    padding-right: 2rem;
     padding-bottom: 0rem;
-    padding-left: 3rem;
+    padding-left: 2rem;
 
     margin-top: 1.45rem;
 
