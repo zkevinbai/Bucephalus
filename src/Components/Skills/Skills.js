@@ -4,8 +4,20 @@ import styled from 'styled-components';
 import GridBox from '../GridBox';
 
 const Root = styled.div`
-    padding: 2.5rem 2rem 0rem 3rem;
+    padding-top: 2.5rem;
+    padding-right: 2;
+    padding-bottom: 0rem;
+    padding-left: 3rem;
+
     margin-top: 1.45rem;
+
+    @media (max-width: 1166px) {
+        padding-top: 0rem;
+        padding-right: 2rem;
+        padding-left: 3rem;
+
+        margin-top: 0rem;
+    }
 `;
 
 const Title = styled.div`
