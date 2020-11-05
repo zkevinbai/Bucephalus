@@ -1,4 +1,5 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 import {
   ContactInformation,
@@ -40,7 +41,11 @@ const projectsList = [
   AugustusDetail,
 ];
 
+const mobileAdjust = [AlexandriaDetail.TitleCopy, AugustusDetail.TitleCopy];
+
 function App() {
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1166px)' })
+
   return (
     <Grid>
       <Name/>
@@ -48,13 +53,17 @@ function App() {
       <Skills/>
       {
         projectsList.map((projectDetail) => {
+          let emphasizeLeft = projectDetail.ShouldEmphasizeLeft;
+          if (isTabletOrMobile && mobileAdjust.includes(projectDetail.TitleCopy)) {
+            emphasizeLeft = !projectDetail.ShouldEmphasizeLeft;
+          }
           return (
             <GridBox
               key={projectDetail.TitleCopy}
-              ShouldEmphasizeLeft={projectDetail.ShouldEmphasizeLeft}
+              ShouldEmphasizeLeft={emphasizeLeft}
             >
               {
-                projectDetail.ShouldEmphasizeLeft ?
+                emphasizeLeft ?
                   (<>
                     <ProjectPhoto
                       TitleCopy={projectDetail.TitleCopy}
