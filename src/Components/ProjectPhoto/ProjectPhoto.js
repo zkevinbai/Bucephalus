@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-const baseURL = './';
-// const baseURL = '../../../assets/projects';
 
 const Root = styled.div`
     background: rgba(255, 255, 255, 0.5);
@@ -22,9 +20,11 @@ const Root = styled.div`
 export const ProjectPhoto = ({
     TitleCopy,
 }) => {
+    const requireImage = (title) => require('./assets/' + title + '.png');
+
     return (
         <Root>
-            <img src={require(baseURL + TitleCopy + '.png')} alt={TitleCopy + ' screenshot'} />
+            <img src={requireImage(TitleCopy)} alt={TitleCopy + ' screenshot'} />
         </Root>
     );
 }
