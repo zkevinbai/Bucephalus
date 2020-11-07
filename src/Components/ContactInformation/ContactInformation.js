@@ -18,7 +18,7 @@ const Title = styled.div`
     grid-column: 1;
 
     font-weight: 700;
-    font-size: 39px;
+    font-size: 3rem;
 `;
 
 const Links = styled.div`
