@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5f78809d.chunk.css",
+    "main.js": "/static/js/main.062cc70c.chunk.js",
+    "main.js.map": "/static/js/main.062cc70c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.36982f88.js",
+    "runtime-main.js.map": "/static/js/runtime-main.36982f88.js.map",
+    "static/js/2.f37c20d4.chunk.js": "/static/js/2.f37c20d4.chunk.js",
+    "static/js/2.f37c20d4.chunk.js.map": "/static/js/2.f37c20d4.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.00ae0907ad0bbb1e34ffbdab0aff2aeb.js": "/precache-manifest.00ae0907ad0bbb1e34ffbdab0aff2aeb.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.5f78809d.chunk.css.map": "/static/css/main.5f78809d.chunk.css.map",
+    "static/js/2.f37c20d4.chunk.js.LICENSE.txt": "/static/js/2.f37c20d4.chunk.js.LICENSE.txt",
+    "static/media/Alexandria.png": "/static/media/Alexandria.ce11d21f.png",
+    "static/media/Augustus.png": "/static/media/Augustus.bbc0fa59.png",
+    "static/media/Aurelian.png": "/static/media/Aurelian.a7a59088.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.36982f88.js",
+    "static/js/2.f37c20d4.chunk.js",
+    "static/css/main.5f78809d.chunk.css",
+    "static/js/main.062cc70c.chunk.js"
+  ]
+}
