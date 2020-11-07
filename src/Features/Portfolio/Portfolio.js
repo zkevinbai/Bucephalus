@@ -41,7 +41,7 @@ const projectsList = [
   AugustusDetail,
 ];
 
-const mobileAdjust = [AlexandriaDetail.TitleCopy, AugustusDetail.TitleCopy];
+const adjustForMobile = [AlexandriaDetail.TitleCopy, AugustusDetail.TitleCopy];
 
 const Portfolio = () => {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1166px)' })
@@ -54,7 +54,7 @@ const Portfolio = () => {
       {
         projectsList.map((projectDetail) => {
           let emphasizeLeft = projectDetail.ShouldEmphasizeLeft;
-          if (isTabletOrMobile && mobileAdjust.includes(projectDetail.TitleCopy)) {
+          if (isTabletOrMobile && adjustForMobile.includes(projectDetail.TitleCopy)) {
             emphasizeLeft = !projectDetail.ShouldEmphasizeLeft;
           }
           return (
