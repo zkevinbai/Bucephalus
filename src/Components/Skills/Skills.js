@@ -4,12 +4,13 @@ import styled from 'styled-components';
 import GridBox from '../GridBox';
 
 const Root = styled.div`
-    padding-top: 2.5rem;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
     padding-right: 2rem;
     padding-bottom: 0rem;
     padding-left: 2rem;
-
-    margin-top: 1.45rem;
 
     @media (max-width: 1166px) {
         padding-top: 0rem;
