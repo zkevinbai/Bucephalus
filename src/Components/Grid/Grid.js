@@ -19,7 +19,7 @@ const Root = styled.div`
         background-image: linear-gradient(to bottom,rgb(255, 210, 206), rgb(255, 254, 180), rgb(183, 229, 255), rgb(255, 210, 206));
     }
 
-    @media (max-width: 750px) {
+    @media (max-width: 425px) {
         width: 47rem;
     }
 `;
