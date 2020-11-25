@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { BrowserRoute, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import { AllPosts, OnePost } from './Components';
 
@@ -8,12 +8,14 @@ import Portfolio from './Features/Portfolio';
 
 const App = () => {
   return (
-    <BrowserRoute>
+    <BrowserRouter>
       <Fragment>
-        <Route component={AllPosts} path="/blog" exact />
-        <Route component={OnePost} path="/blog/:slug" />
+        <Route component={AllPosts} path="/" exact />
+        <Route component={OnePost} path="/:slug" />
+        {/* <Route component={AllPosts} path="/blog" exact />
+        <Route component={OnePost} path="/blog/:slug" /> */}
       </Fragment>
-    </BrowserRoute>
+    </BrowserRouter>
   );
 }
 
