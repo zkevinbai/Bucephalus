@@ -1,6 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import sanityClient from '../../client';
+
+const Thumbnail = styled.div`
+    height: 10rem;
+
+    align-items: center;
+    font-size: 5rem;
+
+    :hover {
+        background: lightblue;
+    }
+`;
+
+const ThumbnailImage = styled.img`
+    height: inherit;
+`;
 
 const AllPosts = () => {
     const [allPostsData, setAllPosts] = useState(null);
@@ -33,15 +49,13 @@ const AllPosts = () => {
                             to={'/' + post.slug.current}
                             key={post.slug.current}
                         >
-                            <span key={index}>
-                                <img
+                            <Thumbnail>
+                                <ThumbnailImage
                                     src={post.mainImage.asset.url}
                                     alt="hero"
                                 />
-                            </span>
-                            <span>
                                 {post.title}
-                            </span>
+                            </Thumbnail>
                         </Link>
                     )
                 })
