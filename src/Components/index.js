@@ -5,3 +5,6 @@ export Name from './Name';
 export ProjectDetail from './ProjectDetail';
 export ProjectPhoto from './ProjectPhoto';
 export Skills from './Skills';
+
+export AllPosts from './AllPosts';
+export OnePost from './OnePost';
