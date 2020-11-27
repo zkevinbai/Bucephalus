@@ -6,15 +6,23 @@ import {
   Link
 } from 'react-router-dom';
 
-import Blog from './Features/Blog';
+// import BlogRouter from './Features/Blog/BlogRouter';
 import Portfolio from './Features/Portfolio';
 
-function App() {
+const BlogRouter = () => {
+  return (
+    <div>
+      hello
+    </div>
+  )
+}
+
+const App = () => {
   return (
     <Router>
       <Switch>
         <Route path="/blog">
-          <Blog />
+          <BlogRouter />
         </Route>
         <Route path="/portfolio">
           <Portfolio />
