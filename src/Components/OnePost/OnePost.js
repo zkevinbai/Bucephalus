@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import imageUrlBuilder from '@sanity/image-url';
+import BlockContent from '@sanity/block-content-to-react';
 
 import sanityClient from '../../client';
 
@@ -40,14 +41,28 @@ const OnePost = () => {
     }
 
     return (
-        <div>
-            One Post
-            <h2>{postData.title}</h2>
-            <img
-                src={postData.author.image.asset.url}
-                alt='Kevin'
-            />
-        </div>
+        <>
+            <h1>{postData.title}</h1>
+            <div>
+                One Post
+                <img
+                    src={urlFor(postData.authorImage).width(100).url()}
+                    alt='Kevin'
+                />
+                <p>{postData.name}</p>
+            </div>
+            <div>
+                <img
+                    src={urlFor(postData.mainImage).width(100).url()}
+                    alt='hello'
+                />
+                <BlockContent
+                    blocks={postData.body}
+                    projectId={sanityClient.clientConfig.projectId}
+                    dataset={sanityClient.clientConfig.dataset}
+                />
+            </div>
+        </>
     )
 };
 
