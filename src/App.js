@@ -3,26 +3,26 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  useRouteMatch,
   Link
 } from 'react-router-dom';
 
 // import BlogRouter from './Features/Blog/BlogRouter';
 import Portfolio from './Features/Portfolio';
-
-const BlogRouter = () => {
-  return (
-    <div>
-      hello
-    </div>
-  )
-}
+import {
+  AllBlogs,
+  SingleBlog,
+} from './Features/Blog';
 
 const App = () => {
   return (
     <Router>
       <Switch>
+        <Route path="/blog/:slug">
+          <SingleBlog />
+        </Route>
         <Route path="/blog">
-          <BlogRouter />
+          <AllBlogs />
         </Route>
         <Route path="/portfolio">
           <Portfolio />
