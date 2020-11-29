@@ -20,7 +20,7 @@ const Root = styled.div`
 export const Name = () => {
     return (
         <Root>
-            Ziheng Kevin Bai
+            Single Blog
         </Root>
     );
 }

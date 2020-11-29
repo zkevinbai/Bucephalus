@@ -1,7 +1,2 @@
-import AllBlogs from './AllBlogs';
-import SingleBlog from './SingleBlog';
-
-export default {
-    AllBlogs,
-    SingleBlog,
-};
+export AllBlogs from './AllBlogs';
+export SingleBlog from './SingleBlog';
