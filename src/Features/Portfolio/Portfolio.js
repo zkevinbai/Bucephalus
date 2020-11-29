@@ -9,7 +9,7 @@ import {
   ProjectDetail,
   ProjectPhoto,
   Skills,
- } from '../../Components/';
+ } from '../../Components';
 
 const AurelianDetail = {
   TitleCopy: 'Aurelian',
