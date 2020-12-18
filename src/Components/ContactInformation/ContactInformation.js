@@ -39,10 +39,6 @@ const Links = styled.div`
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
     justify-items: middle;
-
-    @media (max-width: 1450px) {
-        margin-top: 1rem;
-    }
 `;
 
 const LinkItem = styled.a`
