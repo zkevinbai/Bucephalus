@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import GridBox from '../GridBox';
+import { MAX_MOBILE_WIDTH } from '../constants';
 
 const Root = styled.div`
     display: grid;
@@ -12,7 +13,7 @@ const Root = styled.div`
     padding-bottom: 0rem;
     padding-left: 2rem;
 
-    @media (max-width: 1450px) {
+    @media (max-width: ${MAX_MOBILE_WIDTH}) {
         padding-top: 0rem;
         padding-right: 2rem;
         padding-left: 3rem;
