@@ -40,7 +40,7 @@ const Links = styled.div`
     grid-template-rows: 1fr;
     justify-items: middle;
 
-    @media (max-width: 1166px) {
+    @media (max-width: 1450px) {
         margin-top: 1rem;
     }
 `;

@@ -12,7 +12,7 @@ const Root = styled.div`
     padding-bottom: 0rem;
     padding-left: 2rem;
 
-    @media (max-width: 1166px) {
+    @media (max-width: 1450px) {
         padding-top: 0rem;
         padding-right: 2rem;
         padding-left: 3rem;
