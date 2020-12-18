@@ -12,8 +12,13 @@ import {
 } from './Features/Blog';
 
 const App = () => {
+
+  debugger;
+
   return (
-    <Router>
+    <Router
+      basename={process.env.PUBLIC_URL}
+    >
       <Switch>
         <Route path="/blog/:slug">
           <SingleBlog />
