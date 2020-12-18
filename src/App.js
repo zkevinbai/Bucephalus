@@ -13,8 +13,6 @@ import {
 
 const App = () => {
 
-  debugger;
-
   return (
     <Router
       basename={process.env.PUBLIC_URL}

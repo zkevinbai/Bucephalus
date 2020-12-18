@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Root = styled.div`
-    min-width: 100vw; 
-    height: 100vh;
+    min-width: 810px; 
+    min-height: 100vh;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
