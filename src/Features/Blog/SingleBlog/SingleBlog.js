@@ -32,24 +32,24 @@ export const SingleBlog = ({
     markdownContent,
 }) => {
     const content = `
-        # Header 1
+# Header 1
 
-        ---
+---
 
-        ## Header 2
+## Header 2
 
-        _italic_
+_italic_
 
-        **bold**
-
-
-        [test](bai)
+**bold**
 
 
-        Close out PR from last night for disabling preview and fixing the IE view of a proposals component.Finish a new ticket to update the SPR sample
+[test](bai)
 
 
-        Lunch with Mom Dad
+Close out PR from last night for disabling preview and fixing the IE view of a proposals component.Finish a new ticket to update the SPR sample
+
+
+Lunch with Mom Dad
   `;
 
     return (
