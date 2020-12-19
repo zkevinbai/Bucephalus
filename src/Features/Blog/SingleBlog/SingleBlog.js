@@ -22,7 +22,7 @@ const Root = styled.div`
     border: 5px solid black;
     border-radius: 15px;
 
-    width: 200px;
+    width: 50%;
 
     font-family: "avenir";
     font-size: 25px;
@@ -32,25 +32,24 @@ export const SingleBlog = ({
     markdownContent,
 }) => {
     const content = `
-  # Header 1
+        # Header 1
 
-  ---
+        ---
 
-  ## Header 2
+        ## Header 2
 
-  _italic_
+        _italic_
 
-  **bold**
-
-
-  [test](test.com)
+        **bold**
 
 
-Close out PR from last night for disabling preview and fixing the IE view of a proposals component.Finish a new ticket to update the SPR sample
+        [test](bai)
 
 
-Lunch with Mom Dad
+        Close out PR from last night for disabling preview and fixing the IE view of a proposals component.Finish a new ticket to update the SPR sample
 
+
+        Lunch with Mom Dad
   `;
 
     return (
