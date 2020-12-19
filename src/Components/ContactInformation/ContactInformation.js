@@ -58,7 +58,7 @@ const LinkItem = styled.a`
         justify-self: start;
     }
 
-    p {
+    div {
         padding-left: 0.25rem;
         :hover{
             text-decoration: underline;
@@ -114,7 +114,7 @@ export const ContactInformation = () => {
                             key={itemCopy}
                         >                            
                             <i className={itemIcon} />
-                            <p>{itemCopy}</p>
+                            <div>{itemCopy}</div>
                         </LinkItem>
                     ))
                 }
