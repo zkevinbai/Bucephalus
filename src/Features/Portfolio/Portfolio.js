@@ -14,7 +14,7 @@ import { MAX_TABLET_WIDTH } from '../../Components/constants';
 
 const AurelianDetail = {
   TitleCopy: 'Aurelian',
-  DescriptionCopy: 'personal finance visualization using sankey diagrams',
+  DescriptionCopy: 'sankey personal finance visualization',
   GithubLink: 'https://github.com/zkevinbai/Aurelian',
   LiveLink: 'https://aurelian.app',
   ShouldEmphasizeLeft: true,
