@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { MAX_TABLET_WIDTH } from '../constants';
 
 const Root = styled.div`
-    min-width: 100vw; 
+    min-width: 100%; 
     min-height: 100vh;
 
     display: grid;
