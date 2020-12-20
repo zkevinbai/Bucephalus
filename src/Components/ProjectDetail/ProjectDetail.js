@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { MAX_MOBILE_WIDTH } from '../constants';
+
 const Root = styled.div`
     display: grid;
     grid-template-columns: 1fr;
@@ -13,6 +15,10 @@ const Root = styled.div`
 
     align-items: center;
     font-family: "raleway";
+
+    @media (max-width: ${MAX_MOBILE_WIDTH}) {
+        width: 10rem;
+    }
 `;
 
 const Header = styled.div`
@@ -20,19 +26,27 @@ const Header = styled.div`
 `;
 
 const Title = styled.div`
+    font-size: 2rem;
     font-weight: 400;
-    font-size: 35px;
     text-decoration: underline;
+
+    @media (max-width: ${MAX_MOBILE_WIDTH}) {
+        font-size: 1.75rem;
+    }
 `;
 
 const Description = styled.div`
+    font-size: 1.5rem;
     font-weight: 200;
-    font-size: 18px;
+
+    @media (max-width: ${MAX_MOBILE_WIDTH}) {
+        font-size: 1rem;
+    }
 `;
 
 const Links = styled.div `
+    font-size: 1.5rem;
     font-weight: 300;
-    font-size: 25px;
 
     background: rgba(255, 255, 255, 0.25);
     border-radius: 15px;
@@ -44,6 +58,10 @@ const Links = styled.div `
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
+
+    @media (max-width: ${MAX_MOBILE_WIDTH}) {
+        font-size: 1.25rem;
+    }
 `;
 
 const Link = styled.a`
