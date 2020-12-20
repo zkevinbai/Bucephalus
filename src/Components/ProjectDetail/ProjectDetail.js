@@ -41,6 +41,7 @@ const Description = styled.div`
 
     @media (max-width: ${MAX_MOBILE_WIDTH}) {
         font-size: 1rem;
+        font-weight: 400;
     }
 `;
 
