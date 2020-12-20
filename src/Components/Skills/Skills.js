@@ -14,7 +14,7 @@ const Root = styled.div`
     padding-left: 2rem;
 
     @media (max-width: ${MAX_MOBILE_WIDTH}) {
-        padding-top: 0rem;
+        padding-bottom: 1rem;
         padding-right: 1rem;
         padding-left: 1rem;
 
