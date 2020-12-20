@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { MAX_MOBILE_WIDTH } from '../constants';
+
 const Root = styled.div`
     display: grid;
     padding: 1rem;
@@ -11,6 +13,10 @@ const Root = styled.div`
 
     align-items: center;
     justify-items: center;
+
+    @media (max-width: ${MAX_MOBILE_WIDTH}) {
+        padding: 0rem;
+    }
 `;
 
 export const GridBox = ({
