@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { MAX_MOBILE_WIDTH } from '../constants';
+
 const Root = styled.div`
     display: grid;
     grid-template-columns: 1fr;
@@ -19,6 +21,10 @@ const Title = styled.div`
 
     font-weight: 700;
     font-size: 3rem;
+
+    @media(max-width: ${ MAX_MOBILE_WIDTH }) {
+        font-size: 2rem;
+    }
 `;
 
 const Links = styled.div`
@@ -43,8 +49,7 @@ const Links = styled.div`
 
 const LinkItem = styled.a`
     display: grid;
-    grid-template-columns: 35px 1fr;
-    grid-template-columns: 28px 1fr;
+    grid-template-columns: 2rem 1fr;
     grid-template-rows: 1fr;
 
     color: black;   
