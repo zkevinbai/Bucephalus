@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { MAX_MOBILE_WIDTH } from '../constants';
+import { MAX_TABLET_WIDTH } from '../constants';
 
 const Root = styled.div`
     min-width: 100vw; 
@@ -18,7 +18,7 @@ const Root = styled.div`
         rgb(183, 229, 255)
     );
 
-    @media (max-width: ${MAX_MOBILE_WIDTH}) {
+    @media (max-width: ${MAX_TABLET_WIDTH}) {
         height: 100%;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(6, 1fr);

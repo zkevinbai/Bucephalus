@@ -10,7 +10,7 @@ import {
   ProjectPhoto,
   Skills,
  } from '../../Components';
-import { MAX_MOBILE_WIDTH } from '../../Components/constants';
+import { MAX_TABLET_WIDTH } from '../../Components/constants';
 
 const AurelianDetail = {
   TitleCopy: 'Aurelian',
@@ -45,7 +45,7 @@ const projectsList = [
 const adjustForMobile = [AlexandriaDetail.TitleCopy, AugustusDetail.TitleCopy];
 
 const Portfolio = () => {
-  const isTabletOrMobile = useMediaQuery({ query: `(max-width: ${MAX_MOBILE_WIDTH})` })
+  const isTabletOrMobile = useMediaQuery({ query: `(max-width: ${MAX_TABLET_WIDTH})` })
 
   return (
     <Grid>
