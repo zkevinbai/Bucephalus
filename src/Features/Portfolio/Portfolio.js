@@ -55,9 +55,11 @@ const Portfolio = () => {
       {
         projectsList.map((projectDetail) => {
           let emphasizeLeft = projectDetail.ShouldEmphasizeLeft;
+
           if (isTabletOrMobile && adjustForMobile.includes(projectDetail.TitleCopy)) {
             emphasizeLeft = !projectDetail.ShouldEmphasizeLeft;
           }
+
           return (
             <GridBox
               key={projectDetail.TitleCopy}
