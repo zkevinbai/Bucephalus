@@ -23,7 +23,7 @@ const Title = styled.div`
     font-size: 3rem;
 
     @media(max-width: ${ MAX_MOBILE_WIDTH }) {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 `;
 
