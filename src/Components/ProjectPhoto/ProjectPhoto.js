@@ -9,7 +9,7 @@ const Root = styled.div`
     box-shadow: 0 0 3px;
 
     padding: 0.75rem;
-    margin: 0.25rem;
+    margin: 0.5rem;
     justify-self: center;
 
     img {
@@ -20,10 +20,9 @@ const Root = styled.div`
 
     @media (max-width: ${MAX_MOBILE_WIDTH}) {
         padding: 0.50rem;
-        margin: 0rem;
 
         img {
-            height: 8rem;
+            height: 9.5rem;
         }
     }
 `;
