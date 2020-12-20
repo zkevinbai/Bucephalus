@@ -27,7 +27,7 @@ const Header = styled.div`
 
 const Title = styled.div`
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 500;
     text-decoration: underline;
 
     @media (max-width: ${MAX_MOBILE_WIDTH}) {
@@ -37,7 +37,7 @@ const Title = styled.div`
 
 const Description = styled.div`
     font-size: 1.5rem;
-    font-weight: 200;
+    font-weight: 300;
 
     @media (max-width: ${MAX_MOBILE_WIDTH}) {
         font-size: 1rem;
@@ -46,7 +46,7 @@ const Description = styled.div`
 
 const Links = styled.div `
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 400;
 
     background: rgba(255, 255, 255, 0.25);
     border-radius: 15px;

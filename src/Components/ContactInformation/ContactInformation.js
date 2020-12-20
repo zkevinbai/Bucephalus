@@ -19,8 +19,8 @@ const Title = styled.div`
     grid-row: 1;
     grid-column: 1;
 
-    font-weight: 700;
     font-size: 3rem;
+    font-weight: 700;
 
     @media(max-width: ${ MAX_MOBILE_WIDTH }) {
         font-size: 1.75rem;
@@ -32,8 +32,8 @@ const Links = styled.div`
     grid-column: 1;
 
     font-family: "raleway";
-    font-weight: 300;
     font-size: 1.5rem;
+    font-weight: 400;
 
     background: rgba(255, 255, 255, 0.25);
     border-radius: 15px;
