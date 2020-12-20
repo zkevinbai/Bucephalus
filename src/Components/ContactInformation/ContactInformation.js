@@ -33,7 +33,7 @@ const Links = styled.div`
 
     font-family: "raleway";
     font-weight: 300;
-    font-size: 25px;
+    font-size: 1.5rem;
 
     background: rgba(255, 255, 255, 0.25);
     border-radius: 15px;
@@ -45,6 +45,10 @@ const Links = styled.div`
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
     justify-items: middle;
+
+    @media(max-width: ${ MAX_MOBILE_WIDTH }) {
+        font-size: 1.25rem;
+    }
 `;
 
 const LinkItem = styled.a`
@@ -68,6 +72,10 @@ const LinkItem = styled.a`
         :hover{
             text-decoration: underline;
         }
+    }
+
+    @media(max-width: ${ MAX_MOBILE_WIDTH }) {
+        grid-template-columns: 1.5rem 1fr;
     }
 `;
 
