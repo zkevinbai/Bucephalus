@@ -15,8 +15,8 @@ const Root = styled.div`
 
     @media (max-width: ${MAX_MOBILE_WIDTH}) {
         padding-top: 0rem;
-        padding-right: 2rem;
-        padding-left: 3rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
 
         margin-top: 0rem;
     }
@@ -26,9 +26,13 @@ const Title = styled.div`
     align-self: center;
     text-align: start;
 
+    font-size: 2.2rem;
     font-weight: 500;
-    font-size: 35px;
     font-family: "raleway";
+
+    @media (max-width: ${MAX_MOBILE_WIDTH}) {
+        font-size: 1.5rem;
+    }
 `;
 
 const Technologies = styled.div`
@@ -46,15 +50,20 @@ const Technologies = styled.div`
 
     justify-items: center;
     align-items: end;
+
+    @media (max-width: ${MAX_MOBILE_WIDTH}) {
+        padding: 0rem;
+        margin-left: 0rem;
+    }
 `;
 
 const TechnologyItem = styled.div`
-    font-size: 50px;
+    font-size: 3rem;
 
     background: rgba(255, 255, 255, 1);
 
-    height: 65px;
-    width: 65px;
+    height: 4rem;
+    width: 4rem;
     
     padding: 3px;
     margin: 0.15rem;
@@ -65,6 +74,12 @@ const TechnologyItem = styled.div`
     display: grid;
     align-content: center;
     justify-content: center;
+
+    @media (max-width: ${MAX_MOBILE_WIDTH}) {
+        font-size: 2.75rem;
+        height: 3.5rem;
+        width: 3.5rem;
+    }
 `;
 
 const TechnologyList = [
