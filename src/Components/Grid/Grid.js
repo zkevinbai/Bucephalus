@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { MAX_MOBILE_WIDTH } from '../constants';
 
 const Root = styled.div`
-    min-width: 810px; 
+    min-width: 100vw; 
     min-height: 100vh;
 
     display: grid;
