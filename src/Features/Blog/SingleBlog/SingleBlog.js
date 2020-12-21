@@ -26,6 +26,10 @@ const Root = styled.div`
 
     font-family: "avenir";
     font-size: 25px;
+
+    a {
+        color: #f55f4e;
+    }
 `;
 
 export const SingleBlog = ({
@@ -44,6 +48,8 @@ _italic_
 **bold**
 
 [test](bai)
+
+[hhhhh](j)
 
 Close out PR from last night for disabling preview and fixing the IE view of a proposals component.Finish a new ticket to update the SPR sample
 
