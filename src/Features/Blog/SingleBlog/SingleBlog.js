@@ -30,6 +30,12 @@ const Root = styled.div`
     a {
         color: #f55f4e;
     }
+
+    pre {
+        background: lightgray;
+        border-radius: 1rem;
+        padding: 1rem;
+    }
 `;
 
 export const SingleBlog = ({
@@ -37,7 +43,7 @@ export const SingleBlog = ({
 }) => {
     // since this is markdown, it must be left aligned to show properly
     const content = `
-# Header 1
+# This is my blog title
 
 ---
 
@@ -51,6 +57,8 @@ _italic_
 
 [hhhhh](j)
 
+> quote
+
 Close out PR from last night for disabling preview and fixing the IE view of a proposals component.Finish a new ticket to update the SPR sample
 
 Lunch with Mom Dad
@@ -90,12 +98,23 @@ Lunch with Mom DadClose out PR from last night for disabling preview and fixing 
 
 Lunch with Mom DadClose out PR from last night for disabling preview and fixing the IE view of a proposals component.Finish a new ticket to update the SPR sample
 
-Lunch with Mom Dad
   `;
+    const markdownWithCode = `## How about some code?
+\`\`\`js
+var React = require('react');
+var Markdown = require('react-markdown');
+React.render(
+  <Markdown source="# Your markdown here" />,
+  document.getElementById('content')
+);
+\`\`\``;
+
+    // 1px represents 0.0625rem
 
     return (
         <Root>
             <ReactMarkdown source={content} />
+            <ReactMarkdown source={markdownWithCode} />
         </Root>
     );
 }
