@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const Root = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(11rem, 1fr));
         // by setting min to be greater than the max of my elements
         // the alignment will always be perfect
 `;
@@ -20,22 +21,27 @@ const BlogBox = styled.div`
     width: 20rem;
 `;
 
+const getBlogs = () => {
+    const array = [];
+
+    for (let i = 0; i < 11; i++) {
+        array.push(
+            <BlogBox>
+                {i}
+            </BlogBox>
+        );
+    };
+
+    return array;
+}
+
 export const Name = () => {
+
+    const blogs = getBlogs();
+
     return (
         <Root>
-            <BlogBox />
-            <BlogBox />
-            <BlogBox />
-            <BlogBox />
-            <BlogBox />
-            <BlogBox />
-            <BlogBox />
-            <BlogBox />
-            <BlogBox />
-            <BlogBox />
-            <BlogBox />
-            <BlogBox />
-            <BlogBox />
+            {blogs}
         </Root>
     );
 }
