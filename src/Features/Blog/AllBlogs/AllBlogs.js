@@ -19,12 +19,16 @@ const BlogBox = styled.div`
 
     height: 10rem;
     width: 20rem;
+
+    text-align: center;
+    font-size: 8rem;
+    font-family: avenir;
 `;
 
 const getBlogs = () => {
     const array = [];
 
-    for (let i = 0; i < 11; i++) {
+    for (let i = 1; i < 13; i++) {
         array.push(
             <BlogBox>
                 {i}
