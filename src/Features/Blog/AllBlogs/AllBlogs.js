@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Root = styled.div`
     display: grid;
@@ -30,9 +31,13 @@ const getBlogs = () => {
 
     for (let i = 1; i < 13; i++) {
         array.push(
-            <BlogBox>
-                {i}
-            </BlogBox>
+            <Link
+                to={`/blog/${i}`}
+            >
+                <BlogBox>
+                    {i}
+                </BlogBox>
+            </Link>
         );
     };
 
