@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
+import { Link } from 'react-router-dom';
 
 // import myMarkdownFile from 'src/Features/Blog/SingleBlog/OriginalInstructions.md';
 
@@ -113,6 +114,11 @@ React.render(
 
     return (
         <Root>
+            <Link
+                to={`/blog/`}
+            >
+                All Blogs
+            </Link>
             <ReactMarkdown source={content} />
             <ReactMarkdown source={markdownWithCode} />
         </Root>
