@@ -4,6 +4,28 @@ import { Link } from 'react-router-dom';
 
 const Root = styled.div`
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 10rem);
+`;
+
+const Name = styled.div`
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background: lightblue;
+`;
+
+const Current = styled.div`
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    background: coral;
+`;
+
+const AllBlogs = styled.div`
+    grid-column-start: 1;
+    grid-column-end: 4;
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(11rem, 1fr));
         // by setting min to be greater than the max of my elements
@@ -44,15 +66,24 @@ const getBlogs = () => {
     return array;
 }
 
-export const Name = () => {
+export const BlogLandingPage = () => {
 
     const blogs = getBlogs();
 
     return (
         <Root>
-            {blogs}
+            <Name>
+                Name
+            </Name>
+            <Current>
+                Current
+                ReadmoreButton
+            </Current>
+            <AllBlogs>
+                {blogs}
+            </AllBlogs>
         </Root>
     );
 }
 
-export default Name;
+export default BlogLandingPage;
