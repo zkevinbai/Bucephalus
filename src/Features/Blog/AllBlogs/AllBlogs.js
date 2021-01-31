@@ -44,14 +44,17 @@ const Current = styled.div`
 
     border-radius: 15px;
     margin: 5px;
-    margin-left: 3rem;
-    margin-right: 3rem;
+    /* margin-left: 3rem;
+    margin-right: 3rem; */
     border: 0.25rem solid black;
     border-radius: 15px;
     padding: 1rem; 
 `;
 
 const MainBlogView = styled.div`
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr;
 `;
 
 const AllBlogs = styled.div`
