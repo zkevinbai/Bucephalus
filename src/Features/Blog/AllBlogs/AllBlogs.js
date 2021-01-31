@@ -2,29 +2,61 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+import SingleBlog from '../SingleBlog';
+
+// import { MAX_MOBILE_WIDTH } from '../constants';
+const MAX_MOBILE_WIDTH = '800px';
+
 const Root = styled.div`
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(7, 10rem);
+    grid-template-rows: repeat(7, 10rem); */
+
+    @media(max-width: ${ MAX_MOBILE_WIDTH }) {
+        margin: 0rem;
+    }
+    margin-left: 10rem;
+    margin-right: 10rem;
 `;
 
 const Name = styled.div`
-    grid-column-start: 1;
-    grid-column-end: 4;
-    background: lightblue;
+    /* grid-column-start: 1;
+    grid-column-end: 4; */
+    font-family: "avenir";
+    font-weight: 3rem;
+    font-size: 5rem;
+
+    border-radius: 15px;
+    margin: 0.35rem;
+    margin-left: 3rem;
+    border-radius: 15px;
+    padding: 1rem; 
 `;
 
 const Current = styled.div`
-    grid-column-start: 1;
+    /* grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 2;
-    grid-row-end: 4;
-    background: coral;
+    grid-row-end: 4; */
+    /* background: coral; */
+
+    /* height: 30rem; */
+
+    border-radius: 15px;
+    margin: 5px;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    border: 0.25rem solid black;
+    border-radius: 15px;
+    padding: 1rem; 
+`;
+
+const MainBlogView = styled.div`
 `;
 
 const AllBlogs = styled.div`
-    grid-column-start: 1;
-    grid-column-end: 4;
+    /* grid-column-start: 1;
+    grid-column-end: 5; */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(11rem, 1fr));
@@ -73,15 +105,21 @@ export const BlogLandingPage = () => {
     return (
         <Root>
             <Name>
-                Name
+                Ziheng Kevin Bai
             </Name>
-            <Current>
-                Current
-                ReadmoreButton
-            </Current>
-            <AllBlogs>
-                {blogs}
-            </AllBlogs>
+            <MainBlogView>
+                <Current>
+                    <SingleBlog />
+                    <Link
+                        to={`/blog/1`}
+                    >
+                        Read More
+                    </Link>
+                </Current>
+                <AllBlogs>
+                    {blogs}
+                </AllBlogs>
+            </MainBlogView>
         </Root>
     );
 }
