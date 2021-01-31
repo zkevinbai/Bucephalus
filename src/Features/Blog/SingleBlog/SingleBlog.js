@@ -23,6 +23,9 @@ const Root = styled.div`
     padding: 1rem; */
 
     /* width: 50%; */
+    
+    height: 100%;
+    overflow: hidden;
 
     font-family: "avenir";
     font-size: 25px;
@@ -43,11 +46,11 @@ export const SingleBlog = ({
 }) => {
     return (
         <Root>
-            <Link
+            {/* <Link
                 to={`/blog/`}
             >
                 All Blogs
-            </Link>
+            </Link> */}
             <ReactMarkdown source={markdownContent} />
             <ReactMarkdown source={markdownWithCode} />
         </Root>
