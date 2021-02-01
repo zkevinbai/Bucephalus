@@ -1,11 +1,14 @@
 // since this is markdown, it must be left aligned to show properly
 export const markdownContent = `
 # Why I became a Software Engineer
+
 ---
-\`1 February 2021 Monday\`
+
+\`\`\`js
+Date Published: 1 February 2021 Monday
+\`\`\`
 
 I became a software engineer 
-
 
 ## Part 1: From High School to the United Nations
 
