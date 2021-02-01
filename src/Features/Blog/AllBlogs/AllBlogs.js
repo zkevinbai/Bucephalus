@@ -15,7 +15,8 @@ const Root = styled.div`
     @media(max-width: ${ MAX_MOBILE_WIDTH }) {
         margin: 0rem;
     }
-    margin-left: 10rem;
+    margin-left: 5rem;
+    /* margin-left: 10rem; */
     margin-right: 10rem;
 `;
 
@@ -33,33 +34,23 @@ const Name = styled.div`
     padding: 1rem; 
 `;
 
+const MainBlogView = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+
+    height: 100%;
+`;
+
 const Current = styled.div`
-    /* grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 4; */
-    /* background: coral; */
-
-    /* height: 30rem; */
-
     border-radius: 15px;
     margin: 5px;
-    /* margin-left: 3rem;
-    margin-right: 3rem; */
     border: 0.25rem solid black;
     border-radius: 15px;
     padding: 1rem; 
 `;
 
-const MainBlogView = styled.div`
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr;
-`;
-
 const AllBlogs = styled.div`
-    /* grid-column-start: 1;
-    grid-column-end: 5; */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(11rem, 1fr));
@@ -79,7 +70,8 @@ const BlogBox = styled.div`
     width: 20rem;
 
     text-align: center;
-    font-size: 8rem;
+    text-justify: center;
+    font-size: 3.5rem;
     font-family: avenir;
 `;
 
@@ -92,7 +84,7 @@ const getBlogs = () => {
                 to={`/blog/${i}`}
             >
                 <BlogBox>
-                    {i}
+                    Title {i}
                 </BlogBox>
             </Link>
         );
@@ -110,7 +102,19 @@ export const BlogLandingPage = () => {
             <Name>
                 Ziheng Kevin Bai
             </Name>
-            <MainBlogView>
+            {/* <MainBlogView>
+                <AllBlogs>
+                    <Link
+                        to={`/`}
+                    >
+                        <BlogBox>
+                            See My
+                            Portfolio
+                        </BlogBox>
+                    </Link>
+                    {blogs}
+                </AllBlogs> */}
+                <div>
                 <Current>
                     <SingleBlog />
                     <Link
@@ -119,10 +123,8 @@ export const BlogLandingPage = () => {
                         Read More
                     </Link>
                 </Current>
-                <AllBlogs>
-                    {blogs}
-                </AllBlogs>
-            </MainBlogView>
+                </div>
+            {/* </MainBlogView> */}
         </Root>
     );
 }
