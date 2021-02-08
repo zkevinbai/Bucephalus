@@ -42,7 +42,7 @@ const Links = styled.div`
     padding: 0.5rem;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr;
     justify-items: middle;
 
@@ -64,7 +64,7 @@ const LinkItem = styled.a`
 
     i {
         align-self: center;
-        justify-self: start;
+        justify-self: center;
     }
 
     div {
@@ -84,6 +84,13 @@ const aboutDetails = {
     itemCopy: 'About',
     itemLink: 'https://nature.berkeley.edu/news/2018/01/student-spotlight-kevin-bai',
 };
+
+const blogDetails = {
+    itemIcon: 'fas fa-file-alt',
+    itemCopy: 'Blog',
+    itemLink: 'blog',
+};
+// XXX will want to use react router link instead of a tag, but for now its fine
 
 const emailDetails = {
     itemIcon: 'fas fa-paper-plane',
@@ -105,6 +112,7 @@ const linkedinDetails = {
 
 const ContactList = [
     aboutDetails,
+    blogDetails,
     emailDetails,
     githubDetails,
     linkedinDetails,
