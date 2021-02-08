@@ -2,9 +2,9 @@ import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import {
-  ContactInformation,
   Grid,
   GridBox,
+  LinksContainer,
   Name,
   ProjectDetail,
   ProjectPhoto,
@@ -50,7 +50,7 @@ const Portfolio = () => {
   return (
     <Grid>
       <Name/>
-      <ContactInformation/>
+      <LinksContainer/>
       <Skills/>
       {
         projectsList.map((projectDetail) => {
