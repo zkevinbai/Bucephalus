@@ -9,8 +9,8 @@ import {
   ProjectDetail,
   ProjectPhoto,
   Skills,
- } from '../../Components';
-import { MAX_TABLET_WIDTH } from '../../Components/constants';
+ } from './Components';
+import { MAX_TABLET_WIDTH } from './Components/constants';
 
 const AurelianDetail = {
   TitleCopy: 'Aurelian',
