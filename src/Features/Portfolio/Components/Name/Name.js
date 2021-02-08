@@ -11,7 +11,7 @@ const Root = styled.div`
 
     border-radius: 15px;
     margin: 5px;
-    border: 5px solid black;
+    /* border: 5px solid black; */
     border-radius: 15px;
 
     font-family: "lobster";
