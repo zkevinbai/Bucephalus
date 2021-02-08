@@ -50,8 +50,8 @@ const Links = styled.div`
 `;
 
 const LinkItem = styled.a`
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    padding-right: 1rem;
+    /* padding-right: 0.25rem; */
 
     display: grid;
     grid-template-columns: 2rem 1fr;
@@ -113,7 +113,7 @@ const linkedinDetails = {
 
 const ContactList = [
     aboutDetails,
-    blogDetails,
+    // blogDetails,
     emailDetails,
     githubDetails,
     linkedinDetails,
