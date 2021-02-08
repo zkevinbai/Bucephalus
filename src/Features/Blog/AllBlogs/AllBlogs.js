@@ -117,11 +117,11 @@ export const BlogLandingPage = () => {
                 <div>
                 <Current>
                     <SingleBlog />
-                    <Link
+                    {/* <Link
                         to={`/blog/1`}
                     >
                         Read More
-                    </Link>
+                    </Link> */}
                 </Current>
                 </div>
             {/* </MainBlogView> */}

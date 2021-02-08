@@ -31,15 +31,30 @@ export const SingleBlog = ({
 }) => {
     return (
         <Root>
-            {/* <Link
-                to={`/blog/`}
+            <Link
+                to={`/`}
             >
-                All Blogs
-            </Link> */}
-            <ReactMarkdown source={markdownContent} />
-            <ReactMarkdown source={markdownWithCode} />
+                Back to Portfolio
+            </Link>
+            {/* <ReactMarkdown source={markdownContent} />
+            <ReactMarkdown source={markdownWithCode} /> */}
         </Root>
     );
 }
+// export const SingleBlog = ({
+//     content
+// }) => {
+//     return (
+//         <Root>
+//             {/* <Link
+//                 to={`/blog/`}
+//             >
+//                 All Blogs
+//             </Link> */}
+//             <ReactMarkdown source={markdownContent} />
+//             <ReactMarkdown source={markdownWithCode} />
+//         </Root>
+//     );
+// }
 
 export default SingleBlog;
