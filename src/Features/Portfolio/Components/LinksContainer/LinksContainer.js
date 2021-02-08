@@ -41,9 +41,7 @@ const Links = styled.div`
 
     padding: 0.5rem;
 
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 1fr;
+    display: flex;
     justify-items: middle;
 
     @media(max-width: ${ MAX_MOBILE_WIDTH }) {
@@ -52,6 +50,9 @@ const Links = styled.div`
 `;
 
 const LinkItem = styled.a`
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+
     display: grid;
     grid-template-columns: 2rem 1fr;
     grid-template-rows: 1fr;
