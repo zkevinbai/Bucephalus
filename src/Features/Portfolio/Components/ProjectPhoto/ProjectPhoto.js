@@ -30,7 +30,8 @@ const Root = styled.div`
 export const ProjectPhoto = ({
     TitleCopy,
 }) => {
-    const requireImage = (title) => require('./assets/' + title + '.png');
+    // note to self, figure out how to do import '~/assets/projects` where ~ resolves to src
+    const requireImage = (title) => require('../../../../assets/projects/' + title + '.png');
 
     return (
         <Root>
