@@ -30,7 +30,7 @@ const AlexandriaDetail = {
 
 const AugustusDetail = {
   TitleCopy: 'Augustus',
-  DescriptionCopy: 'note taking with rich text wysiwyg editor',
+  DescriptionCopy: 'note taking with rich text editor',
   GithubLink: 'https://github.com/zkevinbai/Augustus',
   LiveLink: 'https://Augustus.ink/#/',
   ShouldEmphasizeLeft: false,
