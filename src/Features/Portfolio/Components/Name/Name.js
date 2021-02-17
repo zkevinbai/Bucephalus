@@ -3,8 +3,10 @@ import styled from 'styled-components';
 
 import { MAX_MOBILE_WIDTH } from '../constants';
 
+// my signature color rgb(48, 127, 246)
+
 const Root = styled.div`
-    background-image: linear-gradient(to bottom right,rgb(255,150,141), rgb(255,252,103), rgb(86,194,255));
+    /* background-image: linear-gradient(to bottom right,rgb(255,150,141), rgb(255,252,103), rgb(86,194,255)); */
     display: grid;
     justify-items: center;
     align-items: center;
@@ -16,6 +18,7 @@ const Root = styled.div`
 
     font-family: "lobster";
     font-size: 5.5rem;
+    /* color: rgb(48, 127, 246); */
 
     @media(max-width: ${ MAX_MOBILE_WIDTH }) {
         font-size: 4.2rem;
