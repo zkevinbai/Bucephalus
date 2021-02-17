@@ -12,7 +12,7 @@ const Root = styled.div`
     grid-template-rows: repeat(3, 1fr);
 
     background-image: linear-gradient(
-        to bottom right,
+        to top right,
         rgb(255, 210, 206),
         rgb(255, 254, 180),
         rgb(183, 229, 255)
@@ -25,13 +25,17 @@ const Root = styled.div`
 
         background-image: linear-gradient(
             to bottom,
-            rgb(255, 210, 206),
             rgb(255, 254, 180),
             rgb(183, 229, 255),
-            rgb(255, 210, 206)
+            rgb(255, 210, 206),
+            rgb(255, 254, 180)
         );
     }
 `;
+
+// rgb(255, 210, 206) red
+// rgb(255, 254, 180) yellow
+// rgb(183, 229, 255) blue
 
 export const Grid = ({
     children
