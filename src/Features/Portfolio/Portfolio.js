@@ -32,7 +32,7 @@ const AugustusDetail = {
   TitleCopy: 'Augustus',
   DescriptionCopy: 'note taking with rich text editor',
   GithubLink: 'https://github.com/zkevinbai/Augustus',
-  LiveLink: 'https://Augustus.ink/#/',
+  LiveLink: 'https://augustus-ink.herokuapp.com',
   ShouldEmphasizeLeft: false,
 }
 
