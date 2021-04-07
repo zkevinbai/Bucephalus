@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import {
     markdownContent,
     markdownWithCode,
+    blogOne
 } from './Content';
 
 const Root = styled.div`
@@ -29,6 +30,7 @@ const Root = styled.div`
 export const SingleBlog = ({
     content
 }) => {
+
     return (
         <Root>
             <Link
@@ -36,25 +38,11 @@ export const SingleBlog = ({
             >
                 Back to Portfolio
             </Link>
-            {/* <ReactMarkdown source={markdownContent} />
-            <ReactMarkdown source={markdownWithCode} /> */}
+            {/* <ReactMarkdown source={blogOne} /> */}
+            {/* <ReactMarkdown source={markdownContent} /> */}
+            {/* <ReactMarkdown source={markdownWithCode} /> */}
         </Root>
     );
 }
-// export const SingleBlog = ({
-//     content
-// }) => {
-//     return (
-//         <Root>
-//             {/* <Link
-//                 to={`/blog/`}
-//             >
-//                 All Blogs
-//             </Link> */}
-//             <ReactMarkdown source={markdownContent} />
-//             <ReactMarkdown source={markdownWithCode} />
-//         </Root>
-//     );
-// }
 
 export default SingleBlog;
