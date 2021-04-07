@@ -13,24 +13,18 @@ const Root = styled.div`
     grid-template-rows: repeat(7, 10rem); */
 
     @media(max-width: ${ MAX_MOBILE_WIDTH }) {
-        margin: 0rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
-    margin-left: 5rem;
-    /* margin-left: 10rem; */
+    margin-left: 10rem;
     margin-right: 10rem;
 `;
 
 const Name = styled.div`
-    /* grid-column-start: 1;
-    grid-column-end: 4; */
     font-family: "avenir";
     font-weight: 3rem;
     font-size: 5rem;
 
-    border-radius: 15px;
-    margin: 0.35rem;
-    margin-left: 3rem;
-    border-radius: 15px;
     padding: 1rem; 
 `;
 
@@ -100,7 +94,7 @@ export const BlogLandingPage = () => {
     return (
         <Root>
             <Name>
-                Ziheng Kevin Bai
+                How I became a Software Engineer
             </Name>
             {/* <MainBlogView>
                 <AllBlogs>
