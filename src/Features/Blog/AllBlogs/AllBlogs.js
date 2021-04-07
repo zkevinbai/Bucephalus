@@ -94,7 +94,7 @@ export const BlogLandingPage = () => {
     return (
         <Root>
             <Name>
-                How I became a Software Engineer
+                Ziheng Kevin Bai
             </Name>
             {/* <MainBlogView>
                 <AllBlogs>
