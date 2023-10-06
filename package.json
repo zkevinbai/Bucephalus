@@ -12,7 +12,7 @@
     "react-markdown": "^5.0.3",
     "react-responsive": "^8.1.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^5.0.1",
     "styled-components": "^5.2.0"
   },
   "scripts": {
@@ -39,8 +39,10 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-export-default-from": "^7.12.1",
+    "@babel/plugin-proposal-export-default-from": "^7.22.17",
+    "babel-eslint": "^10.1.0",
     "customize-cra": "^1.0.0",
+    "eslint-plugin-babel": "^5.3.1",
     "gh-pages": "^3.1.0",
     "react-app-rewired": "^2.1.6"
   }
