@@ -24,7 +24,7 @@ const AlexandriaDetail = {
   TitleCopy: 'Alexandria',
   DescriptionCopy: 'book search engine and book tracker',
   GithubLink: 'https://github.com/zkevinbai/Alexandria',
-  LiveLink: 'https://alexandria-book.herokuapp.com/#/',
+  // LiveLink: 'https://alexandria-book.herokuapp.com/#/',
   ShouldEmphasizeLeft: true,
 }
 
@@ -32,7 +32,7 @@ const AugustusDetail = {
   TitleCopy: 'Augustus',
   DescriptionCopy: 'note taking with rich text editor',
   GithubLink: 'https://github.com/zkevinbai/Augustus',
-  LiveLink: 'https://augustus-ink.herokuapp.com',
+  // LiveLink: 'https://augustus-ink.herokuapp.com',
   ShouldEmphasizeLeft: false,
 }
 
