@@ -4,15 +4,9 @@ import styled from 'styled-components';
 import { MAX_MOBILE_WIDTH } from '../constants';
 
 const Root = styled.div`
-    /* display: grid;
+    display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr; */
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+    grid-template-rows: 1fr 2fr;
 
     height: 5rem;
     padding: 0.5rem;
@@ -65,6 +59,8 @@ const Links = styled.div `
     grid-template-columns: repeat(2, 1fr);
     justify-items: center; */
 
+    text-align: center;
+
     @media (max-width: ${MAX_MOBILE_WIDTH}) {
         font-size: 1.25rem;
     }
@@ -72,8 +68,6 @@ const Links = styled.div `
 
 const Link = styled.a`
     color: black;
-
-    margin: 0.25rem;
 
     :hover{
         color: rgb(86,194,255);
@@ -94,8 +88,8 @@ export const ProjectDetail = ({
                 <Description>{DescriptionCopy}</Description>
             </Header>
             <Links>
-                <Link href={GithubLink}>Github</Link>
-                {LiveLink  ? <Link href={LiveLink}>Live</Link> : <></>}
+                <Link href={GithubLink}>Github Link</Link>
+                {/* {LiveLink  ? <Link href={LiveLink}>Live</Link> : <></>} */}
             </Links>
         </Root>
     );

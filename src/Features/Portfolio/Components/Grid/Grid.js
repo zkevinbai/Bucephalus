@@ -30,6 +30,8 @@ const Root = styled.div`
             rgb(255, 210, 206),
             rgb(255, 254, 180)
         );
+
+        padding-bottom: 3rem;
     }
 `;
 
