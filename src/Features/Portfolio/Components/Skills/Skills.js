@@ -52,7 +52,7 @@ const Technologies = styled.div`
     align-items: end;
 
     @media (max-width: ${MAX_MOBILE_WIDTH}) {
-        padding: 0rem;
+        padding: 0.25rem;
         margin-left: 0rem;
     }
 `;
@@ -76,9 +76,9 @@ const TechnologyItem = styled.div`
     justify-content: center;
 
     @media (max-width: ${MAX_MOBILE_WIDTH}) {
-        font-size: 2.75rem;
-        height: 3.5rem;
-        width: 3.5rem;
+        font-size: 2.5rem;
+        height: 3rem;
+        width: 3rem;
     }
 `;
 
