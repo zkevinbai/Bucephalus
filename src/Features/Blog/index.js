@@ -1,2 +1,2 @@
-export AllBlogs from './AllBlogs';
-export SingleBlog from './SingleBlog';
+// export AllBlogs from './AllBlogs';
+// export SingleBlog from './SingleBlog';
