@@ -16,7 +16,7 @@ const AurelianDetail = {
   TitleCopy: 'Aurelian',
   DescriptionCopy: 'personal finance sankey visualization',
   GithubLink: 'https://github.com/zkevinbai/Aurelian',
-  // LiveLink: 'https://zkevinbai.github.io/Aurelian/',
+  LiveLink: 'https://zkevinbai.github.io/Aurelian/',
   ShouldEmphasizeLeft: true,
 }
 

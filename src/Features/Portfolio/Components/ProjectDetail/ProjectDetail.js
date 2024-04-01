@@ -69,6 +69,8 @@ const Links = styled.div `
 const Link = styled.a`
     color: black;
 
+    padding: 0.255rem;
+
     :hover{
         color: rgb(86,194,255);
         text-decoration: underline;
@@ -88,8 +90,8 @@ export const ProjectDetail = ({
                 <Description>{DescriptionCopy}</Description>
             </Header>
             <Links>
-                <Link href={GithubLink}>Github Link</Link>
-                {/* {LiveLink  ? <Link href={LiveLink}>Live</Link> : <></>} */}
+                <Link href={GithubLink}>Github</Link>
+                {LiveLink  ? <Link href={LiveLink}>Live</Link> : <></>}
             </Links>
         </Root>
     );
