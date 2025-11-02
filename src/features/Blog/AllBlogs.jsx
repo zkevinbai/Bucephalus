@@ -1,9 +1,15 @@
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 import Grid from '../Portfolio/Grid'
 import GridBox from '../Portfolio/GridBox'
 import { blogPosts } from './blogData'
 
 export default function AllBlogs() {
+  // Scroll to top when navigating to blog listing
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
+  
   return (
     <Grid>
       <GridBox shouldEmphasizeLeft={false} className="md:col-span-2 !grid-cols-1 justify-items-center">

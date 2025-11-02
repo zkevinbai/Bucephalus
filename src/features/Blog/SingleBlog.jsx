@@ -26,7 +26,7 @@ export default function SingleBlog() {
   
   const handleBackToBlog = () => {
     navigate('/blog')
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    // AllBlogs component will handle scrolling to top on mount
   }
   
   if (!blogContent) {

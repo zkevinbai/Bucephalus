@@ -11,10 +11,11 @@ A comprehensive guide to the design patterns, colors, typography, effects, and i
 6. [Shadows](#shadows)
 7. [Hover Effects](#hover-effects)
 8. [Scroll-Aware Behavior](#scroll-aware-behavior)
-9. [3D Transforms](#3d-transforms)
-10. [Transitions & Animations](#transitions--animations)
-11. [Buttons & Interactive Elements](#buttons--interactive-elements)
-12. [Gradients](#gradients)
+9. [Navigation & Scroll Management](#navigation--scroll-management)
+10. [3D Transforms](#3d-transforms)
+11. [Transitions & Animations](#transitions--animations)
+12. [Buttons & Interactive Elements](#buttons--interactive-elements)
+13. [Gradients](#gradients)
 
 ---
 
@@ -236,6 +237,38 @@ useEffect(() => {
   return () => window.removeEventListener('scroll', handleScroll)
 }, [])
 ```
+
+---
+
+## Navigation & Scroll Management
+
+### Scroll-to-Top on Navigation
+
+When navigating between routes (especially from detail views back to list views), components should scroll to the top on mount to ensure users start at the beginning of the new view.
+
+### Implementation Pattern
+
+**For list/landing pages** (e.g., AllBlogs):
+```javascript
+useEffect(() => {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}, [])
+```
+
+**For navigation from detail pages** (e.g., SingleBlog → AllBlogs):
+- The detail page navigates using `navigate('/route')`
+- The list component handles scrolling on mount via `useEffect`
+- This ensures smooth transition and consistent user experience
+
+### Use Cases
+- Navigating from single blog post back to blog listing
+- Navigating between Portfolio and Blog views (handled by 3D rotation wrapper)
+- Any detail → list navigation flow
+
+### Principles
+- **Always start at top**: Users should see the beginning of a new view
+- **Smooth scrolling**: Use `behavior: 'smooth'` for better UX
+- **Component-level handling**: Each component manages its own scroll position on mount
 
 ---
 
