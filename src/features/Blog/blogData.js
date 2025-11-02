@@ -1,17 +1,17 @@
 // Blog posts data
 export const blogPosts = [
   {
-    id: 'fde-at-rippling',
-    slug: 'fde-at-rippling',
-    title: 'What It Means to Be a Forward Deployed Engineer (FDE) at Rippling',
+    id: 'what-it-means-to-be-fde',
+    slug: 'what-it-means-to-be-fde',
+    title: 'What It Means to Be a Forward Deployed Engineer (FDE)',
     author: 'Kevin Bai',
     date: '27 October 2025',
     readTime: '8 min read',
     category: 'FDE',
-    excerpt: 'At Rippling, Forward Deployed Engineers (FDEs) are customer-facing software engineers — technologists who work directly with our largest and most strategic customers to help them get the most out of the Rippling Platform.',
+    excerpt: 'Forward Deployed Engineers (FDEs) are customer-facing software engineers — technologists who work directly with customers to help them get the most out of the platform and solve their most challenging problems.',
     content: `
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
-        At Rippling, Forward Deployed Engineers (FDEs) are customer-facing software engineers — technologists who work directly with our largest and most strategic customers to help them get the most out of the Rippling Platform.
+        Forward Deployed Engineers (FDEs) are customer-facing software engineers — technologists who work directly with customers to help them get the most out of the platform and solve their most challenging problems.
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
@@ -19,7 +19,7 @@ export const blogPosts = [
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
-        Every company runs their business differently. Our job is to make Rippling fit seamlessly into that reality — not the other way around.
+        Every company runs their business differently. The FDE's job is to make the platform fit seamlessly into that reality — not the other way around.
       </p>
       
       <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em]">The Three Hats of an FDE</h2>
@@ -39,7 +39,7 @@ export const blogPosts = [
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
-        We partner with individual contributors, managers, directors, VPs, and C-level leaders to deeply understand how their business runs — what's working, what's breaking, and what "great" looks like.
+        FDEs partner with individual contributors, managers, directors, VPs, and C-level leaders to deeply understand how their business runs — what's working, what's breaking, and what "great" looks like.
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
@@ -53,11 +53,11 @@ export const blogPosts = [
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-4">
-        FDEs roll up their sleeves and talk with the people who live the workflows every day — payroll admins, HR ops teams, finance managers, and IT leaders.
+        FDEs roll up their sleeves and talk with the people who live the workflows every day — understanding their pain points, their processes, and what would make their lives easier.
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-4">
-        Our goal: to find the "Goldilocks zone" — the problem that's most valuable to solve and most straightforward to achieve with Rippling's Platform.
+        The goal: to find the "Goldilocks zone" — the problem that's most valuable to solve and most straightforward to achieve with the platform.
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
@@ -79,19 +79,15 @@ export const blogPosts = [
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-4">
-        We build using Rippling Platform's coding and no-code tools to design and deploy Custom Apps, Functions, Data Models, Workflows, Reports, and Integrations that make the platform work exactly the way each customer needs.
+        We build using the platform's coding and no-code tools to design and deploy Custom Apps, Functions, Data Models, Workflows, Reports, and Integrations that make the platform work exactly the way each customer needs.
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-4">
-        Our role is to extend Rippling's Platform and solve whatever problem is top of mind for the customer.
+        Our role is to extend the platform and solve whatever problem is top of mind for the customer.
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-4">
-        Our goal as a company is to be the system of work — to free smart people to focus on hard problems, not manual ones.
-      </p>
-      
-      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-4">
-        If your challenge involves your employees, we'll aim to solve it for you.
+        The goal is to free smart people to focus on hard problems, not manual ones.
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
@@ -101,11 +97,11 @@ export const blogPosts = [
       <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">What We Build With</h2>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-4">
-        FDEs build using the Rippling Platform, the same technology stack that powers Rippling's own applications.
+        FDEs build using the platform, the same technology stack that powers the core product.
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
-        That means every solution we deliver is secure, scalable, and fully integrated into your existing Rippling environment — no bolted-on code, no fragile middleware.
+        That means every solution we deliver is secure, scalable, and fully integrated into the existing environment — no bolted-on code, no fragile middleware.
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-2">
@@ -114,22 +110,22 @@ export const blogPosts = [
       
       <ul class="list-none m-0 p-0 mb-8 space-y-4">
         <li class="font-raleway text-base font-light text-gray-800 leading-[1.7] tracking-[0.01em]">
-          <strong class="font-semibold">⚙️ Databridge:</strong> Connect Rippling to systems like Salesforce, Greenhouse, or Jira — syncing data automatically.
+          <strong class="font-semibold">⚙️ Databridge:</strong> Connect systems together — syncing data automatically between platforms.
         </li>
         <li class="font-raleway text-base font-light text-gray-800 leading-[1.7] tracking-[0.01em]">
           <strong class="font-semibold">🔄 Transformations:</strong> Clean, map, and merge data between systems so teams can operate from a single source of truth.
         </li>
         <li class="font-raleway text-base font-light text-gray-800 leading-[1.7] tracking-[0.01em]">
-          <strong class="font-semibold">🧠 Functions:</strong> Custom logic written in TypeScript that extends Rippling's capabilities — enabling everything from data validation to advanced calculations.
+          <strong class="font-semibold">🧠 Functions:</strong> Custom logic written in TypeScript that extends capabilities — enabling everything from data validation to advanced calculations.
         </li>
         <li class="font-raleway text-base font-light text-gray-800 leading-[1.7] tracking-[0.01em]">
           <strong class="font-semibold">📊 Reports & Dashboards:</strong> Turn raw data into actionable insights across HR, finance, and operations.
         </li>
         <li class="font-raleway text-base font-light text-gray-800 leading-[1.7] tracking-[0.01em]">
-          <strong class="font-semibold">🧱 Custom Objects & Fields:</strong> Model your unique business entities directly in Rippling — from commission plans to project codes.
+          <strong class="font-semibold">🧱 Custom Objects & Fields:</strong> Model unique business entities directly in the platform — from commission plans to project codes.
         </li>
         <li class="font-raleway text-base font-light text-gray-800 leading-[1.7] tracking-[0.01em]">
-          <strong class="font-semibold">💡 Custom Apps:</strong> Build fully tailored applications that live inside Rippling, complete with UI, workflows, and permissions.
+          <strong class="font-semibold">💡 Custom Apps:</strong> Build fully tailored applications that live inside the platform, complete with UI, workflows, and permissions.
         </li>
         <li class="font-raleway text-base font-light text-gray-800 leading-[1.7] tracking-[0.01em]">
           <strong class="font-semibold">🔔 Workflows:</strong> Automate onboarding, offboarding, compliance tasks, or multi-step approvals — all without leaving the platform.
@@ -137,7 +133,7 @@ export const blogPosts = [
       </ul>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
-        Each solution we build feels custom — but because it's built natively within Rippling's platform, it scales, updates, and evolves seamlessly as your business grows.
+        Each solution we build feels custom — but because it's built natively within the platform, it scales, updates, and evolves seamlessly as the business grows.
       </p>
       
       <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">Why It Matters</h2>
@@ -147,25 +143,25 @@ export const blogPosts = [
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
-        FDEs bridge the gap between your company's goals and Rippling's platform — ensuring that the technology works the way your business does, not the other way around.
+        FDEs bridge the gap between a company's goals and the platform — ensuring that the technology works the way the business does, not the other way around.
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
-        Whether it's syncing data across systems, automating complex approval logic, or creating entirely new applications, FDEs help our customers turn their ideas into real, working software — faster than ever before.
+        Whether it's syncing data across systems, automating complex approval logic, or creating entirely new applications, FDEs help customers turn their ideas into real, working software — faster than ever before.
       </p>
       
       <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">In Short</h2>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-4">
-        The FDE is Rippling's bridge between the potential of the Rippling Platform and the goals of the customer.
+        The FDE is the bridge between the potential of the platform and the goals of the customer.
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-4">
-        We're here to solve any problem that stands in the way of running your business — quickly, creatively, and at scale.
+        We're here to solve any problem that stands in the way of running a business — quickly, creatively, and at scale.
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
-        At Rippling, the FDE's mission is simple:
+        The FDE's mission is simple:
       </p>
       
       <p class="font-raleway text-lg font-medium text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8 italic">
@@ -178,92 +174,110 @@ export const blogPosts = [
     slug: 'technology-as-means',
     title: 'Technology as a Means, Not a Goal',
     author: 'Kevin Bai',
-    date: 'December 2024',
+    date: '30 October 2024',
     readTime: '7 min read',
     category: 'Philosophy',
-    excerpt: 'My philosophy on using technology to solve <strong>real-world problems</strong>. Technology should serve a purpose—whether that\'s improving <strong>enterprise operations</strong>, enabling <strong>better decision-making</strong>, or creating <strong>meaningful impact</strong>.',
+    excerpt: 'Technology is the means, not the goal. Perfect code belongs in academia. Solve the problem, then iterate.',
     content: `
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
         Technology is the means, not the goal.
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
-        This principle has guided my approach to building software for over a decade. Too often, we fall in love with the technology itself—the latest framework, the newest language, the shiniest tool—and lose sight of what we're actually trying to accomplish.
-      </p>
-      
-      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">The Purpose-Driven Approach</h2>
-      
-      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
-        Every piece of software I build starts with a question: <strong>What problem are we solving?</strong> Not "What cool technology can we use?" but "What outcome do we want to create?"
+        When you aim for perfect technology, you're in academia territory. You're in the ivory tower. And you're likely wasting time, money, or both.
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
-        When you begin with the problem, technology becomes a tool in service of a goal. You choose React not because it's trendy, but because it's the right tool for building interactive UIs. You choose Python not because it's popular, but because it solves the data processing challenge at hand.
+        Use technology to solve the problem. Don't get stuck over-engineering or over-perfecting. Ship something that works. Iterate from there.
       </p>
       
-      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">Solving Real Problems</h2>
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">Perfect Is the Enemy of Done</h2>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
-        The best software I've built solves problems that matter: improving efficiency for teams, enabling better decision-making for leaders, creating measurable value for businesses.
+        I've watched projects fail because engineers couldn't stop perfecting. Three architecture refactors. Five component rewrites. Weeks optimizing code that already runs fine.
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
-        Technology should serve a purpose—whether that's improving <strong>enterprise operations</strong>, enabling <strong>better decision-making</strong>, or creating <strong>meaningful impact</strong>. When technology becomes the goal itself, we lose sight of why we're building in the first place.
+        Meanwhile, the customer's problem remains unsolved. The business waits. Budget and goodwill burn away.
       </p>
       
-      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">The Impact Mindset</h2>
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">Solve the Problem</h2>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
-        At the end of the day, what matters isn't the stack you used or the patterns you followed. What matters is: <strong>Did it work? Did it solve the problem? Did it create value?</strong>
+        The best software I've built solved the problem. It wasn't perfect. Sometimes it was messy. But it worked, and it worked quickly.
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
-        Technology is a powerful means to an end. But it's only powerful when we remember what that end actually is.
+        Technology should solve real problems. Not showcase your programming skills. Not prove you can use the latest framework. Not demonstrate architectural purity. <strong>Solve the problem</strong>. Then iterate if needed.
+      </p>
+      
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">Just Do It</h2>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        Phil Knight built Nike by shipping shoes, not by perfecting the manufacturing process in a lab for a decade. He shipped, learned, and improved.
+      </p>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
+        Same principle applies to software. Build it. Ship it. See if it solves the problem. Fix what's broken. Improve what needs improving. Don't wait for perfect. <strong>Just do it</strong>.
       </p>
     `,
   },
   {
     id: 'lessons-global-engineering',
     slug: 'lessons-global-engineering',
-    title: 'Lessons from Global Engineering',
+    title: 'Lessons from Working Abroad',
     author: 'Kevin Bai',
-    date: 'November 2024',
+    date: '22 April 2024',
     readTime: '6 min read',
     category: 'Experience',
-    excerpt: 'Reflections on working across <strong>six continents</strong>, building software for <strong>Fortune 500 companies</strong>, and navigating the complexities of <strong>international software deployment</strong>.',
+    excerpt: 'What I\'ve learned is that regardless of our backgrounds we are really all the same.',
     content: `
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
-        I've had the privilege of building software across six continents, working with teams from San Francisco to London to Bogotá. Each location taught me something different about engineering, culture, and what it means to solve problems at scale.
-      </p>
-      
-      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">The Universal Language of Code</h2>
-      
-      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
-        Code is universal, but context is everything. The same TypeScript function that works in Silicon Valley might need different considerations when deployed in Europe due to data regulations, or in Latin America due to network infrastructure.
+        I've worked on five continents in dozens of countries. San Francisco, Vienna, Bogotá, Dubai, Manila, Moscow.
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
-        Building software for <strong>Fortune 500 companies</strong> means understanding not just the technical requirements, but the business context, regulatory environment, and cultural nuances that shape how technology gets used.
+        What I've learned is that regardless of our backgrounds, we are really all the same.
       </p>
       
-      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">The Complexity of International Deployment</h2>
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">All Humans Laugh</h2>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
-        Navigating the complexities of <strong>international software deployment</strong> taught me that good engineering is about more than clean code—it's about understanding constraints, anticipating edge cases, and building systems that work across diverse environments.
+        I've watched teams in London crack the same jokes as teams in Latin America. The humor might be different, the language might be different, but the laughter? That's universal.
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
-        Time zones, languages, regulations, and infrastructure differences all shape how software gets built and deployed. The best engineers I've worked with don't just write code—they understand the full context in which that code will run.
+        We all find things funny. We all need to break tension with a joke. We all enjoy moments of lightness in our work. Different cultures, different expressions, same emotion.
       </p>
       
-      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">Building for Global Scale</h2>
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">All Humans Feel Frustrated</h2>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
-        Working across six continents has taught me that the best solutions are those that respect local context while maintaining global standards. You can't build the same way everywhere, but you can build with the same principles: clarity, efficiency, and impact.
+        The engineer debugging a tricky bug in Silicon Valley has the same frustration as the engineer debugging the same kind of bug in Southeast Asia. The manager dealing with a missed deadline in Europe has the same stress as the manager in the Middle East.
       </p>
       
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
-        The tools change. The languages change. The regulations change. But the goal remains the same: build technology that solves real problems, wherever those problems exist.
+        We all get frustrated. We all feel that tension when things aren't working. The language we use to express it might differ, but the feeling is the same.
+      </p>
+      
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">All Humans Feel Excited</h2>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        I've seen the same excitement when a solution finally works, whether that's in Vienna or Bogotá. The same energy when a project ships successfully, whether that's in Dubai or Moscow.
+      </p>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
+        We all feel that rush when we solve a hard problem. We all celebrate wins. Different celebrations, different expressions, same excitement.
+      </p>
+      
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">All Emotions Are Shared</h2>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        I've worked with teams communicating in five languages. Built software across different cultures. Seen how business processes vary from region to region.
+      </p>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
+        But underneath it all? All humans laugh. All humans cry. All humans feel frustrated. All humans feel excited. Just in different languages and cultures. Sure, the expressions differ. But all emotions are shared. We're really all the same.
       </p>
     `,
   },
