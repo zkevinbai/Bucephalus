@@ -2,47 +2,42 @@ import Grid from './Grid'
 import GridBox from './GridBox'
 import Hero from './Hero'
 import Skills from './Skills'
-import ProjectDetail from './ProjectDetail'
-import ProjectPhoto from './ProjectPhoto'
-
-const projects = [
-  {
-    title: 'Aurelian',
-    description: 'personal finance sankey visualization',
-    githubLink: 'https://github.com/zkevinbai/Aurelian',
-    liveLink: 'https://zkevinbai.github.io/Aurelian/',
-    emphasizeLeft: true,
-  },
-  {
-    title: 'Alexandria',
-    description: 'book search engine and book tracker',
-    githubLink: 'https://github.com/zkevinbai/Alexandria',
-    emphasizeLeft: true,
-  },
-  {
-    title: 'Augustus',
-    description: 'note taking with rich text editor',
-    githubLink: 'https://github.com/zkevinbai/Augustus',
-    emphasizeLeft: true,
-  },
-]
+import TabNavigation from './TabNavigation'
+import CareerTimeline from './CareerTimeline'
+import Education from './Education'
+import Projects from './Projects'
 
 export default function Portfolio() {
+  const tabs = [
+    { id: 'career', label: 'Career' },
+    { id: 'education', label: 'Education' },
+    { id: 'projects', label: 'Projects' },
+  ]
+
+  const renderTabContent = (activeTab) => {
+    switch (activeTab) {
+      case 'career':
+        return <CareerTimeline />
+      case 'education':
+        return <Education />
+      case 'projects':
+        return <Projects />
+      default:
+        return <CareerTimeline />
+    }
+  }
+
   return (
     <Grid>
       <Hero />
       <Skills />
-      {projects.map((project) => (
-        <GridBox key={project.title} shouldEmphasizeLeft={true}>
-          <ProjectPhoto title={project.title} />
-          <ProjectDetail
-            title={project.title}
-            description={project.description}
-            githubLink={project.githubLink}
-            liveLink={project.liveLink}
-          />
+      <div className="flex flex-col gap-6 p-8 items-center justify-center max-[800px]:p-6 max-[800px]:gap-4">
+        <GridBox shouldEmphasizeLeft={false}>
+          <TabNavigation tabs={tabs}>
+            {(activeTab) => renderTabContent(activeTab)}
+          </TabNavigation>
         </GridBox>
-      ))}
+      </div>
     </Grid>
   )
 }
