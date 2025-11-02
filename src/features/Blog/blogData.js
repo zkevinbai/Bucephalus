@@ -2,7 +2,7 @@
 export const blogPosts = [
   {
     id: 'what-it-means-to-be-fde',
-    slug: 'what-it-means-to-be-fde',
+    slug: 'what-it-means-to-be-a-forward-deployed-engineer-fde',
     title: 'What It Means to Be a Forward Deployed Engineer (FDE)',
     author: 'Kevin Bai',
     date: '27 October 2025',
@@ -171,7 +171,7 @@ export const blogPosts = [
   },
   {
     id: 'technology-as-means',
-    slug: 'technology-as-means',
+    slug: 'technology-as-a-means-not-a-goal',
     title: 'Technology as a Means, Not a Goal',
     author: 'Kevin Bai',
     date: '30 October 2024',
@@ -224,7 +224,7 @@ export const blogPosts = [
   },
   {
     id: 'lessons-global-engineering',
-    slug: 'lessons-global-engineering',
+    slug: 'lessons-from-working-abroad',
     title: 'Lessons from Working Abroad',
     author: 'Kevin Bai',
     date: '22 April 2024',
