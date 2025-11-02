@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation, useNavigate, Navigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Portfolio from './features/Portfolio/Portfolio'
 import AllBlogs from './features/Blog/AllBlogs'
@@ -16,7 +16,7 @@ function Cube3DWrapper() {
   // Sync state with route changes
   useEffect(() => {
     setIsBlog(isBlogList)
-  }, [location.pathname])
+  }, [isBlogList])
   
   // Scroll to top when switching between apps
   useEffect(() => {
@@ -122,6 +122,7 @@ function App() {
         <Route path="/blog" element={<Cube3DWrapper />} />
         <Route path="/portfolio" element={<Cube3DWrapper />} />
         <Route path="/" element={<Cube3DWrapper />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   )

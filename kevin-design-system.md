@@ -16,6 +16,8 @@ A comprehensive guide to the design patterns, colors, typography, effects, and i
 11. [Transitions & Animations](#transitions--animations)
 12. [Buttons & Interactive Elements](#buttons--interactive-elements)
 13. [Gradients](#gradients)
+14. [Image Preloading](#image-preloading)
+15. [Routing & URL Handling](#routing--url-handling)
 
 ---
 
@@ -446,6 +448,97 @@ All interactive elements follow these patterns:
 
 ---
 
+## Image Preloading
+
+### Lazy Preloading Pattern
+
+Images are preloaded only when components mount that actually need them, avoiding unnecessary bandwidth usage and ensuring images are cached for instant loading on subsequent views.
+
+### Implementation Pattern
+
+**For component-specific images** (e.g., Projects component):
+```javascript
+import { useEffect, useRef } from 'react'
+
+const projectImages = [img1, img2, img3]
+
+export default function Projects() {
+  const hasPreloaded = useRef(false)
+  
+  useEffect(() => {
+    if (!hasPreloaded.current) {
+      projectImages.forEach((imageSrc) => {
+        const img = new Image()
+        img.src = imageSrc
+      })
+      hasPreloaded.current = true
+    }
+  }, [])
+  
+  // Component JSX...
+}
+```
+
+### Benefits
+- **On-demand loading**: Only preloads when user navigates to the relevant section
+- **No impact on initial load**: Doesn't compete with critical resources
+- **Browser caching**: Once preloaded, images load instantly from cache
+- **Component-scoped**: Each component manages its own preloading
+- **Idempotent**: `useRef` ensures preloading only happens once per mount
+
+### Use Cases
+- Project images when Projects tab is viewed
+- Any heavy assets that benefit from pre-caching
+
+---
+
+## Routing & URL Handling
+
+### Route Configuration
+
+The application uses React Router with the following routes:
+- `/` - Portfolio (default)
+- `/portfolio` - Portfolio (alias)
+- `/blog` - Blog listing
+- `/blog/:slug` - Individual blog post
+- `*` - Catch-all redirect to `/` (portfolio)
+
+### Catch-All Route Pattern
+
+Unknown routes automatically redirect to the portfolio:
+
+```javascript
+<Route path="*" element={<Navigate to="/" replace />} />
+```
+
+This ensures:
+- Users never see a 404 page
+- All unknown URLs redirect gracefully to portfolio
+- `replace` prevents adding redirect to browser history
+
+### GitHub Pages Configuration
+
+For custom domains on GitHub Pages:
+
+**404.html Configuration:**
+- `pathSegmentsToKeep = 0` (for custom domains)
+- Handles client-side routing redirects
+
+**How it works:**
+1. User visits `/blog` and refreshes
+2. GitHub Pages serves `404.html` (no `/blog` file exists)
+3. `404.html` redirects to `/?/blog`
+4. `index.html` script converts it back to `/blog`
+5. React Router handles the route correctly
+
+### Principles
+- **Always have a fallback**: Catch-all route prevents 404s
+- **Clean URLs**: Maintain readable URLs with React Router
+- **Custom domain compatibility**: `pathSegmentsToKeep = 0` for custom domains
+- **History management**: Use `replace` for redirects to avoid cluttering history
+
+---
+
 ## Implementation Notes
 
 - Uses Tailwind CSS for utility-first styling
@@ -453,4 +546,6 @@ All interactive elements follow these patterns:
 - Raleway font loaded via Google Fonts
 - CSS custom properties for gradients and colors
 - React hooks for scroll-aware behavior and 3D transforms
+- React Router for client-side routing
+- Image preloading for performance optimization
 

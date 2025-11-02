@@ -1,6 +1,21 @@
+import { useEffect, useRef } from 'react'
 import GridBox from './GridBox'
 import ProjectDetail from './ProjectDetail'
 import ProjectPhoto from './ProjectPhoto'
+import TimeTravelTicTacToeImg from '../../assets/projects/TimeTravelTicTacToe.png'
+import AurelianImg from '../../assets/projects/Aurelian.png'
+import VerbaImg from '../../assets/projects/Verba.png'
+import AlexandriaImg from '../../assets/projects/Alexandria.png'
+import AugustusImg from '../../assets/projects/Augustus.png'
+
+// Preload project images to cache them for faster loading
+const projectImages = [
+  TimeTravelTicTacToeImg,
+  AurelianImg,
+  VerbaImg,
+  AlexandriaImg,
+  AugustusImg,
+]
 
 const projects = [
   {
@@ -39,6 +54,20 @@ const projects = [
 ]
 
 export default function Projects() {
+  const hasPreloaded = useRef(false)
+  
+  // Preload images only when Projects component mounts (user clicks Projects tab)
+  // This ensures images are cached without affecting other routes or initial load
+  useEffect(() => {
+    if (!hasPreloaded.current) {
+      projectImages.forEach((imageSrc) => {
+        const img = new Image()
+        img.src = imageSrc
+      })
+      hasPreloaded.current = true
+    }
+  }, [])
+
   return (
     <div className="flex flex-col gap-6 w-full">
       {projects.map((project) => (
