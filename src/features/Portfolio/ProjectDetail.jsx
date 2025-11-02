@@ -5,9 +5,7 @@ export default function ProjectDetail({ title, description, githubLink, liveLink
         <h2 className="text-[2rem] font-semibold text-gray-800 m-0 tracking-[-0.01em] max-[800px]:text-2xl">
           {title}
         </h2>
-        <p className="text-lg font-light text-gray-700 m-0 leading-relaxed max-[800px]:text-[0.95rem]">
-          {description}
-        </p>
+        <p className="text-lg font-light text-gray-700 m-0 leading-relaxed max-[800px]:text-[0.95rem]" dangerouslySetInnerHTML={{ __html: description }} />
       </div>
       <div className="flex gap-4 flex-wrap max-[800px]:justify-center">
         <a

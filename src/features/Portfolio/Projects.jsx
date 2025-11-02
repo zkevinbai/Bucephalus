@@ -5,27 +5,27 @@ import ProjectPhoto from './ProjectPhoto'
 const projects = [
   {
     title: 'Time Travel Tic Tac Toe',
-    description: 'Interactive tic-tac-toe game featuring an AI opponent with time travel mechanics—travel back through move history to replay the game from any point, with a beautiful gradient-styled interface and move tracking',
+    description: 'Interactive <strong>tic-tac-toe game</strong> featuring an <strong>AI opponent</strong> with <strong>time travel mechanics</strong>—travel back through <strong>move history</strong> to replay the game from any point, with a <strong>beautiful gradient-styled interface</strong> and <strong>move tracking</strong>',
     githubLink: 'https://github.com/zkevinbai/tictactoe_two',
     liveLink: 'https://zkevinbai.github.io/tictactoe_two/',
     emphasizeLeft: true,
   },
   {
     title: 'Aurelian',
-    description: 'Personal finance visualization tool using Sankey diagrams to map income, expenses, and savings flows—gain insights into your financial patterns through interactive, color-coded flow charts',
+    description: '<strong>Personal finance visualization tool</strong> using <strong>Sankey diagrams</strong> to map <strong>income, expenses, and savings flows</strong>—gain insights into your <strong>financial patterns</strong> through <strong>interactive, color-coded flow charts</strong>',
     githubLink: 'https://github.com/zkevinbai/Aurelian',
     liveLink: 'https://zkevinbai.github.io/Aurelian/',
     emphasizeLeft: true,
   },
   {
     title: 'Alexandria',
-    description: 'Comprehensive book discovery and management platform—search through extensive book databases, track your reading progress, manage your personal library, and discover new titles with powerful search filters',
+    description: '<strong>Comprehensive book discovery and management platform</strong>—search through <strong>extensive book databases</strong>, track your <strong>reading progress</strong>, manage your <strong>personal library</strong>, and discover new titles with <strong>powerful search filters</strong>',
     githubLink: 'https://github.com/zkevinbai/Alexandria',
     emphasizeLeft: true,
   },
   {
     title: 'Augustus',
-    description: 'Modern note-taking application with a fully-featured rich text editor—create, format, and organize your notes with WYSIWYG editing, markdown support, and intuitive document management',
+    description: '<strong>Modern note-taking application</strong> with a <strong>fully-featured rich text editor</strong>—create, format, and organize your notes with <strong>WYSIWYG editing</strong>, <strong>markdown support</strong>, and <strong>intuitive document management</strong>',
     githubLink: 'https://github.com/zkevinbai/Augustus',
     emphasizeLeft: true,
   },
