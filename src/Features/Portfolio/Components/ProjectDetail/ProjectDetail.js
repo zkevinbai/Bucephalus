@@ -4,76 +4,88 @@ import styled from 'styled-components';
 import { MAX_MOBILE_WIDTH } from '../constants';
 
 const Root = styled.div`
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr;
-
-    height: 5rem;
-    padding: 0.5rem;
-    padding-bottom: 5rem;
-
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    height: 100%;
+    justify-content: center;
     font-family: "raleway";
 
     @media (max-width: ${MAX_MOBILE_WIDTH}) {
-        width: 10rem;
+        padding: 1.5rem;
+        gap: 1rem;
+        text-align: center;
     }
 `;
 
 const Header = styled.div`
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 `;
 
-const Title = styled.div`
+const Title = styled.h2`
     font-size: 2rem;
-    font-weight: 500;
-    text-decoration: underline;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -0.01em;
 
     @media (max-width: ${MAX_MOBILE_WIDTH}) {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
 `;
 
-const Description = styled.div`
-    font-size: 1.5rem;
+const Description = styled.p`
+    font-size: 1.1rem;
     font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    line-height: 1.6;
 
     @media (max-width: ${MAX_MOBILE_WIDTH}) {
-        font-size: 1rem;
-        font-weight: 400;
+        font-size: 0.95rem;
     }
 `;
 
-const Links = styled.div `
-    font-size: 1.5rem;
-    font-weight: 400;
-
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 15px;
-    box-shadow: 0 0 3px;
-
-    margin: 15px;
-    padding: 0.5rem;
-
-    /* display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center; */
-
-    text-align: center;
+const Links = styled.div`
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 
     @media (max-width: ${MAX_MOBILE_WIDTH}) {
-        font-size: 1.25rem;
+        justify-content: center;
     }
 `;
 
 const Link = styled.a`
-    color: black;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    
+    transition: all 0.2s ease;
 
-    padding: 0.255rem;
+    &:hover {
+        background: rgba(48, 127, 246, 0.25);
+        border-color: rgba(48, 127, 246, 0.5);
+        color: #ffffff;
+        transform: translateY(-1px);
+    }
 
-    :hover{
-        color: rgb(86,194,255);
-        text-decoration: underline;
+    @media (max-width: ${MAX_MOBILE_WIDTH}) {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
     }
 `;
 
