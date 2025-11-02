@@ -6,7 +6,11 @@ export default function Hero() {
       </h1>
       
       <p className="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] text-center">
-        I know three things: FDE, Enterprise, and International. I am a William Jefferson Clinton Presidential Scholar and have studied at the University of California Berkeley, Oxford University, and the American University in Dubai.
+        I know three things: Forward Deployed Engineering, Enterprise, and International.
+      </p>
+      
+      <p className="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] text-center">
+        I am a William Jefferson Clinton Presidential Scholar who has studied at the University of California Berkeley, Oxford University, and the American University in Dubai.
       </p>
 
       <div className="flex gap-3 items-start">
