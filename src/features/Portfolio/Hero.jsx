@@ -6,31 +6,31 @@ export default function Hero() {
       </h1>
       
       <p className="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] text-center">
-        I know three things: Forward Deployed Engineering, Enterprise, and International.
+        I know three things: <strong>Forward Deployed Engineering</strong>, <strong>Enterprise</strong>, and <strong>International</strong>.
       </p>
       
       <p className="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] text-center">
-        I am a William Jefferson Clinton Presidential Scholar who has studied at the University of California Berkeley, Oxford University, and the American University in Dubai.
+        I am a <strong>William Jefferson Clinton Presidential Scholar</strong> who has studied at <strong>University of California Berkeley</strong>, <strong>Oxford University</strong>, and <strong>American University in Dubai</strong>.
       </p>
 
       <div className="flex gap-3 items-start">
         <span className="text-2xl leading-none shrink-0">🚀</span>
         <p className="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em]">
-          My main focus is leveraging technology to solve enterprise problems at the local, regional, and global level. Technology is the means, not the goal.
+          My main focus is leveraging technology to solve <strong>enterprise problems</strong> at the <strong>local, regional, and global level</strong>. <strong>Technology is the means, not the goal</strong>.
         </p>
       </div>
 
       <div className="flex gap-3 items-start">
         <span className="text-2xl leading-none shrink-0">🧠</span>
         <p className="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em]">
-          My background spans diplomacy, sales, business development, product management, customer success, software engineering, and forward deployed engineering—which brings them all together. I build full-stack applications with JavaScript, TypeScript, React, and Python, love new opportunities, and learn quickly.
+          My background spans <strong>diplomacy</strong>, <strong>sales</strong>, <strong>business development</strong>, <strong>product management</strong>, <strong>customer success</strong>, <strong>software engineering</strong>, and <strong>forward deployed engineering</strong>—which brings them all together. I build <strong>full-stack applications</strong> with <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>React</strong>, and <strong>Python</strong>, love new opportunities, and learn quickly.
         </p>
       </div>
 
       <div className="flex gap-3 items-start">
         <span className="text-2xl leading-none shrink-0">🌎</span>
         <p className="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em]">
-          I've lived and worked across North America, Europe, the Middle East, East Asia, Southeast Asia, and South America, and speak the six official languages of the United Nations.
+          I've lived and worked across <strong>North America</strong>, <strong>Europe</strong>, <strong>the Middle East</strong>, <strong>East Asia</strong>, <strong>Southeast Asia</strong>, and <strong>South America</strong>, and speak the <strong>six official languages of the United Nations</strong>.
         </p>
       </div>
 
