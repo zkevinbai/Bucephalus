@@ -1,6 +1,6 @@
 import CursorLogo from '../../assets/companies/Cursor-logo.png'
 import OpenAILogo from '../../assets/companies/OpenAI-logo.png'
-import ClaudeLogo from '../../assets/companies/Claude-logo.png'
+import ClaudeLogo from '../../assets/companies/Claude-logo.svg'
 import VercelLogo from '../../assets/companies/Vercel-logo.png'
 import GeminiLogo from '../../assets/companies/Gemini-logo.svg'
 import AWSLogo from '../../assets/companies/AWS-logo.svg'
@@ -72,7 +72,6 @@ export default function Skills() {
             )
           } else {
             // Logo
-            const isGemini = item.name === 'Gemini'
             return (
               <div
                 key={item.name}
@@ -81,10 +80,7 @@ export default function Skills() {
                 <img
                   src={item.logo}
                   alt={item.name}
-                  className={`w-full h-full object-contain ${isGemini ? 'brightness-110 saturate-150 contrast-110' : ''}`}
-                  style={isGemini ? {
-                    filter: 'brightness(1.15) saturate(1.5) contrast(1.2)',
-                  } : {}}
+                  className="w-full h-full object-contain"
                 />
                 <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs font-raleway font-medium px-3 py-1.5 rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50 shadow-lg">
                   {techName}
