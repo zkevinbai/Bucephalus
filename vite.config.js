@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react({
     include: /\.(jsx|tsx)$/,
   })],
-  base: '/',
+  base: '/Bucephalus/',
   build: {
     outDir: 'dist',
   },
