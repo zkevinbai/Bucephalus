@@ -65,6 +65,15 @@ export default function Hero() {
             <span>Twitter</span>
           </a>
           <a
+            href="https://github.com/zkevinbai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-white/90 border border-gray-300 rounded-md text-gray-800 font-raleway text-sm font-medium no-underline transition-all duration-200 hover:bg-gray-800 hover:border-gray-900 hover:text-white hover:-translate-y-[1px] shadow-md hover:shadow-lg"
+          >
+            <i className="fab fa-github text-base" />
+            <span>GitHub</span>
+          </a>
+          <a
             href="https://web.archive.org/web/20240622002720/https://nature.berkeley.edu/news/2018/01/student-spotlight-kevin-bai"
             target="_blank"
             rel="noopener noreferrer"
