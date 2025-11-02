@@ -1,6 +1,6 @@
 import RipplingLogo from '../../assets/companies/Rippling-logo.png'
 import UNLogo from '../../assets/companies/UN-logo.svg'
-import PalantirLogo from '../../assets/companies/Palantir-logo.png'
+import PalantirLogo from '../../assets/companies/palantir-logo.svg'
 import GlobalityLogo from '../../assets/companies/Globality-logo.png'
 import UNHCRLogo from '../../assets/companies/UNHCR-logo.svg'
 
@@ -63,7 +63,7 @@ export default function CareerTimeline() {
               key={index}
               className="flex gap-4 items-start p-4 bg-white/50 border border-gray-300/40 rounded-xl backdrop-blur-sm hover:bg-white/70 hover:shadow-md transition-all duration-300 max-[800px]:flex-col max-[800px]:items-center"
             >
-              <div className="shrink-0 w-16 h-16 max-[800px]:w-12 max-[800px]:h-12">
+              <div className={`shrink-0 w-16 h-16 max-[800px]:w-12 max-[800px]:h-12 ${entry.company === 'Palantir Technologies' ? 'bg-black rounded-lg p-2' : ''}`}>
                 <img
                   src={entry.logo}
                   alt={`${entry.company} logo`}
