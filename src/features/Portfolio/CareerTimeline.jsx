@@ -63,11 +63,11 @@ export default function CareerTimeline() {
               key={index}
               className="flex gap-4 items-start p-4 bg-white/50 border border-gray-300/40 rounded-xl backdrop-blur-sm hover:bg-white/70 hover:shadow-md transition-all duration-300 max-[950px]:flex-col max-[950px]:items-center"
             >
-              <div className={`shrink-0 w-16 h-16 max-[950px]:w-12 max-[950px]:h-12 ${entry.company === 'Palantir Technologies' ? 'bg-black rounded-lg p-2' : ''}`}>
+              <div className={`shrink-0 w-16 h-16 max-[950px]:w-12 max-[950px]:h-12 rounded-lg ${entry.company === 'Palantir Technologies' ? 'bg-black p-2' : ''}`}>
                 <img
                   src={entry.logo}
                   alt={`${entry.company} logo`}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain rounded-lg"
                 />
               </div>
               <div className="flex-1 flex flex-col gap-2">
