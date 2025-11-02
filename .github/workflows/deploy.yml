@@ -27,14 +27,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
-      - name: Build application to dist/
+      - name: Build application to docs/
         run: npm run build
-      
-      - name: Move dist/ to docs/ for GitHub Pages
-        run: |
-          rm -rf docs
-          mv dist docs
-          echo "✓ Moved dist/ to docs/ for deployment"
       
       - name: Verify docs folder exists
         run: |

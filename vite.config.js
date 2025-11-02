@@ -9,7 +9,7 @@ export default defineConfig({
   // Use root base path since GitHub Pages serves from docs/ folder with custom domain
   base: '/',
   build: {
-    outDir: 'dist',
+    outDir: 'docs',
   },
   resolve: {
     extensions: ['.jsx', '.js', '.json'],
