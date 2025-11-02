@@ -1,6 +1,6 @@
 # Bucephalus
 
-My personal website and portfolio
+My personal website, portfolio, and blog.
 
 Built with React, Vite, and Tailwind CSS. Features portfolio projects, career timeline, education history, and blog functionality.
 
@@ -11,7 +11,9 @@ Built with React, Vite, and Tailwind CSS. Features portfolio projects, career ti
 - **Education**: Academic background and achievements
 - **Technologies**: Visual display of technologies and frameworks I work with
 - **Tab Navigation**: Easy switching between Career, Education, and Projects sections
+- **Blog**: Personal blog with 3D cube rotation transition
 - **Responsive Design**: Optimized for wide screens, tablets, and mobile devices
+- **Design System**: Comprehensive design patterns documented in `kevin-design-system.md`
 
 ## Available Scripts
 
@@ -41,16 +43,32 @@ Deploys the app to production (GitHub Pages) using the `docs` folder.<br />
 
 - **React 18** - UI framework
 - **Vite** - Build tool and dev server
-- **Tailwind CSS** - Styling
-- **React Router** - Client-side routing
-- **React Markdown** - Blog content rendering
+- **Tailwind CSS** - Utility-first styling
+- **React Router** - Client-side routing with BrowserRouter
+- **CSS 3D Transforms** - 3D cube rotation effects
+
+## Design System
+
+This project follows a comprehensive design system documented in [`kevin-design-system.md`](./kevin-design-system.md). Key design patterns include:
+
+- **Liquid Glass Morphism**: Semi-transparent backgrounds with backdrop blur
+- **Scroll-Aware UI**: Buttons that adapt based on scroll position
+- **Gradient Backgrounds**: Multi-color gradients for depth
+- **3D Transforms**: Smooth transitions between views
+- **Consistent Typography**: Raleway font family with defined hierarchy
+- **Responsive Design**: Mobile-first approach with progressive enhancement
+
+See the design system documentation for complete details on colors, spacing, components, and interaction patterns.
 
 ## Project Structure
 
 ```
 src/
+├── App.jsx                        # Main app with 3D rotation wrapper and routing
 ├── features/
 │   ├── Portfolio/
+│   │   ├── Grid.jsx              # Main grid layout container
+│   │   ├── GridBox.jsx           # Glass effect card component
 │   │   ├── Hero.jsx              # Introduction and bio
 │   │   ├── Skills.jsx            # Technologies showcase
 │   │   ├── CareerTimeline.jsx    # Professional experience
@@ -58,7 +76,11 @@ src/
 │   │   ├── Projects.jsx          # Project showcase
 │   │   ├── TabNavigation.jsx     # Tab switching component
 │   │   └── ...
-│   └── Blog/                      # Blog functionality
+│   └── Blog/
+│       ├── AllBlogs.jsx          # Blog listing page
+│       ├── SingleBlog.jsx        # Individual blog post page
+│       ├── blogData.js           # Blog posts data and content
+│       └── archive/              # Archived blog posts
 └── assets/
     ├── companies/                 # Company logos
     ├── favicons/                  # Favicon assets
@@ -81,6 +103,30 @@ When adding new logos to the project, please use the following sources:
 - Store all logos in `src/assets/companies/` directory
 
 ## Architecture
+
+### Application Architecture
+
+The application uses a feature-based architecture with shared components:
+
+- **Routing**: React Router with `BrowserRouter` for client-side routing
+  - `/` - Portfolio view
+  - `/blog` - Blog listing
+  - `/blog/:slug` - Individual blog post
+
+- **3D Rotation System**: Portfolio and Blog views are wrapped in a 3D cube rotation container
+  - Smooth 180-degree Y-axis rotation transition
+  - Scroll-aware floating navigation buttons
+  - Auto-scroll to top on view transition
+
+- **Component System**: 
+  - **Grid**: Main responsive grid container with gradient background
+  - **GridBox**: Reusable glass effect card component used throughout
+  - Feature components organized by domain (Portfolio, Blog)
+
+- **Design System**: All styling follows consistent patterns documented in `kevin-design-system.md`
+  - Liquid glass morphism effects
+  - Scroll-aware UI elements
+  - Consistent spacing, colors, and typography
 
 ### Deployment Architecture
 

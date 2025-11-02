@@ -1,17 +1,63 @@
 import { Link } from 'react-router-dom'
-import SingleBlog from './SingleBlog'
+import Grid from '../Portfolio/Grid'
+import GridBox from '../Portfolio/GridBox'
+import { blogPosts } from './blogData'
 
 export default function AllBlogs() {
   return (
-    <div className="mx-40 max-[950px]:mx-4">
-      <div className="font-avenir text-[5rem] font-normal p-4">
-        Kevin Bai
-      </div>
-      <div>
-        <div className="rounded-[15px] m-1 border-[0.25rem] border-black p-4">
-          <SingleBlog />
+    <Grid>
+      <GridBox shouldEmphasizeLeft={false} className="md:col-span-2 !grid-cols-1 justify-items-center">
+        <div className="flex flex-col gap-4 p-6 w-full max-[950px]:p-4">
+          <h1 className="font-raleway text-[2.25rem] font-bold text-transparent bg-[linear-gradient(135deg,#1a1a3a_0%,#307ff6_50%,#1a1a3a_100%)] bg-[length:200%_auto] bg-clip-text [-webkit-background-clip:text] animate-shimmer m-0 leading-tight tracking-[-0.02em] text-center">
+            Kevin's Blog
+          </h1>
+          <p className="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] text-center">
+            Thoughts on <strong>forward deployed engineering</strong>, <strong>enterprise software</strong>, <strong>international geopolitics and economics</strong>, and <strong>building technology</strong> that solves real problems.
+          </p>
         </div>
-      </div>
-    </div>
+      </GridBox>
+      
+      <GridBox shouldEmphasizeLeft={false} className="md:col-span-2 !grid-cols-1">
+        <div className="flex flex-col gap-6 w-full p-6 max-[950px]:p-4 max-[950px]:gap-4">
+          {blogPosts.map((post, index) => (
+            <Link
+              key={post.id}
+              to={`/blog/${post.slug}`}
+              className="flex flex-col gap-4 p-6 bg-white/50 border border-gray-300/40 rounded-xl backdrop-blur-sm hover:bg-white/70 hover:shadow-md transition-all duration-300 font-raleway no-underline"
+            >
+              <h2 className="text-2xl font-semibold text-gray-800 m-0 tracking-[-0.01em] max-[950px]:text-xl">
+                {post.title}
+              </h2>
+              
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-sm text-gray-500 font-light">
+                  {blogPosts.length - index}
+                </span>
+                <span className="px-3 py-1 bg-white/70 border border-gray-300/50 rounded-md text-xs font-medium text-gray-700">
+                  {post.category}
+                </span>
+                <span className="text-sm text-gray-600 font-light">
+                  {post.date}
+                </span>
+                <span className="text-sm text-gray-600 font-light">
+                  {post.readTime}
+                </span>
+              </div>
+              
+              <p 
+                className="text-base font-light text-gray-700 m-0 leading-relaxed max-[950px]:text-sm" 
+                dangerouslySetInnerHTML={{ __html: post.excerpt }} 
+              />
+              
+              <div className="pt-2">
+                <span className="text-sm font-medium text-gray-700 hover:text-[rgba(48,127,246,0.8)] transition-colors duration-200">
+                  Read more →
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </GridBox>
+    </Grid>
   )
 }
