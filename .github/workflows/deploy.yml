@@ -1,5 +1,6 @@
 name: Build and Deploy Portfolio
 
+# Build and deploy on every commit to master
 on:
   push:
     branches:
@@ -14,7 +15,7 @@ jobs:
       id-token: write
     
     steps:
-      - name: Checkout
+      - name: Checkout master branch
         uses: actions/checkout@v4
       
       - name: Setup Node.js
@@ -26,18 +27,37 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
-      - name: Build
+      - name: Build application to dist/
         run: npm run build
       
-      - name: Setup Pages
+      - name: Move dist/ to docs/ for GitHub Pages
+        run: |
+          rm -rf docs
+          mv dist docs
+          echo "✓ Moved dist/ to docs/ for deployment"
+      
+      - name: Verify docs folder exists
+        run: |
+          if [ ! -d "docs" ]; then
+            echo "❌ Build failed: docs directory not created"
+            exit 1
+          fi
+          if [ ! -f "docs/index.html" ]; then
+            echo "❌ Build failed: docs/index.html not found"
+            exit 1
+          fi
+          echo "✓ Build successful - docs/ folder ready for deployment"
+          ls -la docs/ | head -10
+      
+      - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
       
-      - name: Upload artifact
+      - name: Upload docs/ as Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: './dist'
+          path: './docs'
       
-      - name: Deploy to GitHub Pages
+      - name: Deploy dist/ to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
 
