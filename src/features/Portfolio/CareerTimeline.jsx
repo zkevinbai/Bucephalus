@@ -1,8 +1,8 @@
 import RipplingLogo from '../../assets/companies/Rippling-logo.png'
-import CTBTOLogo from '../../assets/companies/CTBTO-logo.png'
+import UNLogo from '../../assets/companies/UN-logo.svg'
 import PalantirLogo from '../../assets/companies/Palantir-logo.png'
 import GlobalityLogo from '../../assets/companies/Globality-logo.png'
-import UNHCRLogo from '../../assets/companies/UNHCR-logo.png'
+import UNHCRLogo from '../../assets/companies/UNHCR-logo.svg'
 
 const careerEntries = [
   {
@@ -14,7 +14,7 @@ const careerEntries = [
     description: 'Founding Forward Deployed Engineer at Rippling, first hire. Here to help build the FDE function at Rippling — a Forward Deployed Engineer is part consultant, part product manager, and part software engineer: a founder-shaped engineer. We solve enterprise problems for Rippling\'s largest and most strategic customers. If there\'s a SKU we don\'t have, we invent it. Our north star is the success of our customers on Rippling. Created the Slack channel and GitHub repo, authored the first FDE SOPs, completed the first FDE project, wrote the first 250K lines of FDE code, achieved and maintained a 100% CSAT score across customer engagements, and collaborating with product and engineering on FDE tools to build incredible applications for customers.',
   },
   {
-    logo: CTBTOLogo,
+    logo: UNLogo,
     title: 'United Nations Youth Representative',
     company: 'Comprehensive Nuclear-Test-Ban Treaty Organization (CTBTO)',
     dateRange: '2017 - Present',

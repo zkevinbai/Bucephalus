@@ -1,9 +1,10 @@
 import CursorLogo from '../../assets/companies/Cursor-logo.png'
-import OpenAILogo from '../../assets/companies/OpenAI-logo.png'
+import ChatGPTLogo from '../../assets/companies/ChatGPT-logo.svg'
 import ClaudeLogo from '../../assets/companies/Claude-logo.svg'
 import VercelLogo from '../../assets/companies/Vercel-logo.png'
 import GeminiLogo from '../../assets/companies/Gemini-logo.svg'
 import AWSLogo from '../../assets/companies/AWS-logo.svg'
+import PythonLogo from '../../assets/companies/Python-logo.svg'
 
 // Helper function to get tech name from devicon class
 const getTechName = (iconClass) => {
@@ -31,7 +32,7 @@ const skills = [
   'devicon-css3-plain colored',
   'devicon-react-original colored',
   'devicon-typescript-plain colored',
-  'devicon-python-plain colored',
+  { name: 'Python', logo: PythonLogo, type: 'logo' },
   'devicon-ruby-plain colored',
   'devicon-nodejs-plain colored',
   'devicon-postgresql-plain colored',
@@ -43,7 +44,7 @@ const skills = [
   { name: 'Gemini', logo: GeminiLogo, type: 'logo' },
   { name: 'Claude', logo: ClaudeLogo, type: 'logo' },
   { name: 'Cursor', logo: CursorLogo, type: 'logo' },
-  { name: 'ChatGPT', logo: OpenAILogo, type: 'logo' },
+  { name: 'ChatGPT', logo: ChatGPTLogo, type: 'logo' },
 ]
 
 export default function Skills() {
@@ -72,15 +73,16 @@ export default function Skills() {
             )
           } else {
             // Logo
+            const isAILogo = ['ChatGPT', 'Claude', 'Gemini'].includes(item.name)
             return (
               <div
                 key={item.name}
-                className="relative group bg-white/70 border border-gray-300/50 h-16 w-16 p-2 rounded-lg grid place-content-center transition-all duration-300 hover:bg-[rgba(48,127,246,0.2)] hover:border-[rgba(48,127,246,0.6)] hover:-translate-y-1 hover:scale-110 hover:shadow-[0_6px_16px_rgba(48,127,246,0.3)] max-[800px]:h-14 max-[800px]:w-14 cursor-pointer"
+                className="relative group bg-white/70 border border-gray-300/50 h-16 w-16 max-[800px]:h-14 max-[800px]:w-14 p-2 rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-[rgba(48,127,246,0.2)] hover:border-[rgba(48,127,246,0.6)] hover:-translate-y-1 hover:scale-110 hover:shadow-[0_6px_16px_rgba(48,127,246,0.3)] cursor-pointer"
               >
                 <img
                   src={item.logo}
                   alt={item.name}
-                  className="w-full h-full object-contain"
+                  className={`object-contain ${isAILogo ? 'w-[150%] h-[150%]' : 'w-full h-full'}`}
                 />
                 <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs font-raleway font-medium px-3 py-1.5 rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50 shadow-lg">
                   {techName}
