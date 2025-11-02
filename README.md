@@ -131,7 +131,3 @@ Live at zkevinbai.com
 - **`public/404.html`**: Enables client-side routing on GitHub Pages
 - **`.github/workflows/deploy.yml`**: Automated deployment workflow
 - **`.husky/pre-commit`**: Builds app before commits to catch errors early
-
-## TODO
-
-- [ ] Add analytics/tracking to the site (e.g., Google Analytics, Plausible, etc.)
