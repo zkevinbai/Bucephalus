@@ -6,7 +6,8 @@ export default defineConfig({
   plugins: [react({
     include: /\.(jsx|tsx)$/,
   })],
-  base: '/Bucephalus/',
+  // Use root base path since GitHub Pages serves from docs/ folder with custom domain
+  base: '/',
   build: {
     outDir: 'dist',
   },
