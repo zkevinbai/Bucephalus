@@ -1,11 +1,13 @@
 import { useParams, Link } from 'react-router-dom'
 import Grid from '../Portfolio/Grid'
 import GridBox from '../Portfolio/GridBox'
-import { getPostBySlug } from './blogData'
+import { getPostBySlug, blogPosts } from './blogData'
 
 export default function SingleBlog() {
   const { slug } = useParams()
   const blogContent = getPostBySlug(slug)
+  const postIndex = blogPosts.findIndex(post => post.slug === slug)
+  const postNumber = postIndex !== -1 ? blogPosts.length - postIndex : null
   
   if (!blogContent) {
     return (
@@ -36,7 +38,16 @@ export default function SingleBlog() {
             ← Back to Blog
           </Link>
           
+          <h1 className="font-raleway text-[2.5rem] font-bold text-transparent bg-[linear-gradient(135deg,#1a1a3a_0%,#307ff6_50%,#1a1a3a_100%)] bg-[length:200%_auto] bg-clip-text [-webkit-background-clip:text] animate-shimmer m-0 leading-tight tracking-[-0.02em] text-center max-[950px]:text-2xl">
+            {blogContent.title}
+          </h1>
+          
           <div className="flex flex-wrap gap-3 items-center justify-center">
+            {postNumber && (
+              <span className="text-sm text-gray-500 font-light">
+                {postNumber}
+              </span>
+            )}
             <span className="px-3 py-1 bg-white/70 border border-gray-300/50 rounded-md text-xs font-medium text-gray-700">
               {blogContent.category}
             </span>
@@ -52,10 +63,6 @@ export default function SingleBlog() {
               </span>
             )}
           </div>
-          
-          <h1 className="font-raleway text-[2.5rem] font-bold text-transparent bg-[linear-gradient(135deg,#1a1a3a_0%,#307ff6_50%,#1a1a3a_100%)] bg-[length:200%_auto] bg-clip-text [-webkit-background-clip:text] animate-shimmer m-0 leading-tight tracking-[-0.02em] text-center max-[950px]:text-2xl">
-            {blogContent.title}
-          </h1>
         </div>
       </GridBox>
       

@@ -19,13 +19,20 @@ export default function AllBlogs() {
       
       <GridBox shouldEmphasizeLeft={false} className="md:col-span-2 !grid-cols-1">
         <div className="flex flex-col gap-6 w-full p-6 max-[950px]:p-4 max-[950px]:gap-4">
-          {blogPosts.map((post) => (
+          {blogPosts.map((post, index) => (
             <Link
               key={post.id}
               to={`/blog/${post.slug}`}
               className="flex flex-col gap-4 p-6 bg-white/50 border border-gray-300/40 rounded-xl backdrop-blur-sm hover:bg-white/70 hover:shadow-md transition-all duration-300 font-raleway no-underline"
             >
+              <h2 className="text-2xl font-semibold text-gray-800 m-0 tracking-[-0.01em] max-[950px]:text-xl">
+                {post.title}
+              </h2>
+              
               <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-sm text-gray-500 font-light">
+                  {blogPosts.length - index}
+                </span>
                 <span className="px-3 py-1 bg-white/70 border border-gray-300/50 rounded-md text-xs font-medium text-gray-700">
                   {post.category}
                 </span>
@@ -36,10 +43,6 @@ export default function AllBlogs() {
                   {post.readTime}
                 </span>
               </div>
-              
-              <h2 className="text-2xl font-semibold text-gray-800 m-0 tracking-[-0.01em] max-[950px]:text-xl">
-                {post.title}
-              </h2>
               
               <p 
                 className="text-base font-light text-gray-700 m-0 leading-relaxed max-[950px]:text-sm" 
