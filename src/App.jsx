@@ -34,10 +34,10 @@ function Cube3DWrapper() {
       {/* Toggle Button - Upper Right */}
       <button
         onClick={handleToggle}
-        className="fixed top-4 right-4 z-50 px-4 py-2 bg-black text-white rounded-lg shadow-lg hover:bg-gray-800 transition-colors duration-200 font-medium"
-        style={{ fontFamily: 'system-ui, sans-serif' }}
+        className="fixed top-4 right-4 z-50 inline-flex items-center gap-2 px-5 py-3 bg-white/40 border border-gray-300/40 rounded-lg text-gray-800 font-raleway text-sm font-medium shadow-md hover:bg-white/60 hover:border-gray-400/60 hover:text-gray-900 hover:-translate-y-[1px] hover:shadow-lg transition-all duration-300 backdrop-blur-sm group"
       >
-        {isBlog ? '→ Portfolio' : '→ Blog'}
+        <span className="text-base transition-transform duration-500 group-hover:rotate-180">🔄</span>
+        <span>{isBlog ? 'Portfolio' : 'Blog'}</span>
       </button>
       
       {/* 3D Cube Container */}
