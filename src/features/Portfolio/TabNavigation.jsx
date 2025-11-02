@@ -4,8 +4,8 @@ export default function TabNavigation({ tabs, children }) {
   const [activeTab, setActiveTab] = useState(tabs[0]?.id || '')
 
   return (
-    <div className="flex flex-col gap-6 w-full">
-      <div className="flex gap-2 justify-center flex-wrap border-b border-gray-300/40 pb-2">
+    <div className="flex flex-col gap-6 w-full h-full min-h-0">
+      <div className="flex gap-2 justify-center flex-wrap border-b border-gray-300/40 pb-2 flex-shrink-0">
         {tabs.map((tab) => (
           <button
             key={tab.id}
@@ -20,7 +20,7 @@ export default function TabNavigation({ tabs, children }) {
           </button>
         ))}
       </div>
-      <div className="w-full">
+      <div className="w-full flex-1 min-h-0 overflow-y-auto">
         {children(activeTab)}
       </div>
     </div>

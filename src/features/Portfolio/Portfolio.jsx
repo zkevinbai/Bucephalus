@@ -29,15 +29,17 @@ export default function Portfolio() {
 
   return (
     <Grid>
-      <Hero />
-      <Skills />
-      <div className="flex flex-col gap-6 p-8 items-center justify-center max-[800px]:p-6 max-[800px]:gap-4">
-        <GridBox shouldEmphasizeLeft={false}>
-          <TabNavigation tabs={tabs}>
-            {(activeTab) => renderTabContent(activeTab)}
-          </TabNavigation>
-        </GridBox>
-      </div>
+      <GridBox shouldEmphasizeLeft={false} className="md:col-span-1 !grid-cols-1 justify-items-center">
+        <Hero />
+      </GridBox>
+      <GridBox shouldEmphasizeLeft={false} className="md:col-span-1 !grid-cols-1 justify-items-center">
+        <Skills />
+      </GridBox>
+      <GridBox shouldEmphasizeLeft={false} className="!grid-cols-1 md:col-span-2">
+        <TabNavigation tabs={tabs}>
+          {(activeTab) => renderTabContent(activeTab)}
+        </TabNavigation>
+      </GridBox>
     </Grid>
   )
 }
