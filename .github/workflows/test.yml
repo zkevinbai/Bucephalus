@@ -1,19 +1,15 @@
-name: Build and Deploy Portfolio
+name: Test Build (No Deploy)
 
 on:
-  push:
+  pull_request:
     branches:
       - master
 
 jobs:
-  build-and-deploy:
+  test-build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
     permissions:
       contents: read
-      pages: write
-      id-token: write
     
     steps:
       - name: Checkout
@@ -31,15 +27,15 @@ jobs:
       - name: Build
         run: npm run build
       
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: './dist'
-      
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Verify build output
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "Build failed: dist directory not found"
+            exit 1
+          fi
+          if [ ! -f "dist/index.html" ]; then
+            echo "Build failed: dist/index.html not found"
+            exit 1
+          fi
+          echo "✓ Build successful"
 
