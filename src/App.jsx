@@ -11,6 +11,7 @@ function Cube3DWrapper() {
   // Determine current view - check if we're on blog list (not single blog post)
   const isBlogList = location.pathname === '/blog'
   const [isBlog, setIsBlog] = useState(isBlogList)
+  const [isScrolled, setIsScrolled] = useState(false)
   
   // Sync state with route changes
   useEffect(() => {
@@ -20,7 +21,20 @@ function Cube3DWrapper() {
   // Scroll to top when switching between apps
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
+    setIsScrolled(false)
   }, [isBlog])
+  
+  // Detect scroll position to minimize button
+  useEffect(() => {
+    const handleScroll = () => {
+      // Hide when scrolled past ~600px (roughly past Hero/Skills, at tabs area)
+      const scrollThreshold = 600
+      setIsScrolled(window.scrollY > scrollThreshold)
+    }
+    
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
   
   const handleToggle = () => {
     const newIsBlog = !isBlog
@@ -42,10 +56,15 @@ function Cube3DWrapper() {
       {/* Toggle Button - Upper Right */}
       <button
         onClick={handleToggle}
-        className="fixed top-4 right-4 z-50 inline-flex items-center gap-2 px-5 py-3 bg-white/40 border border-gray-300/40 rounded-lg text-gray-800 font-raleway text-sm font-medium shadow-md hover:bg-white/60 hover:border-gray-400/60 hover:text-gray-900 hover:-translate-y-[1px] hover:shadow-lg transition-all duration-300 backdrop-blur-sm group"
+        className={`fixed top-4 right-4 z-50 inline-flex items-center gap-2 bg-white/40 border border-gray-300/40 rounded-lg text-gray-800 font-raleway font-medium shadow-md hover:bg-white/60 hover:border-gray-400/60 hover:text-gray-900 hover:-translate-y-[1px] hover:shadow-lg transition-all duration-300 backdrop-blur-sm group ${
+          isScrolled 
+            ? 'px-3 py-2 text-xs' 
+            : 'px-5 py-3 text-sm'
+        }`}
+        title={isBlog ? 'Switch to Portfolio' : 'Switch to Blog'}
       >
         <span className="text-base transition-transform duration-500 group-hover:rotate-180">🔄</span>
-        <span>{isBlog ? 'Portfolio' : 'Blog'}</span>
+        {!isScrolled && <span>{isBlog ? 'Portfolio' : 'Blog'}</span>}
       </button>
       
       {/* 3D Cube Container */}
