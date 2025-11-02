@@ -27,6 +27,8 @@ Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 Builds the app for production to the `docs` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
+**Note:** You don't need to run this manually! The Husky pre-commit hook automatically runs `npm run build` before every commit, so your built files are always up-to-date.
+
 ### `npm run preview`
 
 Preview the production build locally before deploying.
@@ -96,12 +98,11 @@ Source Code (master branch)
     ↓
 npm run build → Vite compiles directly to docs/
     ↓
-GitHub Actions workflow:
-  - Builds on every push to master
-  - Commits docs/ folder to git
-  - Pushes to master branch
+Git commit includes docs/ folder (built locally)
     ↓
-GitHub Pages serves from docs/ folder
+GitHub Pages automatically:
+  - Builds and verifies on every push to master
+  - Deploys from the committed docs/ folder
     ↓
 Live at zkevinbai.com
 ```
@@ -110,7 +111,7 @@ Live at zkevinbai.com
 
 - **Base Path**: `/` (root) - works with custom domain setup
 - **Build Output**: Directly to `docs/` folder for GitHub Pages
-- **Git Hooks**: Husky pre-commit hook builds the app to ensure it compiles before commits
+- **Git Hooks**: Husky pre-commit hook automatically builds the app before every commit (no manual build needed)
 - **Routing**: React Router with `BrowserRouter` and `public/404.html` for client-side routing on GitHub Pages
 - **GitHub Pages Settings**: 
   - Source: `docs/` folder
@@ -128,21 +129,20 @@ Live at zkevinbai.com
 
 ### Deployment Workflow
 
-**Local Build (via Husky pre-commit hook):**
-1. ✅ Before each commit, Husky runs `npm run build`
+**Local Build (automatically via Husky pre-commit hook):**
+1. ✅ **No manual build required!** Before each commit, Husky automatically runs `npm run build`
 2. ✅ Builds directly to `docs/` folder
 3. ✅ Automatically stages `docs/` folder for inclusion in your commit
 4. ✅ Your commit includes both source code and built files
 
-**GitHub Verification (via GitHub Actions):**
-1. ✅ On push to master, workflow verifies `docs/` folder exists
-2. ✅ Verifies `docs/index.html` is present
-3. ✅ GitHub Pages automatically serves from the committed `docs/` folder
+**GitHub Pages Deployment:**
+1. ✅ On push to master, GitHub Pages automatically detects changes
+2. ✅ Builds and verifies the site (3 status checks)
+3. ✅ Deploys from the committed `docs/` folder to production
 
 ### Important Files
 
 - **`vite.config.js`**: Configures base path as `/` for both dev and production
 - **`public/CNAME`**: Sets custom domain `zkevinbai.com`
 - **`public/404.html`**: Enables client-side routing on GitHub Pages
-- **`.github/workflows/deploy.yml`**: Automated deployment workflow
 - **`.husky/pre-commit`**: Builds app before commits to catch errors early
