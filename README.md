@@ -63,6 +63,21 @@ src/
     └── projects/                  # Project images
 ```
 
+## Logo Sources
+
+When adding new logos to the project, please use the following sources:
+
+- **Tech/Technology Logos**: Use [LobeHub Icons](https://lobehub.com/icons?q=) - A free collection of 1275+ vector icons covering major AI brands and models, supporting React / SVG / PNG / WebP formats.
+  
+- **Non-Tech/Company Logos**: Use [Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page) - A free media repository with millions of freely usable media files including company logos, organization emblems, and flags.
+
+### Guidelines
+
+- Prefer SVG format for logos when available (better scalability)
+- Ensure logos are square or can be cropped to square format for consistency
+- Verify licensing and attribution requirements before use
+- Store all logos in `src/assets/companies/` directory
+
 ## Architecture
 
 ### Deployment Architecture
