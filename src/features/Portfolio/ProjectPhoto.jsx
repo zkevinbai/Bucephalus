@@ -1,11 +1,13 @@
 import TimeTravelTicTacToeImg from '../../assets/projects/TimeTravelTicTacToe.png'
 import AurelianImg from '../../assets/projects/Aurelian.png'
+import VerbaImg from '../../assets/projects/Verba.png'
 import AlexandriaImg from '../../assets/projects/Alexandria.png'
 import AugustusImg from '../../assets/projects/Augustus.png'
 
 const images = {
   'Time Travel Tic Tac Toe': TimeTravelTicTacToeImg,
   Aurelian: AurelianImg,
+  Verba: VerbaImg,
   Alexandria: AlexandriaImg,
   Augustus: AugustusImg,
 }

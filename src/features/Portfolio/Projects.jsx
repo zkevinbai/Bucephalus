@@ -18,6 +18,13 @@ const projects = [
     emphasizeLeft: true,
   },
   {
+    title: 'Verba',
+    description: '<strong>AI writing assistant</strong> built with <strong>React 18, TypeScript, and Supabase</strong>—helps writers with <strong>AI-powered grammar checking</strong>, <strong>intelligent writing suggestions</strong>, <strong>A/B variant generation</strong>, and <strong>document management</strong>',
+    githubLink: 'https://github.com/zkevinbai/verba',
+    liveLink: 'https://verba-2025.vercel.app/',
+    emphasizeLeft: true,
+  },
+  {
     title: 'Alexandria',
     description: '<strong>Comprehensive book discovery and management platform</strong>—search through <strong>extensive book databases</strong>, track your <strong>reading progress</strong>, manage your <strong>personal library</strong>, and discover new titles with <strong>powerful search filters</strong>',
     githubLink: 'https://github.com/zkevinbai/Alexandria',
