@@ -6,8 +6,8 @@ const projects = [
   {
     title: 'Time Travel Tic Tac Toe',
     description: 'Interactive tic-tac-toe game featuring an AI opponent with time travel mechanics—travel back through move history to replay the game from any point, with a beautiful gradient-styled interface and move tracking',
-    githubLink: 'https://github.com/zkevinbai/time-travel-tic-tac-toe',
-    liveLink: 'https://zkevinbai.github.io/time-travel-tic-tac-toe/',
+    githubLink: 'https://github.com/zkevinbai/tictactoe_two',
+    liveLink: 'https://zkevinbai.github.io/tictactoe_two/',
     emphasizeLeft: true,
   },
   {
