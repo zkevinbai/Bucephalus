@@ -53,22 +53,20 @@ function Cube3DWrapper() {
           style={{
             transformStyle: 'preserve-3d',
             transform: `rotateY(${isBlog ? 180 : 0}deg)`,
-            transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+            transition: 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
           }}
         >
           {/* Front Face - Portfolio */}
           <div
             className="absolute w-full"
             style={{
-              transform: 'translateZ(0px)',
+              transform: 'rotateY(0deg) translateZ(0px)',
               backfaceVisibility: 'hidden',
               WebkitBackfaceVisibility: 'hidden',
               pointerEvents: isBlog ? 'none' : 'auto',
             }}
           >
-            <div style={{ opacity: isBlog ? 0 : 1 }}>
-              <Portfolio />
-            </div>
+            <Portfolio />
           </div>
           
           {/* Back Face - Blog */}
@@ -81,9 +79,7 @@ function Cube3DWrapper() {
               pointerEvents: isBlog ? 'auto' : 'none',
             }}
           >
-            <div style={{ opacity: isBlog ? 1 : 0 }}>
-              <AllBlogs />
-            </div>
+            <AllBlogs />
           </div>
         </div>
       </div>
