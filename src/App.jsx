@@ -56,11 +56,16 @@ function Cube3DWrapper() {
       {/* Toggle Button - Upper Right */}
       <button
         onClick={handleToggle}
-        className={`fixed top-4 right-4 z-50 inline-flex items-center gap-2 bg-white/40 border border-gray-300/40 rounded-lg text-gray-800 font-raleway font-medium shadow-md hover:bg-white/60 hover:border-gray-400/60 hover:text-gray-900 hover:-translate-y-[1px] hover:shadow-lg transition-all duration-300 backdrop-blur-sm group ${
+        className={`fixed z-50 inline-flex items-center gap-2 bg-white/40 border border-gray-300/40 rounded-lg text-gray-800 font-raleway font-medium shadow-md hover:bg-white/60 hover:border-gray-400/60 hover:text-gray-900 hover:-translate-y-[1px] hover:shadow-lg transition-all duration-300 backdrop-blur-sm group ${
           isScrolled 
             ? 'px-3 py-2 text-xs' 
             : 'px-5 py-3 text-sm'
         }`}
+        style={{
+          // Support iOS Chrome and Safari - account for safe area insets
+          top: 'calc(1rem + env(safe-area-inset-top, 0px))',
+          right: 'calc(1rem + env(safe-area-inset-right, 0px))',
+        }}
         title={isBlog ? 'Switch to Portfolio' : 'Switch to Blog'}
       >
         <span className="text-base transition-transform duration-500 group-hover:rotate-180">🔄</span>

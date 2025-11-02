@@ -35,11 +35,16 @@ export default function SingleBlog() {
         {/* Floating Back Button */}
         <button
           onClick={handleBackToBlog}
-          className={`fixed top-4 left-4 z-50 inline-flex items-center gap-2 bg-white/40 border border-gray-300/40 rounded-lg text-gray-800 font-raleway font-medium shadow-md hover:bg-white/60 hover:border-gray-400/60 hover:text-gray-900 hover:-translate-y-[1px] hover:shadow-lg transition-all duration-300 backdrop-blur-sm ${
+          className={`fixed z-50 inline-flex items-center gap-2 bg-white/40 border border-gray-300/40 rounded-lg text-gray-800 font-raleway font-medium shadow-md hover:bg-white/60 hover:border-gray-400/60 hover:text-gray-900 hover:-translate-y-[1px] hover:shadow-lg transition-all duration-300 backdrop-blur-sm ${
             isScrolled 
               ? 'px-3 py-2 text-xs' 
               : 'px-5 py-3 text-sm'
           }`}
+          style={{
+            // Support iOS Chrome and Safari - account for safe area insets
+            top: 'calc(1rem + env(safe-area-inset-top, 0px))',
+            left: 'calc(1rem + env(safe-area-inset-left, 0px))'
+          }}
           title="Back to Blog"
         >
           <span>←</span>
@@ -62,11 +67,16 @@ export default function SingleBlog() {
       {/* Floating Back Button */}
       <button
         onClick={handleBackToBlog}
-        className={`fixed top-4 left-4 z-50 inline-flex items-center gap-2 bg-white/40 border border-gray-300/40 rounded-lg text-gray-800 font-raleway font-medium shadow-md hover:bg-white/60 hover:border-gray-400/60 hover:text-gray-900 hover:-translate-y-[1px] hover:shadow-lg transition-all duration-300 backdrop-blur-sm ${
+        className={`fixed z-50 inline-flex items-center gap-2 bg-white/40 border border-gray-300/40 rounded-lg text-gray-800 font-raleway font-medium shadow-md hover:bg-white/60 hover:border-gray-400/60 hover:text-gray-900 hover:-translate-y-[1px] hover:shadow-lg transition-all duration-300 backdrop-blur-sm ${
           isScrolled 
             ? 'px-3 py-2 text-xs' 
             : 'px-5 py-3 text-sm'
         }`}
+        style={{
+          // Support iOS Chrome and Safari - account for safe area insets
+          top: 'calc(1rem + env(safe-area-inset-top, 0px))',
+          left: 'calc(1rem + env(safe-area-inset-left, 0px))'
+        }}
         title="Back to Blog"
       >
         <span>←</span>
