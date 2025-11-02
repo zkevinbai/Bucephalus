@@ -11,7 +11,7 @@ const careerEntries = [
     company: 'Rippling',
     dateRange: '2025 - Present',
     location: 'San Francisco Bay Area',
-    description: 'Founding Forward Deployed Engineer at Rippling, first hire. Here to help build the FDE function at Rippling — a Forward Deployed Engineer is part consultant, part product manager, and part software engineer: a founder-shaped engineer. We solve enterprise problems for Rippling\'s largest and most strategic customers. If there\'s a SKU we don\'t have, we invent it. Our north star is the success of our customers on Rippling. Created the Slack channel and GitHub repo, authored the first FDE SOPs, completed the first FDE project, wrote the first 250K lines of FDE code, achieved and maintained a 100% CSAT score across customer engagements, and collaborating with product and engineering on FDE tools to build incredible applications for customers.',
+    description: 'Founding <strong>Forward Deployed Engineer</strong> at Rippling, <strong>first hire</strong>. Here to help build the <strong>FDE function</strong> at Rippling — a Forward Deployed Engineer is part consultant, part product manager, and part software engineer: a <strong>founder-shaped engineer</strong>. We solve <strong>enterprise problems</strong> for Rippling\'s <strong>largest and most strategic customers</strong>. If there\'s a SKU we don\'t have, we invent it. Our north star is the success of our customers on Rippling. Created the <strong>Slack channel and GitHub repo</strong>, authored the <strong>first FDE SOPs</strong>, completed the <strong>first FDE project</strong>, wrote the <strong>first 250K lines of FDE code</strong>, achieved and maintained a <strong>100% CSAT score</strong> across customer engagements, and collaborating with product and engineering on <strong>FDE tools</strong> to build incredible applications for customers.',
   },
   {
     logo: UNLogo,
@@ -19,7 +19,7 @@ const careerEntries = [
     company: 'Comprehensive Nuclear-Test-Ban Treaty Organization (CTBTO)',
     dateRange: '2017 - Present',
     location: 'Vienna, Austria',
-    description: 'United Nations Keynote Speaker at UN Science and Technology Conference in Vienna, Austria and UN Youth Conference in Moscow, Russian Federation. Youth Newsroom Reporter - organized and conducted interviews for UN News with senior executives of the CTBTO, including Wolfgang Hoffmann (Negotiator of the CTBT Treaty) and Dr. Lassina Zerbo (Executive Secretary of the CTBTO). Currently working with the CTBT team to advocate for the full enforcement of the Comprehensive Nuclear-Test-Ban Treaty (CTBT).',
+    description: '<strong>United Nations Keynote Speaker</strong> at <strong>UN Science and Technology Conference</strong> in Vienna, Austria and <strong>UN Youth Conference</strong> in Moscow, Russian Federation. <strong>Youth Newsroom Reporter</strong> - organized and conducted interviews for UN News with senior executives of the CTBTO, including <strong>Wolfgang Hoffmann</strong> (Negotiator of the CTBT Treaty) and <strong>Dr. Lassina Zerbo</strong> (Executive Secretary of the CTBTO). Currently working with the <strong>CTBT team</strong> to advocate for the full enforcement of the <strong>Comprehensive Nuclear-Test-Ban Treaty (CTBT)</strong>.',
   },
   {
     logo: '/favicon.ico',
@@ -27,7 +27,7 @@ const careerEntries = [
     company: 'Kevin Bai',
     dateRange: '2014 - Present',
     location: 'Various Locations',
-    description: 'Keynote and Panel Speaker at Enterprise and United Nations Events. Spoke at Rocketlane (San Francisco, 2025), Palantir (Denver 2022, London 2022, NYC 2021), United Nations (Remote 2021, Moscow 2018, Vienna 2017), General Assembly (Remote 2020), Atlassian (Las Vegas 2019), FOCUS (San Francisco 2016, Mexico City 2016), VAW (Manila 2016), REACH (Los Angeles 2015), and University of California Board of Regents (Oakland 2014).',
+    description: '<strong>Keynote and Panel Speaker</strong> at <strong>Enterprise and United Nations Events</strong>. Spoke at <strong>Rocketlane</strong> (San Francisco, 2025), <strong>Palantir</strong> (Denver 2022, London 2022, NYC 2021), <strong>United Nations</strong> (Remote 2021, Moscow 2018, Vienna 2017), <strong>General Assembly</strong> (Remote 2020), <strong>Atlassian</strong> (Las Vegas 2019), <strong>FOCUS</strong> (San Francisco 2016, Mexico City 2016), <strong>VAW</strong> (Manila 2016), <strong>REACH</strong> (Los Angeles 2015), and <strong>University of California Board of Regents</strong> (Oakland 2014).',
   },
   {
     logo: PalantirLogo,
@@ -35,7 +35,7 @@ const careerEntries = [
     company: 'Palantir Technologies',
     dateRange: '2021 - 2025',
     location: 'Los Angeles, New York City, Chicago, London, Denver, Washington DC, Bogota',
-    description: 'I solve open-ended problems at the most important institutions in the world. I own every stage from discovery to delivery—translating business needs into product capabilities and leading teams to build full-stack software that creates measurable value. Led a $X million project to digitize the innovation workflow of a Fortune 500 CPG company. Built five applications in six months, drove adoption from 0 to 800 users in two months, and achieved $XX million in year-over-year savings for the client. Led a $X million project to improve operational efficiency and safety for a Fortune 500 airline, improving efficiency of a major engineering division by 10 hours per engineer per week.',
+    description: 'I solve <strong>open-ended problems</strong> at the <strong>most important institutions in the world</strong>. I own every stage from <strong>discovery to delivery</strong>—translating business needs into product capabilities and leading teams to build <strong>full-stack software</strong> that creates <strong>measurable value</strong>. Led a <strong>$X million project</strong> to digitize the innovation workflow of a <strong>Fortune 500 CPG company</strong>. Built <strong>five applications in six months</strong>, drove adoption from <strong>0 to 800 users in two months</strong>, and achieved <strong>$XX million in year-over-year savings</strong> for the client. Led a <strong>$X million project</strong> to improve operational efficiency and safety for a <strong>Fortune 500 airline</strong>, improving efficiency of a major engineering division by <strong>10 hours per engineer per week</strong>.',
   },
   {
     logo: GlobalityLogo,
@@ -43,7 +43,7 @@ const careerEntries = [
     company: 'Globality, Inc.',
     dateRange: '2019 - 2021',
     location: 'San Francisco Bay Area',
-    description: 'Wore multiple hats and worked with an incredible team to build the future of professional-services procurement for Fortune 500 companies. Joined shortly after the garage stage and stayed through Series E, we raised over $350 million over two years for a trailblazing AI Enterprise SaaS platform. Built with JavaScript, React, GraphQL, Node, and Python to create the first AI-powered procurement ecosystem. First Place — 2020 Globality Hackathon. Led product engineering for multiple key features. Improved platform accessibility from 52/100 to 95/100, achieving WCAG AA compliance.',
+    description: 'Wore multiple hats and worked with an incredible team to build the future of <strong>professional-services procurement</strong> for <strong>Fortune 500 companies</strong>. Joined shortly after the <strong>garage stage</strong> and stayed through <strong>Series E</strong>, we raised over <strong>$350 million over two years</strong> for a trailblazing <strong>AI Enterprise SaaS platform</strong>. Built with <strong>JavaScript</strong>, <strong>React</strong>, <strong>GraphQL</strong>, <strong>Node</strong>, and <strong>Python</strong> to create the <strong>first AI-powered procurement ecosystem</strong>. <strong>First Place</strong> — 2020 Globality Hackathon. Led <strong>product engineering</strong> for multiple key features. Improved platform accessibility from <strong>52/100 to 95/100</strong>, achieving <strong>WCAG AA compliance</strong>.',
   },
   {
     logo: UNHCRLogo,
@@ -51,7 +51,7 @@ const careerEntries = [
     company: 'UNHCR, the UN Refugee Agency',
     dateRange: '2017',
     location: 'Dubai, United Arab Emirates',
-    description: 'Worked in support of refugees during the peak of the 2017 Syrian Civil War and Refugee Crisis. Built partnerships with leading corporations and nonprofits on behalf of the United Nations. Partnered with IKEA to design and produce a modular refugee shelter. Partnered with Facebook to launch the first Virtual Reality fundraising campaign for refugees. Partnered with Microsoft to enable digital cash-aid distribution for displaced populations. Developed the Qatar outreach strategy for UNHCR Private Sector Partnerships.',
+    description: 'Worked in support of refugees during the peak of the <strong>2017 Syrian Civil War and Refugee Crisis</strong>. Built partnerships with <strong>leading corporations and nonprofits</strong> on behalf of the <strong>United Nations</strong>. Partnered with <strong>IKEA</strong> to design and produce a <strong>modular refugee shelter</strong>. Partnered with <strong>Facebook</strong> to launch the <strong>first Virtual Reality fundraising campaign</strong> for refugees. Partnered with <strong>Microsoft</strong> to enable <strong>digital cash-aid distribution</strong> for displaced populations. Developed the <strong>Qatar outreach strategy</strong> for UNHCR Private Sector Partnerships.',
   },
 ]
 
@@ -87,9 +87,7 @@ export default function CareerTimeline() {
                     </span>
                   </div>
                 </div>
-                <p className="text-sm font-light text-gray-700 font-raleway m-0 leading-relaxed max-[800px]:text-xs">
-                  {entry.description}
-                </p>
+                <p className="text-sm font-light text-gray-700 font-raleway m-0 leading-relaxed max-[800px]:text-xs" dangerouslySetInnerHTML={{ __html: entry.description }} />
               </div>
             </div>
           ))}
