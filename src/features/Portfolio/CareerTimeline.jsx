@@ -1,6 +1,5 @@
 import RipplingLogo from '../../assets/companies/Rippling-logo.png'
 import CTBTOLogo from '../../assets/companies/CTBTO-logo.png'
-import FaviconLogo from '../../assets/favicons/favicon1.png'
 import PalantirLogo from '../../assets/companies/Palantir-logo.png'
 import GlobalityLogo from '../../assets/companies/Globality-logo.png'
 import UNHCRLogo from '../../assets/companies/UNHCR-logo.png'
@@ -23,7 +22,7 @@ const careerEntries = [
     description: 'United Nations Keynote Speaker at UN Science and Technology Conference in Vienna, Austria and UN Youth Conference in Moscow, Russian Federation. Youth Newsroom Reporter - organized and conducted interviews for UN News with senior executives of the CTBTO, including Wolfgang Hoffmann (Negotiator of the CTBT Treaty) and Dr. Lassina Zerbo (Executive Secretary of the CTBTO). Currently working with the CTBT team to advocate for the full enforcement of the Comprehensive Nuclear-Test-Ban Treaty (CTBT).',
   },
   {
-    logo: FaviconLogo,
+    logo: '/favicon.ico',
     title: 'Public Speaker',
     company: 'Kevin Bai',
     dateRange: '2014 - Present',
