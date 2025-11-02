@@ -1,6 +1,6 @@
 # Bucephalus
 
-My personal website and portfolio.
+My personal website, portfolio, and blog.
 
 Built with React, Vite, and Tailwind CSS. Features portfolio projects, career timeline, education history, and blog functionality.
 
