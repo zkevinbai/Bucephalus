@@ -14,7 +14,7 @@ export default function TabNavigation({ tabs, children }) {
               activeTab === tab.id
                 ? 'border-[rgba(48,127,246,0.8)] text-gray-900 bg-white/60'
                 : 'border-transparent text-gray-600 hover:text-gray-800 hover:bg-white/30'
-            } max-[800px]:px-4 max-[800px]:py-2 max-[800px]:text-sm`}
+            } max-[950px]:px-4 max-[950px]:py-2 max-[950px]:text-sm`}
           >
             {tab.label}
           </button>

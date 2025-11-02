@@ -42,9 +42,9 @@ export default function Education() {
           {educationEntries.map((entry, index) => (
             <div
               key={index}
-              className="flex gap-4 items-start p-4 bg-white/50 border border-gray-300/40 rounded-xl backdrop-blur-sm hover:bg-white/70 hover:shadow-md transition-all duration-300 max-[800px]:flex-col max-[800px]:items-center"
+              className="flex gap-4 items-start p-4 bg-white/50 border border-gray-300/40 rounded-xl backdrop-blur-sm hover:bg-white/70 hover:shadow-md transition-all duration-300 max-[950px]:flex-col max-[950px]:items-center"
             >
-              <div className="shrink-0 w-16 h-16 max-[800px]:w-12 max-[800px]:h-12">
+              <div className="shrink-0 w-16 h-16 max-[950px]:w-12 max-[950px]:h-12">
                 <img
                   src={entry.logo}
                   alt={`${entry.institution} logo`}
@@ -53,10 +53,10 @@ export default function Education() {
               </div>
               <div className="flex-1 flex flex-col gap-2">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800 font-raleway m-0 max-[800px]:text-lg">
+                  <h3 className="text-xl font-semibold text-gray-800 font-raleway m-0 max-[950px]:text-lg">
                     {entry.institution}
                   </h3>
-                  <h4 className="text-lg font-medium text-gray-700 font-raleway m-0 max-[800px]:text-base">
+                  <h4 className="text-lg font-medium text-gray-700 font-raleway m-0 max-[950px]:text-base">
                     {entry.degree}
                   </h4>
                 </div>
@@ -64,7 +64,7 @@ export default function Education() {
                   {entry.activities.map((activity, actIndex) => (
                     <p
                       key={actIndex}
-                      className="text-sm font-light text-gray-700 font-raleway m-0 leading-relaxed max-[800px]:text-xs"
+                      className="text-sm font-light text-gray-700 font-raleway m-0 leading-relaxed max-[950px]:text-xs"
                       dangerouslySetInnerHTML={{ __html: activity }}
                     />
                   ))}

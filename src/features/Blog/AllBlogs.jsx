@@ -3,7 +3,7 @@ import SingleBlog from './SingleBlog'
 
 export default function AllBlogs() {
   return (
-    <div className="mx-40 max-[800px]:mx-4">
+    <div className="mx-40 max-[950px]:mx-4">
       <div className="font-avenir text-[5rem] font-normal p-4">
         Kevin Bai
       </div>

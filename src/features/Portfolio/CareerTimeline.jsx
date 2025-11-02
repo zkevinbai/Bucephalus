@@ -61,9 +61,9 @@ export default function CareerTimeline() {
           {careerEntries.map((entry, index) => (
             <div
               key={index}
-              className="flex gap-4 items-start p-4 bg-white/50 border border-gray-300/40 rounded-xl backdrop-blur-sm hover:bg-white/70 hover:shadow-md transition-all duration-300 max-[800px]:flex-col max-[800px]:items-center"
+              className="flex gap-4 items-start p-4 bg-white/50 border border-gray-300/40 rounded-xl backdrop-blur-sm hover:bg-white/70 hover:shadow-md transition-all duration-300 max-[950px]:flex-col max-[950px]:items-center"
             >
-              <div className={`shrink-0 w-16 h-16 max-[800px]:w-12 max-[800px]:h-12 ${entry.company === 'Palantir Technologies' ? 'bg-black rounded-lg p-2' : ''}`}>
+              <div className={`shrink-0 w-16 h-16 max-[950px]:w-12 max-[950px]:h-12 ${entry.company === 'Palantir Technologies' ? 'bg-black rounded-lg p-2' : ''}`}>
                 <img
                   src={entry.logo}
                   alt={`${entry.company} logo`}
@@ -72,10 +72,10 @@ export default function CareerTimeline() {
               </div>
               <div className="flex-1 flex flex-col gap-2">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800 font-raleway m-0 max-[800px]:text-lg">
+                  <h3 className="text-xl font-semibold text-gray-800 font-raleway m-0 max-[950px]:text-lg">
                     {entry.title}
                   </h3>
-                  <h4 className="text-lg font-medium text-gray-700 font-raleway m-0 max-[800px]:text-base">
+                  <h4 className="text-lg font-medium text-gray-700 font-raleway m-0 max-[950px]:text-base">
                     {entry.company}
                   </h4>
                   <div className="flex flex-wrap gap-2 mt-1">
@@ -87,7 +87,7 @@ export default function CareerTimeline() {
                     </span>
                   </div>
                 </div>
-                <p className="text-sm font-light text-gray-700 font-raleway m-0 leading-relaxed max-[800px]:text-xs" dangerouslySetInnerHTML={{ __html: entry.description }} />
+                <p className="text-sm font-light text-gray-700 font-raleway m-0 leading-relaxed max-[950px]:text-xs" dangerouslySetInnerHTML={{ __html: entry.description }} />
               </div>
             </div>
           ))}
