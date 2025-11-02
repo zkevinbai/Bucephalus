@@ -82,7 +82,7 @@ export default function Skills() {
                 <img
                   src={item.logo}
                   alt={item.name}
-                  className={`object-contain ${isAILogo ? 'w-[150%] h-[150%]' : 'w-full h-full'}`}
+                  className={`object-contain rounded-lg ${isAILogo ? 'w-[150%] h-[150%]' : 'w-full h-full'}`}
                 />
                 <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs font-raleway font-medium px-3 py-1.5 rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50 shadow-lg">
                   {techName}
