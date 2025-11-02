@@ -173,6 +173,100 @@ export const blogPosts = [
       </p>
     `,
   },
+  {
+    id: 'technology-as-means',
+    slug: 'technology-as-means',
+    title: 'Technology as a Means, Not a Goal',
+    author: 'Kevin Bai',
+    date: 'December 2024',
+    readTime: '7 min read',
+    category: 'Philosophy',
+    excerpt: 'My philosophy on using technology to solve <strong>real-world problems</strong>. Technology should serve a purpose—whether that\'s improving <strong>enterprise operations</strong>, enabling <strong>better decision-making</strong>, or creating <strong>meaningful impact</strong>.',
+    content: `
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        Technology is the means, not the goal.
+      </p>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        This principle has guided my approach to building software for over a decade. Too often, we fall in love with the technology itself—the latest framework, the newest language, the shiniest tool—and lose sight of what we're actually trying to accomplish.
+      </p>
+      
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">The Purpose-Driven Approach</h2>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        Every piece of software I build starts with a question: <strong>What problem are we solving?</strong> Not "What cool technology can we use?" but "What outcome do we want to create?"
+      </p>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
+        When you begin with the problem, technology becomes a tool in service of a goal. You choose React not because it's trendy, but because it's the right tool for building interactive UIs. You choose Python not because it's popular, but because it solves the data processing challenge at hand.
+      </p>
+      
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">Solving Real Problems</h2>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        The best software I've built solves problems that matter: improving efficiency for teams, enabling better decision-making for leaders, creating measurable value for businesses.
+      </p>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
+        Technology should serve a purpose—whether that's improving <strong>enterprise operations</strong>, enabling <strong>better decision-making</strong>, or creating <strong>meaningful impact</strong>. When technology becomes the goal itself, we lose sight of why we're building in the first place.
+      </p>
+      
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">The Impact Mindset</h2>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        At the end of the day, what matters isn't the stack you used or the patterns you followed. What matters is: <strong>Did it work? Did it solve the problem? Did it create value?</strong>
+      </p>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
+        Technology is a powerful means to an end. But it's only powerful when we remember what that end actually is.
+      </p>
+    `,
+  },
+  {
+    id: 'lessons-global-engineering',
+    slug: 'lessons-global-engineering',
+    title: 'Lessons from Global Engineering',
+    author: 'Kevin Bai',
+    date: 'November 2024',
+    readTime: '6 min read',
+    category: 'Experience',
+    excerpt: 'Reflections on working across <strong>six continents</strong>, building software for <strong>Fortune 500 companies</strong>, and navigating the complexities of <strong>international software deployment</strong>.',
+    content: `
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        I've had the privilege of building software across six continents, working with teams from San Francisco to London to Bogotá. Each location taught me something different about engineering, culture, and what it means to solve problems at scale.
+      </p>
+      
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">The Universal Language of Code</h2>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        Code is universal, but context is everything. The same TypeScript function that works in Silicon Valley might need different considerations when deployed in Europe due to data regulations, or in Latin America due to network infrastructure.
+      </p>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
+        Building software for <strong>Fortune 500 companies</strong> means understanding not just the technical requirements, but the business context, regulatory environment, and cultural nuances that shape how technology gets used.
+      </p>
+      
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">The Complexity of International Deployment</h2>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        Navigating the complexities of <strong>international software deployment</strong> taught me that good engineering is about more than clean code—it's about understanding constraints, anticipating edge cases, and building systems that work across diverse environments.
+      </p>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
+        Time zones, languages, regulations, and infrastructure differences all shape how software gets built and deployed. The best engineers I've worked with don't just write code—they understand the full context in which that code will run.
+      </p>
+      
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">Building for Global Scale</h2>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        Working across six continents has taught me that the best solutions are those that respect local context while maintaining global standards. You can't build the same way everywhere, but you can build with the same principles: clarity, efficiency, and impact.
+      </p>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
+        The tools change. The languages change. The regulations change. But the goal remains the same: build technology that solves real problems, wherever those problems exist.
+      </p>
+    `,
+  },
 ]
 
 // Helper function to get post by slug

@@ -17,9 +17,17 @@ function Cube3DWrapper() {
     setIsBlog(isBlogList)
   }, [location.pathname])
   
+  // Scroll to top when switching between apps
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [isBlog])
+  
   const handleToggle = () => {
     const newIsBlog = !isBlog
     setIsBlog(newIsBlog)
+    
+    // Scroll to top immediately
+    window.scrollTo({ top: 0, behavior: 'smooth' })
     
     // Navigate
     if (newIsBlog) {
