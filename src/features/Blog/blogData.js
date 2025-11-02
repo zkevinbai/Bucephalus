@@ -7,7 +7,7 @@ export const blogPosts = [
     author: 'Kevin Bai',
     date: '27 October 2025',
     readTime: '8 min read',
-    category: 'Engineering',
+    category: 'FDE',
     excerpt: 'At Rippling, Forward Deployed Engineers (FDEs) are customer-facing software engineers — technologists who work directly with our largest and most strategic customers to help them get the most out of the Rippling Platform.',
     content: `
       <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">

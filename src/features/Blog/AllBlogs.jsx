@@ -12,7 +12,7 @@ export default function AllBlogs() {
             Kevin's Blog
           </h1>
           <p className="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] text-center">
-            Thoughts on <strong>forward deployed engineering</strong>, <strong>enterprise software</strong>, <strong>international geopolitics and economics</strong>, and <strong>building software</strong> that solves real problems.
+            Thoughts on <strong>forward deployed engineering</strong>, <strong>enterprise software</strong>, <strong>international geopolitics and economics</strong>, and <strong>building technology</strong> that solves real problems.
           </p>
         </div>
       </GridBox>
