@@ -113,16 +113,16 @@ Live at zkevinbai.com
 
 ### Deployment Workflow
 
-The `.github/workflows/deploy.yml` workflow automatically:
+**Local Build (via Husky pre-commit hook):**
+1. ✅ Before each commit, Husky runs `npm run build`
+2. ✅ Builds directly to `docs/` folder
+3. ✅ Automatically stages `docs/` folder for inclusion in your commit
+4. ✅ Your commit includes both source code and built files
 
-1. ✅ Checks out the `master` branch
-2. ✅ Sets up Node.js 20 with npm caching
-3. ✅ Installs dependencies (`npm ci`)
-4. ✅ Builds the application directly to `docs/` (`npm run build`)
-5. ✅ Verifies the build output
-6. ✅ Commits `docs/` folder to git
-7. ✅ Pushes to master branch
-8. ✅ GitHub Pages automatically serves from `docs/` folder (triggered on every push to master)
+**GitHub Verification (via GitHub Actions):**
+1. ✅ On push to master, workflow verifies `docs/` folder exists
+2. ✅ Verifies `docs/index.html` is present
+3. ✅ GitHub Pages automatically serves from the committed `docs/` folder
 
 ### Important Files
 
