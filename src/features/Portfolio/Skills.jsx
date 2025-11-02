@@ -5,13 +5,13 @@ const technologies = [
   'devicon-html5-plain colored',
   'devicon-css3-plain colored',
   'devicon-react-original colored',
-  'devicon-d3js-plain colored',
-  'devicon-express-original colored',
+  'devicon-typescript-plain colored',
+  'devicon-python-plain colored',
   'devicon-nodejs-plain colored',
   'devicon-postgresql-plain colored',
   'devicon-ruby-plain colored',
   'devicon-git-plain colored',
-  'devicon-rails-plain colored',
+  'devicon-tailwindcss-plain colored',
   'devicon-mongodb-plain colored',
 ]
 

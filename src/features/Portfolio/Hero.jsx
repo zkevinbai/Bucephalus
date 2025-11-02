@@ -60,6 +60,15 @@ export default function Hero() {
             <i className="fab fa-twitter text-base" />
             <span>Twitter</span>
           </a>
+          <a
+            href="https://web.archive.org/web/20240622002720/https://nature.berkeley.edu/news/2018/01/student-spotlight-kevin-bai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/90 border border-gray-300 rounded-md text-gray-800 font-raleway text-[0.95rem] font-medium no-underline transition-all duration-200 hover:bg-purple-500 hover:border-purple-600 hover:text-white hover:-translate-y-[1px] shadow-md hover:shadow-lg max-[800px]:text-sm max-[800px]:px-4 max-[800px]:py-2"
+          >
+            <i className="fas fa-address-card text-base" />
+            <span>About</span>
+          </a>
         </div>
       </div>
     </div>
