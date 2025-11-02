@@ -79,3 +79,7 @@ This project is deployed to GitHub Pages with client-side routing support.
 
 3. **Vite Build Configuration**
    - Modern build tooling for fast development and optimized production builds
+
+## TODO
+
+- [ ] Add analytics/tracking to the site (e.g., Google Analytics, Plausible, etc.)
