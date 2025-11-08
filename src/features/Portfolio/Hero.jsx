@@ -23,7 +23,7 @@ export default function Hero() {
       <div className="flex gap-3 items-start max-[950px]:gap-2">
         <span className="text-2xl leading-none shrink-0 max-[950px]:text-xl">🧠</span>
         <p className="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em]">
-          My background spans <strong>diplomacy</strong>, <strong>sales</strong>, <strong>business development</strong>, <strong>product management</strong>, <strong>customer success</strong>, <strong>software engineering</strong>, and <strong>forward deployed engineering</strong>—which brings them all together. I build <strong>full-stack applications</strong> with <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>React</strong>, and <strong>Python</strong>, love new opportunities, and learn quickly.
+          My background spans <strong>diplomacy</strong>, <strong>sales</strong>, <strong>business development</strong>, <strong>product management</strong>, <strong>customer success</strong>, <strong>software engineering</strong>, and <strong>forward deployed engineering</strong>—which brings them all together. I build <strong>full-stack applications</strong> with <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>React</strong>, and <strong>Python</strong>. I love new opportunities and I learn quickly.
         </p>
       </div>
 
