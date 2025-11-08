@@ -50,7 +50,7 @@ const skills = [
 export default function Skills() {
   return (
     <div className="flex flex-col gap-6 p-8 items-center justify-center max-[950px]:p-6 max-[950px]:gap-4">
-      <h2 className="text-2xl font-semibold text-gray-800 font-raleway m-0 text-center max-[950px]:text-xl">
+      <h2 className="text-2xl font-semibold text-gray-800 font-raleway m-0 text-center">
         Technologies and Frameworks
       </h2>
       <div className="w-full bg-white/50 border border-gray-300/40 rounded-xl backdrop-blur-sm p-6 grid grid-cols-6 grid-rows-3 gap-4 justify-items-center items-center max-[950px]:grid-cols-3 max-[950px]:grid-rows-6 max-[950px]:p-4 max-[950px]:gap-3">

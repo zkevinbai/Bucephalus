@@ -58,6 +58,7 @@ const careerEntries = [
       {
         text: 'Speaking Engagements:',
         subBullets: [
+          '<strong>🌁 2025 November</strong> — <strong>Y Combinator</strong> — San Francisco, United States',
           '<strong>🌁 2025 October</strong> — <strong>Rocketlane</strong> — San Francisco, United States',
           '<strong>🏔️ 2022 September</strong> — <strong>Palantir</strong> — Denver, United States',
           '<strong>🇬🇧 2022 July</strong> — <strong>Palantir</strong> — London, United Kingdom',
@@ -226,10 +227,10 @@ export default function CareerTimeline() {
               </div>
               <div className="flex-1 flex flex-col gap-2">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800 font-raleway m-0 max-[950px]:text-lg">
+                  <h3 className="text-xl font-semibold text-gray-800 font-raleway m-0">
                     {entry.title}
                   </h3>
-                  <h4 className="text-lg font-medium text-gray-700 font-raleway m-0 max-[950px]:text-base">
+                  <h4 className="text-lg font-medium text-gray-700 font-raleway m-0">
                     {entry.company}
                   </h4>
                   <div className="flex flex-wrap gap-2 mt-1">
@@ -241,7 +242,7 @@ export default function CareerTimeline() {
                     </span>
                   </div>
                 </div>
-                <ul className="list-none flex flex-col gap-3 mt-3">
+                <ul className="list-none flex flex-col gap-3 mt-3 max-[950px]:gap-2 max-[950px]:mt-2">
                   {entry.bullets.map((bullet, bulletIndex) => {
                     const isString = typeof bullet === 'string'
                     const bulletText = isString ? bullet : bullet.text
@@ -249,23 +250,23 @@ export default function CareerTimeline() {
                     const isSingleLine = bulletText.includes('Hats I wear') || bulletText.includes('Technologies I use') || bulletText.includes('Work I do')
                     
                     return (
-                      <li key={bulletIndex} className="flex flex-col gap-2">
-                        <div className="text-sm font-light text-gray-700 font-raleway leading-relaxed max-[950px]:text-xs flex items-start gap-2">
+                      <li key={bulletIndex} className="flex flex-col gap-2 max-[950px]:gap-1.5">
+                        <div className="text-sm font-light text-gray-700 font-raleway leading-relaxed flex items-start gap-2">
                           <span className="text-gray-500 mt-1 shrink-0">•</span>
                           <span dangerouslySetInnerHTML={{ __html: bulletText }} />
                         </div>
                         {subBullets.length > 0 && (
                           isSingleLine ? (
-                            <div className="text-sm font-light text-gray-700 font-raleway leading-relaxed max-[950px]:text-xs flex items-start gap-2 ml-6">
+                            <div className="text-sm font-light text-gray-700 font-raleway leading-relaxed flex items-start gap-2 ml-6">
                               <span className="text-gray-400 mt-1 shrink-0">◦</span>
                               <span>{subBullets.join(', ')}</span>
                             </div>
                           ) : (
-                            <ul className="list-none flex flex-col gap-2 ml-6">
+                            <ul className="list-none flex flex-col gap-2 ml-6 max-[950px]:gap-1.5">
                               {subBullets.map((subBullet, subIndex) => (
                                 <li
                                   key={subIndex}
-                                  className="text-sm font-light text-gray-700 font-raleway leading-relaxed max-[950px]:text-xs flex items-start gap-2"
+                                  className="text-sm font-light text-gray-700 font-raleway leading-relaxed flex items-start gap-2"
                                 >
                                   <span className="text-gray-400 mt-1 shrink-0">◦</span>
                                   <span dangerouslySetInnerHTML={{ __html: subBullet }} />

@@ -86,7 +86,7 @@ export default function SingleBlog() {
       <Grid>
         <GridBox shouldEmphasizeLeft={false} className="md:col-span-2 !grid-cols-1 justify-items-center">
           <div className="flex flex-col gap-6 p-6 w-full max-[950px]:p-4">
-          <h1 className="font-raleway text-[2.5rem] font-bold text-transparent bg-[linear-gradient(135deg,#1a1a3a_0%,#307ff6_50%,#1a1a3a_100%)] bg-[length:200%_auto] bg-clip-text [-webkit-background-clip:text] animate-shimmer m-0 leading-tight tracking-[-0.02em] text-center max-[950px]:text-2xl">
+          <h1 className="font-raleway text-[2.5rem] font-bold text-transparent bg-[linear-gradient(135deg,#1a1a3a_0%,#307ff6_50%,#1a1a3a_100%)] bg-[length:200%_auto] bg-clip-text [-webkit-background-clip:text] animate-shimmer m-0 leading-tight tracking-[-0.02em] text-center">
             {blogContent.title}
           </h1>
           

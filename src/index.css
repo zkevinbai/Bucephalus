@@ -18,6 +18,56 @@
     min-height: 100%;
   }
 
+  /* Mobile text sizing - applies consistently across site */
+  @media (max-width: 950px) {
+    /* Body text - reduce size and line height for elements without explicit Tailwind size classes */
+    p:not([class*="text-"]), 
+    li:not([class*="text-"]), 
+    span:not([class*="text-"]) {
+      font-size: 0.875rem; /* text-sm */
+      line-height: 1.5; /* leading-[1.5] */
+    }
+    
+    /* Headings scale down proportionally when not explicitly sized */
+    h1:not([class*="text-"]) {
+      font-size: 1.5rem; /* text-2xl */
+    }
+    
+    h2:not([class*="text-"]) {
+      font-size: 1.25rem; /* text-xl */
+    }
+    
+    h3:not([class*="text-"]) {
+      font-size: 1.125rem; /* text-lg */
+    }
+    
+    h4:not([class*="text-"]) {
+      font-size: 1rem; /* text-base */
+    }
+    
+    /* Tighter line height for relaxed text on mobile */
+    .leading-relaxed {
+      line-height: 1.4 !important;
+    }
+    
+    /* Tighter line height for small text on mobile */
+    .text-xs {
+      line-height: 1.4 !important;
+    }
+    
+    /* Reduce text-base to text-sm on mobile */
+    .text-base {
+      font-size: 0.875rem !important; /* text-sm */
+      line-height: 1.5 !important;
+    }
+    
+    /* Reduce text-lg proportionally on mobile */
+    .text-lg {
+      font-size: 0.95rem !important;
+      line-height: 1.5 !important;
+    }
+  }
+
   a {
     text-decoration: none;
   }

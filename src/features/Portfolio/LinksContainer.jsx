@@ -24,7 +24,7 @@ const links = [
 export default function LinksContainer() {
   return (
     <div className="grid grid-cols-1 grid-rows-[auto_1fr] justify-items-start items-center gap-6 p-8 max-[950px]:justify-items-center max-[950px]:p-6 max-[950px]:gap-4">
-      <div className="text-2xl font-semibold text-gray-800 font-raleway max-[950px]:text-xl max-[950px]:text-center">
+      <div className="text-2xl font-semibold text-gray-800 font-raleway max-[950px]:text-center">
         Full Stack Software Engineer
       </div>
       <div className="flex flex-wrap gap-4 w-full max-[950px]:justify-center max-[950px]:gap-3">

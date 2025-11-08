@@ -53,18 +53,18 @@ export default function Education() {
               </div>
               <div className="flex-1 flex flex-col gap-2">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800 font-raleway m-0 max-[950px]:text-lg">
+                  <h3 className="text-xl font-semibold text-gray-800 font-raleway m-0">
                     {entry.institution}
                   </h3>
-                  <h4 className="text-lg font-medium text-gray-700 font-raleway m-0 max-[950px]:text-base">
+                  <h4 className="text-lg font-medium text-gray-700 font-raleway m-0">
                     {entry.degree}
                   </h4>
                 </div>
-                <div className="flex flex-col gap-2 mt-2">
+                <div className="flex flex-col gap-2 mt-2 max-[950px]:gap-1.5 max-[950px]:mt-1.5">
                   {entry.activities.map((activity, actIndex) => (
                     <p
                       key={actIndex}
-                      className="text-sm font-light text-gray-700 font-raleway m-0 leading-relaxed max-[950px]:text-xs"
+                      className="text-sm font-light text-gray-700 font-raleway m-0 leading-relaxed"
                       dangerouslySetInnerHTML={{ __html: activity }}
                     />
                   ))}

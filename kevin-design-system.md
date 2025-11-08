@@ -73,7 +73,21 @@ linear-gradient(
 - **Body**: `text-base` (16px)
 - **Small**: `text-sm` (14px)
 - **Extra Small**: `text-xs` (12px)
-- **Responsive**: `max-[950px]:text-xl`, `max-[950px]:text-sm`
+
+### Mobile Text Sizing (Global)
+Mobile text sizing is handled **globally** via CSS in `index.css` at the `max-width: 950px` breakpoint. No need to add mobile classes to individual components:
+
+- **`text-base`** → Automatically becomes `text-sm` (14px) on mobile
+- **`text-lg`** → Automatically becomes `0.95rem` on mobile
+- **`leading-relaxed`** → Automatically becomes `line-height: 1.4` on mobile
+- **`text-xs`** → Line height automatically becomes `1.4` on mobile
+- **Headings** (h1, h2, h3, h4) → Automatically scale down proportionally on mobile
+
+**What still needs manual mobile classes:**
+- Button text sizes (may need special handling)
+- Icon/emoji sizes (decorative elements)
+- Spacing classes (padding, gaps, margins)
+- Layout classes (flex-col, grid-cols, etc.)
 
 ### Font Weights
 - **Bold**: `font-bold` - For titles and emphasis
@@ -428,10 +442,14 @@ All interactive elements follow these patterns:
 - Progressive enhancement for desktop
 
 ### Responsive Adjustments
-- Padding: `p-6` → `max-[950px]:p-4`
-- Grid: `grid-cols-2` → `max-[950px]:grid-cols-1`
-- Font sizes: Scale down proportionally
-- Spacing: Reduce gaps on mobile
+- **Text Sizing**: Handled globally via CSS (see Mobile Text Sizing section above)
+- **Padding**: `p-6` → `max-[950px]:p-4`
+- **Grid**: `grid-cols-2` → `max-[950px]:grid-cols-1`
+- **Spacing**: Reduce gaps on mobile (`gap-6` → `max-[950px]:gap-4`)
+- **Icons/Emojis**: Scale down on mobile (`text-2xl` → `max-[950px]:text-xl`)
+
+### Mobile-First Approach
+The design system uses a mobile-first approach with global CSS rules that automatically apply mobile sizing. This ensures consistency across all components without requiring individual mobile classes for text sizing.
 
 ---
 

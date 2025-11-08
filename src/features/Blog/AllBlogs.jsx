@@ -31,7 +31,7 @@ export default function AllBlogs() {
               to={`/blog/${post.slug}`}
               className="flex flex-col gap-4 p-6 bg-white/50 border border-gray-300/40 rounded-xl backdrop-blur-sm hover:bg-white/70 hover:shadow-md transition-all duration-300 font-raleway no-underline"
             >
-              <h2 className="text-2xl font-semibold text-gray-800 m-0 tracking-[-0.01em] max-[950px]:text-xl">
+              <h2 className="text-2xl font-semibold text-gray-800 m-0 tracking-[-0.01em]">
                 {post.title}
               </h2>
               
@@ -51,7 +51,7 @@ export default function AllBlogs() {
               </div>
               
               <p 
-                className="text-base font-light text-gray-700 m-0 leading-relaxed max-[950px]:text-sm" 
+                className="text-base font-light text-gray-700 m-0 leading-relaxed" 
                 dangerouslySetInnerHTML={{ __html: post.excerpt }} 
               />
               

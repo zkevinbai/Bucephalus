@@ -2,10 +2,10 @@ export default function ProjectDetail({ title, description, githubLink, liveLink
   return (
     <div className="flex flex-col gap-6 p-8 h-full justify-center font-raleway max-[950px]:p-6 max-[950px]:gap-4 max-[950px]:text-center">
       <div className="flex flex-col gap-3">
-        <h2 className="text-[2rem] font-semibold text-gray-800 m-0 tracking-[-0.01em] max-[950px]:text-2xl">
+        <h2 className="text-[2rem] font-semibold text-gray-800 m-0 tracking-[-0.01em]">
           {title}
         </h2>
-        <p className="text-lg font-light text-gray-700 m-0 leading-relaxed max-[950px]:text-[0.95rem]" dangerouslySetInnerHTML={{ __html: description }} />
+        <p className="text-lg font-light text-gray-700 m-0 leading-relaxed" dangerouslySetInnerHTML={{ __html: description }} />
       </div>
       <div className="flex gap-4 flex-wrap max-[950px]:justify-center">
         <a
