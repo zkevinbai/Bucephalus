@@ -258,18 +258,179 @@ export function getCombinedMeaning(animal, element) {
   const combination = `${element} ${animal}`
   const defaultDescription = `The ${combination} combines the ${element.toLowerCase()} element's ${elementData.characteristics[0]} and ${elementData.characteristics[1]} with the ${animal.toLowerCase()}'s ${animalData.traits[0]} and ${animalData.traits[1]} nature. This creates a unique blend of ${elementData.personality.split('.')[0].toLowerCase()} and ${animalData.personality.split('.')[0].toLowerCase()}.`
   
-  // Combine strengths from both animal and element
-  const combinedStrengths = [...new Set([...animalData.strengths, ...elementData.strengths])]
+  // Synthesize strengths based on how element enhances animal traits
+  const synthesizeStrengths = (animal, element) => {
+    const synthesis = {
+      'Wood Rat': ['Visionary problem-solving', 'Adaptable intelligence', 'Creative resourcefulness', 'Growth-oriented thinking'],
+      'Fire Rat': ['Energetic innovation', 'Passionate intelligence', 'Enthusiastic problem-solving', 'Charismatic leadership'],
+      'Earth Rat': ['Practical intelligence', 'Stable resourcefulness', 'Methodical problem-solving', 'Reliable strategy'],
+      'Metal Rat': ['Analytical precision', 'Structured intelligence', 'Systematic resourcefulness', 'Disciplined thinking'],
+      'Water Rat': ['Intuitive intelligence', 'Adaptive strategy', 'Wisdom-driven resourcefulness', 'Flexible problem-solving'],
+      
+      'Wood Ox': ['Steady growth', 'Methodical vision', 'Reliable expansion', 'Patient building'],
+      'Fire Ox': ['Passionate determination', 'Energetic reliability', 'Enthusiastic tradition', 'Driven stability'],
+      'Earth Ox': ['Ultimate foundation-building', 'Unshakeable stability', 'Deep-rooted reliability', 'Solid tradition'],
+      'Metal Ox': ['Precise structure', 'Disciplined reliability', 'Systematic strength', 'Organized determination'],
+      'Water Ox': ['Adaptive tradition', 'Flexible stability', 'Wise reliability', 'Flowing strength'],
+      
+      'Wood Tiger': ['Bold vision', 'Energetic courage', 'Innovative leadership', 'Growth-driven charisma'],
+      'Fire Tiger': ['Intense charisma', 'Passionate courage', 'Dynamic leadership', 'Fiery confidence'],
+      'Earth Tiger': ['Grounded courage', 'Practical boldness', 'Stable leadership', 'Balanced confidence'],
+      'Metal Tiger': ['Strategic courage', 'Precise boldness', 'Structured leadership', 'Disciplined confidence'],
+      'Water Tiger': ['Intuitive courage', 'Wise boldness', 'Deep leadership', 'Flowing confidence'],
+      
+      'Wood Rabbit': ['Creative gentleness', 'Artistic growth', 'Visionary harmony', 'Expansive beauty'],
+      'Fire Rabbit': ['Warm creativity', 'Passionate artistry', 'Enthusiastic harmony', 'Inspiring beauty'],
+      'Earth Rabbit': ['Grounded artistry', 'Stable harmony', 'Practical beauty', 'Peaceful creativity'],
+      'Metal Rabbit': ['Refined artistry', 'Precise beauty', 'Structured harmony', 'Disciplined creativity'],
+      'Water Rabbit': ['Intuitive artistry', 'Deep beauty', 'Flowing harmony', 'Wise creativity'],
+      
+      'Wood Dragon': ['Visionary ambition', 'Innovative power', 'Growth-driven leadership', 'Creative energy'],
+      'Fire Dragon': ['Intense power', 'Passionate ambition', 'Fiery leadership', 'Dynamic charisma'],
+      'Earth Dragon': ['Grounded ambition', 'Stable power', 'Practical leadership', 'Lasting empire-building'],
+      'Metal Dragon': ['Strategic ambition', 'Precise power', 'Structured leadership', 'Disciplined innovation'],
+      'Water Dragon': ['Intuitive ambition', 'Wise power', 'Deep leadership', 'Flowing innovation'],
+      
+      'Wood Snake': ['Thoughtful growth', 'Innovative wisdom', 'Visionary insight', 'Creative depth'],
+      'Fire Snake': ['Intense wisdom', 'Passionate insight', 'Charismatic depth', 'Dynamic mystery'],
+      'Earth Snake': ['Grounded wisdom', 'Practical insight', 'Stable depth', 'Reliable philosophy'],
+      'Metal Snake': ['Analytical wisdom', 'Precise insight', 'Structured depth', 'Disciplined thinking'],
+      'Water Snake': ['Ultimate intuition', 'Deep wisdom', 'Flowing insight', 'Transcendent understanding'],
+      
+      'Wood Horse': ['Adventurous growth', 'Innovative energy', 'Visionary freedom', 'Creative exploration'],
+      'Fire Horse': ['Intense energy', 'Passionate adventure', 'Dynamic freedom', 'Fiery enthusiasm'],
+      'Earth Horse': ['Grounded adventure', 'Stable energy', 'Balanced freedom', 'Practical exploration'],
+      'Metal Horse': ['Focused energy', 'Structured adventure', 'Precise freedom', 'Disciplined exploration'],
+      'Water Horse': ['Flowing energy', 'Adaptive adventure', 'Flexible freedom', 'Intuitive exploration'],
+      
+      'Wood Goat': ['Artistic growth', 'Creative gentleness', 'Visionary beauty', 'Expansive harmony'],
+      'Fire Goat': ['Warm creativity', 'Passionate artistry', 'Enthusiastic beauty', 'Inspiring gentleness'],
+      'Earth Goat': ['Grounded artistry', 'Stable beauty', 'Peaceful harmony', 'Practical creativity'],
+      'Metal Goat': ['Refined artistry', 'Precise beauty', 'Structured harmony', 'Disciplined gentleness'],
+      'Water Goat': ['Intuitive artistry', 'Deep beauty', 'Flowing harmony', 'Wise gentleness'],
+      
+      'Wood Monkey': ['Creative intelligence', 'Innovative wit', 'Visionary problem-solving', 'Growth-driven playfulness'],
+      'Fire Monkey': ['Energetic intelligence', 'Passionate wit', 'Dynamic problem-solving', 'Enthusiastic innovation'],
+      'Earth Monkey': ['Practical intelligence', 'Stable wit', 'Reliable problem-solving', 'Grounded innovation'],
+      'Metal Monkey': ['Analytical intelligence', 'Precise wit', 'Structured problem-solving', 'Disciplined innovation'],
+      'Water Monkey': ['Intuitive intelligence', 'Wise wit', 'Flowing problem-solving', 'Adaptive innovation'],
+      
+      'Wood Rooster': ['Organized growth', 'Innovative confidence', 'Visionary perfectionism', 'Creative planning'],
+      'Fire Rooster': ['Energetic perfectionism', 'Passionate confidence', 'Dynamic excellence', 'Enthusiastic organization'],
+      'Earth Rooster': ['Grounded perfectionism', 'Stable confidence', 'Traditional excellence', 'Reliable organization'],
+      'Metal Rooster': ['Ultimate precision', 'Disciplined perfectionism', 'Structured excellence', 'Analytical organization'],
+      'Water Rooster': ['Adaptive perfectionism', 'Flexible confidence', 'Flowing excellence', 'Intuitive organization'],
+      
+      'Wood Dog': ['Trustworthy growth', 'Innovative loyalty', 'Visionary protection', 'Creative reliability'],
+      'Fire Dog': ['Intense loyalty', 'Passionate protection', 'Dynamic reliability', 'Enthusiastic trustworthiness'],
+      'Earth Dog': ['Ultimate loyalty', 'Unshakeable reliability', 'Deep protection', 'Solid trustworthiness'],
+      'Metal Dog': ['Structured loyalty', 'Precise reliability', 'Disciplined protection', 'Organized trustworthiness'],
+      'Water Dog': ['Intuitive loyalty', 'Wise reliability', 'Deep understanding', 'Flowing trustworthiness'],
+      
+      'Wood Pig': ['Generous growth', 'Innovative giving', 'Visionary sharing', 'Creative abundance'],
+      'Fire Pig': ['Intense generosity', 'Passionate giving', 'Enthusiastic sharing', 'Dynamic abundance'],
+      'Earth Pig': ['Grounded generosity', 'Stable giving', 'Reliable sharing', 'Practical abundance'],
+      'Metal Pig': ['Organized generosity', 'Precise giving', 'Structured sharing', 'Thoughtful abundance'],
+      'Water Pig': ['Intuitive generosity', 'Wise giving', 'Deep sharing', 'Flowing abundance']
+    }
+    
+    return synthesis[combination] || [
+      `${elementData.strengths[0]} ${animalData.strengths[0]}`,
+      `${elementData.strengths[1]} ${animalData.strengths[1]}`,
+      `Enhanced ${animalData.strengths[2]}`,
+      `Balanced ${elementData.strengths[2]}`
+    ]
+  }
   
-  // Combine challenges/weaknesses from both animal and element
-  const combinedChallenges = [...new Set([...animalData.weaknesses, ...elementData.challenges])]
+  // Synthesize challenges based on how element and animal traits conflict or amplify weaknesses
+  const synthesizeChallenges = (animal, element) => {
+    const synthesis = {
+      'Wood Rat': ['May overthink opportunities', 'Can be too idealistic in planning', 'Tendency to spread resources thin'],
+      'Fire Rat': ['Can burn out from overenthusiasm', 'May be too impulsive with ideas', 'Risk of overwhelming others'],
+      'Earth Rat': ['May resist necessary changes', 'Can be overly cautious', 'Tendency to miss opportunities'],
+      'Metal Rat': ['Can be too rigid in thinking', 'May over-analyze simple problems', 'Tendency to be overly critical'],
+      'Water Rat': ['Can be indecisive with opportunities', 'May lack direction', 'Tendency to overthink decisions'],
+      
+      'Wood Ox': ['May be too slow to adapt', 'Can resist growth opportunities', 'Tendency to stick to old methods'],
+      'Fire Ox': ['Can be stubborn about change', 'May burn out from overwork', 'Tendency to ignore new ideas'],
+      'Earth Ox': ['May be overly conservative', 'Can resist all change', 'Tendency to be inflexible'],
+      'Metal Ox': ['Can be too rigid', 'May lack emotional flexibility', 'Tendency to be overly structured'],
+      'Water Ox': ['May lack clear direction', 'Can be indecisive', 'Tendency to flow without purpose'],
+      
+      'Wood Tiger': ['Can take too many risks', 'May lack follow-through', 'Tendency to overextend'],
+      'Fire Tiger': ['Can be too impulsive', 'May burn out quickly', 'Tendency to be reckless'],
+      'Earth Tiger': ['May lack boldness', 'Can be too cautious', 'Tendency to miss opportunities'],
+      'Metal Tiger': ['Can be too strategic', 'May overthink bold moves', 'Tendency to delay action'],
+      'Water Tiger': ['May lack clear direction', 'Can be indecisive', 'Tendency to flow without focus'],
+      
+      'Wood Rabbit': ['Can be too idealistic', 'May avoid necessary conflict', 'Tendency to overextend creatively'],
+      'Fire Rabbit': ['Can be too emotional', 'May burn out from intensity', 'Tendency to be moody'],
+      'Earth Rabbit': ['May be too passive', 'Can avoid all confrontation', 'Tendency to be overly cautious'],
+      'Metal Rabbit': ['Can be too critical', 'May lack spontaneity', 'Tendency to overthink beauty'],
+      'Water Rabbit': ['Can be too sensitive', 'May lack direction', 'Tendency to be indecisive'],
+      
+      'Wood Dragon': ['Can overextend ambitions', 'May lack follow-through', 'Tendency to start too many projects'],
+      'Fire Dragon': ['Can be too intense', 'May burn out from power', 'Tendency to overwhelm others'],
+      'Earth Dragon': ['May be too conservative', 'Can resist innovation', 'Tendency to be rigid'],
+      'Metal Dragon': ['Can be too controlling', 'May lack flexibility', 'Tendency to be overly structured'],
+      'Water Dragon': ['May lack clear direction', 'Can be indecisive', 'Tendency to flow without focus'],
+      
+      'Wood Snake': ['Can be too idealistic', 'May overthink decisions', 'Tendency to miss opportunities'],
+      'Fire Snake': ['Can be too intense', 'May burn out from passion', 'Tendency to be secretive'],
+      'Earth Snake': ['May be too conservative', 'Can resist new ideas', 'Tendency to be rigid'],
+      'Metal Snake': ['Can be too analytical', 'May overthink everything', 'Tendency to be critical'],
+      'Water Snake': ['Can be too mysterious', 'May lack direction', 'Tendency to be indecisive'],
+      
+      'Wood Horse': ['Can lack focus', 'May overextend energy', 'Tendency to start too many things'],
+      'Fire Horse': ['Can burn out quickly', 'May be too impulsive', 'Tendency to lack patience'],
+      'Earth Horse': ['May lack adventure', 'Can be too cautious', 'Tendency to resist freedom'],
+      'Metal Horse': ['Can be too focused', 'May lack spontaneity', 'Tendency to be rigid'],
+      'Water Horse': ['Can lack direction', 'May be too flexible', 'Tendency to flow without purpose'],
+      
+      'Wood Goat': ['Can be too idealistic', 'May avoid conflict', 'Tendency to overextend creatively'],
+      'Fire Goat': ['Can be too emotional', 'May burn out from intensity', 'Tendency to be moody'],
+      'Earth Goat': ['May be too passive', 'Can avoid confrontation', 'Tendency to be overly cautious'],
+      'Metal Goat': ['Can be too critical', 'May lack spontaneity', 'Tendency to overthink'],
+      'Water Goat': ['Can be too sensitive', 'May lack direction', 'Tendency to be indecisive'],
+      
+      'Wood Monkey': ['Can lack focus', 'May overextend intelligence', 'Tendency to start too many projects'],
+      'Fire Monkey': ['Can burn out from energy', 'May be too impulsive', 'Tendency to lack discipline'],
+      'Earth Monkey': ['May be too practical', 'Can lack creativity', 'Tendency to be rigid'],
+      'Metal Monkey': ['Can be too analytical', 'May lack playfulness', 'Tendency to overthink'],
+      'Water Monkey': ['Can lack direction', 'May be too flexible', 'Tendency to flow without purpose'],
+      
+      'Wood Rooster': ['Can be too idealistic', 'May overextend perfectionism', 'Tendency to start too many projects'],
+      'Fire Rooster': ['Can burn out from intensity', 'May be too critical', 'Tendency to overwhelm others'],
+      'Earth Rooster': ['May be too conservative', 'Can resist innovation', 'Tendency to be rigid'],
+      'Metal Rooster': ['Can be overly critical', 'May lack flexibility', 'Tendency to be too rigid'],
+      'Water Rooster': ['Can be indecisive', 'May lack clear standards', 'Tendency to flow without focus'],
+      
+      'Wood Dog': ['Can be too idealistic', 'May overextend loyalty', 'Tendency to worry excessively'],
+      'Fire Dog': ['Can burn out from intensity', 'May be too protective', 'Tendency to overwhelm'],
+      'Earth Dog': ['May be too conservative', 'Can resist change', 'Tendency to be pessimistic'],
+      'Metal Dog': ['Can be too rigid', 'May lack emotional flexibility', 'Tendency to be overly structured'],
+      'Water Dog': ['Can be too emotional', 'May lack direction', 'Tendency to worry excessively'],
+      
+      'Wood Pig': ['Can be too trusting', 'May overextend generosity', 'Tendency to be naive'],
+      'Fire Pig': ['Can burn out from giving', 'May be too intense', 'Tendency to overwhelm'],
+      'Earth Pig': ['May be too materialistic', 'Can resist change', 'Tendency to be overly cautious'],
+      'Metal Pig': ['Can be too organized', 'May lack spontaneity', 'Tendency to overthink giving'],
+      'Water Pig': ['Can be too trusting', 'May lack direction', 'Tendency to be indecisive']
+    }
+    
+    return synthesis[combination] || [
+      `May struggle with ${animalData.weaknesses[0].toLowerCase()}`,
+      `Can be affected by ${elementData.challenges[0].toLowerCase()}`,
+      `Tendency toward ${animalData.weaknesses[1]?.toLowerCase() || 'imbalance'}`
+    ]
+  }
   
   return {
     combination,
     description: descriptions[combination] || defaultDescription,
     personality: descriptions[combination] ? descriptions[combination] : `This ${combination} individual combines ${elementData.personality.toLowerCase()} with ${animalData.personality.toLowerCase()}`,
     traits: [...new Set([...elementData.characteristics, ...animalData.traits])],
-    strengths: combinedStrengths,
-    challenges: combinedChallenges
+    strengths: synthesizeStrengths(animal, element),
+    challenges: synthesizeChallenges(animal, element)
   }
 }
