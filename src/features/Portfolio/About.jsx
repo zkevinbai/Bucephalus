@@ -6,19 +6,8 @@ export default function About() {
         dangerouslySetInnerHTML={{
           __html: `
             <p class="mb-6">
-              I know three things: <strong>Forward Deployed Engineering</strong>, <strong>Solving Enterprise Business Problems</strong>, and <strong>International Relations</strong>.
-            </p>
-            
-            <p class="mb-6">
               I am a <strong>William Jefferson Clinton Presidential Scholar</strong> who has studied at <strong>University of California Berkeley</strong>, <strong>Oxford University</strong>, and <strong>American University in Dubai</strong>.
             </p>
-
-            <div class="flex gap-3 items-start mb-6">
-              <span class="text-2xl leading-none shrink-0">🚀</span>
-              <p class="m-0">
-                My main focus is leveraging technology to solve <strong>enterprise problems</strong> at the <strong>local, regional, and global level</strong>. <strong>Technology is the means, not the goal</strong>.
-              </p>
-            </div>
 
             <div class="flex gap-3 items-start mb-6">
               <span class="text-2xl leading-none shrink-0">🧠</span>
@@ -31,6 +20,13 @@ export default function About() {
               <span class="text-2xl leading-none shrink-0">🌎</span>
               <p class="m-0">
                 I've lived and worked across <strong>North America</strong>, <strong>Europe</strong>, <strong>the Middle East</strong>, <strong>East Asia</strong>, <strong>Southeast Asia</strong>, and <strong>South America</strong>, and speak the <strong>six official languages of the United Nations</strong>.
+              </p>
+            </div>
+
+            <div class="flex gap-3 items-start mb-6">
+              <span class="text-2xl leading-none shrink-0">💼</span>
+              <p class="m-0">
+                I currently work as a <strong>Founding Forward Deployed Engineer</strong> at <strong>Rippling</strong>, helping build the FDE function and solve enterprise problems for our largest customers. I'm also an <strong>avid public speaker</strong> at various events around the <strong>FDE space</strong>.
               </p>
             </div>
 
