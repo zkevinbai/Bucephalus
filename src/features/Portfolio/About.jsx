@@ -6,29 +6,20 @@ export default function About() {
         dangerouslySetInnerHTML={{
           __html: `
             <p class="mb-6">
+              I currently work as a <strong>Founding Forward Deployed Engineer</strong> at <strong>Rippling</strong>, helping build the FDE function and solve enterprise problems for our largest customers. I'm also an <strong>avid public speaker</strong> at various events around the <strong>FDE space</strong>.
+            </p>
+
+            <p class="mb-6">
               I am a <strong>William Jefferson Clinton Presidential Scholar</strong> who has studied at <strong>University of California Berkeley</strong>, <strong>Oxford University</strong>, and <strong>American University in Dubai</strong>.
             </p>
 
-            <div class="flex gap-3 items-start mb-6">
-              <span class="text-2xl leading-none shrink-0">🧠</span>
-              <p class="m-0">
-                My background spans <strong>diplomacy</strong>, <strong>sales</strong>, <strong>business development</strong>, <strong>product management</strong>, <strong>customer success</strong>, <strong>software engineering</strong>, and <strong>forward deployed engineering</strong>—which brings them all together. I build <strong>full-stack applications</strong> with <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>React</strong>, and <strong>Python</strong>. I love new opportunities and I learn quickly.
-              </p>
-            </div>
+            <p class="mb-6">
+              My background spans <strong>diplomacy</strong>, <strong>sales</strong>, <strong>business development</strong>, <strong>product management</strong>, <strong>customer success</strong>, <strong>software engineering</strong>, and <strong>forward deployed engineering</strong>—which brings them all together. I build <strong>full-stack applications</strong> with <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>React</strong>, and <strong>Python</strong>. I love new opportunities and I learn quickly.
+            </p>
 
-            <div class="flex gap-3 items-start mb-6">
-              <span class="text-2xl leading-none shrink-0">🌎</span>
-              <p class="m-0">
-                I've lived and worked across <strong>North America</strong>, <strong>Europe</strong>, <strong>the Middle East</strong>, <strong>East Asia</strong>, <strong>Southeast Asia</strong>, and <strong>South America</strong>, and speak the <strong>six official languages of the United Nations</strong>.
-              </p>
-            </div>
-
-            <div class="flex gap-3 items-start mb-6">
-              <span class="text-2xl leading-none shrink-0">💼</span>
-              <p class="m-0">
-                I currently work as a <strong>Founding Forward Deployed Engineer</strong> at <strong>Rippling</strong>, helping build the FDE function and solve enterprise problems for our largest customers. I'm also an <strong>avid public speaker</strong> at various events around the <strong>FDE space</strong>.
-              </p>
-            </div>
+            <p class="mb-6">
+              I've lived and worked across <strong>North America</strong>, <strong>Europe</strong>, <strong>the Middle East</strong>, <strong>East Asia</strong>, <strong>Southeast Asia</strong>, and <strong>South America</strong>, and speak the <strong>six official languages of the United Nations</strong>.
+            </p>
 
             <div class="mt-8 pt-6 border-t-2 border-[#ef4444]">
               <p class="mb-4 text-center text-sm text-gray-600">
