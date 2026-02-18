@@ -80,3 +80,25 @@ export function generateYearRange(startYear, endYear) {
 export function isValidYear(year, minYear = 1900, maxYear = 2100) {
   return Number.isInteger(year) && year >= minYear && year <= maxYear
 }
+
+/**
+ * Find a year that matches the given animal and element combination
+ * @param {string} animal - Animal name (case-insensitive)
+ * @param {string} element - Element name (case-insensitive)
+ * @param {number} startYear - Start year to search from (default: 1900)
+ * @param {number} endYear - End year to search to (default: 2100)
+ * @returns {number|null} Year that matches, or null if not found
+ */
+export function findYearByCombination(animal, element, startYear = 1900, endYear = 2100) {
+  const normalizedAnimal = animal.charAt(0).toUpperCase() + animal.slice(1).toLowerCase()
+  const normalizedElement = element.charAt(0).toUpperCase() + element.slice(1).toLowerCase()
+  
+  for (let year = startYear; year <= endYear; year++) {
+    const zodiac = getZodiacForYear(year)
+    if (zodiac.animal === normalizedAnimal && zodiac.element === normalizedElement) {
+      return year
+    }
+  }
+  
+  return null
+}

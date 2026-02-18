@@ -1,12 +1,14 @@
-import { useState } from 'react'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import Grid from '../Portfolio/Grid'
 import GridBox from '../Portfolio/GridBox'
 import YearSearch from './YearSearch'
 import YearTable from './YearTable'
 import YearDetail from './YearDetail'
+import { isValidYear, findYearByCombination } from './zodiacUtils'
 
 export default function ChineseZodiac() {
+  const [searchParams, setSearchParams] = useSearchParams()
   const [selectedYear, setSelectedYear] = useState(null)
 
   // Scroll to top when component mounts
@@ -14,12 +16,49 @@ export default function ChineseZodiac() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
 
+  // Read URL parameters on mount and when they change
+  useEffect(() => {
+    const yearParam = searchParams.get('year')
+    const animalParam = searchParams.get('animal')
+    const elementParam = searchParams.get('element')
+
+    // Priority: year > animal+element
+    if (yearParam) {
+      const year = parseInt(yearParam, 10)
+      if (isValidYear(year)) {
+        setSelectedYear(year)
+        return
+      }
+    }
+
+    // If animal and element are provided, find a matching year
+    if (animalParam && elementParam) {
+      const matchingYear = findYearByCombination(animalParam, elementParam)
+      
+      if (matchingYear !== null) {
+        setSelectedYear(matchingYear)
+        // Update URL to use year instead of animal+element for cleaner URL
+        setSearchParams({ year: matchingYear.toString() }, { replace: true })
+        return
+      }
+    }
+
+    // If no valid params, clear selection
+    if (!yearParam && !animalParam && !elementParam) {
+      setSelectedYear(null)
+    }
+  }, [searchParams, setSearchParams])
+
   const handleYearSelect = (year) => {
     setSelectedYear(year)
+    // Update URL with year parameter
+    setSearchParams({ year: year.toString() }, { replace: true })
   }
 
   const handleBackToTable = () => {
     setSelectedYear(null)
+    // Clear URL parameters when going back
+    setSearchParams({}, { replace: true })
   }
 
   if (selectedYear) {
