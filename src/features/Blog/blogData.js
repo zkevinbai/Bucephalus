@@ -1,6 +1,67 @@
 // Blog posts data
 export const blogPosts = [
   {
+    id: 'mcps-replacing-postman-curl',
+    slug: 'mcps-replacing-postman-curl',
+    title: 'MCPs Are Quietly Replacing Postman and curl',
+    author: 'Kevin Bai',
+    date: '15 January 2025',
+    readTime: '3 min read',
+    category: 'Technology',
+    excerpt: 'MCPs are quietly replacing Postman and curl—and most people haven\'t noticed yet. Agentic tools just gave users a shorter path to what they actually want.',
+    content: `
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        MCPs are quietly replacing Postman and curl—and most people haven't noticed yet.
+      </p>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        For me, this is already true.
+      </p>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
+        Any system with an API I expect to interact with more than once, my default move is to build an MCP around it. Not a script. Not a collection. An MCP.
+      </p>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        Once it exists, I can query records, perform simple CRUD operations, explore edge cases, and debug state with minimal prompting and zero bespoke scripting. That workflow makes tools like Postman and curl feel increasingly obsolete. They assume the human is the execution engine. MCPs assume the human provides intent—and the system handles the rest.
+      </p>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
+        This isn't traditional competition. Agentic tools just gave users a shorter path to what they actually want.
+      </p>
+      
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">The Bypass, Not the Battle</h2>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        That's why this shift will look less like disruption and more like abandonment.
+      </p>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
+        Chegg and Stack Overflow weren't defeated by better competitors. They were bypassed by users who found easier paths to outcomes. The same dynamic is starting to play out here.
+      </p>
+      
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">The Path Forward</h2>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        This doesn't mean Postman is dead. Stack Overflow found a very real future in a post-agentic world, and there's a strong chance Postman can too.
+      </p>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        But that path isn't guaranteed—and it's theirs to choose.
+      </p>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
+        Users won't revolt. They'll just stop opening the app.
+      </p>
+      
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8 mt-8 pt-6 border-t border-gray-200">
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7421319388185767936/?originTrackingId=a8USAghJnEtCpUwfxusp7w%3D%3D" target="_blank" rel="noopener noreferrer" class="text-[#ef4444] hover:text-[#dc2626] underline transition-colors duration-200">
+          View on LinkedIn →
+        </a>
+      </p>
+    `,
+  },
+  {
     id: 'what-it-means-to-be-fde',
     slug: 'what-it-means-to-be-a-forward-deployed-engineer-fde',
     title: 'What It Means to Be a Forward Deployed Engineer (FDE)',
