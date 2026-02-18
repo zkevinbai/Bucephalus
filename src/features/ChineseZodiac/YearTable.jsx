@@ -58,14 +58,24 @@ export default function YearTable({ onYearSelect }) {
                 <input
                   type="number"
                   value={startYear}
-                  onChange={(e) => setStartYear(parseInt(e.target.value) || 1984)}
+                  onChange={(e) => {
+                    const value = parseInt(e.target.value)
+                    if (!isNaN(value)) {
+                      setStartYear(value)
+                    }
+                  }}
                   className="w-24 px-2 py-1.5 bg-white border border-gray-200 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(239,68,68,0.6)] transition-all duration-300"
                 />
                 <span className="text-gray-500">-</span>
                 <input
                   type="number"
                   value={endYear}
-                  onChange={(e) => setEndYear(parseInt(e.target.value) || 2026)}
+                  onChange={(e) => {
+                    const value = parseInt(e.target.value)
+                    if (!isNaN(value)) {
+                      setEndYear(value)
+                    }
+                  }}
                   className="w-24 px-2 py-1.5 bg-white border border-gray-200 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(239,68,68,0.6)] transition-all duration-300"
                 />
               </div>
