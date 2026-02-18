@@ -258,10 +258,18 @@ export function getCombinedMeaning(animal, element) {
   const combination = `${element} ${animal}`
   const defaultDescription = `The ${combination} combines the ${element.toLowerCase()} element's ${elementData.characteristics[0]} and ${elementData.characteristics[1]} with the ${animal.toLowerCase()}'s ${animalData.traits[0]} and ${animalData.traits[1]} nature. This creates a unique blend of ${elementData.personality.split('.')[0].toLowerCase()} and ${animalData.personality.split('.')[0].toLowerCase()}.`
   
+  // Combine strengths from both animal and element
+  const combinedStrengths = [...new Set([...animalData.strengths, ...elementData.strengths])]
+  
+  // Combine challenges/weaknesses from both animal and element
+  const combinedChallenges = [...new Set([...animalData.weaknesses, ...elementData.challenges])]
+  
   return {
     combination,
     description: descriptions[combination] || defaultDescription,
     personality: descriptions[combination] ? descriptions[combination] : `This ${combination} individual combines ${elementData.personality.toLowerCase()} with ${animalData.personality.toLowerCase()}`,
-    traits: [...new Set([...elementData.characteristics, ...animalData.traits])]
+    traits: [...new Set([...elementData.characteristics, ...animalData.traits])],
+    strengths: combinedStrengths,
+    challenges: combinedChallenges
   }
 }

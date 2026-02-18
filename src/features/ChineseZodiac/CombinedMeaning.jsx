@@ -46,6 +46,46 @@ export default function CombinedMeaning({ combination, combined }) {
             </div>
           </div>
         )}
+
+        {/* Strengths */}
+        {combined.strengths && combined.strengths.length > 0 && (
+          <div>
+            <h3 className="font-raleway text-lg font-semibold text-gray-800 m-0 mb-2 max-[950px]:text-base">
+              Strengths
+            </h3>
+            <ul className="list-none m-0 p-0 flex flex-col gap-2">
+              {combined.strengths.map((strength, index) => (
+                <li
+                  key={index}
+                  className="flex items-start gap-2 font-raleway text-sm font-light text-gray-700 max-[950px]:text-xs"
+                >
+                  <span className="text-gray-400 mt-1">•</span>
+                  <span>{strength}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Challenges */}
+        {combined.challenges && combined.challenges.length > 0 && (
+          <div>
+            <h3 className="font-raleway text-lg font-semibold text-gray-800 m-0 mb-2 max-[950px]:text-base">
+              Challenges
+            </h3>
+            <ul className="list-none m-0 p-0 flex flex-col gap-2">
+              {combined.challenges.map((challenge, index) => (
+                <li
+                  key={index}
+                  className="flex items-start gap-2 font-raleway text-sm font-light text-gray-700 max-[950px]:text-xs"
+                >
+                  <span className="text-gray-400 mt-1">•</span>
+                  <span>{challenge}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   )
