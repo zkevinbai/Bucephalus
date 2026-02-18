@@ -149,15 +149,12 @@ export default function YearTable({ onYearSelect }) {
                 <th className="px-4 py-3 text-left font-raleway text-sm font-semibold text-gray-800 max-[950px]:px-2 max-[950px]:py-2 max-[950px]:text-xs">
                   Element
                 </th>
-                <th className="px-4 py-3 text-left font-raleway text-sm font-semibold text-gray-800 max-[950px]:px-2 max-[950px]:py-2 max-[950px]:text-xs">
-                  Combination
-                </th>
               </tr>
             </thead>
             <tbody>
               {filteredData.length === 0 ? (
                 <tr>
-                  <td colSpan="4" className="px-4 py-8 text-center font-raleway text-sm text-gray-600">
+                  <td colSpan="3" className="px-4 py-8 text-center font-raleway text-sm text-gray-600">
                     No years found matching your filters
                   </td>
                 </tr>
@@ -184,9 +181,6 @@ export default function YearTable({ onYearSelect }) {
                           <span className="text-lg max-[950px]:text-base">{ELEMENT_DATA[item.element]?.emoji || ''}</span>
                           <span>{item.element}</span>
                         </div>
-                      </td>
-                      <td className="px-4 py-3 font-raleway text-sm font-medium text-gray-800 max-[950px]:px-2 max-[950px]:py-2 max-[950px]:text-xs">
-                        {item.combination}
                       </td>
                     </tr>
                   )
