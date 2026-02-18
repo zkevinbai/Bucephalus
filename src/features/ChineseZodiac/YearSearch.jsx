@@ -17,7 +17,7 @@ export default function YearSearch({ onYearSelect }) {
     }
 
     if (!isValidYear(year)) {
-      setError('Year must be between 1900 and 2100')
+      setError('Please enter a valid year')
       return
     }
 
@@ -33,9 +33,7 @@ export default function YearSearch({ onYearSelect }) {
           type="number"
           value={yearInput}
           onChange={(e) => setYearInput(e.target.value)}
-          placeholder="Search year (e.g., 1990, 2000, 2024)"
-          min="1900"
-          max="2100"
+          placeholder="Search any year (e.g., 1990, 2000, 2024, 1800, 2200)"
           className="flex-1 px-4 py-2 bg-white border border-gray-200 rounded-lg font-raleway text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[rgba(239,68,68,0.6)] focus:bg-white/80 transition-all duration-300 max-[950px]:w-full"
         />
         <button

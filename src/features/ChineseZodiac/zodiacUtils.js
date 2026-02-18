@@ -71,32 +71,40 @@ export function generateYearRange(startYear, endYear) {
 }
 
 /**
- * Validate if a year is within the supported range
+ * Validate if a year is valid (any integer year is valid since zodiac cycles repeat)
  * @param {number} year - Year to validate
- * @param {number} minYear - Minimum year (default: 1900)
- * @param {number} maxYear - Maximum year (default: 2100)
- * @returns {boolean} True if valid
+ * @returns {boolean} True if valid integer
  */
-export function isValidYear(year, minYear = 1900, maxYear = 2100) {
-  return Number.isInteger(year) && year >= minYear && year <= maxYear
+export function isValidYear(year) {
+  return Number.isInteger(year)
 }
 
 /**
  * Find a year that matches the given animal and element combination
+ * Since the zodiac cycles every 60 years, we find one occurrence and can calculate all others
  * @param {string} animal - Animal name (case-insensitive)
  * @param {string} element - Element name (case-insensitive)
- * @param {number} startYear - Start year to search from (default: 1900)
- * @param {number} endYear - End year to search to (default: 2100)
+ * @param {number} preferredYear - Preferred year to return closest match to (default: 2000)
  * @returns {number|null} Year that matches, or null if not found
  */
-export function findYearByCombination(animal, element, startYear = 1900, endYear = 2100) {
+export function findYearByCombination(animal, element, preferredYear = 2000) {
   const normalizedAnimal = animal.charAt(0).toUpperCase() + animal.slice(1).toLowerCase()
   const normalizedElement = element.charAt(0).toUpperCase() + element.slice(1).toLowerCase()
   
-  for (let year = startYear; year <= endYear; year++) {
+  // Search in a reference range to find one occurrence
+  const searchStart = 1900
+  const searchEnd = 2100
+  
+  for (let year = searchStart; year <= searchEnd; year++) {
     const zodiac = getZodiacForYear(year)
     if (zodiac.animal === normalizedAnimal && zodiac.element === normalizedElement) {
-      return year
+      // Found a match - now find the closest occurrence to preferredYear
+      // Since it's a 60-year cycle, calculate the closest occurrence
+      const diff = preferredYear - year
+      const cycleOffset = ((diff % 60) + 60) % 60 // Normalize to 0-59
+      const closestYear = preferredYear - cycleOffset
+      // If we went backwards, add 60 to get the next cycle
+      return closestYear <= preferredYear ? closestYear : closestYear - 60
     }
   }
   

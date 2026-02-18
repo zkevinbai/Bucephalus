@@ -3,8 +3,8 @@ import { generateYearRange, getZodiacForYear, ELEMENTS } from './zodiacUtils'
 import { ANIMAL_DATA, ELEMENT_DATA } from './zodiacData'
 
 export default function YearTable({ onYearSelect }) {
-  const [startYear, setStartYear] = useState(1972)
-  const [endYear, setEndYear] = useState(2022)
+  const [startYear, setStartYear] = useState(1984)
+  const [endYear, setEndYear] = useState(2026)
   const [filterAnimal, setFilterAnimal] = useState('')
   const [filterElement, setFilterElement] = useState('')
   const [searchTerm, setSearchTerm] = useState('')
@@ -58,18 +58,14 @@ export default function YearTable({ onYearSelect }) {
                 <input
                   type="number"
                   value={startYear}
-                  onChange={(e) => setStartYear(parseInt(e.target.value) || 1900)}
-                  min="1900"
-                  max="2100"
+                  onChange={(e) => setStartYear(parseInt(e.target.value) || 1984)}
                   className="w-24 px-2 py-1.5 bg-white border border-gray-200 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(239,68,68,0.6)] transition-all duration-300"
                 />
                 <span className="text-gray-500">-</span>
                 <input
                   type="number"
                   value={endYear}
-                  onChange={(e) => setEndYear(parseInt(e.target.value) || 2100)}
-                  min="1900"
-                  max="2100"
+                  onChange={(e) => setEndYear(parseInt(e.target.value) || 2026)}
                   className="w-24 px-2 py-1.5 bg-white border border-gray-200 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(239,68,68,0.6)] transition-all duration-300"
                 />
               </div>

@@ -22,15 +22,11 @@ export default function YearDetail({ year, onBack, onYearSelect }) {
   }, [year])
 
   const handlePreviousYear = () => {
-    if (year > 1900) {
-      onYearSelect(year - 1)
-    }
+    onYearSelect(year - 1)
   }
 
   const handleNextYear = () => {
-    if (year < 2100) {
-      onYearSelect(year + 1)
-    }
+    onYearSelect(year + 1)
   }
 
   return (
@@ -48,15 +44,13 @@ export default function YearDetail({ year, onBack, onYearSelect }) {
             <div className="flex items-center gap-3">
               <button
                 onClick={handlePreviousYear}
-                disabled={year <= 1900}
-                className="px-4 py-2 bg-white border border-gray-200 rounded-lg font-raleway font-medium text-gray-800 hover:bg-white/80 hover:border-[rgba(239,68,68,0.6)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed max-[950px]:px-3 max-[950px]:py-1.5 max-[950px]:text-sm"
+                className="px-4 py-2 bg-white border border-gray-200 rounded-lg font-raleway font-medium text-gray-800 hover:bg-white/80 hover:border-[rgba(239,68,68,0.6)] transition-all duration-300 max-[950px]:px-3 max-[950px]:py-1.5 max-[950px]:text-sm"
               >
                 ← {year - 1}
               </button>
               <button
                 onClick={handleNextYear}
-                disabled={year >= 2100}
-                className="px-4 py-2 bg-white border border-gray-200 rounded-lg font-raleway font-medium text-gray-800 hover:bg-white/80 hover:border-[rgba(239,68,68,0.6)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed max-[950px]:px-3 max-[950px]:py-1.5 max-[950px]:text-sm"
+                className="px-4 py-2 bg-white border border-gray-200 rounded-lg font-raleway font-medium text-gray-800 hover:bg-white/80 hover:border-[rgba(239,68,68,0.6)] transition-all duration-300 max-[950px]:px-3 max-[950px]:py-1.5 max-[950px]:text-sm"
               >
                 {year + 1} →
               </button>

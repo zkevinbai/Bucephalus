@@ -65,7 +65,7 @@ AnimalInfo / ElementInfo / CombinedMeaning (displays details)
 **Purpose**: Input component for searching by year.
 
 **Features**:
-- Number input with validation (1900-2100)
+- Number input with validation (supports any year - zodiac cycles repeat every 60 years)
 - Error messages for invalid input
 - Direct navigation to detail view on search
 
@@ -160,7 +160,7 @@ ANIMAL_DATA = {
 - `getElementForYear(year)`: Calculate element for a given year
 - `getZodiacForYear(year)`: Get both animal and element for a year
 - `generateYearRange(start, end)`: Generate zodiac data for year range
-- `isValidYear(year)`: Validate year is in supported range (1900-2100)
+- `isValidYear(year)`: Validate year is a valid integer (supports any year since zodiac cycles repeat)
 - `findYearByCombination(animal, element)`: Find a year matching animal+element combination
 
 **Constants**:
@@ -181,7 +181,7 @@ ANIMAL_DATA = {
    ```
    /zodiac?animal=rat&element=fire
    ```
-   Finds the first matching year (1900-2100) for the combination and redirects to year-based URL.
+   Finds a matching year for the combination (works for any year since zodiac cycles repeat every 60 years) and redirects to year-based URL.
 
 3. **Table view**:
    ```
@@ -229,7 +229,7 @@ URL parameters are used for:
 ### Search Flow
 
 1. User enters year in search box
-2. Validation checks year range (1900-2100)
+2. Validation checks year is a valid integer (any year is supported)
 3. On submit, `handleYearSelect(year)` is called
 4. URL updates with `?year=X`
 5. `YearDetail` component renders
@@ -309,7 +309,7 @@ When adding or modifying features:
 3. **Validation**: Test year input validation
 4. **Filtering**: Test table filtering works correctly
 5. **Responsive**: Test on mobile, tablet, desktop
-6. **Edge cases**: Test boundary years (1900, 2100)
+6. **Edge cases**: Test various years including historical (e.g., 1800, 1500) and future (e.g., 2200, 2500) - all should work since cycles repeat
 7. **Invalid inputs**: Test invalid year/animal/element combinations
 
 ## Dependencies
