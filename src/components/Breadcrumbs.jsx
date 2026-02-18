@@ -4,8 +4,9 @@ export default function Breadcrumbs() {
   const location = useLocation()
   const pathnames = location.pathname.split('/').filter((x) => x)
 
-  // Don't show breadcrumbs on home page
-  if (pathnames.length === 0) {
+  // Don't show breadcrumbs on home page or top-level routes (already in header navigation)
+  // Only show for nested routes like /blog/:slug
+  if (pathnames.length === 0 || pathnames.length === 1) {
     return null
   }
 
@@ -19,7 +20,7 @@ export default function Breadcrumbs() {
   }
 
   return (
-    <nav className="px-4 md:px-6 lg:px-8 py-3 bg-white border-b-2 border-[#ef4444]">
+    <nav className="fixed top-16 left-0 right-0 z-40 px-4 md:px-6 lg:px-8 py-3 bg-white border-b-2 border-[#ef4444]">
       <div className="flex items-center gap-2 text-sm text-gray-600 font-raleway">
         <Link
           to="/"
