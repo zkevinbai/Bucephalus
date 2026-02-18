@@ -3,26 +3,32 @@ import { useState, useEffect } from 'react'
 import Portfolio from './features/Portfolio/Portfolio'
 import AllBlogs from './features/Blog/AllBlogs'
 import SingleBlog from './features/Blog/SingleBlog'
+import ChineseZodiac from './features/ChineseZodiac/ChineseZodiac'
 
 function Cube3DWrapper() {
   const location = useLocation()
   const navigate = useNavigate()
   
-  // Determine current view - check if we're on blog list (not single blog post)
-  const isBlogList = location.pathname === '/blog'
-  const [isBlog, setIsBlog] = useState(isBlogList)
+  // Determine current view based on pathname
+  const getViewFromPath = (pathname) => {
+    if (pathname === '/blog') return 'blog'
+    if (pathname === '/zodiac') return 'zodiac'
+    return 'portfolio'
+  }
+  
+  const [currentView, setCurrentView] = useState(getViewFromPath(location.pathname))
   const [isScrolled, setIsScrolled] = useState(false)
   
   // Sync state with route changes
   useEffect(() => {
-    setIsBlog(isBlogList)
-  }, [isBlogList])
+    setCurrentView(getViewFromPath(location.pathname))
+  }, [location.pathname])
   
   // Scroll to top when switching between apps
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
     setIsScrolled(false)
-  }, [isBlog])
+  }, [currentView])
   
   // Detect scroll position to minimize button
   useEffect(() => {
@@ -36,27 +42,36 @@ function Cube3DWrapper() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
   
-  const handleToggle = () => {
-    const newIsBlog = !isBlog
-    setIsBlog(newIsBlog)
+  const handleViewChange = (newView) => {
+    setCurrentView(newView)
     
     // Scroll to top immediately
     window.scrollTo({ top: 0, behavior: 'smooth' })
     
     // Navigate
-    if (newIsBlog) {
+    if (newView === 'blog') {
       navigate('/blog')
+    } else if (newView === 'zodiac') {
+      navigate('/zodiac')
     } else {
       navigate('/')
     }
   }
   
+  // Calculate rotation angle: 0deg (Portfolio), 120deg (Blog), 240deg (Zodiac)
+  const rotationAngles = {
+    portfolio: 0,
+    blog: 120,
+    zodiac: 240
+  }
+  
+  const rotationAngle = rotationAngles[currentView] || 0
+  
   return (
     <div className="relative w-screen">
-      {/* Toggle Button - Upper Right */}
-      <button
-        onClick={handleToggle}
-        className={`fixed z-50 inline-flex items-center gap-2 bg-white/40 border border-gray-300/40 rounded-lg text-gray-800 font-raleway font-medium shadow-md hover:bg-white/60 hover:border-gray-400/60 hover:text-gray-900 hover:-translate-y-[1px] hover:shadow-lg transition-all duration-300 backdrop-blur-sm group ${
+      {/* View Selector - Upper Right */}
+      <div
+        className={`fixed z-50 inline-flex items-center gap-2 bg-white/40 border border-gray-300/40 rounded-lg text-gray-800 font-raleway font-medium shadow-md hover:bg-white/60 hover:border-gray-400/60 hover:text-gray-900 hover:-translate-y-[1px] hover:shadow-lg transition-all duration-300 backdrop-blur-sm ${
           isScrolled 
             ? 'px-3 py-2 text-xs' 
             : 'px-5 py-3 text-sm'
@@ -66,54 +81,40 @@ function Cube3DWrapper() {
           top: 'calc(1rem + env(safe-area-inset-top, 0px))',
           right: 'calc(1rem + env(safe-area-inset-right, 0px))',
         }}
-        title={isBlog ? 'Switch to Portfolio' : 'Switch to Blog'}
       >
-        <span className="text-base transition-transform duration-500 group-hover:rotate-180">🔄</span>
-        {!isScrolled && <span>{isBlog ? 'Portfolio' : 'Blog'}</span>}
-      </button>
+        {!isScrolled ? (
+          <select
+            value={currentView}
+            onChange={(e) => handleViewChange(e.target.value)}
+            className="bg-transparent border-none outline-none font-raleway font-medium text-gray-800 cursor-pointer appearance-none pr-6"
+            style={{
+              backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'12\' viewBox=\'0 0 12 12\'%3E%3Cpath fill=\'%23333\' d=\'M6 9L1 4h10z\'/%3E%3C/svg%3E")',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'right center',
+              backgroundSize: '10px'
+            }}
+          >
+            <option value="portfolio">Portfolio</option>
+            <option value="blog">Blog</option>
+            <option value="zodiac">Zodiac</option>
+          </select>
+        ) : (
+          <button
+            onClick={() => handleViewChange(currentView === 'portfolio' ? 'blog' : currentView === 'blog' ? 'zodiac' : 'portfolio')}
+            className="flex items-center gap-1"
+            title={`Switch view (Current: ${currentView})`}
+          >
+            <span className="text-base transition-transform duration-500">🔄</span>
+          </button>
+        )}
+      </div>
       
-      {/* 3D Cube Container */}
-      <div 
-        className="w-full"
-        style={{
-          perspective: '1500px',
-          perspectiveOrigin: '50% 50%'
-        }}
-      >
-        <div
-          className="relative w-full"
-          style={{
-            transformStyle: 'preserve-3d',
-            transform: `rotateY(${isBlog ? 180 : 0}deg)`,
-            transition: 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
-          }}
-        >
-          {/* Front Face - Portfolio */}
-          <div
-            className="absolute w-full"
-            style={{
-              transform: 'rotateY(0deg) translateZ(0px)',
-              backfaceVisibility: 'hidden',
-              WebkitBackfaceVisibility: 'hidden',
-              pointerEvents: isBlog ? 'none' : 'auto',
-            }}
-          >
-            <Portfolio />
-          </div>
-          
-          {/* Back Face - Blog */}
-          <div
-            className="absolute w-full"
-            style={{
-              transform: 'rotateY(180deg) translateZ(0px)',
-              backfaceVisibility: 'hidden',
-              WebkitBackfaceVisibility: 'hidden',
-              pointerEvents: isBlog ? 'auto' : 'none',
-            }}
-          >
-            <AllBlogs />
-          </div>
-        </div>
+      {/* 3D Cube Container - Conditionally render only active view */}
+      <div className="w-full">
+        {/* Conditionally render only the active view */}
+        {currentView === 'portfolio' && <Portfolio />}
+        {currentView === 'blog' && <AllBlogs />}
+        {currentView === 'zodiac' && <ChineseZodiac />}
       </div>
     </div>
   )
@@ -125,6 +126,7 @@ function App() {
       <Routes>
         <Route path="/blog/:slug" element={<SingleBlog />} />
         <Route path="/blog" element={<Cube3DWrapper />} />
+        <Route path="/zodiac" element={<Cube3DWrapper />} />
         <Route path="/portfolio" element={<Cube3DWrapper />} />
         <Route path="/" element={<Cube3DWrapper />} />
         <Route path="*" element={<Navigate to="/" replace />} />
