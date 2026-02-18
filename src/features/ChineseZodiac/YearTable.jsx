@@ -3,11 +3,21 @@ import { generateYearRange, getZodiacForYear, ELEMENTS } from './zodiacUtils'
 import { ANIMAL_DATA, ELEMENT_DATA } from './zodiacData'
 
 export default function YearTable({ onYearSelect }) {
-  const [startYear, setStartYear] = useState(2000)
-  const [endYear, setEndYear] = useState(2030)
+  const [startYear, setStartYear] = useState(1950)
+  const [endYear, setEndYear] = useState(2050)
   const [filterAnimal, setFilterAnimal] = useState('')
   const [filterElement, setFilterElement] = useState('')
   const [searchTerm, setSearchTerm] = useState('')
+
+  const loadMorePast = () => {
+    const newStart = Math.max(1900, startYear - 50)
+    setStartYear(newStart)
+  }
+
+  const loadMoreFuture = () => {
+    const newEnd = Math.min(2100, endYear + 50)
+    setEndYear(newEnd)
+  }
 
   // Generate year range data
   const yearData = useMemo(() => {
@@ -48,13 +58,13 @@ export default function YearTable({ onYearSelect }) {
       {/* Compact Filters - Horizontal Scrollable */}
       <div className="bg-white/50 border border-gray-300/40 rounded-xl p-4 backdrop-blur-sm">
         <div className="flex flex-col gap-3">
-          {/* Year Range - Compact */}
-          <div className="flex items-end gap-3">
-            <div className="flex flex-col gap-1 flex-1">
+          {/* Year Range - Compact with Load More */}
+          <div className="flex items-end gap-3 flex-wrap">
+            <div className="flex flex-col gap-1 flex-1 min-w-[200px]">
               <label className="font-raleway text-xs font-medium text-gray-700">
                 Year Range
               </label>
-              <div className="flex gap-2">
+              <div className="flex gap-2 items-center">
                 <input
                   type="number"
                   value={startYear}
@@ -63,7 +73,7 @@ export default function YearTable({ onYearSelect }) {
                   max="2100"
                   className="w-24 px-2 py-1.5 bg-white/60 border border-gray-300/50 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(48,127,246,0.6)] transition-all duration-300"
                 />
-                <span className="self-center text-gray-500">-</span>
+                <span className="text-gray-500">-</span>
                 <input
                   type="number"
                   value={endYear}
@@ -73,6 +83,25 @@ export default function YearTable({ onYearSelect }) {
                   className="w-24 px-2 py-1.5 bg-white/60 border border-gray-300/50 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(48,127,246,0.6)] transition-all duration-300"
                 />
               </div>
+            </div>
+            {/* Load More Buttons */}
+            <div className="flex gap-2">
+              <button
+                onClick={loadMorePast}
+                disabled={startYear <= 1900}
+                className="px-3 py-1.5 text-xs font-raleway font-medium bg-white/60 border border-gray-300/50 rounded-lg text-gray-700 hover:bg-white/80 hover:border-[rgba(48,127,246,0.6)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                title="Load 50 more years into the past"
+              >
+                ← Load Past
+              </button>
+              <button
+                onClick={loadMoreFuture}
+                disabled={endYear >= 2100}
+                className="px-3 py-1.5 text-xs font-raleway font-medium bg-white/60 border border-gray-300/50 rounded-lg text-gray-700 hover:bg-white/80 hover:border-[rgba(48,127,246,0.6)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                title="Load 50 more years into the future"
+              >
+                Load Future →
+              </button>
             </div>
             {/* Results Count */}
             <div className="text-xs font-raleway font-light text-gray-600 whitespace-nowrap">
