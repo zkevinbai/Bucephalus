@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import { generateYearRange, getZodiacForYear, ELEMENTS } from './zodiacUtils'
-import { ANIMAL_DATA } from './zodiacData'
+import { ANIMAL_DATA, ELEMENT_DATA } from './zodiacData'
 
 export default function YearTable({ onYearSelect }) {
   const [startYear, setStartYear] = useState(2000)
@@ -44,98 +44,99 @@ export default function YearTable({ onYearSelect }) {
   }
 
   return (
-    <div className="flex flex-col gap-6 p-6 w-full max-[950px]:p-4 max-[950px]:gap-4">
-      {/* Filters */}
-      <div className="flex flex-col gap-4 bg-white/50 border border-gray-300/40 rounded-xl p-4 backdrop-blur-sm">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Year Range */}
-          <div className="flex flex-col gap-2">
-            <label className="font-raleway text-sm font-medium text-gray-800">
-              Start Year
-            </label>
-            <input
-              type="number"
-              value={startYear}
-              onChange={(e) => setStartYear(parseInt(e.target.value) || 1900)}
-              min="1900"
-              max="2100"
-              className="px-3 py-2 bg-white/60 border border-gray-300/50 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(48,127,246,0.6)] transition-all duration-300"
-            />
+    <div className="flex flex-col gap-4 p-6 w-full max-[950px]:p-4 max-[950px]:gap-3">
+      {/* Compact Filters - Horizontal Scrollable */}
+      <div className="bg-white/50 border border-gray-300/40 rounded-xl p-4 backdrop-blur-sm">
+        <div className="flex flex-col gap-3">
+          {/* Year Range - Compact */}
+          <div className="flex items-end gap-3">
+            <div className="flex flex-col gap-1 flex-1">
+              <label className="font-raleway text-xs font-medium text-gray-700">
+                Year Range
+              </label>
+              <div className="flex gap-2">
+                <input
+                  type="number"
+                  value={startYear}
+                  onChange={(e) => setStartYear(parseInt(e.target.value) || 1900)}
+                  min="1900"
+                  max="2100"
+                  className="w-24 px-2 py-1.5 bg-white/60 border border-gray-300/50 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(48,127,246,0.6)] transition-all duration-300"
+                />
+                <span className="self-center text-gray-500">-</span>
+                <input
+                  type="number"
+                  value={endYear}
+                  onChange={(e) => setEndYear(parseInt(e.target.value) || 2100)}
+                  min="1900"
+                  max="2100"
+                  className="w-24 px-2 py-1.5 bg-white/60 border border-gray-300/50 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(48,127,246,0.6)] transition-all duration-300"
+                />
+              </div>
+            </div>
+            {/* Results Count */}
+            <div className="text-xs font-raleway font-light text-gray-600 whitespace-nowrap">
+              {filteredData.length} of {yearData.length} years
+            </div>
           </div>
-          <div className="flex flex-col gap-2">
-            <label className="font-raleway text-sm font-medium text-gray-800">
-              End Year
-            </label>
-            <input
-              type="number"
-              value={endYear}
-              onChange={(e) => setEndYear(parseInt(e.target.value) || 2100)}
-              min="1900"
-              max="2100"
-              className="px-3 py-2 bg-white/60 border border-gray-300/50 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(48,127,246,0.6)] transition-all duration-300"
-            />
-          </div>
-        </div>
 
-        {/* Search and Filters */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="flex flex-col gap-2">
-            <label className="font-raleway text-sm font-medium text-gray-800">
-              Search
-            </label>
-            <input
-              type="text"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Search years, animals, elements..."
-              className="px-3 py-2 bg-white/60 border border-gray-300/50 rounded-lg font-raleway text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[rgba(48,127,246,0.6)] transition-all duration-300"
-            />
+          {/* Search and Filters - Horizontal Scrollable on Mobile */}
+          <div className="overflow-x-auto -mx-2 px-2">
+            <div className="flex gap-3 min-w-max md:min-w-0 md:grid md:grid-cols-3">
+              <div className="flex flex-col gap-1 min-w-[200px] md:min-w-0">
+                <label className="font-raleway text-xs font-medium text-gray-700">
+                  Search
+                </label>
+                <input
+                  type="text"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  placeholder="Search years, animals..."
+                  className="px-3 py-1.5 bg-white/60 border border-gray-300/50 rounded-lg font-raleway text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[rgba(48,127,246,0.6)] transition-all duration-300"
+                />
+              </div>
+              <div className="flex flex-col gap-1 min-w-[180px] md:min-w-0">
+                <label className="font-raleway text-xs font-medium text-gray-700">
+                  Animal
+                </label>
+                <select
+                  value={filterAnimal}
+                  onChange={(e) => setFilterAnimal(e.target.value)}
+                  className="px-3 py-1.5 bg-white/60 border border-gray-300/50 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(48,127,246,0.6)] transition-all duration-300"
+                >
+                  <option value="">All Animals</option>
+                  {Object.keys(ANIMAL_DATA).map(animal => (
+                    <option key={animal} value={animal}>
+                      {ANIMAL_DATA[animal].emoji} {animal}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="flex flex-col gap-1 min-w-[180px] md:min-w-0">
+                <label className="font-raleway text-xs font-medium text-gray-700">
+                  Element
+                </label>
+                <select
+                  value={filterElement}
+                  onChange={(e) => setFilterElement(e.target.value)}
+                  className="px-3 py-1.5 bg-white/60 border border-gray-300/50 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(48,127,246,0.6)] transition-all duration-300"
+                >
+                  <option value="">All Elements</option>
+                  {ELEMENTS.map(element => (
+                    <option key={element} value={element}>
+                      {ELEMENT_DATA[element]?.emoji || ''} {element}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
           </div>
-          <div className="flex flex-col gap-2">
-            <label className="font-raleway text-sm font-medium text-gray-800">
-              Filter by Animal
-            </label>
-            <select
-              value={filterAnimal}
-              onChange={(e) => setFilterAnimal(e.target.value)}
-              className="px-3 py-2 bg-white/60 border border-gray-300/50 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(48,127,246,0.6)] transition-all duration-300"
-            >
-              <option value="">All Animals</option>
-              {Object.keys(ANIMAL_DATA).map(animal => (
-                <option key={animal} value={animal}>
-                  {ANIMAL_DATA[animal].emoji} {animal}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="flex flex-col gap-2">
-            <label className="font-raleway text-sm font-medium text-gray-800">
-              Filter by Element
-            </label>
-            <select
-              value={filterElement}
-              onChange={(e) => setFilterElement(e.target.value)}
-              className="px-3 py-2 bg-white/60 border border-gray-300/50 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(48,127,246,0.6)] transition-all duration-300"
-            >
-              <option value="">All Elements</option>
-              {ELEMENTS.map(element => (
-                <option key={element} value={element}>
-                  {element}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-
-        {/* Results Count */}
-        <div className="text-sm font-raleway font-light text-gray-600">
-          Showing {filteredData.length} of {yearData.length} years
         </div>
       </div>
 
-      {/* Table */}
-      <div className="bg-white/50 border border-gray-300/40 rounded-xl backdrop-blur-sm overflow-hidden">
-        <div className="overflow-x-auto">
+      {/* Table - Scrollable */}
+      <div className="bg-white/50 border border-gray-300/40 rounded-xl backdrop-blur-sm overflow-hidden flex flex-col" style={{ maxHeight: '60vh' }}>
+        <div className="overflow-x-auto overflow-y-auto flex-1">
           <table className="w-full border-collapse">
             <thead>
               <tr className="bg-white/60 border-b border-gray-300/40">
@@ -179,7 +180,10 @@ export default function YearTable({ onYearSelect }) {
                         </div>
                       </td>
                       <td className="px-4 py-3 font-raleway text-sm text-gray-700 max-[950px]:px-2 max-[950px]:py-2 max-[950px]:text-xs">
-                        {item.element}
+                        <div className="flex items-center gap-2">
+                          <span className="text-lg max-[950px]:text-base">{ELEMENT_DATA[item.element]?.emoji || ''}</span>
+                          <span>{item.element}</span>
+                        </div>
                       </td>
                       <td className="px-4 py-3 font-raleway text-sm font-medium text-gray-800 max-[950px]:px-2 max-[950px]:py-2 max-[950px]:text-xs">
                         {item.combination}
