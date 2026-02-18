@@ -53,7 +53,7 @@ export default function Skills() {
       <h2 className="text-2xl font-semibold text-gray-800 font-raleway m-0 text-center">
         Technologies and Frameworks
       </h2>
-      <div className="w-full bg-white/50 border border-gray-300/40 rounded-xl backdrop-blur-sm p-6 grid grid-cols-6 grid-rows-3 gap-4 justify-items-center items-center max-[950px]:grid-cols-3 max-[950px]:grid-rows-6 max-[950px]:p-4 max-[950px]:gap-3">
+      <div className="w-full bg-white border border-gray-200 rounded-xl shadow-md p-6 grid grid-cols-6 grid-rows-3 gap-4 justify-items-center items-center max-[950px]:grid-cols-3 max-[950px]:grid-rows-6 max-[950px]:p-4 max-[950px]:gap-3">
         {skills.map((item) => {
           const techName = typeof item === 'string' ? getTechName(item) : item.name
           
@@ -62,7 +62,7 @@ export default function Skills() {
             return (
               <div
                 key={item}
-                className="relative group text-[2.5rem] bg-white/70 border border-gray-300/50 h-16 w-16 p-2 rounded-lg grid place-content-center transition-all duration-300 hover:bg-[rgba(48,127,246,0.2)] hover:border-[rgba(48,127,246,0.6)] hover:-translate-y-1 hover:scale-110 hover:shadow-[0_6px_16px_rgba(48,127,246,0.3)] max-[950px]:text-[2rem] max-[950px]:h-14 max-[950px]:w-14 cursor-pointer"
+                className="relative group text-[2.5rem] bg-white border border-gray-200 h-16 w-16 p-2 rounded-lg grid place-content-center transition-all duration-300 hover:bg-[rgba(239,68,68,0.1)] hover:border-[#ef4444] hover:-translate-y-1 hover:scale-110 hover:shadow-[0_6px_16px_rgba(239,68,68,0.3)] max-[950px]:text-[2rem] max-[950px]:h-14 max-[950px]:w-14 cursor-pointer"
               >
                 <i className={item} />
                 <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs font-raleway font-medium px-3 py-1.5 rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50 shadow-lg">
@@ -77,7 +77,7 @@ export default function Skills() {
             return (
               <div
                 key={item.name}
-                className="relative group bg-white/70 border border-gray-300/50 h-16 w-16 max-[950px]:h-14 max-[950px]:w-14 p-2 rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-[rgba(48,127,246,0.2)] hover:border-[rgba(48,127,246,0.6)] hover:-translate-y-1 hover:scale-110 hover:shadow-[0_6px_16px_rgba(48,127,246,0.3)] cursor-pointer"
+                className="relative group bg-white border border-gray-200 h-16 w-16 max-[950px]:h-14 max-[950px]:w-14 p-2 rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-[rgba(239,68,68,0.1)] hover:border-[#ef4444] hover:-translate-y-1 hover:scale-110 hover:shadow-[0_6px_16px_rgba(239,68,68,0.3)] cursor-pointer"
               >
                 <img
                   src={item.logo}

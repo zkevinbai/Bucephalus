@@ -41,7 +41,7 @@ export default function YearDetail({ year, onBack, onYearSelect }) {
           <div className="flex items-center justify-between flex-wrap gap-4">
             <button
               onClick={onBack}
-              className="px-4 py-2 bg-white/60 border border-gray-300/50 rounded-lg font-raleway font-medium text-gray-800 hover:bg-white/80 hover:border-[rgba(48,127,246,0.6)] transition-all duration-300 max-[950px]:px-3 max-[950px]:py-1.5 max-[950px]:text-sm"
+              className="px-4 py-2 bg-white border border-gray-200 rounded-lg font-raleway font-medium text-gray-800 hover:bg-white/80 hover:border-[rgba(239,68,68,0.6)] transition-all duration-300 max-[950px]:px-3 max-[950px]:py-1.5 max-[950px]:text-sm"
             >
               ← Back
             </button>
@@ -49,14 +49,14 @@ export default function YearDetail({ year, onBack, onYearSelect }) {
               <button
                 onClick={handlePreviousYear}
                 disabled={year <= 1900}
-                className="px-4 py-2 bg-white/60 border border-gray-300/50 rounded-lg font-raleway font-medium text-gray-800 hover:bg-white/80 hover:border-[rgba(48,127,246,0.6)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed max-[950px]:px-3 max-[950px]:py-1.5 max-[950px]:text-sm"
+                className="px-4 py-2 bg-white border border-gray-200 rounded-lg font-raleway font-medium text-gray-800 hover:bg-white/80 hover:border-[rgba(239,68,68,0.6)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed max-[950px]:px-3 max-[950px]:py-1.5 max-[950px]:text-sm"
               >
                 ← {year - 1}
               </button>
               <button
                 onClick={handleNextYear}
                 disabled={year >= 2100}
-                className="px-4 py-2 bg-white/60 border border-gray-300/50 rounded-lg font-raleway font-medium text-gray-800 hover:bg-white/80 hover:border-[rgba(48,127,246,0.6)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed max-[950px]:px-3 max-[950px]:py-1.5 max-[950px]:text-sm"
+                className="px-4 py-2 bg-white border border-gray-200 rounded-lg font-raleway font-medium text-gray-800 hover:bg-white/80 hover:border-[rgba(239,68,68,0.6)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed max-[950px]:px-3 max-[950px]:py-1.5 max-[950px]:text-sm"
               >
                 {year + 1} →
               </button>

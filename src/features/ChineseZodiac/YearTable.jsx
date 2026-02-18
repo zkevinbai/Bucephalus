@@ -46,7 +46,7 @@ export default function YearTable({ onYearSelect }) {
   return (
     <div className="flex flex-col gap-4 p-6 w-full max-[950px]:p-4 max-[950px]:gap-3">
       {/* Compact Filters - Horizontal Scrollable */}
-      <div className="bg-white/50 border border-gray-300/40 rounded-xl p-4 backdrop-blur-sm">
+      <div className="bg-white border border-gray-200 rounded-xl p-4 ">
         <div className="flex flex-col gap-3">
           {/* Year Range - Compact */}
           <div className="flex items-end gap-3 flex-wrap">
@@ -61,7 +61,7 @@ export default function YearTable({ onYearSelect }) {
                   onChange={(e) => setStartYear(parseInt(e.target.value) || 1900)}
                   min="1900"
                   max="2100"
-                  className="w-24 px-2 py-1.5 bg-white/60 border border-gray-300/50 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(48,127,246,0.6)] transition-all duration-300"
+                  className="w-24 px-2 py-1.5 bg-white border border-gray-200 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(239,68,68,0.6)] transition-all duration-300"
                 />
                 <span className="text-gray-500">-</span>
                 <input
@@ -70,7 +70,7 @@ export default function YearTable({ onYearSelect }) {
                   onChange={(e) => setEndYear(parseInt(e.target.value) || 2100)}
                   min="1900"
                   max="2100"
-                  className="w-24 px-2 py-1.5 bg-white/60 border border-gray-300/50 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(48,127,246,0.6)] transition-all duration-300"
+                  className="w-24 px-2 py-1.5 bg-white border border-gray-200 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(239,68,68,0.6)] transition-all duration-300"
                 />
               </div>
             </div>
@@ -92,7 +92,7 @@ export default function YearTable({ onYearSelect }) {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   placeholder="Search years, animals..."
-                  className="px-3 py-1.5 bg-white/60 border border-gray-300/50 rounded-lg font-raleway text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[rgba(48,127,246,0.6)] transition-all duration-300"
+                  className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg font-raleway text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[rgba(239,68,68,0.6)] transition-all duration-300"
                 />
               </div>
               <div className="flex flex-col gap-1 min-w-[180px] md:min-w-0">
@@ -102,7 +102,7 @@ export default function YearTable({ onYearSelect }) {
                 <select
                   value={filterAnimal}
                   onChange={(e) => setFilterAnimal(e.target.value)}
-                  className="px-3 py-1.5 bg-white/60 border border-gray-300/50 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(48,127,246,0.6)] transition-all duration-300"
+                  className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(239,68,68,0.6)] transition-all duration-300"
                 >
                   <option value="">All Animals</option>
                   {Object.keys(ANIMAL_DATA).map(animal => (
@@ -119,7 +119,7 @@ export default function YearTable({ onYearSelect }) {
                 <select
                   value={filterElement}
                   onChange={(e) => setFilterElement(e.target.value)}
-                  className="px-3 py-1.5 bg-white/60 border border-gray-300/50 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(48,127,246,0.6)] transition-all duration-300"
+                  className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg font-raleway text-sm text-gray-800 focus:outline-none focus:border-[rgba(239,68,68,0.6)] transition-all duration-300"
                 >
                   <option value="">All Elements</option>
                   {ELEMENTS.map(element => (
@@ -135,11 +135,11 @@ export default function YearTable({ onYearSelect }) {
       </div>
 
       {/* Table - Scrollable */}
-      <div className="bg-white/50 border border-gray-300/40 rounded-xl backdrop-blur-sm overflow-hidden flex flex-col" style={{ maxHeight: '60vh' }}>
+      <div className="bg-white border border-gray-200 rounded-xl  overflow-hidden flex flex-col" style={{ maxHeight: '60vh' }}>
         <div className="overflow-x-auto overflow-y-auto flex-1">
           <table className="w-full border-collapse">
             <thead>
-              <tr className="bg-white/60 border-b border-gray-300/40">
+              <tr className="bg-white border-b border-gray-200">
                 <th className="px-4 py-3 text-left font-raleway text-sm font-semibold text-gray-800 max-[950px]:px-2 max-[950px]:py-2 max-[950px]:text-xs">
                   Year
                 </th>
@@ -165,7 +165,7 @@ export default function YearTable({ onYearSelect }) {
                     <tr
                       key={item.year}
                       onClick={() => handleYearClick(item.year)}
-                      className="border-b border-gray-300/30 hover:bg-white/70 cursor-pointer transition-colors duration-200"
+                      className="border-b border-gray-300/30 hover:bg-white cursor-pointer transition-colors duration-200"
                     >
                       <td className="px-4 py-3 font-raleway text-sm font-medium text-gray-800 max-[950px]:px-2 max-[950px]:py-2 max-[950px]:text-xs">
                         {item.year}

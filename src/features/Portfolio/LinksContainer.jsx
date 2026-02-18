@@ -32,7 +32,7 @@ export default function LinksContainer() {
           <a
             key={label}
             href={href}
-            className="flex items-center gap-2 px-5 py-3 bg-white/60 border border-gray-300/50 rounded-lg text-gray-800 font-raleway text-base font-normal no-underline transition-all duration-300 hover:bg-[rgba(48,127,246,0.2)] hover:border-[rgba(48,127,246,0.6)] hover:text-gray-900 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(48,127,246,0.3)] max-[950px]:text-sm max-[950px]:px-4 max-[950px]:py-2.5"
+            className="flex items-center gap-2 px-5 py-3 bg-white border border-gray-200 rounded-lg text-gray-800 font-raleway text-base font-normal no-underline transition-all duration-300 hover:bg-[rgba(239,68,68,0.2)] hover:border-[rgba(239,68,68,0.6)] hover:text-gray-900 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(239,68,68,0.3)] max-[950px]:text-sm max-[950px]:px-4 max-[950px]:py-2.5"
           >
             <i className={`${icon} text-lg`} />
             <span>{label}</span>

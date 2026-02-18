@@ -30,7 +30,7 @@ export default function AnimalInfo({ animal, animalData }) {
             {animalData.traits.map((trait, index) => (
               <span
                 key={index}
-                className="px-3 py-1 bg-white/60 border border-gray-300/40 rounded-md text-sm font-raleway font-light text-gray-700 max-[950px]:text-xs"
+                className="px-3 py-1 bg-white border border-gray-200 rounded-md text-sm font-raleway font-light text-gray-700 max-[950px]:text-xs"
               >
                 {trait}
               </span>

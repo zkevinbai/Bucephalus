@@ -1,81 +1,135 @@
 # Kevin's Design System
 
-A comprehensive guide to the design patterns, colors, typography, effects, and interactions used throughout the portfolio and blog.
+A comprehensive guide to the design patterns, colors, typography, effects, and interactions used throughout the portfolio and blog. Designed to embody **Fire Rat energy** - passion, energy, transformation, charisma, cleverness, quick-wittedness, resourcefulness, and adaptability.
 
 ## Table of Contents
-1. [Colors](#colors)
-2. [Typography](#typography)
-3. [Layout & Spacing](#layout--spacing)
-4. [Glass Effects (Liquid Glass)](#glass-effects-liquid-glass)
-5. [Rounded Corners](#rounded-corners)
-6. [Shadows](#shadows)
-7. [Hover Effects](#hover-effects)
-8. [Scroll-Aware Behavior](#scroll-aware-behavior)
-9. [Navigation & Scroll Management](#navigation--scroll-management)
-10. [3D Transforms](#3d-transforms)
-11. [Transitions & Animations](#transitions--animations)
-12. [Buttons & Interactive Elements](#buttons--interactive-elements)
-13. [Gradients](#gradients)
+1. [Design Philosophy: Fire Rat Energy](#design-philosophy-fire-rat-energy)
+2. [Colors](#colors)
+3. [Typography](#typography)
+4. [Layout & Spacing](#layout--spacing)
+5. [Navigation & Header](#navigation--header)
+6. [Color Blocking & Sections](#color-blocking--sections)
+7. [Cards & Containers](#cards--containers)
+8. [Rounded Corners](#rounded-corners)
+9. [Shadows](#shadows)
+10. [Hover Effects](#hover-effects)
+11. [Playful Elements](#playful-elements)
+12. [Transitions & Animations](#transitions--animations)
+13. [Buttons & Interactive Elements](#buttons--interactive-elements)
 14. [Image Preloading](#image-preloading)
 15. [Routing & URL Handling](#routing--url-handling)
 
 ---
 
+## Design Philosophy: Fire Rat Energy
+
+The design system embodies the Fire Rat's core characteristics through visual and interactive elements:
+
+- **Passion & Energy**: Bold, vibrant color blocks, dynamic typography, energetic animations
+- **Transformation**: Smooth transitions, state changes, progressive disclosure
+- **Charisma**: Playful illustrations, memorable interactions, confident messaging
+- **Clever & Quick-witted**: Smart micro-interactions, responsive feedback, intuitive navigation
+- **Resourceful & Adaptable**: Flexible layouts, responsive design, modular components
+
+### Core Design Principles
+
+1. **Bold Color Blocking**: Solid, vibrant color sections create clear visual hierarchy and energy
+2. **Modern & Sleek**: Clean lines, generous spacing, professional typography
+3. **Playful Professionalism**: Balance serious content with energetic, charismatic elements
+4. **Smooth Interactions**: All interactions are animated and provide clear feedback
+5. **Clear Navigation**: Traditional header with breadcrumbs for orientation
+6. **Mobile-First**: Responsive design that adapts gracefully across devices
+
+---
+
 ## Colors
 
-### Primary Colors
-- **Primary Blue**: `rgb(48, 127, 246)` / `#307ff6`
-  - Used for: Links, hover states, accents, shadows
-  - RGBA variants: `rgba(48,127,246,0.2)`, `rgba(48,127,246,0.25)`, `rgba(48,127,246,0.3)`, `rgba(48,127,246,0.6)`, `rgba(48,127,246,0.8)`
+### Primary Color Palette (Fire Rat Energy)
 
-### Text Colors
-- **Dark Gray (Primary)**: `text-gray-800` / `rgb(31, 41, 55)`
-- **Medium Gray**: `text-gray-700` / `rgb(55, 65, 81)`
-- **Light Gray**: `text-gray-600` / `rgb(75, 85, 99)`
-- **Lighter Gray**: `text-gray-500` / `rgb(107, 114, 128)`
+**Vibrant Blue** (Primary Accent):
+- `rgb(48, 127, 246)` / `#307ff6` - Primary blue
+- Used for: Primary buttons, links, accents, hover states
+- RGBA variants: `rgba(48,127,246,0.2)`, `rgba(48,127,246,0.3)`, `rgba(48,127,246,0.6)`, `rgba(48,127,246,0.8)`
 
-### Background Gradient
-The signature gradient used throughout the application:
-```css
-linear-gradient(
-  to bottom,
-  rgb(255,254,180),  /* Light yellow */
-  rgb(183,229,255),  /* Light blue */
-  rgb(255,210,206),  /* Light pink */
-  rgb(255,254,180)   /* Light yellow */
-)
-```
+**Light Pink/Lavender**:
+- `rgb(255, 182, 193)` / `#ffb6c1` - Soft pink
+- `rgb(230, 230, 250)` / `#e6e6fa` - Lavender
+- Used for: Section backgrounds, cards, accents
 
-### Glass Background Colors (Opacity-based)
-- **40% opacity**: `bg-white/40` - Base glass effect for cards
-- **50% opacity**: `bg-white/50` - Medium glass effect for nested cards
-- **60% opacity**: `bg-white/60` - Hover state for cards
-- **70% opacity**: `bg-white/70` - Higher emphasis cards (badges, buttons)
-- **90% opacity**: `bg-white/90` - Nearly opaque (Hero buttons)
+**Light Green**:
+- `rgb(144, 238, 144)` / `#90ee90` - Light green
+- `rgb(152, 251, 152)` / `#98fb98` - Pale green
+- Used for: Section backgrounds, tags, accents
 
-### Border Colors
-- **Light borders**: `border-gray-300/40` or `border-gray-300/50`
-- **Hover borders**: `border-gray-400/60` or `border-[rgba(48,127,246,0.6)]`
+**Light Orange/Peach**:
+- `rgb(255, 218, 185)` / `#ffdab9` - Peach
+- `rgb(255, 192, 203)` / `#ffc0cb` - Pink-orange
+- Used for: Section backgrounds, cards, playful elements
+
+**Light Beige/Cream**:
+- `rgb(255, 250, 240)` / `#fffaf0` - Floral white
+- `rgb(250, 250, 250)` / `#fafafa` - Off-white
+- Used for: Section backgrounds, cards, text blocks
+
+**Yellow** (Accent):
+- `rgb(255, 255, 0)` / `#ffff00` - Bright yellow
+- `rgb(255, 215, 0)` / `#ffd700` - Gold
+- Used for: Emojis, illustrations, highlights, playful elements
+
+**Dark Gray/Black** (Text):
+- `rgb(31, 41, 55)` / `#1f2937` - Dark gray (primary text)
+- `rgb(55, 65, 81)` / `#374151` - Medium gray
+- `rgb(75, 85, 99)` / `#4b5563` - Light gray
+- Used for: Headings, body text, navigation
+
+**White**:
+- `rgb(255, 255, 255)` / `#ffffff` - Pure white
+- Used for: Text on colored backgrounds, card backgrounds, contrast
+
+### Color Blocking Strategy
+
+Instead of gradients, use **solid color blocks** to define sections:
+- Each major section can have its own background color
+- Creates clear visual separation and energetic flow
+- Colors should contrast well with text for readability
+- Use white or light beige for text-heavy sections
+
+### Text Colors on Colored Backgrounds
+
+- **On Dark Backgrounds**: White text (`text-white`)
+- **On Light Backgrounds**: Dark gray text (`text-gray-800` or `text-gray-900`)
+- **On Colored Backgrounds**: Ensure sufficient contrast (WCAG AA minimum)
+
+### Accent Colors for Interactive Elements
+
+- **Hover States**: Use primary blue with opacity (`rgba(48,127,246,0.2)`)
+- **Active States**: Use primary blue solid (`#307ff6`)
+- **Focus States**: Use primary blue with ring (`ring-2 ring-[#307ff6]`)
 
 ---
 
 ## Typography
 
 ### Font Family
+
 - **Primary Font**: `Raleway` (`font-raleway`)
   - Sans-serif font used throughout
+  - Clean, modern, professional
   - Applied to all text elements
-- **Display Font**: `Lobster` (defined in config, available but not commonly used)
 
-### Font Sizes
-- **H1 (Page Titles)**: `text-[2.5rem]` / `text-[2.25rem]` (40px / 36px)
-- **H2 (Section Titles)**: `text-2xl` (24px)
-- **Body**: `text-base` (16px)
-- **Small**: `text-sm` (14px)
-- **Extra Small**: `text-xs` (12px)
+### Font Sizes (Impactful & Bold)
+
+- **Hero/Display**: `text-5xl` to `text-7xl` (48px - 72px) - Large, impactful headlines
+- **H1 (Page Titles)**: `text-4xl` to `text-5xl` (36px - 48px) - Major page titles
+- **H2 (Section Titles)**: `text-3xl` to `text-4xl` (30px - 36px) - Section headers
+- **H3 (Subsection Titles)**: `text-2xl` (24px) - Subsection headers
+- **Body**: `text-base` (16px) - Standard body text
+- **Small**: `text-sm` (14px) - Supporting text, metadata
+- **Extra Small**: `text-xs` (12px) - Tags, labels, fine print
 
 ### Mobile Text Sizing (Global)
-Mobile text sizing is handled **globally** via CSS in `index.css` at the `max-width: 950px` breakpoint. No need to add mobile classes to individual components:
+
+Mobile text sizing is handled **globally** via CSS in `index.css` at the `max-width: 950px` breakpoint:
 
 - **`text-base`** → Automatically becomes `text-sm` (14px) on mobile
 - **`text-lg`** → Automatically becomes `0.95rem` on mobile
@@ -90,379 +144,445 @@ Mobile text sizing is handled **globally** via CSS in `index.css` at the `max-wi
 - Layout classes (flex-col, grid-cols, etc.)
 
 ### Font Weights
-- **Bold**: `font-bold` - For titles and emphasis
-- **Semibold**: `font-semibold` - For section headers
-- **Medium**: `font-medium` - For buttons and metadata
-- **Light**: `font-light` - For body text (default)
-- **Normal**: `font-normal` - For standard text
 
-### Text Effects
-- **Gradient Text (Shimmer)**: 
+- **Bold**: `font-bold` (700) - For large headlines, strong emphasis
+- **Semibold**: `font-semibold` (600) - For section headers, important text
+- **Medium**: `font-medium` (500) - For buttons, navigation, metadata
+- **Normal**: `font-normal` (400) - For body text (default)
+- **Light**: `font-light` (300) - For subtle emphasis (use sparingly)
+
+### Typography Hierarchy
+
+**Large Headlines** (Hero sections):
+```css
+text-5xl md:text-6xl lg:text-7xl
+font-bold
+tracking-tight
+leading-tight
+```
+
+**Section Titles**:
+```css
+text-3xl md:text-4xl
+font-bold
+tracking-tight
+```
+
+**Body Text**:
   ```css
-  text-transparent 
-  bg-[linear-gradient(135deg,#1a1a3a_0%,#307ff6_50%,#1a1a3a_100%)]
-  bg-[length:200%_auto]
-  bg-clip-text
-  [-webkit-background-clip:text]
-  animate-shimmer
+text-base
+font-normal
+leading-relaxed
   ```
 
 ### Letter Spacing
-- **Tight**: `tracking-[-0.02em]` - For large titles
-- **Normal**: `tracking-[-0.01em]` - For headings
-- **Slightly loose**: `tracking-[0.01em]` - For body text
+
+- **Tight**: `tracking-tight` or `tracking-[-0.02em]` - For large titles
+- **Normal**: `tracking-normal` - For body text
+- **Slightly loose**: `tracking-wide` - For uppercase text, labels
 
 ### Line Height
-- **Tight**: `leading-tight` - For titles
-- **Relaxed**: `leading-relaxed` - For paragraphs
-- **Fixed**: `leading-[1.7]` - For body text
+
+- **Tight**: `leading-tight` - For large headlines
+- **Normal**: `leading-normal` - For standard text
+- **Relaxed**: `leading-relaxed` - For paragraphs, body text
+- **Loose**: `leading-loose` - For spacious layouts
 
 ---
 
 ## Layout & Spacing
 
 ### Grid System
+
 - **Main Grid**: 2-column on desktop (`md:grid-cols-2`), 1-column on mobile
+- **3-Column Grid**: For work/project showcases (`md:grid-cols-3`)
 - **Grid Gap**: `gap-6` (24px) - Standard spacing between grid items
 - **Responsive Gap**: `max-[950px]:gap-4` (16px) - On smaller screens
 
-### Padding
-- **Large Cards**: `p-6` (24px) - Main content areas
-- **Medium Cards**: `p-4` (16px) - Nested content
-- **Buttons (Large)**: `px-5 py-3` - Full button state
-- **Buttons (Small)**: `px-3 py-2` - Minimized button state
-- **Responsive**: `max-[950px]:p-4`, `max-[950px]:p-6`
+### Section Spacing
+
+- **Section Padding**: `py-12 md:py-16 lg:py-20` - Vertical padding for major sections
+- **Container Padding**: `px-4 md:px-6 lg:px-8` - Horizontal padding for content containers
+- **Card Padding**: `p-6` (24px) - Standard card padding
+- **Compact Cards**: `p-4` (16px) - Nested content, smaller cards
 
 ### Breakpoints
-- **Main Breakpoint**: `max-[950px]` - Mobile/tablet transition point
+
+- **Mobile**: `max-[950px]` - Mobile/tablet transition point
+- **Tablet**: `md:` (768px+) - Tablet and up
+- **Desktop**: `lg:` (1024px+) - Desktop and up
 - Uses max-width media queries for mobile-first approach
+
+### Max Width Containers
+
+- **Content Container**: `max-w-7xl mx-auto` - Main content width
+- **Narrow Content**: `max-w-4xl mx-auto` - Blog posts, focused content
+- **Wide Content**: `max-w-full` - Full-width sections
 
 ---
 
-## Glass Effects (Liquid Glass)
+## Navigation & Header
 
-The signature "liquid glass" effect combines:
-- **Semi-transparent backgrounds**: `bg-white/40` to `bg-white/70`
-- **Backdrop blur**: `backdrop-blur-sm`
-- **Subtle borders**: `border border-gray-300/40` or `border-gray-300/50`
-- **Layered opacity**: Creates depth through opacity stacking
+### Traditional Header (Desktop)
 
-### Standard Glass Card
+**Structure**:
+- Fixed or sticky header at top of page
+- Logo/brand on left
+- Navigation links in center or right
+- CTA button (e.g., "Let's Talk", "Contact") on right
+- Background: Light pink, light beige, or white with subtle border
+
+**Implementation**:
 ```css
-bg-white/40 
-border border-gray-300/40 
-rounded-xl 
-backdrop-blur-sm
+fixed top-0 left-0 right-0 z-50
+bg-white/90 backdrop-blur-sm
+border-b border-gray-200
+px-4 md:px-6 lg:px-8
+py-4
 ```
 
-### Glass Card Hover State
+**Navigation Links**:
+- Horizontal layout on desktop
+- Active state: Primary blue color or underline
+- Hover: Color transition to primary blue
+- Font: `font-medium text-base`
+
+### Hamburger Menu (Mobile)
+
+**Structure**:
+- Hamburger icon (☰) in top right or left
+- Click opens slide-out menu or dropdown
+- Menu includes all navigation links
+- Close button (×) or click outside to close
+
+**Implementation**:
 ```css
-hover:bg-white/60 
-hover:border-gray-400/60 
-hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)]
+md:hidden
+fixed top-4 right-4 z-50
+bg-white/90 backdrop-blur-sm
+rounded-lg p-3
+shadow-lg
 ```
+
+**Mobile Menu**:
+- Full-screen overlay or slide-in panel
+- Navigation links stacked vertically
+- Background: White or light beige
+- Smooth slide-in animation
+
+### Breadcrumbs
+
+**Structure**:
+- Below header, above main content
+- Shows current location: Home > Section > Page
+- Links are clickable (except current page)
+- Subtle styling, doesn't compete with main content
+
+**Implementation**:
+```css
+text-sm text-gray-600
+flex items-center gap-2
+py-2 px-4 md:px-6 lg:px-8
+bg-white/50
+```
+
+**Breadcrumb Pattern**:
+```javascript
+Home > Portfolio > Project Name
+Home > Blog > Post Title
+```
+
+---
+
+## Color Blocking & Sections
+
+### Section Background Strategy
+
+Each major section can use a **solid color block** background to create visual separation and energy:
+
+**Common Section Colors**:
+- **Hero Section**: Vibrant blue or light pink
+- **About Section**: Light beige or white
+- **Services/Features**: Alternating colors (pink, green, orange)
+- **Work/Portfolio**: Light beige or white background with colored cards
+- **Testimonials**: Vibrant blue with white/beige cards
+- **Blog/Journal**: Light beige or white
+- **CTA Section**: Vibrant blue
+- **Footer**: Dark gray or black
+
+### Full-Width Color Blocks
+
+```css
+w-full
+py-12 md:py-16 lg:py-20
+bg-[color]
+```
+
+### Alternating Section Colors
+
+Create rhythm by alternating section background colors:
+- Section 1: Light beige
+- Section 2: Light pink
+- Section 3: Light green
+- Section 4: Light orange
+- Repeat pattern
+
+---
+
+## Cards & Containers
+
+### Standard Card
+
+**Modern Card Style** (replacing glass morphism):
+```css
+bg-white
+rounded-xl
+p-6
+shadow-md
+border border-gray-200
+hover:shadow-lg
+hover:-translate-y-1
+transition-all duration-300
+```
+
+### Colored Card Variants
+
+**Pink Card**:
+```css
+bg-pink-100
+rounded-xl
+p-6
+shadow-md
+```
+
+**Green Card**:
+```css
+bg-green-100
+rounded-xl
+p-6
+shadow-md
+```
+
+**Orange Card**:
+```css
+bg-orange-100
+rounded-xl
+p-6
+shadow-md
+```
+
+### Project/Work Cards
+
+- Colored background (pink, green, orange, yellow)
+- Image or illustration
+- Title and description
+- Tags/categories
+- Hover: Lift effect, shadow increase
 
 ---
 
 ## Rounded Corners
 
-- **Large Cards**: `rounded-xl` (12px) - Primary container cards (GridBox)
-- **Medium Cards**: `rounded-lg` (8px) - Buttons, badges, skill icons
+- **Large Cards**: `rounded-xl` (12px) - Primary container cards
+- **Medium Cards**: `rounded-lg` (8px) - Buttons, badges, standard cards
 - **Small Elements**: `rounded-md` (6px) - Small badges, category tags
-- **Images**: `rounded-xl` - Photos and project images
+- **Images**: `rounded-xl` or `rounded-2xl` - Photos and project images
+- **Buttons**: `rounded-full` or `rounded-lg` - Pill-shaped or rounded buttons
 
 ### Usage Pattern
 - **Primary containers**: `rounded-xl`
-- **Interactive elements**: `rounded-lg`
-- **Badges/tags**: `rounded-md`
+- **Interactive elements**: `rounded-lg` or `rounded-full`
+- **Badges/tags**: `rounded-md` or `rounded-full`
 
 ---
 
 ## Shadows
 
 ### Standard Shadows
-- **Base**: `shadow-md` - Default shadow for buttons
+
+- **Base**: `shadow-md` - Default shadow for cards and buttons
 - **Hover**: `shadow-lg` - Enhanced shadow on hover
-- **Cards**: `hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)]` - Deep shadow on card hover
+- **Cards**: `hover:shadow-xl` - Deep shadow on card hover
 - **Colored Shadows (Blue)**: `hover:shadow-[0_6px_16px_rgba(48,127,246,0.3)]` - Interactive elements
-- **Image Shadows**: `shadow-[0_8px_24px_rgba(0,0,0,0.4)]` - Photos
+- **Image Shadows**: `shadow-[0_8px_24px_rgba(0,0,0,0.2)]` - Photos
 - **Hover Image**: `hover:shadow-[0_12px_32px_rgba(48,127,246,0.3)]` - Photos on hover
+
+### Shadow Progression
+
+```css
+shadow-sm → shadow-md → shadow-lg → shadow-xl
+```
 
 ---
 
 ## Hover Effects
 
 ### Lift Effect
+
 Buttons and cards lift on hover:
 ```css
-hover:-translate-y-[1px]
-hover:shadow-lg
-```
-Or for stronger effect:
-```css
 hover:-translate-y-1
+hover:shadow-lg
+transition-all duration-300
 ```
 
 ### Scale Effect
-Skills icons scale on hover:
+
+Icons and images scale on hover:
 ```css
 hover:scale-110
 hover:-translate-y-1
+transition-transform duration-300
 ```
 
-### Background Transition
-Cards become more opaque on hover:
+### Color Transition
+
+Interactive elements change color on hover:
 ```css
-hover:bg-white/60  (from bg-white/40)
-hover:border-gray-400/60  (from border-gray-300/40)
+hover:bg-[rgba(48,127,246,0.1)]
+hover:text-[#307ff6]
+transition-colors duration-300
 ```
 
-### Color Hover
-Interactive elements get blue tint:
+### Background Color Change
+
+Cards change background on hover:
 ```css
-hover:bg-[rgba(48,127,246,0.2)]
-hover:border-[rgba(48,127,246,0.6)]
+hover:bg-white/90
+hover:border-[#307ff6]
+transition-all duration-300
 ```
 
 ---
 
-## Scroll-Aware Behavior
+## Playful Elements
 
-Floating navigation buttons adapt based on scroll position:
+### Emojis & Illustrations
 
-### Implementation
-- **Threshold**: ~600px from top
-- **Full State**: Shows text + icon, `px-5 py-3 text-sm`
-- **Minimized State**: Icon only, `px-3 py-2 text-xs`
-- **Smooth Transition**: `transition-all duration-300`
+**Strategic Placement**:
+- Small emojis scattered throughout (not overwhelming)
+- Used to add personality and energy
+- Examples: ⭐, 😊, 🚀, 💡, ✨, 🎯
+- Size: `text-xl` to `text-2xl` (20px - 24px)
 
-### Use Cases
-- Portfolio/Blog toggle button (upper right)
-- Back to Blog button (upper left)
+**Illustration Style**:
+- Hand-drawn, playful stickers
+- Simple line art
+- Colorful, energetic
+- Used sparingly for emphasis
 
-### Pattern
-```javascript
-const [isScrolled, setIsScrolled] = useState(false)
+### Playful Typography
 
-useEffect(() => {
-  const handleScroll = () => {
-    const scrollThreshold = 600
-    setIsScrolled(window.scrollY > scrollThreshold)
-  }
-  window.addEventListener('scroll', handleScroll)
-  return () => window.removeEventListener('scroll', handleScroll)
-}, [])
-```
+**Character Replacements**:
+- Replace letters in headlines with illustrations (e.g., "O" becomes an eye icon)
+- Use emojis within text for emphasis
+- Creative spacing and sizing
 
----
+**Examples**:
+- "WORK" → "W👁RK" (eye in place of O)
+- "TOGETHER" → "TOGETH✨R" (sparkle for emphasis)
 
-## Navigation & Scroll Management
+### Decorative Elements
 
-### Scroll-to-Top on Navigation
-
-When navigating between routes (especially from detail views back to list views), components should scroll to the top on mount to ensure users start at the beginning of the new view.
-
-### Implementation Pattern
-
-**For list/landing pages** (e.g., AllBlogs):
-```javascript
-useEffect(() => {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
-}, [])
-```
-
-**For navigation from detail pages** (e.g., SingleBlog → AllBlogs):
-- The detail page navigates using `navigate('/route')`
-- The list component handles scrolling on mount via `useEffect`
-- This ensures smooth transition and consistent user experience
-
-### Use Cases
-- Navigating from single blog post back to blog listing
-- Navigating between Portfolio and Blog views (handled by 3D rotation wrapper)
-- Any detail → list navigation flow
-
-### Principles
-- **Always start at top**: Users should see the beginning of a new view
-- **Smooth scrolling**: Use `behavior: 'smooth'` for better UX
-- **Component-level handling**: Each component manages its own scroll position on mount
-
----
-
-## 3D Transforms
-
-### 3D Cube Rotation (Portfolio ↔ Blog)
-- **Perspective**: `1500px`
-- **Transform Style**: `preserve-3d`
-- **Rotation**: `rotateY(${isBlog ? 180 : 0}deg)`
-- **Transition**: `0.8s cubic-bezier(0.4, 0, 0.2, 1)`
-- **Backface Visibility**: `hidden` - Ensures only visible face is interactive
-
-### Implementation Details
-- Two faces: Portfolio (0deg) and Blog (180deg)
-- Pointer events disabled on hidden face
-- Smooth rotation on toggle
-- Scrolls to top on rotation
+- Small geometric shapes
+- Dotted lines or borders
+- Colorful accents
+- Abstract patterns (used sparingly)
 
 ---
 
 ## Transitions & Animations
 
 ### Standard Transition
+
 ```css
 transition-all duration-300
 ```
 Used for: Cards, buttons, hover effects
 
 ### Fast Transition
+
 ```css
 transition-all duration-200
 ```
 Used for: Quick interactions, color changes
 
-### Shimmer Animation
-```css
-animate-shimmer
-keyframes: shimmer 3s ease-in-out infinite
-```
-Used for: Gradient text titles
+### Smooth Easing
 
-### Rotate Animation
 ```css
-transition-transform duration-500
-group-hover:rotate-180
+transition-all duration-300 ease-in-out
 ```
-Used for: Rotating emoji in toggle button
+Used for: Complex animations, state changes
+
+### Micro-interactions
+
+- Button press: Slight scale down (`active:scale-95`)
+- Link hover: Color change with underline
+- Card hover: Lift and shadow increase
+- Icon hover: Scale and color change
 
 ---
 
 ## Buttons & Interactive Elements
 
-### Floating Buttons
-- **Position**: `fixed top-4 left-4` or `fixed top-4 right-4`
-- **Z-index**: `z-50`
-- **Base Style**: Glass effect with backdrop blur
-- **Responsive**: Adapts size based on scroll position
+### Primary Button
 
-### Standard Button Style
 ```css
 inline-flex items-center gap-2
-bg-white/40 border border-gray-300/40
-rounded-lg text-gray-800
+bg-[#307ff6] text-white
+rounded-lg
+px-6 py-3
 font-raleway font-medium
 shadow-md
-hover:bg-white/60 hover:border-gray-400/60
-hover:-translate-y-[1px] hover:shadow-lg
+hover:bg-[#2563eb]
+hover:shadow-lg
+hover:-translate-y-1
 transition-all duration-300
-backdrop-blur-sm
+```
+
+### Secondary Button
+
+```css
+inline-flex items-center gap-2
+bg-white text-gray-800
+border border-gray-300
+rounded-lg
+px-6 py-3
+font-raleway font-medium
+shadow-md
+hover:bg-gray-50
+hover:border-[#307ff6]
+hover:text-[#307ff6]
+hover:shadow-lg
+hover:-translate-y-1
+transition-all duration-300
+```
+
+### Pill Button (Rounded)
+
+```css
+rounded-full
+px-6 py-3
+```
+
+### Badge/Category Tags
+
+```css
+px-3 py-1
+bg-white border border-gray-200
+rounded-full
+text-xs font-medium text-gray-700
+hover:bg-[#307ff6] hover:text-white
+hover:border-[#307ff6]
+transition-all duration-200
 ```
 
 ### Link Buttons
+
 Similar styling but with:
 - `no-underline`
-- Color transitions: `hover:text-[rgba(48,127,246,0.8)]`
-
-### Badge/Category Tags
-```css
-px-3 py-1
-bg-white/70 border border-gray-300/50
-rounded-md text-xs font-medium text-gray-700
-```
-
----
-
-## Gradients
-
-### Text Gradient (Shimmer Effect)
-```css
-linear-gradient(135deg, #1a1a3a 0%, #307ff6 50%, #1a1a3a 100%)
-background-size: 200% auto
-animation: shimmer 3s ease-in-out infinite
-```
-
-### Background Gradient (Page)
-```css
-linear-gradient(
-  to bottom,
-  rgb(255,254,180),
-  rgb(183,229,255),
-  rgb(255,210,206),
-  rgb(255,254,180)
-)
-```
-
----
-
-## Component Patterns
-
-### GridBox Component
-Base container for all major sections:
-- Glass effect background
-- Rounded corners (`rounded-xl`)
-- Grid layout (responsive)
-- Hover effects with shadow
-- Padding and gap spacing
-
-### Grid Component
-Main layout container:
-- Full-width grid
-- Background gradient
-- Responsive column layout
-- Consistent spacing
-
-### Skill Icons
-- Square containers: `h-16 w-16` (desktop), `h-14 w-14` (mobile)
-- Glass effect background
-- Hover: scale, lift, blue tint, shadow
-- Tooltip on hover
-
----
-
-## Interaction Patterns
-
-### Clickable Elements
-All interactive elements follow these patterns:
-1. Visual feedback on hover (color, scale, lift)
-2. Smooth transitions (300ms standard)
-3. Clear visual hierarchy (glass effects, shadows)
-4. Consistent spacing and sizing
-
-### Navigation
-- Floating buttons for main navigation
-- Scroll-aware behavior
-- Smooth scroll to top on navigation
-- Visual feedback with hover states
-
----
-
-## Responsive Design Patterns
-
-### Breakpoint Strategy
-- **Primary**: `max-[950px]` - Mobile/tablet transition
-- Mobile-first approach
-- Progressive enhancement for desktop
-
-### Responsive Adjustments
-- **Text Sizing**: Handled globally via CSS (see Mobile Text Sizing section above)
-- **Padding**: `p-6` → `max-[950px]:p-4`
-- **Grid**: `grid-cols-2` → `max-[950px]:grid-cols-1`
-- **Spacing**: Reduce gaps on mobile (`gap-6` → `max-[950px]:gap-4`)
-- **Icons/Emojis**: Scale down on mobile (`text-2xl` → `max-[950px]:text-xl`)
-
-### Mobile-First Approach
-The design system uses a mobile-first approach with global CSS rules that automatically apply mobile sizing. This ensures consistency across all components without requiring individual mobile classes for text sizing.
-
----
-
-## Design Principles
-
-1. **Glass Morphism**: Core aesthetic using semi-transparent backgrounds with blur
-2. **Smooth Transitions**: All interactions are animated (300ms standard)
-3. **Consistent Spacing**: Grid-based layout with consistent gaps and padding
-4. **Progressive Disclosure**: Content reveals progressively, buttons minimize on scroll
-5. **Color Harmony**: Blue accent with warm gradient background
-6. **Typography Hierarchy**: Clear size and weight differences
-7. **Depth Through Layers**: Glass effects and shadows create visual depth
-8. **Responsive First**: Mobile-friendly with progressive desktop enhancement
+- Color transitions: `hover:text-[#307ff6]`
+- Underline on hover: `hover:underline`
 
 ---
 
@@ -498,6 +618,7 @@ export default function Projects() {
 ```
 
 ### Benefits
+
 - **On-demand loading**: Only preloads when user navigates to the relevant section
 - **No impact on initial load**: Doesn't compete with critical resources
 - **Browser caching**: Once preloaded, images load instantly from cache
@@ -505,6 +626,7 @@ export default function Projects() {
 - **Idempotent**: `useRef` ensures preloading only happens once per mount
 
 ### Use Cases
+
 - Project images when Projects tab is viewed
 - Any heavy assets that benefit from pre-caching
 
@@ -550,6 +672,7 @@ For custom domains on GitHub Pages:
 5. React Router handles the route correctly
 
 ### Principles
+
 - **Always have a fallback**: Catch-all route prevents 404s
 - **Clean URLs**: Maintain readable URLs with React Router
 - **Custom domain compatibility**: `pathSegmentsToKeep = 0` for custom domains
@@ -562,8 +685,32 @@ For custom domains on GitHub Pages:
 - Uses Tailwind CSS for utility-first styling
 - Custom animations defined in `tailwind.config.js`
 - Raleway font loaded via Google Fonts
-- CSS custom properties for gradients and colors
-- React hooks for scroll-aware behavior and 3D transforms
+- React hooks for navigation, scroll management, and interactions
 - React Router for client-side routing
 - Image preloading for performance optimization
+- Mobile-first responsive design approach
 
+---
+
+## Migration Notes
+
+### Removed Elements
+
+- **3D Cube Rotation**: Replaced with traditional header navigation
+- **Glass Morphism**: Replaced with solid color blocks and modern cards
+- **Background Gradients**: Replaced with color blocking strategy
+- **Floating Buttons**: Replaced with traditional header navigation
+- **Scroll-aware button minimization**: Replaced with standard header
+
+### New Elements
+
+- **Traditional Header**: Fixed/sticky header with navigation
+- **Breadcrumbs**: Navigation breadcrumbs for orientation
+- **Hamburger Menu**: Mobile navigation menu
+- **Color Blocking**: Solid color sections for visual energy
+- **Playful Elements**: Emojis and illustrations for charisma
+- **Bold Typography**: Larger, more impactful headlines
+
+### Design Evolution
+
+The design system has evolved from a glass morphism aesthetic to a bold, colorful, modern design that better represents Fire Rat energy - passionate, energetic, charismatic, and clever.
