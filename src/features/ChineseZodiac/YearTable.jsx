@@ -3,8 +3,8 @@ import { generateYearRange, getZodiacForYear, ELEMENTS } from './zodiacUtils'
 import { ANIMAL_DATA, ELEMENT_DATA } from './zodiacData'
 
 export default function YearTable({ onYearSelect }) {
-  const [startYear, setStartYear] = useState(1950)
-  const [endYear, setEndYear] = useState(2050)
+  const [startYear, setStartYear] = useState(1972)
+  const [endYear, setEndYear] = useState(2022)
   const [filterAnimal, setFilterAnimal] = useState('')
   const [filterElement, setFilterElement] = useState('')
   const [searchTerm, setSearchTerm] = useState('')
