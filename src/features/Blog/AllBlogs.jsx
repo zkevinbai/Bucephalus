@@ -29,7 +29,7 @@ export default function AllBlogs() {
             <Link
               key={post.id}
               to={`/blog/${post.slug}`}
-              className="flex flex-col gap-4 p-6 bg-white border border-gray-200 rounded-xl shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-raleway no-underline"
+              className="flex flex-col gap-4 p-6 bg-white border-2 border-gray-200 border-l-4 border-l-gray-300 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 hover:border-l-[#ef4444] transition-all duration-300 font-raleway no-underline"
             >
               <h2 className="text-2xl font-semibold text-gray-800 m-0 tracking-[-0.01em]">
                 {post.title}

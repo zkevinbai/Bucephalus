@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="flex flex-col gap-6 p-6 w-full max-[950px]:p-4 max-[950px]:gap-4">
+    <div className="flex flex-col gap-6 p-6 w-full bg-white border-l-4 border-[#ef4444] rounded-xl shadow-sm max-[950px]:p-4 max-[950px]:gap-4">
       <div 
         className="font-raleway text-base font-light text-gray-800 leading-[1.7] tracking-[0.01em]"
         dangerouslySetInnerHTML={{
@@ -34,7 +34,7 @@ export default function About() {
               </p>
             </div>
 
-            <div class="mt-8 pt-6 border-t border-gray-200">
+            <div class="mt-8 pt-6 border-t-2 border-[#ef4444]">
               <p class="mb-4 text-center text-sm text-gray-600">
                 Additional links:
               </p>

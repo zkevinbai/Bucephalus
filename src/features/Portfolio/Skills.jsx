@@ -49,11 +49,11 @@ const skills = [
 
 export default function Skills() {
   return (
-    <div className="flex flex-col gap-6 p-8 items-center justify-center max-[950px]:p-6 max-[950px]:gap-4">
+    <div className="flex flex-col gap-6 p-8 items-center justify-center bg-white rounded-xl shadow-sm max-[950px]:p-6 max-[950px]:gap-4">
       <h2 className="text-2xl font-semibold text-gray-800 font-raleway m-0 text-center">
         Technologies and Frameworks
       </h2>
-      <div className="w-full bg-white border border-gray-200 rounded-xl shadow-md p-6 grid grid-cols-6 grid-rows-3 gap-4 justify-items-center items-center max-[950px]:grid-cols-3 max-[950px]:grid-rows-6 max-[950px]:p-4 max-[950px]:gap-3">
+      <div className="w-full bg-white border border-gray-200 rounded-xl shadow-lg p-6 grid grid-cols-3 gap-4 max-[640px]:grid-cols-1 max-[640px]:gap-3">
         {skills.map((item) => {
           const techName = typeof item === 'string' ? getTechName(item) : item.name
           
@@ -62,13 +62,14 @@ export default function Skills() {
             return (
               <div
                 key={item}
-                className="relative group text-[2.5rem] bg-white border border-gray-200 h-16 w-16 p-2 rounded-lg grid place-content-center transition-all duration-300 hover:bg-[rgba(239,68,68,0.1)] hover:border-[#ef4444] hover:-translate-y-1 hover:scale-110 hover:shadow-[0_6px_16px_rgba(239,68,68,0.3)] max-[950px]:text-[2rem] max-[950px]:h-14 max-[950px]:w-14 cursor-pointer"
+                className="flex items-center gap-4 p-3 bg-white border border-gray-200 rounded-lg transition-all duration-300 hover:bg-red-50 hover:border-[#ef4444] hover:shadow-md group min-w-0"
               >
-                <i className={item} />
-                <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs font-raleway font-medium px-3 py-1.5 rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50 shadow-lg">
-                  {techName}
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+                <div className="text-3xl shrink-0 w-12 h-12 flex items-center justify-center">
+                  <i className={item} />
                 </div>
+                <span className="text-base font-medium text-gray-800 font-raleway group-hover:text-[#ef4444] transition-colors truncate">
+                  {techName}
+                </span>
               </div>
             )
           } else {
@@ -77,17 +78,18 @@ export default function Skills() {
             return (
               <div
                 key={item.name}
-                className="relative group bg-white border border-gray-200 h-16 w-16 max-[950px]:h-14 max-[950px]:w-14 p-2 rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-[rgba(239,68,68,0.1)] hover:border-[#ef4444] hover:-translate-y-1 hover:scale-110 hover:shadow-[0_6px_16px_rgba(239,68,68,0.3)] cursor-pointer"
+                className="flex items-center gap-4 p-3 bg-white border border-gray-200 rounded-lg transition-all duration-300 hover:bg-red-50 hover:border-[#ef4444] hover:shadow-md group min-w-0"
               >
-                <img
-                  src={item.logo}
-                  alt={item.name}
-                  className={`object-contain rounded-lg ${isAILogo ? 'w-[150%] h-[150%]' : 'w-full h-full'}`}
-                />
-                <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs font-raleway font-medium px-3 py-1.5 rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50 shadow-lg">
-                  {techName}
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+                <div className="shrink-0 w-12 h-12 flex items-center justify-center">
+                  <img
+                    src={item.logo}
+                    alt={item.name}
+                    className={`object-contain ${isAILogo ? 'w-[120%] h-[120%]' : 'w-full h-full'}`}
+                  />
                 </div>
+                <span className="text-base font-medium text-gray-800 font-raleway group-hover:text-[#ef4444] transition-colors truncate">
+                  {techName}
+                </span>
               </div>
             )
           }

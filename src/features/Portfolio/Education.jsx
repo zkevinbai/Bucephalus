@@ -42,7 +42,7 @@ export default function Education() {
           {educationEntries.map((entry, index) => (
             <div
               key={index}
-              className="flex gap-4 items-start p-4 bg-white border border-gray-200 rounded-xl  hover:bg-white hover:shadow-md transition-all duration-300 max-[950px]:flex-col max-[950px]:items-center"
+              className="flex gap-4 items-start p-6 bg-white border-2 border-gray-200 border-l-4 border-l-blue-400 rounded-xl shadow-md hover:shadow-lg hover:-translate-y-1 hover:border-l-blue-600 transition-all duration-300 max-[950px]:flex-col max-[950px]:items-center max-[950px]:p-4"
             >
               <div className="shrink-0 w-16 h-16 max-[950px]:w-12 max-[950px]:h-12 rounded-lg">
                 <img

@@ -11,7 +11,7 @@ export default function Header() {
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-16 px-4 md:px-6 lg:px-8 bg-white/90 backdrop-blur-sm border-b border-gray-200">
+    <header className="fixed top-0 left-0 right-0 z-50 h-16 px-4 md:px-6 lg:px-8 bg-white/90 backdrop-blur-sm border-b-2 border-[#ef4444]">
       <nav className="flex items-center justify-between h-full">
         <NavLink 
           to="/" 

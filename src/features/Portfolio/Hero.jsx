@@ -1,16 +1,16 @@
 export default function Hero() {
   return (
     <div className="flex flex-col gap-6 p-6 max-[950px]:gap-4 max-[950px]:p-4">
-      <h1 className="font-raleway text-[2.25rem] font-bold text-transparent bg-[linear-gradient(135deg,#1a1a3a_0%,#ef4444_50%,#1a1a3a_100%)] bg-[length:200%_auto] bg-clip-text [-webkit-background-clip:text] animate-shimmer m-0 leading-tight tracking-[-0.02em] text-center">
+      <h1 className="font-raleway text-[2.25rem] md:text-[3rem] font-bold text-transparent bg-[linear-gradient(135deg,#1a1a3a_0%,#ef4444_50%,#1a1a3a_100%)] bg-[length:200%_auto] bg-clip-text [-webkit-background-clip:text] animate-shimmer m-0 leading-tight tracking-[-0.02em] text-center">
         Hello, my name is Kevin.
       </h1>
       
       <p className="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] text-center">
-        I know three things: <strong>Forward Deployed Engineering</strong>, <strong>Solving Enterprise Business Problems</strong>, and <strong>International Relations</strong>.
+        I know three things: <strong className="font-semibold">Forward Deployed Engineering</strong>, <strong className="font-semibold">Solving Enterprise Business Problems</strong>, and <strong className="font-semibold">International Relations</strong>.
       </p>
       
       <p className="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] text-center">
-        Leveraging technology to help customers solve real problems. <strong>Technology is the means, not the goal</strong>.
+        My main goal is to leverage technology to help customers solve real problems. <strong className="font-semibold">Technology is the means, not the goal</strong>.
       </p>
 
       <div>

@@ -212,11 +212,11 @@ const careerEntries = [
 
 export default function CareerTimeline() {
   return (
-    <div className="flex flex-col gap-6 w-full">
+    <div className="flex flex-col gap-6 w-full m-0 p-0">
           {careerEntries.map((entry, index) => (
             <div
               key={index}
-              className="flex gap-4 items-start p-4 bg-white border border-gray-200 rounded-xl  hover:bg-white hover:shadow-md transition-all duration-300 max-[950px]:flex-col max-[950px]:items-center"
+              className="flex gap-4 items-start p-6 bg-white border-2 border-gray-200 border-l-4 border-l-[#ef4444] rounded-xl shadow-md hover:shadow-lg hover:-translate-y-1 hover:border-l-[#dc2626] transition-all duration-300 max-[950px]:flex-col max-[950px]:items-center max-[950px]:p-4 m-0"
             >
               <div className={`shrink-0 w-16 h-16 max-[950px]:w-12 max-[950px]:h-12 rounded-lg ${entry.company === 'Palantir Technologies' ? 'bg-black p-2' : ''}`}>
                 <img
@@ -225,8 +225,8 @@ export default function CareerTimeline() {
                   className="w-full h-full object-contain rounded-lg"
                 />
               </div>
-              <div className="flex-1 flex flex-col gap-2">
-                <div>
+              <div className="flex-1 flex flex-col gap-2 min-w-0 m-0 p-0">
+                <div className="m-0 p-0">
                   <h3 className="text-xl font-semibold text-gray-800 font-raleway m-0">
                     {entry.title}
                   </h3>
@@ -242,7 +242,7 @@ export default function CareerTimeline() {
                     </span>
                   </div>
                 </div>
-                <ul className="list-none flex flex-col gap-3 mt-3 max-[950px]:gap-2 max-[950px]:mt-2">
+                <ul className="list-none flex flex-col gap-3 mt-3 max-[950px]:gap-2 max-[950px]:mt-2 p-0 m-0">
                   {entry.bullets.map((bullet, bulletIndex) => {
                     const isString = typeof bullet === 'string'
                     const bulletText = isString ? bullet : bullet.text
@@ -250,8 +250,8 @@ export default function CareerTimeline() {
                     const isSingleLine = bulletText.includes('Hats I wear') || bulletText.includes('Technologies I use') || bulletText.includes('Work I do')
                     
                     return (
-                      <li key={bulletIndex} className="flex flex-col gap-2 max-[950px]:gap-1.5">
-                        <div className="text-sm font-light text-gray-700 font-raleway leading-relaxed flex items-start gap-2">
+                      <li key={bulletIndex} className="flex flex-col gap-2 max-[950px]:gap-1.5 m-0 p-0">
+                        <div className="text-sm font-light text-gray-700 font-raleway leading-relaxed flex items-start gap-2 m-0">
                           <span className="text-gray-500 mt-1 shrink-0">•</span>
                           <span dangerouslySetInnerHTML={{ __html: bulletText }} />
                         </div>
@@ -262,11 +262,11 @@ export default function CareerTimeline() {
                               <span>{subBullets.join(', ')}</span>
                             </div>
                           ) : (
-                            <ul className="list-none flex flex-col gap-2 ml-6 max-[950px]:gap-1.5">
+                            <ul className="list-none flex flex-col gap-2 ml-6 max-[950px]:gap-1.5 p-0 m-0">
                               {subBullets.map((subBullet, subIndex) => (
                                 <li
                                   key={subIndex}
-                                  className="text-sm font-light text-gray-700 font-raleway leading-relaxed flex items-start gap-2"
+                                  className="text-sm font-light text-gray-700 font-raleway leading-relaxed flex items-start gap-2 m-0 p-0"
                                 >
                                   <span className="text-gray-400 mt-1 shrink-0">◦</span>
                                   <span dangerouslySetInnerHTML={{ __html: subBullet }} />
