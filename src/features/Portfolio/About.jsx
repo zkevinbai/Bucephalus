@@ -1,7 +1,28 @@
+import { useEffect, useRef } from 'react'
+import { trackOutboundClick } from '../../utils/analytics'
+
 export default function About() {
+  const containerRef = useRef(null)
+
+  useEffect(() => {
+    const el = containerRef.current
+    if (!el) return
+    const links = el.querySelectorAll('a[href^="http"]')
+    const handlers = []
+    links.forEach((a) => {
+      const href = a.getAttribute('href')
+      const label = (a.textContent || href || '').trim()
+      const handler = () => trackOutboundClick(href, label)
+      a.addEventListener('click', handler)
+      handlers.push({ a, handler })
+    })
+    return () => handlers.forEach(({ a, handler }) => a.removeEventListener('click', handler))
+  }, [])
+
   return (
     <div className="flex flex-col gap-6 p-6 w-full bg-white border-l-4 border-[#ef4444] rounded-xl shadow-sm max-[950px]:p-4 max-[950px]:gap-4">
-      <div 
+      <div
+        ref={containerRef} 
         className="font-raleway text-base font-light text-gray-800 leading-[1.7] tracking-[0.01em]"
         dangerouslySetInnerHTML={{
           __html: `

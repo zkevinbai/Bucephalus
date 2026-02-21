@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import Grid from '../Portfolio/Grid'
 import GridBox from '../Portfolio/GridBox'
 import { blogPosts } from './blogData'
+import { trackBlogPostClick } from '../../utils/analytics'
 
 export default function AllBlogs() {
   // Scroll to top when navigating to blog listing
@@ -29,6 +30,7 @@ export default function AllBlogs() {
             <Link
               key={post.id}
               to={`/blog/${post.slug}`}
+              onClick={() => trackBlogPostClick({ slug: post.slug, title: post.title, category: post.category })}
               className="flex flex-col gap-4 p-6 bg-white border-2 border-gray-200 border-l-4 border-l-gray-300 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 hover:border-l-[#ef4444] transition-all duration-300 font-raleway no-underline"
             >
               <h2 className="text-2xl font-semibold text-gray-800 m-0 tracking-[-0.01em]">

@@ -1,3 +1,5 @@
+import { trackOutboundClick } from '../../utils/analytics'
+
 export default function Hero() {
   return (
     <div className="flex flex-col gap-6 p-6 max-[950px]:gap-4 max-[950px]:p-4">
@@ -22,6 +24,7 @@ export default function Hero() {
             href="https://www.linkedin.com/in/zkevinbai/"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackOutboundClick('https://www.linkedin.com/in/zkevinbai/', 'LinkedIn')}
             className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-800 font-raleway text-sm font-medium no-underline transition-all duration-300 hover:bg-[#ef4444] hover:border-[#ef4444] hover:text-white hover:-translate-y-1 shadow-md hover:shadow-lg"
           >
             <i className="fab fa-linkedin text-base" />
@@ -38,6 +41,7 @@ export default function Hero() {
             href="https://github.com/zkevinbai"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackOutboundClick('https://github.com/zkevinbai', 'GitHub')}
             className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-800 font-raleway text-sm font-medium no-underline transition-all duration-300 hover:bg-[#ef4444] hover:border-[#ef4444] hover:text-white hover:-translate-y-1 shadow-md hover:shadow-lg"
           >
             <i className="fab fa-github text-base" />

@@ -3,17 +3,25 @@ import { useEffect } from 'react'
 import Grid from '../Portfolio/Grid'
 import GridBox from '../Portfolio/GridBox'
 import { getPostBySlug, blogPosts } from './blogData'
+import { trackBlogPostView } from '../../utils/analytics'
 
 export default function SingleBlog() {
   const { slug } = useParams()
   const blogContent = getPostBySlug(slug)
   const postIndex = blogPosts.findIndex(post => post.slug === slug)
-  const postNumber = postIndex !== -1 ? blogPosts.length - postIndex : null
-  
+  const postNumber = postIndex !== -1 ? blogPosts.length - postIndex : null  
+
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
+
+  // Track blog post view for analytics
+  useEffect(() => {
+    if (blogContent) {
+      trackBlogPostView({ slug, title: blogContent.title, category: blogContent.category })
+    }
+  }, [slug, blogContent])
   
   if (!blogContent) {
     return (
