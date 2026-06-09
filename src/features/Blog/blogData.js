@@ -1,6 +1,105 @@
 // Blog posts data
 export const blogPosts = [
   {
+    id: 'flat-title-member-of-technical-staff',
+    slug: 'the-flat-title-member-of-technical-staff',
+    title: 'The Flat Title: Why "Member of Technical Staff" Works',
+    author: 'Kevin Bai',
+    date: '8 June 2026',
+    readTime: '6 min read',
+    category: 'FDE',
+    excerpt: 'At Palantir, "Forward Deployed Engineer" was completely flat—no Senior, no Staff, no Principal. "Member of Technical Staff" shares that spirit. A flat title isn\'t a gimmick. It\'s a forcing function.',
+    content: `
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        At Palantir, there was no such thing as a Senior Forward Deployed Engineer.
+      </p>
+
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        No Staff FDE. No Principal FDE. No Distinguished anything. From your first day out of school to your tenth year running the most important account in the company, the title on your badge said the same three words: Forward Deployed Engineer. The title was completely flat.
+      </p>
+
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
+        That's why "Member of Technical Staff" caught my eye. It's having a moment—OpenAI, Anthropic, NVIDIA, Snowflake, and a long list of others have adopted it. And it's playing the same game FDE plays. It's a flat title, and the flatness is the point.
+      </p>
+
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">An Old Idea</h2>
+
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        "Member of Technical Staff" isn't new. It comes from Bell Labs, where the people inventing the transistor and information theory weren't sorted into Junior and Principal. They were members of a staff. The title said you belonged to a group of serious people doing serious work, and it deliberately said nothing about where you ranked inside it.
+      </p>
+
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
+        That's the whole trick. Most titles are designed to broadcast rank. "Senior" tells the room you've been around. "Staff" tells them you outrank the Seniors. A flat title refuses to play. It tells you what someone does, not how important they are. And once you've worked under one, you understand why a certain kind of company keeps reaching for it.
+      </p>
+
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">A Flat Title Is a Forcing Function</h2>
+
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        Here's what a flat title actually does to a room.
+      </p>
+
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        When my title told a customer nothing about my seniority, I couldn't lead with it. I couldn't walk in and let "Principal" do the work of earning trust. I had to earn standing every time, through clarity and insight—by understanding their problem better than they expected and saying something useful in the first ten minutes. The title bought me nothing, so the work had to buy everything.
+      </p>
+
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
+        That's a feature, not a bug. Titles that announce rank let people coast on them. Flat titles make standing something you re-earn in the room. The newest person and the veteran start the meeting on the same footing, and the meeting sorts them out by what they actually contribute.
+      </p>
+
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">The Role Expands to Fit the Person</h2>
+
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        A flat title is also a roomy one. "Software Engineer II, Backend, Payments" tells you exactly what you're allowed to do. "Member of Technical Staff" tells you almost nothing—which means it lets you do almost anything.
+      </p>
+
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        That's the same reason "Forward Deployed Engineer" works. An FDE is part consultant, part product manager, part software engineer—three roles living in one person. I never had to ask whether scoping a feature or sitting with a VP or writing the actual code was "my job." It was all my job. A narrow title would have fought me on that every week. A flat one got out of the way.
+      </p>
+
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
+        Companies doing genuinely new work want exactly this. You can't write a tight job description for a problem nobody has solved yet. So you give people a title broad enough to hold whatever the work turns out to require, and you trust them to fill it. The title shapes itself around the person instead of forcing the person into the title.
+      </p>
+
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">The Hierarchy Doesn't Vanish—It Goes Underground</h2>
+
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        Let me be honest about the part the cheerful version of this story leaves out. A flat title does not flatten the org. There is still a person whose call ends the argument. There are still pay bands, promotions, and levels—MTS-1, MTS-2, MTS-3, whatever the company calls them internally. The ranking is real. It just stops being something you wear on the outside.
+      </p>
+
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        That's the actual design decision. Not "no hierarchy," but "no public hierarchy." Internally, the company still needs to pay people fairly and promote them. Externally—to the customer, to the rest of the team, to the new hire deciding whether to speak up—everyone is the same title. You move the leveling off the badge and into the compensation review where it belongs.
+      </p>
+
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
+        Done well, this is great. Done badly, it's worse than the thing it replaced. A hidden ladder can become a political one, where standing is decided by who knows what about whom rather than by a legible level. Flat titles only work when the company is disciplined enough to keep the real evaluation honest underneath. The title stops doing that work, so something else has to.
+      </p>
+
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">Why the Best People Like It Anyway</h2>
+
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        Despite all that, flat titles attract exactly the people you'd want. The reason is simple: the engineers worth hiring don't need the title to tell the room they're good. They'd rather it not. A flat title signals a place that competes on impact instead of pedigree, and that's a magnet for people who are confident the work will speak for them.
+      </p>
+
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
+        It's the same instinct that makes "Founding Engineer" or "Member of Technical Staff" feel more serious than "Senior Software Engineer III," even though the second one sounds more senior on paper. The flat title says the work is the point. The graduated one says the ladder is.
+      </p>
+
+      <h2 class="font-raleway text-2xl font-semibold text-gray-800 m-0 mb-6 tracking-[-0.01em] mt-8">When to Use One</h2>
+
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        Flat titles aren't free, and they aren't for everyone. A large company that needs a thousand engineers to understand their exact lane will be better served by clear, graduated titles. There's nothing wrong with that—legibility is a real virtue when scale is the problem you're solving.
+      </p>
+
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-6">
+        But when the work is open-ended, when the role is too broad to fit in a sentence, and when you're trying to gather people who'd rather be judged by what they build than by what their badge says—a flat title is the right tool. That's why it shows up at research labs, at deep-tech companies, and in roles like FDE that refuse to sit in one box.
+      </p>
+
+      <p class="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] mb-8">
+        "Member of Technical Staff" won't replace traditional titles across the industry, and it shouldn't try to. But where it fits, it does something a graduated title can't: it clears the rank out of the way and leaves nothing to hide behind except the work. Having spent four years under a title exactly like it, I can tell you that's a far better place to stand than it sounds.
+      </p>
+    `,
+  },
+  {
     id: 'cost-paradox-cheaper-software',
     slug: 'cost-paradox-cheaper-software-means-more',
     title: 'The Cost Paradox: Why Cheaper Software Means More Software',
