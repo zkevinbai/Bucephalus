@@ -31,7 +31,7 @@ const B = ({ children }) => <strong className="font-semibold text-ink">{children
 export default function About() {
   return (
     <Section id="about" eyebrow="About" title="I speak customer, executive, and engineer.">
-      <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr]">
+      <div className="grid gap-12 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
         <div className="reveal flex flex-col gap-6">
           <Para>
             I'm the <B>founding Forward Deployed Engineer</B> at <B>Rippling</B> — the first hire,
@@ -79,9 +79,9 @@ export default function About() {
             </p>
             <p className="mt-3 font-serif text-lg leading-[1.9] text-ink">
               {cities.map((city, i) => (
-                <span key={city} className="whitespace-nowrap">
-                  {city}
-                  {i < cities.length - 1 && <span className="mx-2 text-muted" aria-hidden>·</span>}
+                <span key={city}>
+                  <span className="whitespace-nowrap">{city}</span>
+                  {i < cities.length - 1 && <span className="mx-2 text-muted" aria-hidden>·</span>}{' '}
                 </span>
               ))}
             </p>
