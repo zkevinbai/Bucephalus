@@ -1,9 +1,9 @@
 import Section from './Section'
-import TimeTravelTicTacToeImg from '../../assets/projects/TimeTravelTicTacToe.png'
-import AurelianImg from '../../assets/projects/Aurelian.png'
-import VerbaImg from '../../assets/projects/Verba.png'
-import AlexandriaImg from '../../assets/projects/Alexandria.png'
-import AugustusImg from '../../assets/projects/Augustus.png'
+import TimeTravelTicTacToeImg from '../../assets/projects/TimeTravelTicTacToe.webp'
+import AurelianImg from '../../assets/projects/Aurelian.webp'
+import VerbaImg from '../../assets/projects/Verba.webp'
+import AlexandriaImg from '../../assets/projects/Alexandria.webp'
+import AugustusImg from '../../assets/projects/Augustus.webp'
 
 const projects = [
   {

@@ -29,12 +29,8 @@ jobs:
       
       - name: Verify build output
         run: |
-          if [ ! -d "docs" ]; then
-            echo "Build failed: docs directory not found"
-            exit 1
-          fi
-          if [ ! -f "docs/index.html" ]; then
-            echo "Build failed: docs/index.html not found"
+          if [ ! -f "dist/index.html" ]; then
+            echo "Build failed: dist/index.html not found"
             exit 1
           fi
           echo "✓ Build successful"

@@ -54,6 +54,3 @@ Thumbs.db
 .cache/
 .parcel-cache/
 .vite/
-
-# Husky
-.husky/_

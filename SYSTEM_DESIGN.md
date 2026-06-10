@@ -1,222 +1,75 @@
 # System Design
 
-This document describes how the Bucephalus website works as a whole system. For detailed design patterns and styling guidelines, see [KEVIN_DESIGN_SYSTEM.md](./KEVIN_DESIGN_SYSTEM.md).
+How zkevinbai.com (codename Bucephalus) works as a whole system, current as of the v2 redesign.
 
 ## Overview
 
-Bucephalus is a static single-page application (SPA) built with React, deployed to GitHub Pages. It serves as a personal portfolio, blog, and interactive tools showcase.
+A static single-page application: React 18 + Vite + Tailwind 3 + react-router-dom 6, no TypeScript, no backend. Client-side routing with a GitHub Pages SPA redirect shim. Deployed to GitHub Pages at the custom domain `zkevinbai.com`.
 
-## Architecture
+## Routes
 
-### Application Structure
+Defined in `src/App.jsx`:
 
-```
-┌─────────────────────────────────────┐
-│         Browser (Client)             │
-│  ┌───────────────────────────────┐   │
-│  │    React Application (SPA)    │   │
-│  │  ┌─────────────────────────┐   │   │
-│  │  │  React Router           │   │   │
-│  │  │  - / (Portfolio)        │   │   │
-│  │  │  - /blog                 │   │   │
-│  │  │  - /blog/:slug           │   │   │
-│  │  │  - /zodiac               │   │   │
-│  │  └─────────────────────────┘   │   │
-│  │  ┌─────────────────────────┐   │   │
-│  │  │  Components             │   │   │
-│  │  │  - Header               │   │   │
-│  │  │  - Breadcrumbs         │   │   │
-│  │  └─────────────────────────┘   │   │
-│  │  ┌─────────────────────────┐   │   │
-│  │  │  Features               │   │   │
-│  │  │  - Portfolio            │   │   │
-│  │  │  - Blog                 │   │   │
-│  │  │  - ChineseZodiac        │   │   │
-│  │  └─────────────────────────┘   │   │
-│  └───────────────────────────────┘   │
-└─────────────────────────────────────┘
-         ↓ HTTP Request
-┌─────────────────────────────────────┐
-│      GitHub Pages (CDN)              │
-│  ┌───────────────────────────────┐   │
-│  │    Static Files (docs/)        │   │
-│  │  - index.html                  │   │
-│  │  - assets/                     │   │
-│  │  - 404.html (SPA routing)      │   │
-│  └───────────────────────────────┘   │
-└─────────────────────────────────────┘
-```
+| Path | Component | Notes |
+|------|-----------|-------|
+| `/`, `/portfolio` | `Portfolio` | Single-scroll portfolio page |
+| `/projects` | `ProjectsPage` | Standalone projects page |
+| `/blog` | `AllBlogs` | Blog index |
+| `/blog/:slug` | `SingleBlog` | One post |
+| `/toys` | `Toys` | Browser-utility index |
+| `/toys/zodiac` | `ChineseZodiac` | Zodiac lookup (a "toy") |
+| `/toys/:slug` | `ToyPage` | One tool |
+| `/themes` | `Themes` | Theme Studio — intentional easter egg, linked from the footer |
+| `/zodiac` | redirect → `/toys/zodiac` | Backward compat |
+| `*` | redirect → `/` | Catch-all |
 
-### Technology Stack
+`App.jsx` also mounts `RouteEffects`, which per navigation: sends a GA page view, scrolls to top (preserving `#anchor` jumps), and re-arms the scroll-reveal observer.
 
-- **Frontend Framework**: React 18
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS
-- **Routing**: React Router DOM
-- **Deployment**: GitHub Pages
-- **Domain**: Custom domain (zkevinbai.com)
-
-## Routing System
-
-### Route Configuration
-
-The application uses React Router's `BrowserRouter` for client-side routing:
-
-```javascript
-/                    → Portfolio (default)
-/portfolio           → Portfolio (alias)
-/blog                → Blog listing
-/blog/:slug          → Individual blog post
-/zodiac              → Chinese Zodiac app
-*                    → Redirect to / (catch-all)
-```
-
-### Client-Side Routing on GitHub Pages
-
-Since GitHub Pages serves static files, client-side routing requires special handling:
-
-1. **404.html**: When a user visits `/blog` directly (or refreshes), GitHub Pages serves `404.html`
-2. **URL Rewriting**: `404.html` rewrites the URL to `/?/blog` format
-3. **History Restoration**: `index.html` script converts it back to `/blog`
-4. **React Router**: Handles the route and renders the correct component
-
-This ensures all routes work correctly even on direct navigation or page refresh.
-
-## Component Architecture
-
-### Feature-Based Organization
+## Source layout
 
 ```
 src/
-├── components/          # Shared UI components
-│   ├── Header.jsx      # Fixed navigation header
-│   └── Breadcrumbs.jsx # Navigation breadcrumbs
-│
-├── features/           # Feature modules
-│   ├── Portfolio/     # Portfolio feature
-│   ├── Blog/          # Blog feature
-│   └── ChineseZodiac/  # Zodiac feature
-│
-└── assets/             # Static assets
-    ├── companies/      # Company logos
-    ├── projects/       # Project images
-    └── ...
+├── main.jsx                 React root
+├── App.jsx                  Router + RouteEffects
+├── index.css                Reset, CSS-var tokens, .reveal, .eyebrow, .prose
+├── components/              Shell: Header, Footer, Container
+├── hooks/useScrollReveal.js IntersectionObserver for .reveal fade-ins
+├── utils/analytics.js       Google Analytics helpers (gtag)
+├── assets/                  Images: companies/, projects/, portrait
+└── features/
+    ├── Portfolio/           Hero, SectionNav, About, CareerTimeline,
+    │                        Projects, Education, Skills, Section (wrapper)
+    ├── Blog/                AllBlogs, SingleBlog, blogData.js
+    ├── Toys/                Toys index, ToyPage, ToyLayout, toykit.jsx,
+    │                        toysData.js, tools/ (one file per tool)
+    ├── ChineseZodiac/       Zodiac feature, zodiacData.js, zodiacUtils.js
+    └── Themes/              Theme Studio page, themePresets.js (dark mode vars)
 ```
 
-### Shared Components
+## Data flow
 
-- **Header**: Fixed navigation bar with links to Portfolio, Blog, and Zodiac
-- **Breadcrumbs**: Shows current location (hidden on home page)
-- **Grid**: Responsive grid layout container
-- **GridBox**: Reusable card component with consistent styling
+Content is data-driven, no CMS:
 
-### Feature Components
+- Blog posts live in `src/features/Blog/blogData.js` as HTML strings. Legacy posts carry old inline classes; `SingleBlog.jsx` strips every `class="…"` before rendering and `.prose` in `index.css` styles by tag. New posts can omit inline classes entirely.
+- Toys are registered in `src/features/Toys/toysData.js` (slug, category, component). Adding a tool = new file in `tools/` + one entry there.
+- Career/education/project content lives in arrays at the top of the respective Portfolio components.
+- Zodiac tables live in `zodiacData.js` / `zodiacUtils.js`.
 
-Each feature is self-contained with its own components and data:
+## Design system (v2, warm editorial)
 
-- **Portfolio**: Hero, Skills, CareerTimeline, Education, Projects, TabNavigation
-- **Blog**: AllBlogs, SingleBlog, blogData
-- **ChineseZodiac**: YearSearch, YearTable, YearDetail, zodiacData, zodiacUtils
+- Tokens are CSS variables in `src/index.css`, mapped to Tailwind utilities in `tailwind.config.js`: paper `#fbf7f0` background, ink `#1b1714` text, clay/terracotta `#cc785c` accent, plus sparing sage/ocean/plum/gold.
+- Fonts: Fraunces (serif — display and headings) + Inter (sans — body), loaded from Google Fonts in `index.html`. Use Tailwind tokens (`bg-paper`, `text-ink`, `text-clay-deep`, `font-serif`), never hardcoded hex.
+- Dark mode ("Midnight Teal"): a `.dark` class on `<html>` swaps the CSS variables (values in `src/features/Themes/themePresets.js`). An inline script in `index.html` applies the saved/system theme before first paint.
+- Motion: `.reveal` elements fade in via `useScrollReveal`; respects `prefers-reduced-motion`.
+- Icons: Font Awesome **5.8.1** and Devicon, both via CDN `<link>`s in `index.html`. Use FA5 icon names, not FA6.
 
-## Data Management
+## Build & deploy
 
-### Static Data
+- `npm run dev` → Vite dev server at http://localhost:5173
+- `npm run build` → static bundle in `dist/` (not committed)
+- Deploy: pushing to `master` triggers `.github/workflows/deploy.yml`, which builds and publishes `dist/` to GitHub Pages via `actions/deploy-pages`. PRs get a build check from `.github/workflows/test.yml`.
+- `public/` is copied verbatim into the bundle: `CNAME` (custom domain), `favicon.ico`, `og-image.jpg`, and `404.html`. The `404.html` + the inline script in `index.html` implement the spa-github-pages redirect so deep links work on Pages.
 
-All data is stored in JavaScript files (no backend):
+## Analytics
 
-- **Blog Posts**: `src/features/Blog/blogData.js` - Array of blog post objects
-- **Zodiac Data**: `src/features/ChineseZodiac/zodiacData.js` - Zodiac animal/element data
-- **Portfolio Data**: Embedded in component files (CareerTimeline, Education, Projects)
-
-### Image Preloading
-
-Images are preloaded on-demand when components mount:
-
-```javascript
-// Example: Projects component preloads project images
-useEffect(() => {
-  projectImages.forEach((imageSrc) => {
-    const img = new Image()
-    img.src = imageSrc
-  })
-}, [])
-```
-
-This ensures images are cached before display, improving perceived performance.
-
-## Build & Deployment
-
-### Build Process
-
-1. **Source**: React source code in `src/`
-2. **Build**: Vite compiles to `docs/` folder
-3. **Output**: Static HTML, CSS, JS files in `docs/`
-
-### Deployment Flow
-
-```
-Developer commits code
-    ↓
-Husky pre-commit hook runs
-    ↓
-npm run build (Vite builds to docs/)
-    ↓
-git add -f docs/ (force add build output)
-    ↓
-Commit includes source + built files
-    ↓
-Push to GitHub
-    ↓
-GitHub Pages serves from docs/ folder
-    ↓
-Live at zkevinbai.com
-```
-
-### Key Configuration
-
-- **Base Path**: `/` (root) - Works with custom domain
-- **Build Output**: `docs/` folder (configured in `vite.config.js`)
-- **Git Hook**: `.husky/pre-commit` automatically builds before commits
-- **Custom Domain**: `public/CNAME` sets `zkevinbai.com`
-- **SPA Routing**: `public/404.html` handles client-side routing
-
-## Styling System
-
-The application uses Tailwind CSS with a comprehensive design system. See [KEVIN_DESIGN_SYSTEM.md](./KEVIN_DESIGN_SYSTEM.md) for:
-
-- Color palette and usage
-- Typography system
-- Component patterns
-- Responsive design
-- Hover effects and animations
-
-## Performance Optimizations
-
-1. **Image Preloading**: On-demand preloading when components mount
-2. **Code Splitting**: React Router automatically code-splits routes
-3. **Static Assets**: All assets bundled and optimized by Vite
-4. **CDN Delivery**: GitHub Pages serves files via CDN
-5. **No Backend**: Pure static site, no server requests needed
-
-## Development Workflow
-
-1. **Local Development**: `npm run dev` - Vite dev server with hot reload
-2. **Build**: `npm run build` - Creates production build in `docs/`
-3. **Preview**: `npm run preview` - Preview production build locally
-4. **Commit**: Husky automatically builds before commit
-5. **Deploy**: Push to GitHub, GitHub Pages auto-deploys from `docs/`
-
-## Key Files
-
-- **`src/App.jsx`**: Main app component with routing
-- **`src/main.jsx`**: React entry point
-- **`index.html`**: HTML template
-- **`vite.config.js`**: Build configuration
-- **`tailwind.config.js`**: Tailwind CSS configuration
-- **`public/404.html`**: SPA routing handler for GitHub Pages
-- **`public/CNAME`**: Custom domain configuration
-- **`.husky/pre-commit`**: Auto-build git hook
-
-## Design System
-
-For detailed design patterns, colors, typography, and component guidelines, see [KEVIN_DESIGN_SYSTEM.md](./KEVIN_DESIGN_SYSTEM.md).
+Google Analytics (gtag, id in `index.html`). `src/utils/analytics.js` wraps it: page views (via `RouteEffects`), outbound clicks, blog/section/toy/theme events. All helpers no-op if gtag is absent.
