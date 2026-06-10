@@ -4,6 +4,7 @@ import JsonFormatter from './tools/JsonFormatter'
 import ColorConverter from './tools/ColorConverter'
 import UuidGenerator from './tools/UuidGenerator'
 import SqlFormatter from './tools/SqlFormatter'
+import TicTacToe from './tools/TicTacToe'
 import TimeZonePicker from './tools/TimeZonePicker'
 
 /* The toy registry. Adding a toy is a single entry here:
@@ -72,6 +73,15 @@ export const toys = [
     icon: 'fas fa-globe',
     accent: 'text-sage',
     Component: TimeZonePicker,
+  },
+  {
+    slug: 'tic-tac-toe',
+    name: 'Time Travel Tic Tac Toe',
+    blurb: 'Play the computer or a friend — and rewind any move to rewrite history.',
+    category: 'Fun',
+    icon: 'fas fa-history',
+    accent: 'text-plum',
+    Component: TicTacToe,
   },
   {
     slug: 'zodiac',

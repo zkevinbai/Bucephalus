@@ -41,6 +41,13 @@ export default function Footer() {
         <span>© {new Date().getFullYear()} Kevin Bai. Built in San Francisco.</span>
         <span className="flex items-center gap-4">
           <Link
+            to="/projects"
+            onClick={() => trackEasterEgg('projects')}
+            className="transition-colors hover:text-clay"
+          >
+            🛠 The early work
+          </Link>
+          <Link
             to="/themes"
             onClick={() => trackEasterEgg('themes')}
             className="transition-colors hover:text-clay"

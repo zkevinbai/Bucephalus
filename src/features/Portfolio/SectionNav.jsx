@@ -4,7 +4,7 @@ import { trackSectionView } from '../../utils/analytics'
 const SECTIONS = [
   { id: 'about', label: 'About' },
   { id: 'career', label: 'Career' },
-  { id: 'projects', label: 'Projects' },
+  { id: 'volunteering', label: 'Volunteering' },
   { id: 'education', label: 'Education' },
   { id: 'skills', label: 'Skills' },
 ]
