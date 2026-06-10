@@ -1,5 +1,12 @@
 /** @type {import('tailwindcss').Config} */
+
+// Tokens resolve to CSS variables (RGB channels) so the `/opacity` modifier keeps
+// working and the whole palette can flip between light (Clay) and dark (Midnight
+// Teal) by swapping variables on the `.dark` class. See src/index.css.
+const token = (name) => `rgb(var(${name}) / <alpha-value>)`
+
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,jsx}",
@@ -14,20 +21,23 @@ export default {
         'raleway': ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
-        // Warm "paper" palette — the claude-sandbox aesthetic.
-        paper: '#fbf7f0',
-        cream: '#f7f1e7',
-        'cream-2': '#efe6d6',
-        ink: '#1b1714',
-        'ink-soft': '#2a2420',
-        muted: '#8a7f72',
-        line: '#e6ddd0',
-        clay: '#cc785c',
-        'clay-deep': '#b4593d',
-        sage: '#6a8d73',
-        ocean: '#3f7cac',
-        plum: '#b07bac',
-        gold: '#c69749',
+        paper: token('--paper'),
+        cream: token('--cream'),
+        'cream-2': token('--cream-2'),
+        ink: token('--ink'),
+        'ink-soft': token('--ink-soft'),
+        muted: token('--muted'),
+        line: token('--line'),
+        clay: token('--clay'),
+        'clay-deep': token('--clay-deep'),
+        sage: token('--sage'),
+        ocean: token('--ocean'),
+        plum: token('--plum'),
+        gold: token('--gold'),
+        // `card` is the raised-surface color. Mapping `white` to it means the many
+        // existing `bg-white/60` cards theme automatically in dark mode.
+        card: token('--card'),
+        white: token('--card'),
       },
       maxWidth: {
         'reading': '720px',

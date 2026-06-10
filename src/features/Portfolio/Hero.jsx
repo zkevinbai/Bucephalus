@@ -1,5 +1,6 @@
 import Container from '../../components/Container'
 import { trackOutboundClick } from '../../utils/analytics'
+import Portrait from '../../assets/kevin-portrait.png'
 import RipplingLogo from '../../assets/companies/Rippling-logo.png'
 import PalantirLogo from '../../assets/companies/palantir-logo.svg'
 import UNLogo from '../../assets/companies/UN-logo.svg'
@@ -29,11 +30,12 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
           background:
-            'radial-gradient(60% 50% at 18% 0%, rgba(204,120,92,0.10), transparent 70%), radial-gradient(50% 45% at 92% 8%, rgba(198,151,73,0.10), transparent 70%)',
+            'radial-gradient(60% 50% at 18% 0%, rgb(var(--clay) / 0.10), transparent 70%), radial-gradient(50% 45% at 92% 8%, rgb(var(--gold) / 0.10), transparent 70%)',
         }}
       />
       <Container>
-        <div className="max-w-3xl">
+        <div className="grid items-center gap-10 md:gap-14 lg:grid-cols-[minmax(0,1fr)_300px]">
+          <div className="max-w-3xl">
           <p className="eyebrow reveal">Founding Forward Deployed Engineer · Rippling</p>
 
           <h1 className="reveal mt-5 font-serif text-[2.9rem] font-semibold leading-[1.04] tracking-[-0.02em] text-ink sm:text-6xl md:text-7xl">
@@ -71,6 +73,19 @@ export default function Hero() {
               </a>
             ))}
           </div>
+          </div>
+
+          {/* Portrait */}
+          <div
+            className="reveal order-first mx-auto lg:order-none"
+            style={{ transitionDelay: '120ms' }}
+          >
+            <img
+              src={Portrait}
+              alt="Kevin Bai"
+              className="h-52 w-52 rounded-full border-4 border-paper object-cover shadow-xl ring-1 ring-line sm:h-60 sm:w-60 lg:h-[17rem] lg:w-[17rem]"
+            />
+          </div>
         </div>
 
         {/* Credentials strip */}
@@ -85,9 +100,10 @@ export default function Hero() {
                 src={logo}
                 alt={name}
                 title={name}
-                style={darken ? { filter: 'brightness(0)' } : undefined}
                 className={`h-7 w-auto max-w-[130px] object-contain transition-all duration-300 hover:opacity-90 md:h-8 ${
-                  darken ? 'opacity-45 hover:[filter:none]' : 'opacity-55 grayscale hover:grayscale-0'
+                  darken
+                    ? 'opacity-45 [filter:brightness(0)] hover:[filter:none] dark:opacity-80 dark:[filter:invert(1)]'
+                    : 'opacity-55 grayscale hover:grayscale-0 dark:opacity-70 dark:[filter:grayscale(1)_invert(1)]'
                 }`}
               />
             ))}

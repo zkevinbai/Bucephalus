@@ -197,7 +197,7 @@ function Entry({ entry }) {
       {/* node / logo */}
       <div
         className={`mb-4 flex h-14 w-14 items-center justify-center rounded-2xl border border-line shadow-sm md:absolute md:left-0 md:top-0 md:mb-0 ${
-          entry.dark ? 'bg-ink p-3' : 'bg-white p-2.5'
+          entry.dark ? 'bg-[#14110e] p-3' : 'bg-white p-2.5'
         }`}
       >
         <img src={entry.logo} alt={`${entry.company} logo`} className="h-full w-full object-contain" />

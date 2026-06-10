@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
+  const [dark, setDark] = useState(
+    () => typeof document !== 'undefined' && document.documentElement.classList.contains('dark')
+  )
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -10,6 +13,21 @@ export default function Header() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  const toggleTheme = () => {
+    setDark((d) => {
+      const next = !d
+      document.documentElement.classList.toggle('dark', next)
+      try {
+        localStorage.setItem('theme', next ? 'dark' : 'light')
+      } catch {
+        /* storage unavailable — no-op */
+      }
+      const meta = document.querySelector('meta[name="theme-color"]')
+      if (meta) meta.setAttribute('content', next ? '#0f1c1b' : '#fbf7f0')
+      return next
+    })
+  }
 
   const navLinks = [
     { to: '/', label: 'Work', end: true },
@@ -57,6 +75,15 @@ export default function Header() {
               )}
             </NavLink>
           ))}
+
+          <button
+            onClick={toggleTheme}
+            aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
+            title={dark ? 'Light mode' : 'Dark mode'}
+            className="ml-1 flex h-9 w-9 items-center justify-center rounded-full text-ink-soft transition-colors hover:text-clay"
+          >
+            <i className={dark ? 'fas fa-sun' : 'fas fa-moon'} />
+          </button>
         </div>
       </nav>
     </header>

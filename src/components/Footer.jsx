@@ -39,9 +39,14 @@ export default function Footer() {
 
       <Container className="flex flex-col gap-2 border-t border-line py-5 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
         <span>© {new Date().getFullYear()} Kevin Bai. Built in San Francisco.</span>
-        <Link to="/toys/zodiac" className="transition-colors hover:text-clay">
-          年 What's your Chinese zodiac?
-        </Link>
+        <span className="flex items-center gap-4">
+          <Link to="/themes" className="transition-colors hover:text-clay">
+            🎨 Pick a palette
+          </Link>
+          <Link to="/toys/zodiac" className="transition-colors hover:text-clay">
+            年 What's your Chinese zodiac?
+          </Link>
+        </span>
       </Container>
     </footer>
   )

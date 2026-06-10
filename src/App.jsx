@@ -8,6 +8,7 @@ import SingleBlog from './features/Blog/SingleBlog'
 import ChineseZodiac from './features/ChineseZodiac/ChineseZodiac'
 import Toys from './features/Toys/Toys'
 import ToyPage from './features/Toys/ToyPage'
+import Themes from './features/Themes/Themes'
 import { useScrollReveal } from './hooks/useScrollReveal'
 import { trackPageView } from './utils/analytics'
 
@@ -43,6 +44,7 @@ function App() {
           <Route path="/toys" element={<Toys />} />
           <Route path="/toys/zodiac" element={<ChineseZodiac />} />
           <Route path="/toys/:slug" element={<ToyPage />} />
+          <Route path="/themes" element={<Themes />} />
           <Route path="/zodiac" element={<Navigate to="/toys/zodiac" replace />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/" element={<Portfolio />} />
