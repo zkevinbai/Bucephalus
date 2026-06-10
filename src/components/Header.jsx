@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { trackThemeToggle } from '../utils/analytics'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -25,6 +26,7 @@ export default function Header() {
       }
       const meta = document.querySelector('meta[name="theme-color"]')
       if (meta) meta.setAttribute('content', next ? '#0f1c1b' : '#fbf7f0')
+      trackThemeToggle(next ? 'dark' : 'light')
       return next
     })
   }

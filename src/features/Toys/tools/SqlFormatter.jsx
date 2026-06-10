@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Field, TextArea, Btn, CopyButton, Note, SegmentedControl } from '../toykit'
+import { trackToyUse } from '../../../utils/analytics'
 
 const DIALECTS = [
   { value: 'sql', label: 'Standard' },
@@ -31,6 +32,7 @@ export default function SqlFormatter() {
       return
     }
     setBusy(true)
+    trackToyUse('sql-formatter', 'format', { sql_dialect: dialect })
     try {
       const { format } = await loadFormatter()
       setOutput(

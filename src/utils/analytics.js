@@ -73,3 +73,43 @@ export function trackBlogPostView({ slug, title, category }) {
     ...(category && { blog_category: category }),
   })
 }
+
+/**
+ * Track which portfolio sections people actually scroll to. The homepage is a
+ * single route, so plain page_views can't see this — fire once per section per
+ * page load from the scrollspy.
+ *
+ * @param {string} sectionId - e.g. 'about', 'career', 'projects'
+ */
+export function trackSectionView(sectionId) {
+  trackEvent('section_view', { section_id: sectionId })
+}
+
+/**
+ * Track a discrete action inside a toy (format, generate, add city, …).
+ *
+ * @param {string} toySlug - registry slug, e.g. 'json-formatter'
+ * @param {string} action - what the user did, e.g. 'format', 'generate'
+ * @param {Record<string, string|number|boolean>} [params] - extra detail
+ */
+export function trackToyUse(toySlug, action, params = {}) {
+  trackEvent('toy_use', { toy_slug: toySlug, toy_action: action, ...params })
+}
+
+/**
+ * Track light/dark theme toggles.
+ *
+ * @param {'light'|'dark'} theme - the theme being switched TO
+ */
+export function trackThemeToggle(theme) {
+  trackEvent('theme_toggle', { theme })
+}
+
+/**
+ * Track footer easter-egg discoveries (palette studio, zodiac).
+ *
+ * @param {string} egg - e.g. 'themes', 'zodiac'
+ */
+export function trackEasterEgg(egg) {
+  trackEvent('easter_egg_click', { egg })
+}

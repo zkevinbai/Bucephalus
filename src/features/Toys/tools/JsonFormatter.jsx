@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Field, TextArea, Btn, CopyButton, Note, SegmentedControl } from '../toykit'
+import { trackToyUse } from '../../../utils/analytics'
 
 const SAMPLE = '{"name":"Kevin","roles":["FDE","speaker"],"languages":6,"active":true}'
 
@@ -15,6 +16,7 @@ export default function JsonFormatter() {
       setOutput('')
       return
     }
+    trackToyUse('json-formatter', mode)
     try {
       const parsed = JSON.parse(input)
       const space = mode === 'minify' ? 0 : indent === 'tab' ? '\t' : Number(indent)

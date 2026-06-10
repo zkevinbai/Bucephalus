@@ -1,5 +1,6 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { Btn } from '../toykit'
+import { trackToyUse } from '../../../utils/analytics'
 
 // Curated city list (label → IANA zone). Anchor is whichever sits on top.
 const CITIES = [
@@ -111,9 +112,68 @@ export default function TimeZonePicker() {
   const activeInstant = columns[activeCol]
 
   const addCity = (city) => {
-    if (city && !selected.includes(city)) setSelected([...selected, city])
+    if (city && !selected.includes(city)) {
+      trackToyUse('timezones', 'add_city', { tz_city: city })
+      setSelected([...selected, city])
+    }
   }
-  const removeCity = (city) => setSelected(selected.filter((c) => c !== city))
+  const removeCity = (city) => {
+    trackToyUse('timezones', 'remove_city', { tz_city: city })
+    setSelected(selected.filter((c) => c !== city))
+  }
+
+  // --- Drag-to-reorder (pointer events: works for mouse and touch) ---------
+  // The drag source lives in a ref so move events never see stale state;
+  // the state copy only drives the row styling.
+  const [dragCity, setDragCity] = useState(null)
+  const dragRef = useRef(null)
+  const didReorder = useRef(false)
+
+  const moveCity = (city, targetCity) => {
+    if (city === targetCity) return
+    didReorder.current = true
+    setSelected((sel) => {
+      const from = sel.indexOf(city)
+      const to = sel.indexOf(targetCity)
+      if (from < 0 || to < 0) return sel
+      const next = [...sel]
+      next.splice(from, 1)
+      next.splice(to, 0, city)
+      return next
+    })
+  }
+
+  const onDragStart = (city) => (e) => {
+    e.preventDefault()
+    try {
+      e.currentTarget.setPointerCapture(e.pointerId)
+    } catch {
+      /* capture unsupported — drag still works via move events */
+    }
+    didReorder.current = false
+    dragRef.current = city
+    setDragCity(city)
+  }
+  const onDragMove = () => (e) => {
+    const src = dragRef.current
+    if (!src) return
+    // Vertical reorder: find the row whose vertical span contains the pointer.
+    // Geometry-based (not elementFromPoint) so it works regardless of where
+    // the pointer sits horizontally.
+    const rowsEls = [...document.querySelectorAll('tr[data-city]')]
+    const target = rowsEls.find((r) => {
+      const { top, bottom } = r.getBoundingClientRect()
+      return e.clientY >= top && e.clientY <= bottom
+    })
+    if (target && target.dataset.city !== src) moveCity(src, target.dataset.city)
+  }
+  const onDragEnd = () => {
+    if (dragRef.current && didReorder.current) {
+      trackToyUse('timezones', 'reorder_city', { tz_city: dragRef.current })
+    }
+    dragRef.current = null
+    setDragCity(null)
+  }
 
   const available = CITIES.filter((c) => !selected.includes(c.city))
 
@@ -207,10 +267,30 @@ export default function TimeZonePicker() {
         <table className="w-full border-collapse">
           <tbody>
             {rows.map((c) => (
-              <tr key={c.city} className="border-b border-line/60 last:border-b-0">
-                <td className="sticky left-0 z-10 w-36 bg-paper/95 px-3 py-2 backdrop-blur">
-                  <div className="flex items-center justify-between gap-2">
-                    <div className="min-w-0">
+              <tr
+                key={c.city}
+                data-city={c.city}
+                className={`border-b border-line/60 transition-opacity last:border-b-0 ${
+                  dragCity === c.city ? 'opacity-50' : ''
+                }`}
+              >
+                <td className="sticky left-0 z-10 w-40 bg-paper/95 px-2 py-2 backdrop-blur">
+                  <div className="flex items-center justify-between gap-1.5">
+                    <button
+                      onPointerDown={onDragStart(c.city)}
+                      onPointerMove={onDragMove(c.city)}
+                      onPointerUp={onDragEnd}
+                      onPointerCancel={onDragEnd}
+                      aria-label={`Reorder ${c.city} (drag)`}
+                      title="Drag to reorder — top city sets the day"
+                      style={{ touchAction: 'none' }}
+                      className={`shrink-0 px-1 py-2 text-muted/50 transition-colors hover:text-clay ${
+                        dragCity === c.city ? 'cursor-grabbing text-clay' : 'cursor-grab'
+                      }`}
+                    >
+                      <i className="fas fa-grip-vertical text-xs" aria-hidden />
+                    </button>
+                    <div className="min-w-0 flex-1">
                       <div className="truncate text-sm font-semibold text-ink">{c.city}</div>
                       <div className="text-[0.7rem] text-muted">
                         {offsetLabel(c.tz, activeInstant)}

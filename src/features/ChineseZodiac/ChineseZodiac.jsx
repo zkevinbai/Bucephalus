@@ -5,6 +5,7 @@ import YearSearch from './YearSearch'
 import YearTable from './YearTable'
 import YearDetail from './YearDetail'
 import { isValidYear, findYearByCombination } from './zodiacUtils'
+import { trackToyUse } from '../../utils/analytics'
 
 export default function ChineseZodiac() {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -44,6 +45,7 @@ export default function ChineseZodiac() {
   }, [searchParams, setSearchParams])
 
   const handleYearSelect = (year) => {
+    trackToyUse('zodiac', 'year_select', { zodiac_year: year })
     setSelectedYear(year)
     setSearchParams({ year: year.toString() }, { replace: true })
     window.scrollTo({ top: 0, behavior: 'smooth' })

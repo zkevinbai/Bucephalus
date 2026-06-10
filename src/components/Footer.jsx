@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import Container from './Container'
-import { trackOutboundClick } from '../utils/analytics'
+import { trackOutboundClick, trackEasterEgg } from '../utils/analytics'
 
 const socials = [
   { icon: 'fab fa-linkedin-in', label: 'LinkedIn', href: 'https://www.linkedin.com/in/zkevinbai/' },
@@ -40,10 +40,18 @@ export default function Footer() {
       <Container className="flex flex-col gap-2 border-t border-line py-5 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
         <span>© {new Date().getFullYear()} Kevin Bai. Built in San Francisco.</span>
         <span className="flex items-center gap-4">
-          <Link to="/themes" className="transition-colors hover:text-clay">
+          <Link
+            to="/themes"
+            onClick={() => trackEasterEgg('themes')}
+            className="transition-colors hover:text-clay"
+          >
             🎨 Pick a palette
           </Link>
-          <Link to="/toys/zodiac" className="transition-colors hover:text-clay">
+          <Link
+            to="/toys/zodiac"
+            onClick={() => trackEasterEgg('zodiac')}
+            className="transition-colors hover:text-clay"
+          >
             年 What's your Chinese zodiac?
           </Link>
         </span>

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Field, Btn, CopyButton, TextInput, Output } from '../toykit'
+import { trackToyUse } from '../../../utils/analytics'
 
 function uuid() {
   if (crypto.randomUUID) return crypto.randomUUID()
@@ -38,7 +39,12 @@ export default function UuidGenerator() {
             onChange={(e) => setCount(e.target.value)}
           />
         </Field>
-        <Btn onClick={generate}>
+        <Btn
+          onClick={() => {
+            trackToyUse('uuid', 'generate', { uuid_count: Number(count) || 1 })
+            generate()
+          }}
+        >
           <i className="fas fa-dice" aria-hidden /> Generate
         </Btn>
         <CopyButton value={joined} label="Copy all" className="ml-auto" />

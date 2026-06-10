@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { trackSectionView } from '../../utils/analytics'
 
 const SECTIONS = [
   { id: 'about', label: 'About' },
@@ -11,6 +12,7 @@ const SECTIONS = [
 /** Sticky in-page nav with scrollspy highlighting the section in view. */
 export default function SectionNav() {
   const [active, setActive] = useState('about')
+  const seen = useRef(new Set())
 
   useEffect(() => {
     const observers = SECTIONS.map(({ id }) => {
@@ -18,7 +20,15 @@ export default function SectionNav() {
       if (!el) return null
       const io = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting) setActive(id)
+          if (entry.isIntersecting) {
+            setActive(id)
+            // Report each section once per page load so GA can see how far
+            // visitors actually get on the single-route homepage.
+            if (!seen.current.has(id)) {
+              seen.current.add(id)
+              trackSectionView(id)
+            }
+          }
         },
         { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
       )
