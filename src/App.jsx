@@ -6,6 +6,8 @@ import Portfolio from './features/Portfolio/Portfolio'
 import AllBlogs from './features/Blog/AllBlogs'
 import SingleBlog from './features/Blog/SingleBlog'
 import ChineseZodiac from './features/ChineseZodiac/ChineseZodiac'
+import Toys from './features/Toys/Toys'
+import ToyPage from './features/Toys/ToyPage'
 import { useScrollReveal } from './hooks/useScrollReveal'
 import { trackPageView } from './utils/analytics'
 
@@ -38,7 +40,10 @@ function App() {
         <Routes>
           <Route path="/blog/:slug" element={<SingleBlog />} />
           <Route path="/blog" element={<AllBlogs />} />
-          <Route path="/zodiac" element={<ChineseZodiac />} />
+          <Route path="/toys" element={<Toys />} />
+          <Route path="/toys/zodiac" element={<ChineseZodiac />} />
+          <Route path="/toys/:slug" element={<ToyPage />} />
+          <Route path="/zodiac" element={<Navigate to="/toys/zodiac" replace />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/" element={<Portfolio />} />
           <Route path="*" element={<Navigate to="/" replace />} />

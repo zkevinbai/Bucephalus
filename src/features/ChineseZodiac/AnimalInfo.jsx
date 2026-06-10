@@ -1,77 +1,58 @@
+const heading = 'font-serif text-lg font-semibold text-ink'
+const body = 'text-[0.95rem] leading-relaxed text-ink-soft'
+const chip =
+  'rounded-full bg-cream px-3 py-1 text-xs font-medium text-clay-deep'
+
+function Bullets({ items }) {
+  return (
+    <ul className="flex flex-col gap-2">
+      {items.map((item, i) => (
+        <li key={i} className="flex items-start gap-2 text-[0.9rem] text-ink-soft">
+          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-clay" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
 export default function AnimalInfo({ animal, animalData }) {
   if (!animalData) return null
 
   return (
-    <div className="flex flex-col gap-4 p-6 max-[950px]:p-4 max-[950px]:gap-3">
-      <div className="flex items-center gap-3 mb-2">
-        <span className="text-4xl max-[950px]:text-3xl">{animalData.emoji}</span>
-        <h2 className="font-raleway text-2xl font-bold text-gray-800 m-0 max-[950px]:text-xl">
-          {animal}
-        </h2>
+    <div className="flex flex-col gap-5">
+      <div className="flex items-center gap-3">
+        <span className="text-4xl">{animalData.emoji}</span>
+        <h2 className="font-serif text-2xl font-semibold tracking-[-0.01em] text-ink">{animal}</h2>
       </div>
 
-      <div className="flex flex-col gap-4">
-        {/* Personality */}
-        <div>
-          <h3 className="font-raleway text-lg font-semibold text-gray-800 m-0 mb-2 max-[950px]:text-base">
-            Personality
-          </h3>
-          <p className="font-raleway text-base font-light text-gray-700 m-0 leading-relaxed max-[950px]:text-sm">
-            {animalData.personality}
-          </p>
-        </div>
+      <div>
+        <h3 className={heading}>Personality</h3>
+        <p className={`mt-2 ${body}`}>{animalData.personality}</p>
+      </div>
 
-        {/* Traits */}
-        <div>
-          <h3 className="font-raleway text-lg font-semibold text-gray-800 m-0 mb-2 max-[950px]:text-base">
-            Key Traits
-          </h3>
-          <div className="flex flex-wrap gap-2">
-            {animalData.traits.map((trait, index) => (
-              <span
-                key={index}
-                className="px-3 py-1 bg-white border border-gray-200 rounded-md text-sm font-raleway font-light text-gray-700 max-[950px]:text-xs"
-              >
-                {trait}
-              </span>
-            ))}
-          </div>
+      <div>
+        <h3 className={heading}>Key traits</h3>
+        <div className="mt-2 flex flex-wrap gap-2">
+          {animalData.traits.map((trait, i) => (
+            <span key={i} className={chip}>
+              {trait}
+            </span>
+          ))}
         </div>
+      </div>
 
-        {/* Strengths */}
-        <div>
-          <h3 className="font-raleway text-lg font-semibold text-gray-800 m-0 mb-2 max-[950px]:text-base">
-            Strengths
-          </h3>
-          <ul className="list-none m-0 p-0 flex flex-col gap-2">
-            {animalData.strengths.map((strength, index) => (
-              <li
-                key={index}
-                className="flex items-start gap-2 font-raleway text-sm font-light text-gray-700 max-[950px]:text-xs"
-              >
-                <span className="text-gray-400 mt-1">•</span>
-                <span>{strength}</span>
-              </li>
-            ))}
-          </ul>
+      <div>
+        <h3 className={heading}>Strengths</h3>
+        <div className="mt-2">
+          <Bullets items={animalData.strengths} />
         </div>
+      </div>
 
-        {/* Weaknesses */}
-        <div>
-          <h3 className="font-raleway text-lg font-semibold text-gray-800 m-0 mb-2 max-[950px]:text-base">
-            Challenges
-          </h3>
-          <ul className="list-none m-0 p-0 flex flex-col gap-2">
-            {animalData.weaknesses.map((weakness, index) => (
-              <li
-                key={index}
-                className="flex items-start gap-2 font-raleway text-sm font-light text-gray-700 max-[950px]:text-xs"
-              >
-                <span className="text-gray-400 mt-1">•</span>
-                <span>{weakness}</span>
-              </li>
-            ))}
-          </ul>
+      <div>
+        <h3 className={heading}>Challenges</h3>
+        <div className="mt-2">
+          <Bullets items={animalData.weaknesses} />
         </div>
       </div>
     </div>

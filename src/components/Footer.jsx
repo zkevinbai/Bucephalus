@@ -39,7 +39,7 @@ export default function Footer() {
 
       <Container className="flex flex-col gap-2 border-t border-line py-5 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
         <span>© {new Date().getFullYear()} Kevin Bai. Built in San Francisco.</span>
-        <Link to="/zodiac" className="transition-colors hover:text-clay">
+        <Link to="/toys/zodiac" className="transition-colors hover:text-clay">
           年 What's your Chinese zodiac?
         </Link>
       </Container>
