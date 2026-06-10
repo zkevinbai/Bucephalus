@@ -64,6 +64,10 @@ const careerEntries = [
         text: 'Selected speaking engagements:',
         chips: true,
         subBullets: [
+          'Rippling · SF · Jun 2026',
+          'Rocketlane · SF · May 2026',
+          'Andreessen Horowitz · SF · Apr 2026',
+          'Rippling · SF · Mar 2026',
           'Y Combinator · SF · 2025',
           'Rocketlane · SF · 2025',
           'Palantir · Denver · 2022',

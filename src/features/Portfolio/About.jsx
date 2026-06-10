@@ -75,7 +75,7 @@ export default function About() {
         <div className="reveal" style={{ transitionDelay: '80ms' }}>
           <div className="rounded-2xl border border-line bg-white/60 p-7 shadow-[0_1px_0_rgba(0,0,0,0.02)]">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-clay">
-              Worked from
+              I've worked in
             </p>
             <p className="mt-3 font-serif text-lg leading-[1.9] text-ink">
               {cities.map((city, i) => (
