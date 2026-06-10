@@ -20,6 +20,6 @@ npm run build    # production build → dist/
 npm run preview  # preview the production build
 ```
 
-Deploys to GitHub Pages via GitHub Actions on push to `master`.
+Deploys to GitHub Pages via GitHub Actions on push to `main`.
 
 For architecture, see [SYSTEM_DESIGN.md](./SYSTEM_DESIGN.md). For agent/contributor conventions, see [CLAUDE.md](./CLAUDE.md).

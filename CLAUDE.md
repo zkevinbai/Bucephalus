@@ -6,7 +6,7 @@ Personal site (zkevinbai.com): React 18 + Vite + Tailwind 3 + react-router-dom 6
 
 - `npm run dev` — dev server at http://localhost:5173 (always run from this repo's root)
 - `npm run build` — production build → `dist/` (never commit it)
-- Deploy is automatic: push to `master` → `.github/workflows/deploy.yml` → GitHub Pages
+- Deploy is automatic: push to `main` → `.github/workflows/deploy.yml` → GitHub Pages
 
 ## Design system (v2 "warm editorial" — this is final)
 

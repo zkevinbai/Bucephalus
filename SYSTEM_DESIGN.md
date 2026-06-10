@@ -67,7 +67,7 @@ Content is data-driven, no CMS:
 
 - `npm run dev` → Vite dev server at http://localhost:5173
 - `npm run build` → static bundle in `dist/` (not committed)
-- Deploy: pushing to `master` triggers `.github/workflows/deploy.yml`, which builds and publishes `dist/` to GitHub Pages via `actions/deploy-pages`. PRs get a build check from `.github/workflows/test.yml`.
+- Deploy: pushing to `main` triggers `.github/workflows/deploy.yml`, which builds and publishes `dist/` to GitHub Pages via `actions/deploy-pages`. PRs get a build check from `.github/workflows/test.yml`.
 - `public/` is copied verbatim into the bundle: `CNAME` (custom domain), `favicon.ico`, `og-image.jpg`, and `404.html`. The `404.html` + the inline script in `index.html` implement the spa-github-pages redirect so deep links work on Pages.
 
 ## Analytics
