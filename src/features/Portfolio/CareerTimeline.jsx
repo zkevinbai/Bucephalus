@@ -1,288 +1,274 @@
+import Section from './Section'
 import RipplingLogo from '../../assets/companies/Rippling-logo.png'
 import UNLogo from '../../assets/companies/UN-logo.svg'
 import PalantirLogo from '../../assets/companies/palantir-logo.svg'
 import GlobalityLogo from '../../assets/companies/Globality-logo.png'
 import UNHCRLogo from '../../assets/companies/UNHCR-logo.svg'
+import KevinLogo from '../../assets/companies/KevinBai-logo.png'
 
 const careerEntries = [
   {
     logo: RipplingLogo,
+    dark: false,
     title: 'Founding Forward Deployed Engineer',
     company: 'Rippling',
-    dateRange: '2025 - Present',
+    dateRange: '2025 — Present',
     location: 'San Francisco Bay Area',
     bullets: [
-      'Founding <strong>Forward Deployed Engineer</strong> at Rippling, <strong>first hire</strong>. Here to help build the <strong>FDE function</strong> at Rippling — a Forward Deployed Engineer is part consultant, part product manager, and part software engineer: a <strong>founder-shaped engineer</strong>',
-      'Solve <strong>enterprise problems</strong> for Rippling\'s <strong>largest and most strategic customers</strong>. If there\'s a SKU we don\'t have, we invent it. Our north star is the success of our customers on Rippling',
+      'Founding <strong>Forward Deployed Engineer</strong> at Rippling, <strong>first hire</strong>. Here to help build the <strong>FDE function</strong> — a Forward Deployed Engineer is part consultant, part product manager, and part software engineer: a <strong>founder-shaped engineer</strong>',
+      "Solve <strong>enterprise problems</strong> for Rippling's <strong>largest and most strategic customers</strong>. If there's a SKU we don't have, we invent it. Our north star is the success of our customers on Rippling",
       'Created the <strong>Slack channel and GitHub repo</strong>, authored the <strong>first FDE SOPs</strong>, completed the <strong>first FDE project</strong>, and wrote the <strong>first 250K lines of FDE code</strong>',
     ],
   },
   {
     logo: UNLogo,
+    dark: false,
     title: 'United Nations Youth Representative',
     company: 'Comprehensive Nuclear-Test-Ban Treaty Organization (CTBTO)',
-    dateRange: '2017 - Present',
+    dateRange: '2017 — Present',
     location: 'Vienna, Austria',
     bullets: [
       {
         text: '<strong>🇺🇳 United Nations Keynote Speaker</strong>',
         subBullets: [
           '<strong>UN Science and Technology Conference</strong> — Vienna, Austria',
-          '<strong>UN Youth Conference</strong> — Moscow, Russian Federation'
-        ]
+          '<strong>UN Youth Conference</strong> — Moscow, Russian Federation',
+        ],
       },
       {
-        text: '<strong>📰 Youth Newsroom Reporter:</strong> Organized and conducted interviews for UN News with senior executives of the Comprehensive Nuclear-Test-Ban Treaty Organization (CTBTO)',
+        text: '<strong>📰 Youth Newsroom Reporter:</strong> Organized and conducted interviews for UN News with senior executives of the CTBTO',
         subBullets: [
           '<strong>Wolfgang Hoffmann</strong> — Negotiator of the CTBT Treaty',
-          '<strong>Dr. Lassina Zerbo</strong> — Executive Secretary of the CTBTO'
-        ]
+          '<strong>Dr. Lassina Zerbo</strong> — Executive Secretary of the CTBTO',
+        ],
       },
       {
-        text: 'Currently working with the <strong>CTBT team</strong> to advocate for the full enforcement of the <strong>Comprehensive Nuclear-Test-Ban Treaty (CTBT)</strong>',
-        subBullets: []
-      }
+        text: 'Currently working with the <strong>CTBT team</strong> to advocate for full enforcement of the <strong>Comprehensive Nuclear-Test-Ban Treaty (CTBT)</strong>',
+        subBullets: [],
+      },
     ],
   },
   {
-    logo: '/favicon.ico',
+    logo: KevinLogo,
+    dark: false,
     title: 'Public Speaker',
-    company: 'Kevin Bai',
-    dateRange: '2014 - Present',
-    location: 'Various Locations',
+    company: 'Independent',
+    dateRange: '2014 — Present',
+    location: 'Various locations',
     bullets: [
       {
-        text: '<strong>🇺🇳 Keynote and Panel Speaker</strong> at <strong>Enterprise and United Nations Events</strong>',
-        subBullets: []
+        text: '<strong>🎤 Keynote and panel speaker</strong> at <strong>enterprise and United Nations events</strong>',
+        subBullets: [],
       },
       {
-        text: 'Speaking Engagements:',
+        text: 'Selected speaking engagements:',
+        chips: true,
         subBullets: [
-          '<strong>🌁 2025 November</strong> — <strong>Y Combinator</strong> — San Francisco, United States',
-          '<strong>🌁 2025 October</strong> — <strong>Rocketlane</strong> — San Francisco, United States',
-          '<strong>🏔️ 2022 September</strong> — <strong>Palantir</strong> — Denver, United States',
-          '<strong>🇬🇧 2022 July</strong> — <strong>Palantir</strong> — London, United Kingdom',
-          '<strong>💻 2021 November</strong> — <strong>United Nations</strong> — Remote',
-          '<strong>🏙️ 2021 May</strong> — <strong>Palantir</strong> — New York City, United States',
-          '<strong>💻 2020 October</strong> — <strong>General Assembly</strong> — Remote',
-          '<strong>🎰 2019 April</strong> — <strong>Atlassian</strong> — Las Vegas, United States',
-          '<strong>🇷🇺 2018 October</strong> — <strong>United Nations</strong> — Moscow, Russian Federation',
-          '<strong>🇦🇹 2017 July</strong> — <strong>United Nations</strong> — Vienna, Austria',
-          '<strong>🌁 2016 October</strong> — <strong>FOCUS</strong> — San Francisco, United States',
-          '<strong>🇲🇽 2016 April</strong> — <strong>FOCUS</strong> — Mexico City, Mexico',
-          '<strong>🇵🇭 2016 January</strong> — <strong>VAW</strong> — Manila, Philippines',
-          '<strong>🌇 2015 December</strong> — <strong>REACH</strong> — Los Angeles, United States',
-          '<strong>🎓 2014 August</strong> — <strong>University of California Board of Regents</strong> — Oakland, United States'
-        ]
-      }
+          'Rippling · SF · Jun 2026',
+          'Rocketlane · SF · May 2026',
+          'Andreessen Horowitz · SF · Apr 2026',
+          'Rippling · SF · Mar 2026',
+          'Y Combinator · SF · 2025',
+          'Rocketlane · SF · 2025',
+          'Palantir · Denver · 2022',
+          'Palantir · London · 2022',
+          'United Nations · Remote · 2021',
+          'Palantir · NYC · 2021',
+          'General Assembly · 2020',
+          'Atlassian · Las Vegas · 2019',
+          'United Nations · Moscow · 2018',
+          'United Nations · Vienna · 2017',
+          'FOCUS · SF · 2016',
+          'FOCUS · Mexico City · 2016',
+          'UC Board of Regents · Oakland · 2014',
+        ],
+      },
     ],
   },
   {
     logo: PalantirLogo,
+    dark: true,
     title: 'Forward Deployed Software Engineer',
     company: 'Palantir Technologies',
-    dateRange: 'May 2021 - Apr 2025',
-    location: 'Los Angeles, New York City, Chicago, London, Denver, Washington DC, Bogota',
+    dateRange: 'May 2021 — Apr 2025',
+    location: 'LA · NYC · Chicago · London · Denver · DC · Bogotá',
     bullets: [
       {
-        text: 'Solve <strong>open-ended problems</strong> at the <strong>most important institutions in the world</strong>. Own every stage from <strong>discovery to delivery</strong>—translating business needs into product capabilities and leading teams to build <strong>full-stack software</strong> that creates <strong>measurable value</strong>. Bridge the gap between the potential of the platform and the needs of the customer',
-        subBullets: []
+        text: 'Solved <strong>open-ended problems</strong> at the <strong>most important institutions in the world</strong>. Owned every stage from <strong>discovery to delivery</strong> — translating business needs into product capabilities and leading teams to build <strong>full-stack software</strong> that creates <strong>measurable value</strong>',
+        subBullets: [],
       },
       {
-        text: '<strong>🎩 Hats I wear:</strong>',
-        subBullets: [
-          'Forward Deployed Engineer',
-          'Full Stack Engineer',
-          'Product Manager',
-          'Data Scientist',
-          'Business Development',
-          'Consultant',
-          'Strategist',
-          'Customer Success'
-        ]
+        text: '<strong>🎩 Hats I wore</strong>',
+        chips: true,
+        subBullets: ['FDE', 'Full Stack Engineer', 'Product Manager', 'Data Scientist', 'Business Development', 'Consultant', 'Strategist', 'Customer Success'],
       },
       {
-        text: '<strong>⚡️ Technologies I use:</strong>',
-        subBullets: [
-          'TypeScript',
-          'React',
-          'Python',
-          'Spark',
-          'PySpark',
-          'SQL',
-          'Azure',
-          'AWS',
-          'Foundry',
-          'Data Pipelines',
-          'AIP'
-        ]
+        text: '<strong>⚡️ Technologies</strong>',
+        chips: true,
+        subBullets: ['TypeScript', 'React', 'Python', 'Spark', 'PySpark', 'SQL', 'Azure', 'AWS', 'Foundry', 'Data Pipelines', 'AIP'],
       },
       {
-        text: '<strong>🦉 Work I do:</strong>',
+        text: '<strong>Selected work</strong>',
         subBullets: [
-          'Establish and own client relationships',
-          'Ideate and scope features',
-          'Plan and schedule work',
-          'Lead teams of engineers and consultants',
-          'Create datasets and models',
-          'Build full stack applications'
-        ]
+          '<strong>🍺 Led a multi-million-dollar project</strong> to digitize the innovation workflow of a <strong>Fortune 500 CPG company</strong>. Built <strong>five applications in six months</strong>, drove adoption from <strong>0 to 800 users in two months</strong>, and achieved savings <strong>more than 10× the initial expectations</strong>',
+          '<strong>✈️ Led a multi-million-dollar project</strong> to improve operational efficiency and safety for a <strong>Fortune 500 airline</strong>. Digitized safety analysis, automated damage and injury reporting, and improved a major engineering division by <strong>10 hours per engineer per week</strong>',
+          '<strong>♻️ Led development</strong> of the first auth-agnostic, stack-agnostic user-information module, and the company\'s <strong>first internal pipeline</strong> connecting internal and demo environments',
+        ],
       },
-      {
-        text: '<strong>Work I\'ve Done</strong>',
-        subBullets: [
-          '<strong>🍺 Led a $X million project</strong> to digitize the innovation workflow of a <strong>Fortune 500 CPG company</strong>. Built <strong>five applications in six months</strong>, drove adoption from <strong>0 to 800 users in two months</strong>, and achieved <strong>$XX million in year-over-year savings</strong> for the client—more than <strong>10× their initial expectations</strong>',
-          '<strong>✈️ Led a $X million project</strong> to improve operational efficiency and safety for a <strong>Fortune 500 airline</strong>. Digitized safety analysis across the organization, automated reporting for damages and injuries, and improved the efficiency of a major engineering division by <strong>10 hours per engineer per week</strong>',
-          '<strong>♻️ Led development</strong> of the first auth-agnostic, stack-agnostic user information module. Built the company\'s <strong>first internal pipeline</strong> connecting internal and demo environments, improving data consistency and accelerating deployment cycles across teams'
-        ]
-      }
     ],
   },
   {
     logo: GlobalityLogo,
+    dark: false,
     title: 'Full Stack Software Engineer',
     company: 'Globality, Inc.',
-    dateRange: '2019 - 2021',
+    dateRange: '2019 — 2021',
     location: 'San Francisco Bay Area',
     bullets: [
       {
-        text: '<strong>🦄 Globality became a unicorn while I was there!</strong>',
-        subBullets: []
+        text: '<strong>🦄 Globality became a unicorn while I was there.</strong> Joined shortly after the garage stage and stayed through Series E, helping raise over <strong>$350M in two years</strong> for a trailblazing <strong>AI enterprise SaaS platform</strong> — before ChatGPT existed',
+        subBullets: [],
       },
       {
-        text: 'Wore multiple hats and worked with an incredible team to build the future of <strong>professional-services procurement</strong> for <strong>Fortune 500 companies</strong>. Joined shortly after the <strong>garage stage</strong> and stayed through <strong>Series E</strong>, we raised over <strong>$350 million over two years</strong> for a trailblazing <strong>AI Enterprise SaaS platform</strong>—before ChatGPT even existed',
-        subBullets: []
+        text: 'Built with <strong>JavaScript</strong>, <strong>React</strong>, <strong>GraphQL</strong>, <strong>Node</strong>, and <strong>Python</strong> to create the <strong>first AI-powered procurement ecosystem</strong>, helping enterprises save up to <strong>40% on eight-figure projects</strong>',
+        subBullets: [],
       },
       {
-        text: 'Built with <strong>JavaScript</strong>, <strong>React</strong>, <strong>GraphQL</strong>, <strong>Node</strong>, and <strong>Python</strong> to create the <strong>first AI-powered procurement ecosystem</strong>, helping enterprises connect with service providers worldwide and save up to <strong>40% on eight-figure projects</strong>',
-        subBullets: []
-      },
-      {
-        text: 'Accomplishments:',
+        text: '<strong>Highlights</strong>',
         subBullets: [
-          '<strong>🥇 First Place</strong> — 2020 Globality Hackathon',
+          '<strong>🥇 First place</strong> — 2020 Globality Hackathon',
           'Led <strong>product engineering</strong> for multiple key features, from technical design through production',
-          'Improved platform accessibility from <strong>52/100 to 95/100</strong>, achieving <strong>WCAG AA compliance</strong>',
-          'Introduced and implemented <strong>Amplitude analytics</strong> across the platform using the delegation pattern'
-        ]
-      }
+          'Improved platform accessibility from <strong>52 to 95 / 100</strong>, achieving <strong>WCAG AA compliance</strong>',
+          'Introduced <strong>Amplitude analytics</strong> across the platform using the delegation pattern',
+        ],
+      },
     ],
   },
   {
     logo: UNHCRLogo,
+    dark: false,
     title: 'Private Sector Partnerships',
     company: 'UNHCR, the UN Refugee Agency',
     dateRange: '2017',
     location: 'Dubai, United Arab Emirates',
     bullets: [
       {
-        text: '<strong>🇺🇳 Worked in support of refugees</strong> during the peak of the <strong>2017 Syrian Civil War and Refugee Crisis</strong>',
-        subBullets: []
+        text: '<strong>🇺🇳 Worked in support of refugees</strong> during the peak of the <strong>2017 Syrian Civil War and Refugee Crisis</strong>, building partnerships with leading corporations and nonprofits on behalf of the <strong>United Nations</strong>',
+        subBullets: [
+          'Partnered with <strong>IKEA</strong> on a <strong>modular refugee shelter</strong> — mass-manufacturable, assembled without power tools, easily repaired',
+          'Partnered with <strong>Facebook</strong> on the <strong>first VR fundraising campaign</strong> for refugees',
+          'Partnered with <strong>Microsoft</strong> to enable <strong>digital cash-aid distribution</strong> for displaced populations',
+        ],
       },
       {
-        text: '<strong>🤝 Partnerships:</strong> Built partnerships with <strong>leading corporations and nonprofits</strong> on behalf of the <strong>United Nations</strong>',
-        subBullets: [
-          'Partnered with <strong>IKEA</strong> to design and produce a <strong>modular refugee shelter</strong> that could be mass-manufactured, assembled without power tools, and easily repaired',
-          'Partnered with <strong>Facebook</strong> to launch the <strong>first Virtual Reality fundraising campaign</strong> for refugees',
-          'Partnered with <strong>Microsoft</strong> to enable <strong>digital cash-aid distribution</strong> for displaced populations'
-        ]
+        text: 'Developed the <strong>Qatar outreach strategy</strong> for UNHCR Private Sector Partnerships, authored <strong>executive briefings</strong> for the High Commissioner, and co-wrote the <strong>UNHCR MENA newsletter</strong>',
+        subBullets: [],
       },
-      {
-        text: '<strong>💼 Business Development:</strong>',
-        subBullets: [
-          'Developed the <strong>Qatar outreach strategy</strong> for UNHCR Private Sector Partnerships',
-          'Analyzed the public, private, and NGO ecosystems of Qatar'
-        ]
-      },
-      {
-        text: '<strong>🗣️ Advocacy and Public Relations:</strong>',
-        subBullets: [
-          'Co-wrote the UNHCR MENA Newsletter for April–August 2018, responsible for research, design, and editing'
-        ]
-      },
-      {
-        text: '<strong>🧾 Executive Briefing:</strong>',
-        subBullets: [
-          'Authored briefing documents for the High Commissioner of UNHCR on Qatar and the Gulf Cooperation Council'
-        ]
-      }
     ],
   },
 ]
 
-export default function CareerTimeline() {
+function Bullet({ text }) {
   return (
-    <div className="flex flex-col gap-6 w-full m-0 p-0">
-          {careerEntries.map((entry, index) => (
-            <div
-              key={index}
-              className="flex gap-4 items-start p-6 bg-white border-2 border-gray-200 border-l-4 border-l-[#ef4444] rounded-xl shadow-md hover:shadow-lg hover:-translate-y-1 hover:border-l-[#dc2626] transition-all duration-300 max-[950px]:flex-col max-[950px]:items-center max-[950px]:p-4 m-0"
-            >
-              <div className={`shrink-0 w-16 h-16 max-[950px]:w-12 max-[950px]:h-12 rounded-lg ${entry.company === 'Palantir Technologies' ? 'bg-black p-2' : ''}`}>
-                <img
-                  src={entry.logo}
-                  alt={`${entry.company} logo`}
-                  className="w-full h-full object-contain rounded-lg"
-                />
-              </div>
-              <div className="flex-1 flex flex-col gap-2 min-w-0 m-0 p-0">
-                <div className="m-0 p-0">
-                  <h3 className="text-xl font-semibold text-gray-800 font-raleway m-0">
-                    {entry.title}
-                  </h3>
-                  <h4 className="text-lg font-medium text-gray-700 font-raleway m-0">
-                    {entry.company}
-                  </h4>
-                  <div className="flex flex-wrap gap-2 mt-1">
-                    <span className="text-sm text-gray-600 font-raleway">
-                      {entry.dateRange}
-                    </span>
-                    <span className="text-sm text-gray-600 font-raleway">
-                      {entry.location}
-                    </span>
-                  </div>
-                </div>
-                <ul className="list-none flex flex-col gap-3 mt-3 max-[950px]:gap-2 max-[950px]:mt-2 p-0 m-0">
-                  {entry.bullets.map((bullet, bulletIndex) => {
-                    const isString = typeof bullet === 'string'
-                    const bulletText = isString ? bullet : bullet.text
-                    const subBullets = isString ? [] : (bullet.subBullets || [])
-                    const isSingleLine = bulletText.includes('Hats I wear') || bulletText.includes('Technologies I use') || bulletText.includes('Work I do')
-                    
-                    return (
-                      <li key={bulletIndex} className="flex flex-col gap-2 max-[950px]:gap-1.5 m-0 p-0">
-                        <div className="text-sm font-light text-gray-700 font-raleway leading-relaxed flex items-start gap-2 m-0">
-                          <span className="text-gray-500 mt-1 shrink-0">•</span>
-                          <span dangerouslySetInnerHTML={{ __html: bulletText }} />
-                        </div>
-                        {subBullets.length > 0 && (
-                          isSingleLine ? (
-                            <div className="text-sm font-light text-gray-700 font-raleway leading-relaxed flex items-start gap-2 ml-6">
-                              <span className="text-gray-400 mt-1 shrink-0">◦</span>
-                              <span>{subBullets.join(', ')}</span>
-                            </div>
-                          ) : (
-                            <ul className="list-none flex flex-col gap-2 ml-6 max-[950px]:gap-1.5 p-0 m-0">
-                              {subBullets.map((subBullet, subIndex) => (
-                                <li
-                                  key={subIndex}
-                                  className="text-sm font-light text-gray-700 font-raleway leading-relaxed flex items-start gap-2 m-0 p-0"
-                                >
-                                  <span className="text-gray-400 mt-1 shrink-0">◦</span>
-                                  <span dangerouslySetInnerHTML={{ __html: subBullet }} />
-                                </li>
-                              ))}
-                            </ul>
-                          )
-                        )}
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
-            </div>
-          ))}
+    <div className="flex gap-2.5 [&_strong]:font-semibold [&_strong]:text-ink">
+      <span className="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-clay/70" />
+      <span
+        className="text-[0.97rem] leading-relaxed text-ink-soft"
+        dangerouslySetInnerHTML={{ __html: text }}
+      />
     </div>
   )
 }
 
+function ChipRow({ items }) {
+  return (
+    <div className="flex flex-wrap gap-2">
+      {items.map((item) => (
+        <span
+          key={item}
+          className="rounded-full border border-line bg-cream px-3 py-1 text-[0.8rem] font-medium text-ink-soft"
+        >
+          {item}
+        </span>
+      ))}
+    </div>
+  )
+}
+
+function Entry({ entry }) {
+  return (
+    <article className="reveal relative md:pl-24">
+      {/* node / logo */}
+      <div
+        className={`mb-4 flex h-14 w-14 items-center justify-center rounded-2xl border border-line shadow-sm md:absolute md:left-0 md:top-0 md:mb-0 ${
+          entry.dark ? 'bg-[#14110e] p-3' : 'bg-white p-2.5'
+        }`}
+      >
+        <img src={entry.logo} alt={`${entry.company} logo`} className="h-full w-full object-contain" />
+      </div>
+
+      <div className="rounded-2xl border border-line bg-white/60 p-6 transition-shadow duration-300 hover:shadow-[0_14px_40px_-24px_rgba(27,23,20,0.4)] md:p-7">
+        <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+          <h3 className="font-serif text-xl font-semibold tracking-[-0.01em] text-ink md:text-[1.4rem]">
+            {entry.title}
+          </h3>
+          <span className="text-sm font-medium text-clay-deep">{entry.dateRange}</span>
+        </div>
+        <p className="mt-1 text-[0.95rem] font-medium text-ink-soft">{entry.company}</p>
+        <p className="mt-0.5 text-sm text-muted">{entry.location}</p>
+
+        <div className="mt-5 flex flex-col gap-4">
+          {entry.bullets.map((bullet, i) => {
+            if (typeof bullet === 'string') return <Bullet key={i} text={bullet} />
+            return (
+              <div key={i} className="flex flex-col gap-2.5">
+                <Bullet text={bullet.text} />
+                {bullet.subBullets?.length > 0 &&
+                  (bullet.chips ? (
+                    <div className="md:pl-4">
+                      <ChipRow items={bullet.subBullets} />
+                    </div>
+                  ) : (
+                    <div className="flex flex-col gap-2 pl-4 md:pl-6">
+                      {bullet.subBullets.map((sub, j) => (
+                        <div
+                          key={j}
+                          className="flex gap-2.5 [&_strong]:font-semibold [&_strong]:text-ink"
+                        >
+                          <span className="mt-[0.6em] h-1 w-1 shrink-0 rounded-full bg-muted" />
+                          <span
+                            className="text-[0.92rem] leading-relaxed text-muted"
+                            dangerouslySetInnerHTML={{ __html: sub }}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </article>
+  )
+}
+
+export default function CareerTimeline() {
+  return (
+    <Section
+      id="career"
+      eyebrow="Career"
+      title="From the United Nations to the enterprise frontier."
+      intro="A decade spanning diplomacy, startups, and the world's most important institutions — always in the seat where business problems meet software."
+    >
+      <div className="relative">
+        <span className="absolute left-[27px] top-3 hidden w-px bg-line md:block" style={{ height: 'calc(100% - 24px)' }} />
+        <div className="flex flex-col gap-10">
+          {careerEntries.map((entry, i) => (
+            <Entry key={i} entry={entry} />
+          ))}
+        </div>
+      </div>
+    </Section>
+  )
+}

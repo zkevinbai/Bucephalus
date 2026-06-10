@@ -1,93 +1,93 @@
 import { NavLink } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { trackThemeToggle } from '../utils/analytics'
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const [dark, setDark] = useState(
+    () => typeof document !== 'undefined' && document.documentElement.classList.contains('dark')
+  )
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const toggleTheme = () => {
+    setDark((d) => {
+      const next = !d
+      document.documentElement.classList.toggle('dark', next)
+      try {
+        localStorage.setItem('theme', next ? 'dark' : 'light')
+      } catch {
+        /* storage unavailable — no-op */
+      }
+      const meta = document.querySelector('meta[name="theme-color"]')
+      if (meta) meta.setAttribute('content', next ? '#0f1c1b' : '#fbf7f0')
+      trackThemeToggle(next ? 'dark' : 'light')
+      return next
+    })
+  }
 
   const navLinks = [
-    { to: '/', label: 'Portfolio', end: true },
-    { to: '/blog', label: 'Blog' },
-    { to: '/zodiac', label: 'Zodiac' },
+    { to: '/', label: 'Work', end: true },
+    { to: '/blog', label: 'Writing' },
+    { to: '/toys', label: 'Toys' },
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-16 px-4 md:px-6 lg:px-8 bg-white/90 backdrop-blur-sm border-b-2 border-[#ef4444]">
-      <nav className="flex items-center justify-between h-full">
-        <NavLink 
-          to="/" 
-          className="font-raleway font-bold text-xl text-gray-900 hover:text-[#ef4444] transition-colors duration-200"
+    <header
+      className={`fixed top-0 inset-x-0 z-50 h-16 transition-all duration-300 ${
+        scrolled
+          ? 'bg-paper/85 backdrop-blur-md border-b border-line'
+          : 'bg-transparent border-b border-transparent'
+      }`}
+    >
+      <nav className="mx-auto flex h-full max-w-page items-center justify-between px-6 md:px-8">
+        <NavLink
+          to="/"
+          className="font-serif text-[1.35rem] font-semibold tracking-[-0.01em] text-ink transition-colors hover:text-clay"
         >
           Kevin Bai
         </NavLink>
-        
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-6">
+
+        <div className="flex items-center gap-1 sm:gap-2">
           {navLinks.map((link) => (
             <NavLink
               key={link.to}
               to={link.to}
               end={link.end}
               className={({ isActive }) =>
-                `font-raleway font-medium text-base px-4 py-2 transition-all duration-200 ${
-                  isActive
-                    ? 'text-[#ef4444] border-b-2 border-[#ef4444]'
-                    : 'text-gray-800 hover:text-[#ef4444]'
+                `relative px-3 py-2 text-sm font-medium transition-colors ${
+                  isActive ? 'text-clay' : 'text-ink-soft hover:text-clay'
                 }`
               }
             >
-              {link.label}
+              {({ isActive }) => (
+                <>
+                  {link.label}
+                  <span
+                    className={`absolute inset-x-3 -bottom-0.5 h-px bg-clay transition-opacity ${
+                      isActive ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  />
+                </>
+              )}
             </NavLink>
           ))}
-        </div>
 
-        {/* Hamburger Menu Button (Mobile) */}
-        <button
-          className="md:hidden w-8 h-8 flex flex-col justify-center gap-1.5 cursor-pointer"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span
-            className={`block h-0.5 w-full bg-gray-800 transition-all duration-300 ${
-              isMenuOpen ? 'rotate-45 translate-y-2' : ''
-            }`}
-          />
-          <span
-            className={`block h-0.5 w-full bg-gray-800 transition-all duration-300 ${
-              isMenuOpen ? 'opacity-0' : ''
-            }`}
-          />
-          <span
-            className={`block h-0.5 w-full bg-gray-800 transition-all duration-300 ${
-              isMenuOpen ? '-rotate-45 -translate-y-2' : ''
-            }`}
-          />
-        </button>
+          <button
+            onClick={toggleTheme}
+            aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
+            title={dark ? 'Light mode' : 'Dark mode'}
+            className="ml-1 flex h-9 w-9 items-center justify-center rounded-full text-ink-soft transition-colors hover:text-clay"
+          >
+            <i className={dark ? 'fas fa-sun' : 'fas fa-moon'} />
+          </button>
+        </div>
       </nav>
-
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden fixed top-16 left-0 right-0 bg-white/95 backdrop-blur-md shadow-xl border-b border-gray-200 z-50">
-          <div className="flex flex-col py-2">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                end={link.end}
-                onClick={() => setIsMenuOpen(false)}
-                className={({ isActive }) =>
-                  `font-raleway font-medium text-base px-6 py-3 transition-all duration-200 ${
-                    isActive
-                      ? 'text-[#ef4444] bg-red-50'
-                      : 'text-gray-800 hover:text-[#ef4444] hover:bg-gray-50'
-                  }`
-                }
-              >
-                {link.label}
-              </NavLink>
-            ))}
-          </div>
-        </div>
-      )}
     </header>
   )
 }

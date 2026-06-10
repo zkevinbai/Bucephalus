@@ -1,75 +1,93 @@
-import { useEffect, useRef } from 'react'
+import Section from './Section'
 import { trackOutboundClick } from '../../utils/analytics'
 
+const cities = [
+  'San Francisco',
+  'New York',
+  'Los Angeles',
+  'Chicago',
+  'London',
+  'Bogotá',
+  'Dubai',
+  'Bangkok',
+  'Taipei',
+  'Mexico City',
+]
+
+const moreLinks = [
+  { label: 'Twitter', href: 'https://twitter.com/zkevinbai' },
+  {
+    label: 'UC Berkeley feature',
+    href: 'https://web.archive.org/web/20240622002720/https://nature.berkeley.edu/news/2018/01/student-spotlight-kevin-bai',
+  },
+]
+
+function Para({ children }) {
+  return <p className="text-[1.075rem] leading-[1.8] text-ink-soft">{children}</p>
+}
+
+const B = ({ children }) => <strong className="font-semibold text-ink">{children}</strong>
+
 export default function About() {
-  const containerRef = useRef(null)
-
-  useEffect(() => {
-    const el = containerRef.current
-    if (!el) return
-    const links = el.querySelectorAll('a[href^="http"]')
-    const handlers = []
-    links.forEach((a) => {
-      const href = a.getAttribute('href')
-      const label = (a.textContent || href || '').trim()
-      const handler = () => trackOutboundClick(href, label)
-      a.addEventListener('click', handler)
-      handlers.push({ a, handler })
-    })
-    return () => handlers.forEach(({ a, handler }) => a.removeEventListener('click', handler))
-  }, [])
-
   return (
-    <div className="flex flex-col gap-6 p-6 w-full bg-white border-l-4 border-[#ef4444] rounded-xl shadow-sm max-[950px]:p-4 max-[950px]:gap-4">
-      <div
-        ref={containerRef} 
-        className="font-raleway text-base font-light text-gray-800 leading-[1.7] tracking-[0.01em]"
-        dangerouslySetInnerHTML={{
-          __html: `
-            <p class="mb-6">
-              I currently work as a <strong>Founding Forward Deployed Engineer</strong> at <strong>Rippling</strong>, helping build the FDE function and solve enterprise problems for our largest customers. I'm also an <strong>avid public speaker</strong> at various events around the <strong>FDE space</strong>.
-            </p>
+    <Section id="about" eyebrow="About" title="I speak customer, executive, and engineer.">
+      <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr]">
+        <div className="reveal flex flex-col gap-6">
+          <Para>
+            I'm the <B>founding Forward Deployed Engineer</B> at <B>Rippling</B> — the first hire,
+            helping build the FDE function and solve enterprise problems for our largest and most
+            strategic customers. I'm also an <B>avid public speaker</B> across the <B>FDE space</B>.
+          </Para>
+          <Para>
+            I'm a <B>William Jefferson Clinton Presidential Scholar</B> who has studied at{' '}
+            <B>UC Berkeley</B>, <B>Oxford University</B>, and the <B>American University in Dubai</B>.
+          </Para>
+          <Para>
+            My background spans <B>diplomacy</B>, <B>sales</B>, <B>business development</B>,{' '}
+            <B>product management</B>, <B>customer success</B>, and <B>software engineering</B> —
+            and forward deployed engineering brings them all together. I build full-stack
+            applications with <B>JavaScript</B>, <B>TypeScript</B>, <B>React</B>, and <B>Python</B>.
+            I love new opportunities and I learn quickly.
+          </Para>
+          <Para>
+            I've lived and worked across <B>North America</B>, <B>Europe</B>, <B>the Middle East</B>,{' '}
+            <B>East Asia</B>, <B>Southeast Asia</B>, and <B>South America</B>, and speak the{' '}
+            <B>six official languages of the United Nations</B>.
+          </Para>
 
-            <p class="mb-6">
-              I am a <strong>William Jefferson Clinton Presidential Scholar</strong> who has studied at <strong>University of California Berkeley</strong>, <strong>Oxford University</strong>, and <strong>American University in Dubai</strong>.
-            </p>
+          <div className="flex flex-wrap gap-2 pt-1">
+            {moreLinks.map(({ label, href }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackOutboundClick(href, label)}
+                className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-2 text-sm font-medium text-ink-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-clay hover:text-clay-deep"
+              >
+                {label}
+                <span aria-hidden>↗</span>
+              </a>
+            ))}
+          </div>
+        </div>
 
-            <p class="mb-6">
-              My background spans <strong>diplomacy</strong>, <strong>sales</strong>, <strong>business development</strong>, <strong>product management</strong>, <strong>customer success</strong>, <strong>software engineering</strong>, and <strong>forward deployed engineering</strong>—which brings them all together. I build <strong>full-stack applications</strong> with <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>React</strong>, and <strong>Python</strong>. I love new opportunities and I learn quickly.
+        <div className="reveal" style={{ transitionDelay: '80ms' }}>
+          <div className="rounded-2xl border border-line bg-white/60 p-7 shadow-[0_1px_0_rgba(0,0,0,0.02)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-clay">
+              I've worked in
             </p>
-
-            <p class="mb-6">
-              I've lived and worked across <strong>North America</strong>, <strong>Europe</strong>, <strong>the Middle East</strong>, <strong>East Asia</strong>, <strong>Southeast Asia</strong>, and <strong>South America</strong>, and speak the <strong>six official languages of the United Nations</strong>.
+            <p className="mt-3 font-serif text-lg leading-[1.9] text-ink">
+              {cities.map((city, i) => (
+                <span key={city} className="whitespace-nowrap">
+                  {city}
+                  {i < cities.length - 1 && <span className="mx-2 text-muted" aria-hidden>·</span>}
+                </span>
+              ))}
             </p>
-
-            <div class="mt-8 pt-6 border-t-2 border-[#ef4444]">
-              <p class="mb-4 text-center text-sm text-gray-600">
-                Additional links:
-              </p>
-              <div class="flex gap-3 flex-wrap justify-center">
-                <a
-                  href="https://twitter.com/zkevinbai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-800 font-raleway text-sm font-medium no-underline transition-all duration-300 hover:bg-[#ef4444] hover:border-[#ef4444] hover:text-white hover:-translate-y-1 shadow-md hover:shadow-lg"
-                >
-                  <i class="fab fa-twitter text-base"></i>
-                  <span>Twitter</span>
-                </a>
-                <a
-                  href="https://web.archive.org/web/20240622002720/https://nature.berkeley.edu/news/2018/01/student-spotlight-kevin-bai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-800 font-raleway text-sm font-medium no-underline transition-all duration-300 hover:bg-[#ef4444] hover:border-[#ef4444] hover:text-white hover:-translate-y-1 shadow-md hover:shadow-lg"
-                >
-                  <i class="fas fa-address-card text-base"></i>
-                  <span>UC Berkeley Feature</span>
-                </a>
-              </div>
-            </div>
-          `
-        }}
-      />
-    </div>
+          </div>
+        </div>
+      </div>
+    </Section>
   )
 }

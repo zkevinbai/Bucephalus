@@ -1,3 +1,4 @@
+import Section from './Section'
 import CursorLogo from '../../assets/companies/Cursor-logo.png'
 import ChatGPTLogo from '../../assets/companies/ChatGPT-logo.svg'
 import ClaudeLogo from '../../assets/companies/Claude-logo.svg'
@@ -6,95 +7,148 @@ import GeminiLogo from '../../assets/companies/Gemini-logo.svg'
 import AWSLogo from '../../assets/companies/AWS-logo.svg'
 import PythonLogo from '../../assets/companies/Python-logo.svg'
 
-// Helper function to get tech name from devicon class
-const getTechName = (iconClass) => {
-  const nameMap = {
-    'devicon-javascript-plain': 'JavaScript',
-    'devicon-html5-plain': 'HTML5',
-    'devicon-css3-plain': 'CSS3',
-    'devicon-react-original': 'React',
-    'devicon-typescript-plain': 'TypeScript',
-    'devicon-python-plain': 'Python',
-    'devicon-ruby-plain': 'Ruby',
-    'devicon-nodejs-plain': 'Node.js',
-    'devicon-postgresql-plain': 'PostgreSQL',
-    'devicon-mongodb-plain': 'MongoDB',
-    'devicon-git-plain': 'Git',
-    'devicon-tailwindcss-plain': 'Tailwind CSS',
-  }
-  const baseClass = iconClass.split(' ')[0]
-  return nameMap[baseClass] || baseClass.replace('devicon-', '').replace('-plain', '').replace('-original', '')
-}
-
-const skills = [
-  'devicon-javascript-plain colored',
-  'devicon-html5-plain colored',
-  'devicon-css3-plain colored',
-  'devicon-react-original colored',
-  'devicon-typescript-plain colored',
-  { name: 'Python', logo: PythonLogo, type: 'logo' },
-  'devicon-ruby-plain colored',
-  'devicon-nodejs-plain colored',
-  'devicon-postgresql-plain colored',
-  'devicon-mongodb-plain colored',
-  { name: 'AWS', logo: AWSLogo, type: 'logo' },
-  'devicon-git-plain colored',
-  { name: 'Vercel', logo: VercelLogo, type: 'logo' },
-  'devicon-tailwindcss-plain colored',
-  { name: 'Gemini', logo: GeminiLogo, type: 'logo' },
-  { name: 'Claude', logo: ClaudeLogo, type: 'logo' },
-  { name: 'Cursor', logo: CursorLogo, type: 'logo' },
-  { name: 'ChatGPT', logo: ChatGPTLogo, type: 'logo' },
+const competencies = [
+  'Forward Deployed Engineering',
+  'Enterprise AI Deployment',
+  '0→1 Team Building',
+  'Player-Coach Leadership',
+  'Technical Architecture Review',
+  'Pre-Sales Scoping & SOWs',
+  'Cross-Functional Stakeholder Management',
+  'LLM / MCP / Agent Tooling',
+  'Hiring & Developing Engineers',
+  'Engagement Playbook Design',
+  'Executive Presence',
+  'International Expansion',
+  'Intercultural Leadership',
 ]
+
+const languages = [
+  { flag: '🇨🇳', name: 'Chinese' },
+  { flag: '🇺🇸', name: 'English' },
+  { flag: '🇲🇽', name: 'Spanish' },
+  { flag: '🇫🇷', name: 'French' },
+  { flag: '🇦🇪', name: 'Arabic' },
+  { flag: '🇷🇺', name: 'Russian' },
+]
+
+// Each item is either a devicon class or an imported logo.
+const groups = [
+  {
+    label: 'Programming languages',
+    items: [
+      { name: 'JavaScript', icon: 'devicon-javascript-plain colored' },
+      { name: 'TypeScript', icon: 'devicon-typescript-plain colored' },
+      { name: 'Python', logo: PythonLogo },
+      { name: 'Ruby', icon: 'devicon-ruby-plain colored' },
+      { name: 'HTML5', icon: 'devicon-html5-plain colored' },
+      { name: 'CSS3', icon: 'devicon-css3-plain colored' },
+    ],
+  },
+  {
+    label: 'Frameworks & Data',
+    items: [
+      { name: 'React', icon: 'devicon-react-original colored' },
+      { name: 'Node.js', icon: 'devicon-nodejs-plain colored' },
+      { name: 'Tailwind CSS', icon: 'devicon-tailwindcss-plain colored' },
+      { name: 'PostgreSQL', icon: 'devicon-postgresql-plain colored' },
+      { name: 'MongoDB', icon: 'devicon-mongodb-plain colored' },
+      { name: 'Git', icon: 'devicon-git-plain colored' },
+    ],
+  },
+  {
+    label: 'Platforms & AI',
+    items: [
+      { name: 'AWS', logo: AWSLogo },
+      { name: 'Vercel', logo: VercelLogo },
+      { name: 'Claude', logo: ClaudeLogo, fill: true },
+      { name: 'ChatGPT', logo: ChatGPTLogo, fill: true },
+      { name: 'Gemini', logo: GeminiLogo, fill: true },
+      { name: 'Cursor', logo: CursorLogo },
+    ],
+  },
+]
+
+function SkillPill({ item }) {
+  return (
+    <div className="flex items-center gap-3 rounded-xl border border-line bg-white/60 px-4 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-clay/60 hover:bg-white">
+      <div className="flex h-7 w-7 shrink-0 items-center justify-center text-2xl">
+        {item.icon ? (
+          <i className={item.icon} />
+        ) : (
+          <img
+            src={item.logo}
+            alt=""
+            className={`object-contain ${item.fill ? 'h-[120%] w-[120%]' : 'h-full w-full'}`}
+          />
+        )}
+      </div>
+      <span className="text-sm font-medium text-ink-soft">{item.name}</span>
+    </div>
+  )
+}
 
 export default function Skills() {
   return (
-    <div className="flex flex-col gap-6 p-8 items-center justify-center bg-white rounded-xl shadow-sm max-[950px]:p-6 max-[950px]:gap-4">
-      <h2 className="text-2xl font-semibold text-gray-800 font-raleway m-0 text-center">
-        Technologies and Frameworks
-      </h2>
-      <div className="w-full bg-white border border-gray-200 rounded-xl shadow-lg p-6 grid grid-cols-3 gap-4 max-[640px]:grid-cols-1 max-[640px]:gap-3">
-        {skills.map((item) => {
-          const techName = typeof item === 'string' ? getTechName(item) : item.name
-          
-          if (typeof item === 'string') {
-            // Devicon technology
-            return (
-              <div
-                key={item}
-                className="flex items-center gap-4 p-3 bg-white border border-gray-200 rounded-lg transition-all duration-300 hover:bg-red-50 hover:border-[#ef4444] hover:shadow-md group min-w-0"
+    <Section
+      id="skills"
+      eyebrow="Toolkit"
+      title="More than a tech stack."
+    >
+      <div className="flex flex-col gap-10">
+        {/* Core competencies */}
+        <div className="reveal">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-muted">
+            Core competencies
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {competencies.map((c) => (
+              <span
+                key={c}
+                className="rounded-full border border-line bg-cream px-3.5 py-1.5 text-[0.85rem] font-medium text-ink-soft"
               >
-                <div className="text-3xl shrink-0 w-12 h-12 flex items-center justify-center">
-                  <i className={item} />
-                </div>
-                <span className="text-base font-medium text-gray-800 font-raleway group-hover:text-[#ef4444] transition-colors truncate">
-                  {techName}
+                {c}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Spoken languages */}
+        <div className="reveal">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-muted">
+            Spoken languages — the six official languages of the United Nations
+          </p>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+            {languages.map((l) => (
+              <div
+                key={l.name}
+                className="flex items-center gap-3 rounded-xl border border-line bg-white/60 px-4 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-clay/60 hover:bg-white"
+              >
+                <span className="text-2xl" aria-hidden>
+                  {l.flag}
+                </span>
+                <span>
+                  <span className="block text-sm font-semibold text-ink">{l.name}</span>
+                  {l.detail && <span className="mt-0.5 block text-xs text-muted">{l.detail}</span>}
                 </span>
               </div>
-            )
-          } else {
-            // Logo
-            const isAILogo = ['ChatGPT', 'Claude', 'Gemini'].includes(item.name)
-            return (
-              <div
-                key={item.name}
-                className="flex items-center gap-4 p-3 bg-white border border-gray-200 rounded-lg transition-all duration-300 hover:bg-red-50 hover:border-[#ef4444] hover:shadow-md group min-w-0"
-              >
-                <div className="shrink-0 w-12 h-12 flex items-center justify-center">
-                  <img
-                    src={item.logo}
-                    alt={item.name}
-                    className={`object-contain ${isAILogo ? 'w-[120%] h-[120%]' : 'w-full h-full'}`}
-                  />
-                </div>
-                <span className="text-base font-medium text-gray-800 font-raleway group-hover:text-[#ef4444] transition-colors truncate">
-                  {techName}
-                </span>
-              </div>
-            )
-          }
-        })}
+            ))}
+          </div>
+        </div>
+
+        {groups.map((group) => (
+          <div key={group.label} className="reveal">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-muted">
+              {group.label}
+            </p>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+              {group.items.map((item) => (
+                <SkillPill key={item.name} item={item} />
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
+    </Section>
   )
 }

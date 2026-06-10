@@ -1,71 +1,54 @@
 import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
-import Grid from '../Portfolio/Grid'
-import GridBox from '../Portfolio/GridBox'
+import Container from '../../components/Container'
 import { blogPosts } from './blogData'
 import { trackBlogPostClick } from '../../utils/analytics'
 
 export default function AllBlogs() {
-  // Scroll to top when navigating to blog listing
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [])
-  
   return (
-    <Grid>
-      <GridBox shouldEmphasizeLeft={false} className="md:col-span-2 !grid-cols-1 justify-items-center">
-        <div className="flex flex-col gap-4 p-6 w-full max-[950px]:p-4">
-          <h1 className="font-raleway text-[2.25rem] font-bold text-transparent bg-[linear-gradient(135deg,#1a1a3a_0%,#ef4444_50%,#1a1a3a_100%)] bg-[length:200%_auto] bg-clip-text [-webkit-background-clip:text] animate-shimmer m-0 leading-tight tracking-[-0.02em] text-center">
-            Kevin's Blog
-          </h1>
-          <p className="font-raleway text-base font-light text-gray-800 m-0 leading-[1.7] tracking-[0.01em] text-center">
-            Thoughts on <strong>forward deployed engineering</strong>, <strong>enterprise software</strong>, <strong>international geopolitics and economics</strong>, and <strong>building technology</strong> that solves real problems.
-          </p>
-        </div>
-      </GridBox>
-      
-      <GridBox shouldEmphasizeLeft={false} className="md:col-span-2 !grid-cols-1">
-        <div className="flex flex-col gap-6 w-full p-6 max-[950px]:p-4 max-[950px]:gap-4">
-          {blogPosts.map((post, index) => (
-            <Link
-              key={post.id}
-              to={`/blog/${post.slug}`}
-              onClick={() => trackBlogPostClick({ slug: post.slug, title: post.title, category: post.category })}
-              className="flex flex-col gap-4 p-6 bg-white border-2 border-gray-200 border-l-4 border-l-gray-300 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 hover:border-l-[#ef4444] transition-all duration-300 font-raleway no-underline"
-            >
-              <h2 className="text-2xl font-semibold text-gray-800 m-0 tracking-[-0.01em]">
-                {post.title}
-              </h2>
-              
-              <div className="flex flex-wrap gap-3 items-center">
-                <span className="text-sm text-gray-500 font-light">
-                  {blogPosts.length - index}
-                </span>
-                <span className="px-3 py-1 bg-white border border-gray-200 rounded-full text-xs font-medium text-gray-700 hover:bg-[#ef4444] hover:text-white hover:border-[#ef4444] transition-all duration-200">
-                  {post.category}
-                </span>
-                <span className="text-sm text-gray-600 font-light">
-                  {post.date}
-                </span>
-                <span className="text-sm text-gray-600 font-light">
-                  {post.readTime}
-                </span>
-              </div>
-              
-              <p 
-                className="text-base font-light text-gray-700 m-0 leading-relaxed" 
-                dangerouslySetInnerHTML={{ __html: post.excerpt }} 
-              />
-              
-              <div className="pt-2">
-                <span className="text-sm font-medium text-gray-700 hover:text-[#ef4444] transition-colors duration-300">
-                  Read more →
-                </span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </GridBox>
-    </Grid>
+    <Container size="reading" className="pt-32 pb-8 md:pt-40">
+      <header className="reveal">
+        <p className="eyebrow">Writing</p>
+        <h1 className="mt-4 font-serif text-[2.6rem] font-semibold leading-[1.06] tracking-[-0.02em] text-ink md:text-6xl">
+          Notes from the field.
+        </h1>
+        <p className="mt-5 text-[1.1rem] leading-relaxed text-muted">
+          Thoughts on forward deployed engineering, enterprise software, international geopolitics
+          and economics, and building technology that solves real problems.
+        </p>
+      </header>
+
+      <div className="mt-14 flex flex-col">
+        {blogPosts.map((post, index) => (
+          <Link
+            key={post.id}
+            to={`/blog/${post.slug}`}
+            onClick={() =>
+              trackBlogPostClick({ slug: post.slug, title: post.title, category: post.category })
+            }
+            className="reveal group block border-t border-line py-7 last:border-b"
+          >
+            <div className="flex items-center gap-3 text-sm text-muted">
+              <span className="rounded-full bg-cream px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-clay-deep">
+                {post.category}
+              </span>
+              <span>{post.date}</span>
+              <span aria-hidden>·</span>
+              <span>{post.readTime}</span>
+            </div>
+
+            <h2 className="mt-3 font-serif text-[1.55rem] font-semibold leading-snug tracking-[-0.01em] text-ink transition-colors group-hover:text-clay-deep md:text-[1.75rem]">
+              {post.title}
+            </h2>
+
+            <p className="mt-2.5 text-[1rem] leading-relaxed text-ink-soft">{post.excerpt}</p>
+
+            <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-clay-deep">
+              Read
+              <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+            </span>
+          </Link>
+        ))}
+      </div>
+    </Container>
   )
 }
