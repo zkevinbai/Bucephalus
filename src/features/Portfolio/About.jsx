@@ -1,11 +1,17 @@
 import Section from './Section'
 import { trackOutboundClick } from '../../utils/analytics'
 
-const facts = [
-  { label: 'Based in', value: 'San Francisco Bay Area' },
-  { label: 'Honor', value: 'Clinton Presidential Scholar' },
-  { label: 'Languages', value: 'The six official UN languages' },
-  { label: 'Worked across', value: 'Six continents' },
+const cities = [
+  'San Francisco',
+  'New York',
+  'Los Angeles',
+  'Chicago',
+  'London',
+  'Bogotá',
+  'Dubai',
+  'Bangkok',
+  'Taipei',
+  'Mexico City',
 ]
 
 const moreLinks = [
@@ -24,11 +30,11 @@ const B = ({ children }) => <strong className="font-semibold text-ink">{children
 
 export default function About() {
   return (
-    <Section id="about" eyebrow="About" title="Part consultant, part PM, part engineer.">
+    <Section id="about" eyebrow="About" title="I speak customer, executive, and engineer.">
       <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr]">
         <div className="reveal flex flex-col gap-6">
           <Para>
-            I'm a <B>Founding Forward Deployed Engineer</B> at <B>Rippling</B> — the first hire,
+            I'm the <B>founding Forward Deployed Engineer</B> at <B>Rippling</B> — the first hire,
             helping build the FDE function and solve enterprise problems for our largest and most
             strategic customers. I'm also an <B>avid public speaker</B> across the <B>FDE space</B>.
           </Para>
@@ -67,16 +73,19 @@ export default function About() {
         </div>
 
         <div className="reveal" style={{ transitionDelay: '80ms' }}>
-          <dl className="rounded-2xl border border-line bg-white/60 p-7 shadow-[0_1px_0_rgba(0,0,0,0.02)]">
-            {facts.map(({ label, value }, i) => (
-              <div key={label} className={i > 0 ? 'mt-5 border-t border-line pt-5' : ''}>
-                <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-clay">
-                  {label}
-                </dt>
-                <dd className="mt-1.5 font-serif text-lg leading-snug text-ink">{value}</dd>
-              </div>
-            ))}
-          </dl>
+          <div className="rounded-2xl border border-line bg-white/60 p-7 shadow-[0_1px_0_rgba(0,0,0,0.02)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-clay">
+              Worked from
+            </p>
+            <p className="mt-3 font-serif text-lg leading-[1.9] text-ink">
+              {cities.map((city, i) => (
+                <span key={city} className="whitespace-nowrap">
+                  {city}
+                  {i < cities.length - 1 && <span className="mx-2 text-muted" aria-hidden>·</span>}
+                </span>
+              ))}
+            </p>
+          </div>
         </div>
       </div>
     </Section>

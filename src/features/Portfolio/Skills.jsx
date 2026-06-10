@@ -24,7 +24,7 @@ const competencies = [
 ]
 
 const languages = [
-  { flag: '🇨🇳', name: 'Chinese', detail: 'Mandarin · native' },
+  { flag: '🇨🇳', name: 'Chinese' },
   { flag: '🇺🇸', name: 'English' },
   { flag: '🇲🇽', name: 'Spanish' },
   { flag: '🇫🇷', name: 'French' },
@@ -35,7 +35,7 @@ const languages = [
 // Each item is either a devicon class or an imported logo.
 const groups = [
   {
-    label: 'Languages & Core',
+    label: 'Programming languages',
     items: [
       { name: 'JavaScript', icon: 'devicon-javascript-plain colored' },
       { name: 'TypeScript', icon: 'devicon-typescript-plain colored' },
@@ -78,7 +78,7 @@ function SkillPill({ item }) {
         ) : (
           <img
             src={item.logo}
-            alt={item.name}
+            alt=""
             className={`object-contain ${item.fill ? 'h-[120%] w-[120%]' : 'h-full w-full'}`}
           />
         )}
