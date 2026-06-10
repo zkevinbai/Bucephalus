@@ -6,11 +6,8 @@ export default defineConfig({
   plugins: [react({
     include: /\.(jsx|tsx)$/,
   })],
-  // Use root base path since GitHub Pages serves from docs/ folder with custom domain
+  // Root base path: GitHub Pages serves at the custom domain root
   base: '/',
-  build: {
-    outDir: 'docs',
-  },
   resolve: {
     extensions: ['.jsx', '.js', '.json'],
   },

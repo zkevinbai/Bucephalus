@@ -1,6 +1,6 @@
 import Container from '../../components/Container'
 import { trackOutboundClick } from '../../utils/analytics'
-import Portrait from '../../assets/kevin-portrait.png'
+import Portrait from '../../assets/kevin-portrait.webp'
 import RipplingLogo from '../../assets/companies/Rippling-logo.png'
 import PalantirLogo from '../../assets/companies/palantir-logo.svg'
 import UNLogo from '../../assets/companies/UN-logo.svg'
