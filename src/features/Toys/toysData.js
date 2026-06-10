@@ -3,6 +3,7 @@ import TextDiff from './tools/TextDiff'
 import JsonFormatter from './tools/JsonFormatter'
 import ColorConverter from './tools/ColorConverter'
 import UuidGenerator from './tools/UuidGenerator'
+import SqlFormatter from './tools/SqlFormatter'
 import TimeZonePicker from './tools/TimeZonePicker'
 
 /* The toy registry. Adding a toy is a single entry here:
@@ -35,6 +36,15 @@ export const toys = [
     icon: 'fas fa-code',
     accent: 'text-ocean',
     Component: JsonFormatter,
+  },
+  {
+    slug: 'sql-formatter',
+    name: 'SQL Formatter',
+    blurb: 'Format messy queries across Postgres, MySQL, BigQuery, and Spark dialects.',
+    category: 'Developer',
+    icon: 'fas fa-database',
+    accent: 'text-ocean',
+    Component: SqlFormatter,
   },
   {
     slug: 'uuid',
