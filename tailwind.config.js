@@ -7,26 +7,45 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'lobster': ['Lobster', 'cursive'],
-        'raleway': ['Raleway', 'sans-serif'],
+        // Editorial serif for display + headings, Inter for everything else.
+        'serif': ['Fraunces', 'Georgia', 'serif'],
+        'sans': ['Inter', 'system-ui', 'sans-serif'],
+        // Kept so legacy class names don't break during the redesign.
+        'raleway': ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
-        'primary-blue': 'rgb(48, 127, 246)',
+        // Warm "paper" palette — the claude-sandbox aesthetic.
+        paper: '#fbf7f0',
+        cream: '#f7f1e7',
+        'cream-2': '#efe6d6',
+        ink: '#1b1714',
+        'ink-soft': '#2a2420',
+        muted: '#8a7f72',
+        line: '#e6ddd0',
+        clay: '#cc785c',
+        'clay-deep': '#b4593d',
+        sage: '#6a8d73',
+        ocean: '#3f7cac',
+        plum: '#b07bac',
+        gold: '#c69749',
+      },
+      maxWidth: {
+        'reading': '720px',
+        'page': '1080px',
       },
       keyframes: {
-        shimmer: {
-          '0%, 100%': { 'background-position': '0% center' },
-          '50%': { 'background-position': '100% center' },
+        rise: {
+          '0%': { opacity: '0', transform: 'translateY(16px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'fade-in': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
       },
       animation: {
-        shimmer: 'shimmer 3s ease-in-out infinite',
-      },
-      backgroundImage: {
-        'shimmer-gradient': 'linear-gradient(135deg, #ffffff 0%, #a0a0ff 50%, #ffffff 100%)',
-      },
-      backgroundSize: {
-        'shimmer': '200% auto',
+        rise: 'rise 0.7s cubic-bezier(0.2,0.8,0.2,1) both',
+        'fade-in': 'fade-in 0.6s ease both',
       },
     },
   },

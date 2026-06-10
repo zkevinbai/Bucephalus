@@ -1,78 +1,105 @@
-import { useParams } from 'react-router-dom'
-import { useEffect } from 'react'
-import Grid from '../Portfolio/Grid'
-import GridBox from '../Portfolio/GridBox'
+import { useParams, Link } from 'react-router-dom'
+import { useEffect, useMemo } from 'react'
+import Container from '../../components/Container'
 import { getPostBySlug, blogPosts } from './blogData'
 import { trackBlogPostView } from '../../utils/analytics'
 
+// The blog content carries legacy inline class attributes (font-raleway, gray
+// utilities, etc.). Strip them so the `.prose` layer styles it by tag instead.
+function stripInlineClasses(html) {
+  return html.replace(/\sclass="[^"]*"/g, '')
+}
+
 export default function SingleBlog() {
   const { slug } = useParams()
-  const blogContent = getPostBySlug(slug)
-  const postIndex = blogPosts.findIndex(post => post.slug === slug)
-  const postNumber = postIndex !== -1 ? blogPosts.length - postIndex : null  
+  const post = getPostBySlug(slug)
 
-  // Scroll to top when component mounts
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [])
+  const cleanContent = useMemo(
+    () => (post ? stripInlineClasses(post.content) : ''),
+    [post]
+  )
 
-  // Track blog post view for analytics
+  // Adjacent posts for prev/next navigation.
+  const index = blogPosts.findIndex((p) => p.slug === slug)
+  const prev = index > 0 ? blogPosts[index - 1] : null
+  const next = index >= 0 && index < blogPosts.length - 1 ? blogPosts[index + 1] : null
+
   useEffect(() => {
-    if (blogContent) {
-      trackBlogPostView({ slug, title: blogContent.title, category: blogContent.category })
-    }
-  }, [slug, blogContent])
-  
-  if (!blogContent) {
+    if (post) trackBlogPostView({ slug, title: post.title, category: post.category })
+  }, [slug, post])
+
+  if (!post) {
     return (
-      <Grid>
-        <GridBox shouldEmphasizeLeft={false} className="md:col-span-2 !grid-cols-1 justify-items-center">
-          <div className="flex flex-col gap-6 p-6 w-full max-[950px]:p-4">
-            <h1 className="font-raleway text-2xl font-semibold text-gray-800 m-0">Post not found</h1>
-          </div>
-        </GridBox>
-      </Grid>
+      <Container size="reading" className="pt-40 pb-20 text-center">
+        <h1 className="font-serif text-3xl font-semibold text-ink">Post not found</h1>
+        <Link to="/blog" className="mt-6 inline-block font-medium text-clay-deep hover:text-clay">
+          ← Back to writing
+        </Link>
+      </Container>
     )
   }
-  
+
   return (
-    <Grid>
-        <GridBox shouldEmphasizeLeft={false} className="md:col-span-2 !grid-cols-1 justify-items-center">
-          <div className="flex flex-col gap-6 p-6 w-full max-[950px]:p-4">
-          <h1 className="font-raleway text-[2.5rem] font-bold text-transparent bg-[linear-gradient(135deg,#1a1a3a_0%,#ef4444_50%,#1a1a3a_100%)] bg-[length:200%_auto] bg-clip-text [-webkit-background-clip:text] animate-shimmer m-0 leading-tight tracking-[-0.02em] text-center">
-            {blogContent.title}
-          </h1>
-          
-          <div className="flex flex-wrap gap-3 items-center justify-center">
-            {postNumber && (
-              <span className="text-sm text-gray-500 font-light">
-                {postNumber}
-              </span>
-            )}
-            <span className="px-3 py-1 bg-white border border-gray-200 rounded-full text-xs font-medium text-gray-700 hover:bg-[#ef4444] hover:text-white hover:border-[#ef4444] transition-all duration-200">
-              {blogContent.category}
-            </span>
-            <span className="text-sm text-gray-600 font-light">
-              {blogContent.date}
-            </span>
-            <span className="text-sm text-gray-600 font-light">
-              {blogContent.readTime}
-            </span>
-            {blogContent.author && (
-              <span className="text-sm text-gray-600 font-light">
-                {blogContent.author}
-              </span>
-            )}
-          </div>
+    <Container size="reading" className="pt-28 pb-8 md:pt-36">
+      <Link
+        to="/blog"
+        className="inline-flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-clay-deep"
+      >
+        <span aria-hidden>←</span> Writing
+      </Link>
+
+      <header className="mt-8 border-b border-line pb-8">
+        <div className="flex flex-wrap items-center gap-3 text-sm text-muted">
+          <span className="rounded-full bg-cream px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-clay-deep">
+            {post.category}
+          </span>
+          <span>{post.date}</span>
+          <span aria-hidden>·</span>
+          <span>{post.readTime}</span>
         </div>
-      </GridBox>
-      
-      <GridBox shouldEmphasizeLeft={false} className="md:col-span-2 !grid-cols-1">
-        <article 
-          className="flex flex-col gap-6 p-8 w-full max-[950px]:p-6 max-[950px]:gap-4"
-          dangerouslySetInnerHTML={{ __html: blogContent.content }}
-        />
-      </GridBox>
-    </Grid>
+        <h1 className="mt-4 font-serif text-[2.3rem] font-semibold leading-[1.08] tracking-[-0.02em] text-ink md:text-[3.1rem]">
+          {post.title}
+        </h1>
+        {post.author && (
+          <p className="mt-4 text-[0.95rem] text-muted">By {post.author}</p>
+        )}
+      </header>
+
+      <article
+        className="prose mt-10"
+        dangerouslySetInnerHTML={{ __html: cleanContent }}
+      />
+
+      <nav className="mt-16 grid gap-4 border-t border-line pt-8 sm:grid-cols-2">
+        {prev ? (
+          <Link
+            to={`/blog/${prev.slug}`}
+            className="group rounded-xl border border-line bg-white/60 p-5 transition-colors hover:border-clay/60"
+          >
+            <span className="text-xs font-semibold uppercase tracking-wide text-muted">
+              ← Previous
+            </span>
+            <p className="mt-1.5 font-serif text-base font-semibold text-ink group-hover:text-clay-deep">
+              {prev.title}
+            </p>
+          </Link>
+        ) : (
+          <span />
+        )}
+        {next && (
+          <Link
+            to={`/blog/${next.slug}`}
+            className="group rounded-xl border border-line bg-white/60 p-5 text-right transition-colors hover:border-clay/60 sm:col-start-2"
+          >
+            <span className="text-xs font-semibold uppercase tracking-wide text-muted">
+              Next →
+            </span>
+            <p className="mt-1.5 font-serif text-base font-semibold text-ink group-hover:text-clay-deep">
+              {next.title}
+            </p>
+          </Link>
+        )}
+      </nav>
+    </Container>
   )
 }

@@ -9,85 +9,131 @@
     box-sizing: border-box;
   }
 
+  html {
+    scroll-behavior: smooth;
+    /* offset for the fixed header when jumping to anchors */
+    scroll-padding-top: 88px;
+  }
+
   html, body {
-    margin: 0;
-    padding: 0;
     font-size: 100%;
-    vertical-align: baseline;
-    background: #ffffff;
+    background: #fbf7f0;        /* paper */
+    color: #1b1714;             /* ink */
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
     min-height: 100%;
   }
 
-  /* Mobile text sizing - applies consistently across site */
-  @media (max-width: 950px) {
-    /* Body text - reduce size and line height for elements without explicit Tailwind size classes */
-    p:not([class*="text-"]), 
-    li:not([class*="text-"]), 
-    span:not([class*="text-"]) {
-      font-size: 0.875rem; /* text-sm */
-      line-height: 1.5; /* leading-[1.5] */
-    }
-    
-    /* Headings scale down proportionally when not explicitly sized */
-    h1:not([class*="text-"]) {
-      font-size: 1.5rem; /* text-2xl */
-    }
-    
-    h2:not([class*="text-"]) {
-      font-size: 1.25rem; /* text-xl */
-    }
-    
-    h3:not([class*="text-"]) {
-      font-size: 1.125rem; /* text-lg */
-    }
-    
-    h4:not([class*="text-"]) {
-      font-size: 1rem; /* text-base */
-    }
-    
-    /* Tighter line height for relaxed text on mobile */
-    .leading-relaxed {
-      line-height: 1.4 !important;
-    }
-    
-    /* Tighter line height for small text on mobile */
-    .text-xs {
-      line-height: 1.4 !important;
-    }
-    
-    /* Reduce text-base to text-sm on mobile */
-    .text-base {
-      font-size: 0.875rem !important; /* text-sm */
-      line-height: 1.5 !important;
-    }
-    
-    /* Reduce text-lg proportionally on mobile */
-    .text-lg {
-      font-size: 0.95rem !important;
-      line-height: 1.5 !important;
-    }
+  ::selection {
+    background: #cc785c;        /* clay */
+    color: #fff;
   }
 
-  a {
-    text-decoration: none;
-  }
+  a { text-decoration: none; color: inherit; }
 
-  input:focus,
-  select:focus,
-  textarea:focus,
-  button:focus {
-    outline: none;
-  }
-
-  input,
-  select,
-  textarea,
   button {
     cursor: pointer;
     border: none;
-    margin: 0;
-    padding: 0;
     background: transparent;
-    -webkit-appearance: none;
+    font-family: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid #cc785c;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* ----- Scroll reveal ------------------------------------------------ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { transition: none; opacity: 1; transform: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* ----- Section eyebrow --------------------------------------------- */
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #cc785c;
+  }
+
+  /* ----- Blog prose --------------------------------------------------- */
+  /* Blog HTML has its class attributes stripped at render; we style by tag. */
+  .prose {
+    color: #2a2420;
+    font-size: 1.075rem;
+    line-height: 1.78;
+    font-weight: 400;
+  }
+  .prose > * { margin: 0; }
+  .prose > * + * { margin-top: 1.4em; }
+  .prose strong { font-weight: 600; color: #1b1714; }
+  .prose em { font-style: italic; }
+  .prose h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.65rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #1b1714;
+    margin-top: 2.4em;
+    margin-bottom: 0;
+  }
+  .prose h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 1.25;
+    color: #1b1714;
+    margin-top: 1.8em;
+  }
+  .prose ul { margin-top: 1.4em; padding-left: 1.2em; list-style: none; }
+  .prose li {
+    position: relative;
+    padding-left: 1.1em;
+    margin-top: 0.6em;
+  }
+  .prose li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #cc785c;
+  }
+  .prose a {
+    color: #b4593d;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(180, 89, 61, 0.35);
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  .prose a:hover { color: #cc785c; border-bottom-color: #cc785c; }
+  .prose blockquote {
+    border-left: 3px solid #cc785c;
+    padding-left: 1.2em;
+    font-style: italic;
+    color: #6b635b;
+  }
+
+  @media (max-width: 720px) {
+    .prose { font-size: 1rem; line-height: 1.7; }
+    .prose h2 { font-size: 1.4rem; }
   }
 }

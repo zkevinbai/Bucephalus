@@ -1,36 +1,50 @@
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import Header from './components/Header'
-import Breadcrumbs from './components/Breadcrumbs'
+import Footer from './components/Footer'
 import Portfolio from './features/Portfolio/Portfolio'
 import AllBlogs from './features/Blog/AllBlogs'
 import SingleBlog from './features/Blog/SingleBlog'
 import ChineseZodiac from './features/ChineseZodiac/ChineseZodiac'
+import { useScrollReveal } from './hooks/useScrollReveal'
 import { trackPageView } from './utils/analytics'
 
-function AnalyticsPageView() {
+function RouteEffects() {
   const location = useLocation()
+
+  // Analytics page view per route.
   useEffect(() => {
     const path = location.pathname + location.search
     trackPageView(path, document.title)
   }, [location.pathname, location.search])
+
+  // Scroll to top on navigation (but allow in-page #anchors to work).
+  useEffect(() => {
+    if (!location.hash) window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [location.pathname])
+
+  // Re-arm scroll-reveal after each route swap.
+  useScrollReveal(location.pathname)
+
   return null
 }
 
 function App() {
   return (
     <BrowserRouter>
-      <AnalyticsPageView />
+      <RouteEffects />
       <Header />
-      <Breadcrumbs />
-      <Routes>
-        <Route path="/blog/:slug" element={<SingleBlog />} />
-        <Route path="/blog" element={<AllBlogs />} />
-        <Route path="/zodiac" element={<ChineseZodiac />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/" element={<Portfolio />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      <main className="min-h-screen">
+        <Routes>
+          <Route path="/blog/:slug" element={<SingleBlog />} />
+          <Route path="/blog" element={<AllBlogs />} />
+          <Route path="/zodiac" element={<ChineseZodiac />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/" element={<Portfolio />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </main>
+      <Footer />
     </BrowserRouter>
   )
 }
