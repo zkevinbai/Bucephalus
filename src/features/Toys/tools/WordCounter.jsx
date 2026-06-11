@@ -20,7 +20,7 @@ export default function WordCounter() {
   }, [text])
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 lg:grid lg:grid-cols-[minmax(0,1fr)_240px] lg:items-start">
       <Field label="Your text">
         <TextArea
           mono={false}
@@ -28,10 +28,11 @@ export default function WordCounter() {
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Paste or type here…"
+          className="lg:min-h-[26rem]"
         />
       </Field>
 
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-7">
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-1 lg:gap-2.5">
         <Stat label="Words" value={stats.words.toLocaleString()} />
         <Stat label="Characters" value={stats.chars.toLocaleString()} />
         <Stat label="No spaces" value={stats.charsNoSpaces.toLocaleString()} />

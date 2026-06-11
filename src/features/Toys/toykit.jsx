@@ -94,12 +94,13 @@ export function Output({ value, mono = true, className = '', empty = 'Output app
   )
 }
 
-/** A labelled stat tile (word counter et al). */
+/** A labelled stat tile (word counter et al). Tile in a grid on small screens;
+    a compact label-left / value-right row when stacked in a desktop side rail. */
 export function Stat({ label, value }) {
   return (
-    <div className="rounded-xl border border-line bg-white/60 px-4 py-3 text-center">
-      <div className="font-serif text-2xl font-semibold tabular-nums text-ink">{value}</div>
-      <div className="mt-0.5 text-xs font-medium uppercase tracking-wide text-muted">{label}</div>
+    <div className="rounded-xl border border-line bg-white/60 px-4 py-3 text-center lg:flex lg:flex-row-reverse lg:items-baseline lg:justify-between lg:gap-3 lg:py-2.5 lg:text-left">
+      <div className="font-serif text-2xl font-semibold tabular-nums text-ink lg:text-xl">{value}</div>
+      <div className="mt-0.5 text-xs font-medium uppercase tracking-wide text-muted lg:mt-0">{label}</div>
     </div>
   )
 }

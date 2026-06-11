@@ -52,52 +52,60 @@ export default function SqlFormatter() {
   }
 
   return (
-    <div className="flex flex-col gap-6">
-      <Field label="SQL input" hint="any messy query">
-        <TextArea
-          rows={9}
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="select * from users where …"
-        />
-      </Field>
+    <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
+      <div className="flex flex-col gap-6">
+        <Field label="SQL input" hint="any messy query">
+          <TextArea
+            rows={9}
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="select * from users where …"
+            className="lg:min-h-[20rem]"
+          />
+        </Field>
 
-      <div className="flex flex-wrap items-center gap-3">
-        <Btn onClick={run} disabled={busy}>
-          <i className="fas fa-align-left" aria-hidden /> {busy ? 'Formatting…' : 'Format'}
-        </Btn>
-        <SegmentedControl options={DIALECTS} value={dialect} onChange={setDialect} />
-        <SegmentedControl
-          options={[
-            { value: 'upper', label: 'KEYWORDS' },
-            { value: 'lower', label: 'keywords' },
-          ]}
-          value={keywordCase}
-          onChange={setKeywordCase}
-        />
-        <Btn
-          variant="ghost"
-          className="ml-auto"
-          onClick={() => {
-            setInput(SAMPLE)
-            setOutput('')
-            setError('')
-          }}
-        >
-          Try a sample
-        </Btn>
+        <div className="flex flex-wrap items-center gap-3">
+          <Btn onClick={run} disabled={busy}>
+            <i className="fas fa-align-left" aria-hidden /> {busy ? 'Formatting…' : 'Format'}
+          </Btn>
+          <SegmentedControl options={DIALECTS} value={dialect} onChange={setDialect} />
+          <SegmentedControl
+            options={[
+              { value: 'upper', label: 'KEYWORDS' },
+              { value: 'lower', label: 'keywords' },
+            ]}
+            value={keywordCase}
+            onChange={setKeywordCase}
+          />
+          <Btn
+            variant="ghost"
+            className="ml-auto"
+            onClick={() => {
+              setInput(SAMPLE)
+              setOutput('')
+              setError('')
+            }}
+          >
+            Try a sample
+          </Btn>
+        </div>
+
+        <Note tone="error">{error}</Note>
       </div>
 
-      <Note tone="error">{error}</Note>
-
-      {output && (
-        <Field label="Result">
-          <div className="relative">
-            <TextArea readOnly rows={16} value={output} className="bg-cream/50" />
-            <CopyButton value={output} className="absolute right-3 top-3" />
-          </div>
-        </Field>
-      )}
+      {/* Sits beside the input on desktop; on mobile it only appears once there's a result. */}
+      <Field label="Result" className={output ? '' : 'hidden lg:flex'}>
+        <div className="relative">
+          <TextArea
+            readOnly
+            rows={16}
+            value={output}
+            placeholder="Formatted SQL appears here."
+            className="bg-cream/50 lg:min-h-[28rem]"
+          />
+          {output && <CopyButton value={output} className="absolute right-3 top-3" />}
+        </div>
+      </Field>
     </div>
   )
 }

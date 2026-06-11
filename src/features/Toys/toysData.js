@@ -9,7 +9,8 @@ import TimeZonePicker from './tools/TimeZonePicker'
 
 /* The toy registry. Adding a toy is a single entry here:
    - `Component` toys render inside the shared ToyLayout at /toys/:slug
-   - `path` toys (e.g. the Zodiac) own their full page and route */
+   - `path` toys (e.g. the Zodiac) own their full page and route
+   - `narrow` toys keep the reading-width column on desktop instead of the full page */
 export const toys = [
   {
     slug: 'word-counter',
@@ -54,6 +55,7 @@ export const toys = [
     category: 'Developer',
     icon: 'fas fa-fingerprint',
     accent: 'text-ocean',
+    narrow: true,
     Component: UuidGenerator,
   },
   {
@@ -81,6 +83,7 @@ export const toys = [
     category: 'Fun',
     icon: 'fas fa-history',
     accent: 'text-plum',
+    narrow: true,
     Component: TicTacToe,
   },
   {

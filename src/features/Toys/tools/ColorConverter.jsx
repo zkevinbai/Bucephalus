@@ -52,32 +52,32 @@ export default function ColorConverter() {
   const scale = valid ? steps.map((s) => (s === 0 ? normHex : toHex(mix(rgb, s)))) : []
 
   return (
-    <div className="flex flex-col gap-6">
-      <div className="flex flex-wrap items-center gap-4">
-        <input
-          type="color"
-          value={valid ? normHex : '#000000'}
-          onChange={(e) => setHex(e.target.value)}
-          aria-label="Color picker"
-          className="h-16 w-16 cursor-pointer rounded-xl border border-line bg-white/70 p-1"
-        />
-        <Field label="Hex" className="flex-1 min-w-[180px]">
-          <TextInput
-            mono
-            value={hex}
+    <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
+      <div className="flex flex-col gap-6">
+        <div className="flex flex-wrap items-center gap-4">
+          <input
+            type="color"
+            value={valid ? normHex : '#000000'}
             onChange={(e) => setHex(e.target.value)}
-            placeholder="#cc785c"
-            spellCheck={false}
+            aria-label="Color picker"
+            className="h-16 w-16 cursor-pointer rounded-xl border border-line bg-white/70 p-1"
           />
-        </Field>
-      </div>
+          <Field label="Hex" className="flex-1 min-w-[180px]">
+            <TextInput
+              mono
+              value={hex}
+              onChange={(e) => setHex(e.target.value)}
+              placeholder="#cc785c"
+              spellCheck={false}
+            />
+          </Field>
+        </div>
 
-      <Note tone="error">{!valid && hex.trim() ? 'Not a valid hex color.' : ''}</Note>
+        <Note tone="error">{!valid && hex.trim() ? 'Not a valid hex color.' : ''}</Note>
 
-      {valid && (
-        <>
+        {valid && (
           <div
-            className="flex h-24 items-end rounded-xl border border-line p-3"
+            className="flex h-24 items-end rounded-xl border border-line p-3 lg:h-48"
             style={{ background: normHex }}
           >
             <span
@@ -86,7 +86,11 @@ export default function ColorConverter() {
               {normHex}
             </span>
           </div>
+        )}
+      </div>
 
+      {valid && (
+        <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-2">
             {[
               { label: 'HEX', value: normHex },
@@ -121,7 +125,7 @@ export default function ColorConverter() {
               ))}
             </div>
           </Field>
-        </>
+        </div>
       )}
     </div>
   )

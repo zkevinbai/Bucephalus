@@ -28,55 +28,63 @@ export default function JsonFormatter() {
   }
 
   return (
-    <div className="flex flex-col gap-6">
-      <Field label="JSON input" hint="Paste raw or minified JSON">
-        <TextArea
-          rows={10}
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder='{"hello": "world"}'
-        />
-      </Field>
+    <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
+      <div className="flex flex-col gap-6">
+        <Field label="JSON input" hint="Paste raw or minified JSON">
+          <TextArea
+            rows={10}
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder='{"hello": "world"}'
+            className="lg:min-h-[20rem]"
+          />
+        </Field>
 
-      <div className="flex flex-wrap items-center gap-3">
-        <Btn onClick={() => run('pretty')}>
-          <i className="fas fa-align-left" aria-hidden /> Format
-        </Btn>
-        <Btn variant="ghost" onClick={() => run('minify')}>
-          <i className="fas fa-compress" aria-hidden /> Minify
-        </Btn>
-        <SegmentedControl
-          options={[
-            { value: '2', label: '2 spaces' },
-            { value: '4', label: '4 spaces' },
-            { value: 'tab', label: 'Tab' },
-          ]}
-          value={indent}
-          onChange={setIndent}
-        />
-        <Btn
-          variant="ghost"
-          className="ml-auto"
-          onClick={() => {
-            setInput(SAMPLE)
-            setOutput('')
-            setError('')
-          }}
-        >
-          Try a sample
-        </Btn>
+        <div className="flex flex-wrap items-center gap-3">
+          <Btn onClick={() => run('pretty')}>
+            <i className="fas fa-align-left" aria-hidden /> Format
+          </Btn>
+          <Btn variant="ghost" onClick={() => run('minify')}>
+            <i className="fas fa-compress" aria-hidden /> Minify
+          </Btn>
+          <SegmentedControl
+            options={[
+              { value: '2', label: '2 spaces' },
+              { value: '4', label: '4 spaces' },
+              { value: 'tab', label: 'Tab' },
+            ]}
+            value={indent}
+            onChange={setIndent}
+          />
+          <Btn
+            variant="ghost"
+            className="ml-auto"
+            onClick={() => {
+              setInput(SAMPLE)
+              setOutput('')
+              setError('')
+            }}
+          >
+            Try a sample
+          </Btn>
+        </div>
+
+        <Note tone="error">{error}</Note>
       </div>
 
-      <Note tone="error">{error}</Note>
-
-      {output && (
-        <Field label="Result">
-          <div className="relative">
-            <TextArea readOnly rows={12} value={output} className="bg-cream/50" />
-            <CopyButton value={output} className="absolute right-3 top-3" />
-          </div>
-        </Field>
-      )}
+      {/* Sits beside the input on desktop; on mobile it only appears once there's a result. */}
+      <Field label="Result" className={output ? '' : 'hidden lg:flex'}>
+        <div className="relative">
+          <TextArea
+            readOnly
+            rows={12}
+            value={output}
+            placeholder="Formatted JSON appears here."
+            className="bg-cream/50 lg:min-h-[26rem]"
+          />
+          {output && <CopyButton value={output} className="absolute right-3 top-3" />}
+        </div>
+      </Field>
     </div>
   )
 }
