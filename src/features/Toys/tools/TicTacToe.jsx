@@ -142,7 +142,7 @@ export default function TicTacToe() {
           >
             {status}
           </p>
-          <div className="grid aspect-square grid-cols-3 gap-2">
+          <div className="grid aspect-square grid-cols-3 grid-rows-3 gap-2">
             {board.map((cell, i) => {
               const inWin = winner?.line.includes(i)
               return (
