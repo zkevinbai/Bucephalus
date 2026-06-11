@@ -6,6 +6,7 @@ import UuidGenerator from './tools/UuidGenerator'
 import SqlFormatter from './tools/SqlFormatter'
 import TicTacToe from './tools/TicTacToe'
 import TimeZonePicker from './tools/TimeZonePicker'
+import FlightPath from './tools/FlightPath'
 
 /* The toy registry. Adding a toy is a single entry here:
    - `Component` toys render inside the shared ToyLayout at /toys/:slug
@@ -75,6 +76,15 @@ export const toys = [
     icon: 'fas fa-globe',
     accent: 'text-sage',
     Component: TimeZonePicker,
+  },
+  {
+    slug: 'flight-path',
+    name: 'Flight Path',
+    blurb: 'Pick a route and departure time — watch it arc across the map and land in local time.',
+    category: 'Time zones',
+    icon: 'fas fa-plane',
+    accent: 'text-sage',
+    Component: FlightPath,
   },
   {
     slug: 'tic-tac-toe',
