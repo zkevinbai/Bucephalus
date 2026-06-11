@@ -69,7 +69,7 @@ const careerEntries = [
           'Andreessen Horowitz · SF · Apr 2026',
           'Rippling · SF · Mar 2026',
           'Y Combinator · SF · Nov 2025',
-          'Rocketlane · SF · Oct 2025',
+          'Salesforce · SF · Oct 2025',
           'Palantir · Denver · Sep 2022',
           'Palantir · London · Jul 2022',
           'United Nations · Remote · Nov 2021',
