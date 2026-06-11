@@ -113,11 +113,8 @@ export default function YearTable({ onYearSelect }) {
       </div>
 
       {/* Table */}
-      <div
-        className="overflow-hidden rounded-2xl border border-line bg-white/60"
-        style={{ maxHeight: '60vh' }}
-      >
-        <div className="h-full overflow-auto">
+      <div className="overflow-hidden rounded-2xl border border-line bg-white/60">
+        <div className="max-h-[60vh] overflow-auto">
           <table className="w-full border-collapse">
             <thead className="sticky top-0 z-10 bg-cream">
               <tr className="border-b border-line text-left">
