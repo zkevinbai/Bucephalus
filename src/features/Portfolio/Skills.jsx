@@ -57,14 +57,14 @@ const groups = [
     ],
   },
   {
-    label: 'Platforms & AI',
+    label: 'AI and platforms',
     items: [
-      { name: 'AWS', logo: AWSLogo },
-      { name: 'Vercel', logo: VercelLogo },
       { name: 'Claude', logo: ClaudeLogo, fill: true },
       { name: 'ChatGPT', logo: ChatGPTLogo, fill: true },
       { name: 'Gemini', logo: GeminiLogo, fill: true },
       { name: 'Cursor', logo: CursorLogo },
+      { name: 'Vercel', logo: VercelLogo },
+      { name: 'AWS', logo: AWSLogo },
     ],
   },
 ]
