@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react'
+import { useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { Btn } from '../toykit'
 import { trackToyUse } from '../../../utils/analytics'
 
@@ -123,11 +123,51 @@ export default function TimeZonePicker() {
   }
 
   // --- Drag-to-reorder (pointer events: works for mouse and touch) ---------
-  // The drag source lives in a ref so move events never see stale state;
-  // the state copy only drives the row styling.
+  // The dragged row floats under the pointer; the other rows slide into their
+  // new slots with a FLIP animation so reordering reads as physical, not a snap.
+  // The drag source lives in a ref so move events never see stale state; the
+  // state copy only drives row styling.
   const [dragCity, setDragCity] = useState(null)
-  const dragRef = useRef(null)
+  const drag = useRef(null) // { city, pointerY, grabOffset }
   const didReorder = useRef(false)
+  const tableRef = useRef(null)
+  const rowEls = useRef(new Map()) // city → <tr>
+  const flipPrev = useRef(new Map()) // city → previous top (table-relative)
+  const flipAnim = useRef(new Map()) // city → in-flight WAAPI animation
+
+  const prefersReduced =
+    typeof window !== 'undefined' &&
+    window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  // After every reorder: re-pin the dragged row to the pointer, and animate
+  // each other row sliding from where it was to where it landed (FLIP).
+  useLayoutEffect(() => {
+    const base = tableRef.current?.getBoundingClientRect().top ?? 0
+    const d = drag.current
+    rowEls.current.forEach((el, city) => {
+      if (!el) return
+      if (d && city === d.city) {
+        // Clear our transform, read the true slot top, then re-pin to pointer.
+        el.style.transform = ''
+        const natTop = el.getBoundingClientRect().top
+        flipPrev.current.set(city, natTop - base)
+        el.style.transform = `translateY(${d.pointerY - (natTop + d.grabOffset)}px)`
+        return
+      }
+      const running = flipAnim.current.get(city)
+      if (running) running.cancel() // revert to true position before measuring
+      const prev = flipPrev.current.get(city)
+      const next = el.getBoundingClientRect().top - base
+      flipPrev.current.set(city, next)
+      if (prev == null || prefersReduced || Math.abs(prev - next) < 1) return
+      const anim = el.animate(
+        [{ transform: `translateY(${prev - next}px)` }, { transform: 'translateY(0)' }],
+        { duration: 200, easing: 'cubic-bezier(0.2, 0, 0, 1)' }
+      )
+      flipAnim.current.set(city, anim)
+    })
+  })
 
   const moveCity = (city, targetCity) => {
     if (city === targetCity) return
@@ -136,42 +176,72 @@ export default function TimeZonePicker() {
       const from = sel.indexOf(city)
       const to = sel.indexOf(targetCity)
       if (from < 0 || to < 0) return sel
-      const next = [...sel]
-      next.splice(from, 1)
-      next.splice(to, 0, city)
+      const next = sel.filter((c) => c !== city)
+      const at = next.indexOf(targetCity) + (to > from ? 1 : 0)
+      next.splice(at, 0, city)
       return next
     })
   }
 
   const onDragStart = (city) => (e) => {
     e.preventDefault()
+    const row = e.currentTarget.closest('tr')
     try {
       e.currentTarget.setPointerCapture(e.pointerId)
     } catch {
       /* capture unsupported — drag still works via move events */
     }
     didReorder.current = false
-    dragRef.current = city
+    drag.current = {
+      city,
+      pointerY: e.clientY,
+      grabOffset: e.clientY - (row?.getBoundingClientRect().top ?? e.clientY),
+    }
     setDragCity(city)
   }
+
   const onDragMove = () => (e) => {
-    const src = dragRef.current
-    if (!src) return
-    // Vertical reorder: find the row whose vertical span contains the pointer.
-    // Geometry-based (not elementFromPoint) so it works regardless of where
-    // the pointer sits horizontally.
-    const rowsEls = [...document.querySelectorAll('tr[data-city]')]
-    const target = rowsEls.find((r) => {
-      const { top, bottom } = r.getBoundingClientRect()
-      return e.clientY >= top && e.clientY <= bottom
-    })
-    if (target && target.dataset.city !== src) moveCity(src, target.dataset.city)
-  }
-  const onDragEnd = () => {
-    if (dragRef.current && didReorder.current) {
-      trackToyUse('timezones', 'reorder_city', { tz_city: dragRef.current })
+    const d = drag.current
+    if (!d) return
+    d.pointerY = e.clientY
+    // Keep the dragged row glued to the pointer (offset from its current slot).
+    const el = rowEls.current.get(d.city)
+    if (el) {
+      el.style.transform = ''
+      const natTop = el.getBoundingClientRect().top
+      el.style.transform = `translateY(${e.clientY - (natTop + d.grabOffset)}px)`
     }
-    dragRef.current = null
+    // Reorder when the pointer crosses into another row's vertical span.
+    for (const [city, r] of rowEls.current) {
+      if (city === d.city || !r) continue
+      const { top, bottom } = r.getBoundingClientRect()
+      if (e.clientY >= top && e.clientY <= bottom) {
+        moveCity(d.city, city)
+        break
+      }
+    }
+  }
+
+  const onDragEnd = () => {
+    const d = drag.current
+    if (d) {
+      // Settle the floating row into its final slot rather than snapping.
+      const el = rowEls.current.get(d.city)
+      if (el) {
+        const y = parseFloat(/translateY\(([-0-9.]+)px\)/.exec(el.style.transform)?.[1] ?? '0')
+        el.style.transform = ''
+        if (!prefersReduced && Math.abs(y) > 0.5) {
+          el.animate(
+            [{ transform: `translateY(${y}px)` }, { transform: 'translateY(0)' }],
+            { duration: 180, easing: 'cubic-bezier(0.2, 0, 0, 1)' }
+          )
+        }
+      }
+      if (didReorder.current) {
+        trackToyUse('timezones', 'reorder_city', { tz_city: d.city })
+      }
+    }
+    drag.current = null
     setDragCity(null)
   }
 
@@ -264,21 +334,32 @@ export default function TimeZonePicker() {
 
       {/* Hour grid */}
       <div className="overflow-x-auto rounded-2xl border border-line bg-white/40">
-        <table className="w-full border-collapse">
+        <table ref={tableRef} className="w-full border-collapse">
           <tbody>
             {rows.map((c) => (
               <tr
                 key={c.city}
                 data-city={c.city}
-                className={`border-b border-line/60 transition-opacity last:border-b-0 ${
-                  dragCity === c.city ? 'opacity-50' : ''
+                ref={(el) => {
+                  if (el) rowEls.current.set(c.city, el)
+                  else {
+                    rowEls.current.delete(c.city)
+                    flipPrev.current.delete(c.city)
+                    flipAnim.current.delete(c.city)
+                  }
+                }}
+                style={dragCity === c.city ? { willChange: 'transform' } : undefined}
+                className={`border-b border-line/60 last:border-b-0 ${
+                  dragCity === c.city
+                    ? 'relative z-20 cursor-grabbing select-none outline outline-1 -outline-offset-1 outline-clay/40'
+                    : ''
                 }`}
               >
                 <td className="sticky left-0 z-10 w-40 bg-paper/95 px-2 py-2 backdrop-blur">
                   <div className="flex items-center justify-between gap-1.5">
                     <button
                       onPointerDown={onDragStart(c.city)}
-                      onPointerMove={onDragMove(c.city)}
+                      onPointerMove={onDragMove()}
                       onPointerUp={onDragEnd}
                       onPointerCancel={onDragEnd}
                       aria-label={`Reorder ${c.city} (drag)`}
