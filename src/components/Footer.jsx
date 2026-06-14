@@ -41,20 +41,13 @@ export default function Footer() {
 
       <Container className="flex flex-col gap-2 border-t border-line py-5 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
         <span>© {new Date().getFullYear()} Kevin Bai. Built in San Francisco.</span>
-        <span className="flex items-center gap-4">
+        <span className="flex flex-wrap items-center gap-4">
           <Link
-            to="/projects"
-            onClick={() => trackEasterEgg('projects')}
+            to="/curiosities"
+            onClick={() => trackEasterEgg('curiosities')}
             className="transition-colors hover:text-clay"
           >
-            🛠 The early work
-          </Link>
-          <Link
-            to="/themes"
-            onClick={() => trackEasterEgg('themes')}
-            className="transition-colors hover:text-clay"
-          >
-            🎨 Pick a palette
+            🪄 Curiosities
           </Link>
           <Link
             to="/toys/zodiac"
