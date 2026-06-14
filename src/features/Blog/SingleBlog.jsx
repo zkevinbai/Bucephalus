@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { useEffect, useMemo } from 'react'
 import Container from '../../components/Container'
+import { SubstackPostCTA } from '../../components/SubstackCTA'
 import { getPostBySlug, blogPosts } from './blogData'
 import { trackBlogPostView } from '../../utils/analytics'
 
@@ -69,6 +70,8 @@ export default function SingleBlog() {
         className="prose mt-10"
         dangerouslySetInnerHTML={{ __html: cleanContent }}
       />
+
+      <SubstackPostCTA />
 
       <nav className="mt-16 grid gap-4 border-t border-line pt-8 sm:grid-cols-2">
         {prev ? (

@@ -5,6 +5,7 @@ import CareerTimeline from './CareerTimeline'
 import Volunteering from './Volunteering'
 import Education from './Education'
 import Skills from './Skills'
+import { SubstackHomeBand } from '../../components/SubstackCTA'
 
 export default function Portfolio() {
   return (
@@ -16,6 +17,7 @@ export default function Portfolio() {
       <Volunteering />
       <Education />
       <Skills />
+      <SubstackHomeBand />
     </>
   )
 }

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Container from '../../components/Container'
+import { SubstackBlogBand } from '../../components/SubstackCTA'
 import { blogPosts } from './blogData'
 import { trackBlogPostClick } from '../../utils/analytics'
 
@@ -16,6 +17,8 @@ export default function AllBlogs() {
           and economics, and building technology that solves real problems.
         </p>
       </header>
+
+      <SubstackBlogBand />
 
       <div className="mt-14 flex flex-col">
         {blogPosts.map((post, index) => (

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Container from './Container'
+import { SubstackMark, FDE_POD_URL } from './SubstackCTA'
 import { trackOutboundClick, trackEasterEgg } from '../utils/analytics'
 
 const socials = [
@@ -7,6 +8,7 @@ const socials = [
   { icon: 'fab fa-github', label: 'GitHub', href: 'https://github.com/zkevinbai' },
   { icon: 'fab fa-twitter', label: 'Twitter', href: 'https://twitter.com/zkevinbai' },
   { icon: 'fas fa-paper-plane', label: 'Email', href: 'mailto:hello@zkevinbai.com' },
+  { mark: true, label: 'FDE Pod', href: FDE_POD_URL },
 ]
 
 export default function Footer() {
@@ -21,7 +23,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
-          {socials.map(({ icon, label, href }) => (
+          {socials.map(({ icon, mark, label, href }) => (
             <a
               key={label}
               href={href}
@@ -31,7 +33,7 @@ export default function Footer() {
               aria-label={label}
               className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-paper text-ink-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-clay hover:bg-clay hover:text-white"
             >
-              <i className={icon} />
+              {mark ? <SubstackMark className="h-[1.05rem] w-[1.05rem]" /> : <i className={icon} />}
             </a>
           ))}
         </div>
