@@ -19,6 +19,13 @@ const corners = [
     title: 'Pick a palette',
     blurb: 'Theme Studio — recolor the whole site and make it your own.',
   },
+  {
+    to: '/logo-sizer',
+    event: 'logo-sizer',
+    emoji: '📐',
+    title: 'Logo sizer',
+    blurb: 'Drag to resize the logo chips from my career timeline.',
+  },
 ]
 
 export default function Curiosities() {

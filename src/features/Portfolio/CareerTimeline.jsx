@@ -12,6 +12,7 @@ const careerEntries = [
     logo: AnthropicLogo,
     dark: false,
     whiteBg: true,
+    pad: 14,
     title: 'Member of Technical Staff',
     company: 'Anthropic',
     dateRange: '2026 — Present',
@@ -23,6 +24,9 @@ const careerEntries = [
   {
     logo: UNLogo,
     dark: false,
+    fill: true,
+    bgColor: '#009edb',
+    pad: 8,
     title: 'United Nations Youth Representative',
     company: 'Comprehensive Nuclear-Test-Ban Treaty Organization (CTBTO)',
     dateRange: '2017 — Present',
@@ -88,6 +92,9 @@ const careerEntries = [
   {
     logo: RipplingLogo,
     dark: false,
+    fill: true,
+    bgColor: '#fdb71c',
+    pad: 10,
     title: 'Founding Forward Deployed Engineer',
     company: 'Rippling',
     dateRange: '2025 — 2026',
@@ -101,6 +108,7 @@ const careerEntries = [
   {
     logo: PalantirLogo,
     dark: true,
+    pad: 14,
     title: 'Forward Deployed Software Engineer',
     company: 'Palantir Technologies',
     dateRange: '2021 — 2025',
@@ -133,6 +141,9 @@ const careerEntries = [
   {
     logo: GlobalityLogo,
     dark: false,
+    fill: true,
+    bgColor: '#1e335c',
+    pad: 10,
     title: 'Full Stack Software Engineer',
     company: 'Globality, Inc.',
     dateRange: '2019 — 2021',
@@ -160,6 +171,7 @@ const careerEntries = [
   {
     logo: UNHCRLogo,
     dark: false,
+    pad: 10,
     title: 'Private Sector Partnerships',
     company: 'UNHCR, the UN Refugee Agency',
     dateRange: '2017',
@@ -213,10 +225,17 @@ function Entry({ entry }) {
     <article className="reveal relative md:pl-24">
       {/* node / logo */}
       <div
-        className={`mb-4 flex h-14 w-14 items-center justify-center rounded-2xl border border-line shadow-sm md:absolute md:left-0 md:top-0 md:mb-0 ${
-          entry.dark ? 'bg-[#14110e] p-3' : 'bg-white p-2.5'
+        className={`mb-4 flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-line shadow-sm md:absolute md:left-0 md:top-0 md:mb-0 ${
+          entry.fill ? 'p-3.5' : entry.dark ? 'bg-[#14110e] p-3' : 'bg-white p-2.5'
         }`}
-        style={entry.whiteBg ? { backgroundColor: '#ffffff' } : undefined}
+        style={{
+          ...(entry.whiteBg
+            ? { backgroundColor: '#ffffff' }
+            : entry.bgColor
+              ? { backgroundColor: entry.bgColor }
+              : {}),
+          ...(entry.pad != null ? { padding: entry.pad } : {}),
+        }}
       >
         <img src={entry.logo} alt={`${entry.company} logo`} className="h-full w-full object-contain" />
       </div>
@@ -272,8 +291,8 @@ export default function CareerTimeline() {
     <Section
       id="career"
       eyebrow="Career"
-      title="From the United Nations to the enterprise frontier."
-      intro="A decade spanning diplomacy, startups, and the world's most important institutions — always in the seat where business problems meet software."
+      title="From the United Nations to the frontier of Artificial Intelligence."
+      intro="A decade spanning diplomacy, startups, and the world's most important institutions — always in the seat where business problems meet technology."
     >
       <div className="relative">
         <span className="absolute left-[27px] top-3 hidden w-px bg-line md:block" style={{ height: 'calc(100% - 24px)' }} />

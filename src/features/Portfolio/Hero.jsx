@@ -2,6 +2,7 @@ import Container from '../../components/Container'
 import { trackOutboundClick } from '../../utils/analytics'
 import Portrait from '../../assets/kevin-portrait.webp'
 import AnthropicLogo from '../../assets/companies/Anthropic-logo.svg'
+import RipplingLogo from '../../assets/companies/Rippling-logo.png'
 import PalantirLogo from '../../assets/companies/palantir-logo.svg'
 import UNLogo from '../../assets/companies/UN-logo.svg'
 import BerkeleyLogo from '../../assets/companies/UCBerkeley-logo.png'
@@ -15,6 +16,7 @@ const ctas = [
 
 const credentials = [
   { logo: AnthropicLogo, name: 'Anthropic' },
+  { logo: RipplingLogo, name: 'Rippling' },
   { logo: PalantirLogo, name: 'Palantir', darken: true },
   { logo: UNLogo, name: 'United Nations' },
   { logo: BerkeleyLogo, name: 'UC Berkeley' },
@@ -102,7 +104,7 @@ export default function Hero() {
                 title={name}
                 className={`h-7 w-auto max-w-[130px] object-contain transition-all duration-300 hover:opacity-90 md:h-8 ${
                   darken
-                    ? 'opacity-45 [filter:brightness(0)] hover:[filter:none] dark:opacity-80 dark:[filter:invert(1)]'
+                    ? 'opacity-45 [filter:brightness(0)] hover:opacity-100 dark:opacity-80 dark:[filter:invert(1)]'
                     : 'opacity-55 grayscale hover:grayscale-0 dark:opacity-70 dark:[filter:grayscale(1)_invert(1)]'
                 }`}
               />

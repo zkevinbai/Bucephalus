@@ -11,6 +11,7 @@ import ToyPage from './features/Toys/ToyPage'
 import Themes from './features/Themes/Themes'
 import ProjectsPage from './features/Portfolio/ProjectsPage'
 import Curiosities from './features/Curiosities/Curiosities'
+import LogoSizer from './features/LogoSizer/LogoSizer'
 import { useScrollReveal } from './hooks/useScrollReveal'
 import { trackPageView } from './utils/analytics'
 
@@ -49,6 +50,7 @@ function App() {
           <Route path="/themes" element={<Themes />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/curiosities" element={<Curiosities />} />
+          <Route path="/logo-sizer" element={<LogoSizer />} />
           <Route path="/zodiac" element={<Navigate to="/toys/zodiac" replace />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/" element={<Portfolio />} />
