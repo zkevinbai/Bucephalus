@@ -57,7 +57,7 @@ export default function Volunteering() {
       id="volunteering"
       eyebrow="Giving back"
       title="Leadership beyond the job."
-      intro="Service has run alongside the career the whole way — and these days, mostly about sending the ladder down: opening the door into forward deployed engineering for the people coming up behind me."
+      intro="Service has run alongside my career the whole way — mostly sending the ladder down for others, with some representation and advocacy along the way."
     >
       <div className="grid gap-4 md:grid-cols-2">
         {entries.map((e) => (
