@@ -2,20 +2,28 @@ import Section from './Section'
 
 const entries = [
   {
+    role: 'Forward Deployed Engineering Mentor',
+    org: 'Independent',
+    years: '2024 — Present',
+    icon: 'fas fa-hands-helping',
+    blurb:
+      '1:1 mentorship for people breaking into forward deployed and FDE roles — office hours, mock interviews, and portfolio reviews to open the door into the field.',
+  },
+  {
+    role: 'Guest Lecturer & Speaker',
+    org: 'Universities, bootcamps & community programs',
+    years: '2019 — Present',
+    icon: 'fas fa-graduation-cap',
+    blurb:
+      'Free talks on the forward deployed engineering and AI career path, for people trying to break into the field.',
+  },
+  {
     role: 'Founder',
     org: 'Algobatics — Software Engineering Tutoring',
     years: '2020 — Present',
     icon: 'fas fa-chalkboard-teacher',
     blurb:
       'Tutored 50+ software engineering students from underrepresented backgrounds; built curriculum and videos that make CS approachable for non-technical audiences.',
-  },
-  {
-    role: 'Student Advocate to the UC Board of Regents',
-    org: 'University of California Student Association',
-    years: '2014 — 2015',
-    icon: 'fas fa-landmark',
-    blurb:
-      'Selected as the sole student representative of 234,464 UC students; advocated on tuition, diversity, and fossil fuel divestment.',
   },
   {
     role: 'US Delegate',
@@ -26,20 +34,12 @@ const entries = [
       'One of 15 Americans selected for high-level discussions with Mexican senators, secretaries, ambassadors, and the leaders of TELMEX, Google Mexico, and Amazon Mexico.',
   },
   {
-    role: 'Inaugural President',
-    org: 'Bowles Hall Student Association',
-    years: '2015 — 2016',
-    icon: 'fas fa-university',
+    role: 'Student Advocate to the UC Board of Regents',
+    org: 'University of California Student Association',
+    years: '2014 — 2015',
+    icon: 'fas fa-landmark',
     blurb:
-      'Led the student side of the Phoenix Program, a $45M initiative to revive the residential college at UC Berkeley.',
-  },
-  {
-    role: 'Director of Business Development',
-    org: 'UC Berkeley Model United Nations',
-    years: '2015 — 2016',
-    icon: 'fas fa-globe-americas',
-    blurb:
-      'Coordinated a 12-person team for the largest international relations conference on the West Coast (700 attendees); negotiated airline partnerships that cut attendance costs 20%.',
+      'Selected as the sole student representative of 234,464 UC students; advocated on tuition, diversity, and fossil fuel divestment.',
   },
   {
     role: 'Philippines Site Leader',
@@ -57,7 +57,7 @@ export default function Volunteering() {
       id="volunteering"
       eyebrow="Giving back"
       title="Leadership beyond the job."
-      intro="Service has run alongside the career the whole way — tutoring engineers, representing students, and showing up where it counts."
+      intro="Service has run alongside the career the whole way — and these days, mostly about sending the ladder down: opening the door into forward deployed engineering for the people coming up behind me."
     >
       <div className="grid gap-4 md:grid-cols-2">
         {entries.map((e) => (

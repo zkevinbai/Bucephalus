@@ -2,7 +2,6 @@ import Container from '../../components/Container'
 import { trackOutboundClick } from '../../utils/analytics'
 import Portrait from '../../assets/kevin-portrait.webp'
 import AnthropicLogo from '../../assets/companies/Anthropic-logo.svg'
-import RipplingLogo from '../../assets/companies/Rippling-logo.png'
 import PalantirLogo from '../../assets/companies/palantir-logo.svg'
 import UNLogo from '../../assets/companies/UN-logo.svg'
 import BerkeleyLogo from '../../assets/companies/UCBerkeley-logo.png'
@@ -16,7 +15,6 @@ const ctas = [
 
 const credentials = [
   { logo: AnthropicLogo, name: 'Anthropic' },
-  { logo: RipplingLogo, name: 'Rippling' },
   { logo: PalantirLogo, name: 'Palantir', darken: true },
   { logo: UNLogo, name: 'United Nations' },
   { logo: BerkeleyLogo, name: 'UC Berkeley' },
