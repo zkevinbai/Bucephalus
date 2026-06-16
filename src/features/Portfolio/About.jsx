@@ -35,8 +35,8 @@ export default function About() {
         <div className="reveal flex flex-col gap-6">
           <Para>
             I'm a <B>Member of Technical Staff</B> at <B>Anthropic</B>, working on <B>Applied AI</B>.
-            I came up as a <B>Forward Deployed Engineer</B> — building the FDE function at{' '}
-            <B>Rippling</B> as its first hire, and solving open-ended problems for the{' '}
+            I earned my stripes as a <B>Forward Deployed Engineer</B> — built the FDE function at{' '}
+            <B>Rippling</B> as its first hire, and led FDE engagements for the{' '}
             <B>most important institutions in the world</B> at <B>Palantir</B> before that. I'm
             also an <B>avid public speaker</B> across the <B>FDE space</B>.
           </Para>

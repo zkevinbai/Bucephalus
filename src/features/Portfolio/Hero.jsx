@@ -49,7 +49,7 @@ export default function Hero() {
             <span className="font-medium text-clay-deep">Forward Deployed Engineering</span>,{' '}
             <span className="font-medium text-clay-deep">Applied AI</span>, and{' '}
             <span className="font-medium text-clay-deep">International Relations</span>. My goal is to
-            put applied AI to work on the problems that matter most.
+            bridge the gap between what artificial intelligence can do and what the world actually needs.
           </p>
 
           <p className="reveal mt-4 font-serif text-[1.3rem] italic text-muted md:text-[1.5rem]" style={{ transitionDelay: '120ms' }}>

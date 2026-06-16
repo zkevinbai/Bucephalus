@@ -9,6 +9,7 @@ import PythonLogo from '../../assets/companies/Python-logo.svg'
 
 const competencies = [
   'Forward Deployed Engineering',
+  'Applied AI',
   'Enterprise AI Deployment',
   '0→1 Team Building',
   'Player-Coach Leadership',

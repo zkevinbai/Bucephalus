@@ -19,9 +19,9 @@ const educationEntries = [
   {
     logo: OxfordLogo,
     institution: 'University of Oxford',
-    degree: 'Sustainable Development',
+    degree: 'Sustainable Development, Renewable Energy, Urban Innovation',
     activities: [
-      '<strong>IARU Santander Scholar</strong> — fully funded by Santander Bank to study and research at Oxford, focused on <strong>sustainable development</strong>, <strong>renewable energy</strong>, and <strong>urban innovation</strong>',
+      '<strong>IARU Santander Scholar</strong> — fully funded by Santander Bank to study and research at Oxford',
       '🏆 <strong>Oxford Debate Union</strong> — participated in three debates and <strong>won all three</strong>',
     ],
   },
