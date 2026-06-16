@@ -1,7 +1,7 @@
 import Container from '../../components/Container'
 import { trackOutboundClick } from '../../utils/analytics'
 import Portrait from '../../assets/kevin-portrait.webp'
-import RipplingLogo from '../../assets/companies/Rippling-logo.png'
+import AnthropicLogo from '../../assets/companies/Anthropic-logo.svg'
 import PalantirLogo from '../../assets/companies/palantir-logo.svg'
 import UNLogo from '../../assets/companies/UN-logo.svg'
 import BerkeleyLogo from '../../assets/companies/UCBerkeley-logo.png'
@@ -14,7 +14,7 @@ const ctas = [
 ]
 
 const credentials = [
-  { logo: RipplingLogo, name: 'Rippling' },
+  { logo: AnthropicLogo, name: 'Anthropic' },
   { logo: PalantirLogo, name: 'Palantir', darken: true },
   { logo: UNLogo, name: 'United Nations' },
   { logo: BerkeleyLogo, name: 'UC Berkeley' },
@@ -36,7 +36,7 @@ export default function Hero() {
       <Container>
         <div className="grid items-center gap-10 md:gap-14 lg:grid-cols-[minmax(0,1fr)_300px]">
           <div className="max-w-3xl">
-          <p className="eyebrow reveal">Founding Forward Deployed Engineer · Rippling</p>
+          <p className="eyebrow reveal">Member of Technical Staff · Anthropic</p>
 
           <h1 className="reveal mt-5 font-serif text-[2.9rem] font-semibold leading-[1.04] tracking-[-0.02em] text-ink sm:text-6xl md:text-7xl">
             Hello, I'm Kevin.
@@ -45,9 +45,9 @@ export default function Hero() {
           <p className="reveal mt-6 text-[1.2rem] leading-relaxed text-ink-soft md:text-[1.32rem]" style={{ transitionDelay: '60ms' }}>
             I know three things well —{' '}
             <span className="font-medium text-clay-deep">Forward Deployed Engineering</span>,{' '}
-            <span className="font-medium text-clay-deep">solving enterprise problems</span>, and{' '}
-            <span className="font-medium text-clay-deep">international relations</span>. My goal is to
-            leverage technology to help customers solve real problems.
+            <span className="font-medium text-clay-deep">Applied AI</span>, and{' '}
+            <span className="font-medium text-clay-deep">International Relations</span>. My goal is to
+            put applied AI to work on the problems that matter most.
           </p>
 
           <p className="reveal mt-4 font-serif text-[1.3rem] italic text-muted md:text-[1.5rem]" style={{ transitionDelay: '120ms' }}>

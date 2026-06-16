@@ -34,9 +34,11 @@ export default function About() {
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
         <div className="reveal flex flex-col gap-6">
           <Para>
-            I'm the <B>founding Forward Deployed Engineer</B> at <B>Rippling</B> — the first hire,
-            helping build the FDE function and solve enterprise problems for our largest and most
-            strategic customers. I'm also an <B>avid public speaker</B> across the <B>FDE space</B>.
+            I'm a <B>Member of Technical Staff</B> at <B>Anthropic</B>, working on <B>Applied AI</B>.
+            I came up as a <B>Forward Deployed Engineer</B> — building the FDE function at{' '}
+            <B>Rippling</B> as its first hire, and solving open-ended problems for the{' '}
+            <B>most important institutions in the world</B> at <B>Palantir</B> before that. I'm
+            also an <B>avid public speaker</B> across the <B>FDE space</B>.
           </Para>
           <Para>
             I'm a <B>William Jefferson Clinton Presidential Scholar</B> who has studied at{' '}

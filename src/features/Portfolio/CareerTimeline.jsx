@@ -1,4 +1,5 @@
 import Section from './Section'
+import AnthropicLogo from '../../assets/companies/Anthropic-logo.svg'
 import RipplingLogo from '../../assets/companies/Rippling-logo.png'
 import UNLogo from '../../assets/companies/UN-logo.svg'
 import PalantirLogo from '../../assets/companies/palantir-logo.svg'
@@ -8,16 +9,15 @@ import KevinLogo from '../../assets/companies/KevinBai-logo.png'
 
 const careerEntries = [
   {
-    logo: RipplingLogo,
+    logo: AnthropicLogo,
     dark: false,
-    title: 'Founding Forward Deployed Engineer',
-    company: 'Rippling',
-    dateRange: '2025 — Present',
-    location: 'San Francisco Bay Area',
+    whiteBg: true,
+    title: 'Member of Technical Staff',
+    company: 'Anthropic',
+    dateRange: '2026 — Present',
+    location: 'San Francisco',
     bullets: [
-      'Founding <strong>Forward Deployed Engineer</strong> at Rippling, <strong>first hire</strong>. Here to help build the <strong>FDE function</strong> — a Forward Deployed Engineer is part consultant, part product manager, and part software engineer: a <strong>founder-shaped engineer</strong>',
-      "Solve <strong>enterprise problems</strong> for Rippling's <strong>largest and most strategic customers</strong>. If there's a SKU we don't have, we invent it. Our north star is the success of our customers on Rippling",
-      'Created the <strong>Slack channel and GitHub repo</strong>, authored the <strong>first FDE SOPs</strong>, completed the <strong>first FDE project</strong>, and wrote the <strong>first 250K lines of FDE code</strong>',
+      'Applied AI',
     ],
   },
   {
@@ -86,11 +86,24 @@ const careerEntries = [
     ],
   },
   {
+    logo: RipplingLogo,
+    dark: false,
+    title: 'Founding Forward Deployed Engineer',
+    company: 'Rippling',
+    dateRange: '2025 — 2026',
+    location: 'San Francisco Bay Area',
+    bullets: [
+      'Founding <strong>Forward Deployed Engineer</strong> at Rippling, <strong>first hire</strong>. Helped build the <strong>FDE function</strong> — a Forward Deployed Engineer is part consultant, part product manager, and part software engineer: a <strong>founder-shaped engineer</strong>',
+      "Solved <strong>enterprise problems</strong> for Rippling's <strong>largest and most strategic customers</strong>. If there wasn't a SKU we needed, we invented it. Our north star was the success of our customers on Rippling",
+      'Created the <strong>Slack channel and GitHub repo</strong>, authored the <strong>first FDE SOPs</strong>, completed the <strong>first FDE project</strong>, and wrote the <strong>first 250K lines of FDE code</strong>',
+    ],
+  },
+  {
     logo: PalantirLogo,
     dark: true,
     title: 'Forward Deployed Software Engineer',
     company: 'Palantir Technologies',
-    dateRange: 'May 2021 — Apr 2025',
+    dateRange: '2021 — 2025',
     location: 'LA · NYC · Chicago · London · Denver · DC · Bogotá',
     bullets: [
       {
@@ -203,6 +216,7 @@ function Entry({ entry }) {
         className={`mb-4 flex h-14 w-14 items-center justify-center rounded-2xl border border-line shadow-sm md:absolute md:left-0 md:top-0 md:mb-0 ${
           entry.dark ? 'bg-[#14110e] p-3' : 'bg-white p-2.5'
         }`}
+        style={entry.whiteBg ? { backgroundColor: '#ffffff' } : undefined}
       >
         <img src={entry.logo} alt={`${entry.company} logo`} className="h-full w-full object-contain" />
       </div>
