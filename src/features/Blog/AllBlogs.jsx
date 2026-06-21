@@ -3,8 +3,17 @@ import Container from '../../components/Container'
 import { SubstackBlogBand } from '../../components/SubstackCTA'
 import { blogPosts } from './blogData'
 import { trackBlogPostClick } from '../../utils/analytics'
+import { useSeo, blogJsonLd } from '../../utils/seo'
 
 export default function AllBlogs() {
+  useSeo({
+    title: 'Writing — Kevin Bai',
+    description:
+      'Thoughts on forward deployed engineering, enterprise software, international geopolitics and economics, and building technology that solves real problems.',
+    path: '/blog',
+    jsonLd: blogJsonLd(blogPosts),
+  })
+
   return (
     <Container size="reading" className="pt-32 pb-8 md:pt-40">
       <header className="reveal">

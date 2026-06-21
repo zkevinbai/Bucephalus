@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Container from '../../components/Container'
 import { trackEasterEgg } from '../../utils/analytics'
+import { useSeo } from '../../utils/seo'
 
 // A quiet hub for the off-the-main-path corners of the site, reached from the
 // footer easter egg. Each card routes onward to its own page.
@@ -29,6 +30,12 @@ const corners = [
 ]
 
 export default function Curiosities() {
+  useSeo({
+    title: 'Curiosities — Kevin Bai',
+    description: 'Off-the-main-path corners of zkevinbai.com.',
+    path: '/curiosities',
+  })
+
   return (
     <Container size="reading" className="pt-28 pb-16 md:pt-36">
       <Link

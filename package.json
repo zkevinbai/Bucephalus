@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/gen-seo.mjs && (vite build --ssr src/entry-server.jsx --outDir dist-server --logLevel error && node scripts/prerender.mjs || echo 'prerender skipped — shipping SPA build')",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.105.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.0",

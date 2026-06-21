@@ -1,5 +1,6 @@
 import Container from '../../components/Container'
 import { themes } from './themePresets'
+import { useSeo } from '../../utils/seo'
 
 const serif = "'Fraunces', Georgia, serif"
 
@@ -158,6 +159,13 @@ function ThemeCard({ t }) {
 }
 
 export default function Themes() {
+  useSeo({
+    title: 'Theme Studio — Kevin Bai',
+    description: 'Preview the color palettes behind zkevinbai.com.',
+    path: '/themes',
+    robots: 'noindex, follow',
+  })
+
   return (
     <Container size="page" className="pt-32 pb-8 md:pt-40">
       <header className="reveal max-w-reading">

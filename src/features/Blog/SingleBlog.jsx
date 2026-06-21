@@ -4,6 +4,7 @@ import Container from '../../components/Container'
 import { SubstackPostCTA } from '../../components/SubstackCTA'
 import { getPostBySlug, blogPosts } from './blogData'
 import { trackBlogPostView } from '../../utils/analytics'
+import { useSeo, articleJsonLd } from '../../utils/seo'
 
 // The blog content carries legacy inline class attributes (font-raleway, gray
 // utilities, etc.). Strip them so the `.prose` layer styles it by tag instead.
@@ -28,6 +29,18 @@ export default function SingleBlog() {
   useEffect(() => {
     if (post) trackBlogPostView({ slug, title: post.title, category: post.category })
   }, [slug, post])
+
+  useSeo(
+    post
+      ? {
+          title: `${post.title} — Kevin Bai`,
+          description: post.excerpt,
+          path: `/blog/${post.slug}`,
+          type: 'article',
+          jsonLd: articleJsonLd(post),
+        }
+      : { title: 'Post not found — Kevin Bai', path: `/blog/${slug}`, robots: 'noindex, follow' }
+  )
 
   if (!post) {
     return (

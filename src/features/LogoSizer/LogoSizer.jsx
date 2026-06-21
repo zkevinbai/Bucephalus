@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Container from '../../components/Container'
+import { useSeo } from '../../utils/seo'
 import AnthropicLogo from '../../assets/companies/Anthropic-logo.svg'
 import RipplingLogo from '../../assets/companies/Rippling-logo.png'
 import GlobalityLogo from '../../assets/companies/Globality-logo.png'
@@ -30,6 +31,13 @@ function Chip({ src, bg, pad, size }) {
 
 export default function LogoSizer() {
   const [pad, setPad] = useState(8)
+
+  useSeo({
+    title: 'Logo Sizer — Kevin Bai',
+    description: 'An interactive toy for sizing the logo chips in the career timeline.',
+    path: '/logo-sizer',
+    robots: 'noindex, follow',
+  })
 
   return (
     <Container size="reading" className="pt-28 pb-20 md:pt-36">

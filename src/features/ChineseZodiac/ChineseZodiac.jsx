@@ -6,10 +6,22 @@ import YearTable from './YearTable'
 import YearDetail from './YearDetail'
 import { isValidYear, findYearByCombination } from './zodiacUtils'
 import { trackToyUse } from '../../utils/analytics'
+import { useSeo, softwareJsonLd } from '../../utils/seo'
 
 export default function ChineseZodiac() {
   const [searchParams, setSearchParams] = useSearchParams()
   const [selectedYear, setSelectedYear] = useState(null)
+
+  useSeo({
+    title: 'Chinese Zodiac — Kevin Bai',
+    description: 'Look up any year’s Chinese zodiac animal and element, and what they mean.',
+    path: '/toys/zodiac',
+    jsonLd: softwareJsonLd({
+      name: 'Chinese Zodiac',
+      description: 'Look up any year’s Chinese zodiac animal and element, and what they mean.',
+      path: '/toys/zodiac',
+    }),
+  })
 
   // Read URL parameters on mount and when they change
   useEffect(() => {

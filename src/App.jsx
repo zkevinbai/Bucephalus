@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -37,7 +37,7 @@ function RouteEffects() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <RouteEffects />
       <Header />
       <main className="min-h-screen">
@@ -58,7 +58,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-    </BrowserRouter>
+    </>
   )
 }
 
