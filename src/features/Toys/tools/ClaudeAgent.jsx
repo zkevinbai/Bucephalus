@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Field, TextArea, Btn, Note, SegmentedControl } from '../toykit'
+import Markdown from './Markdown'
 import { trackEvent } from '../../../utils/analytics'
 import {
   MODELS,
@@ -322,7 +323,7 @@ export default function ClaudeAgent() {
           {answer && (
             <div className="rounded-2xl border border-line bg-white/70 p-4">
               <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-clay">Answer</p>
-              <p className="whitespace-pre-wrap text-[0.95rem] leading-relaxed text-ink">{answer}</p>
+              <Markdown className="text-[0.95rem] leading-relaxed text-ink">{answer}</Markdown>
             </div>
           )}
 

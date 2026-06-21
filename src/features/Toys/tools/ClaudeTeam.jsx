@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Field, TextArea, Btn, Note, SegmentedControl } from '../toykit'
+import Markdown from './Markdown'
 import { trackEvent } from '../../../utils/analytics'
 import {
   MODELS,
@@ -158,7 +159,7 @@ function DelegationCard({ event }) {
       <div className="px-4 py-3">
         <p className="mb-2 text-[0.8rem] italic leading-snug text-muted">“{event.task}”</p>
         {event.output ? (
-          <p className="whitespace-pre-wrap text-[0.9rem] leading-relaxed text-ink">{event.output}</p>
+          <Markdown className="text-[0.9rem] leading-relaxed text-ink">{event.output}</Markdown>
         ) : (
           <p className="text-sm text-muted">…</p>
         )}
@@ -524,12 +525,12 @@ export default function ClaudeTeam() {
                 <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-clay">
                   <i className="fas fa-user-tie mr-1.5" aria-hidden /> Lead — final answer
                 </p>
-                <p className="whitespace-pre-wrap text-[0.95rem] leading-relaxed text-ink">{e.text}</p>
+                <Markdown className="text-[0.95rem] leading-relaxed text-ink">{e.text}</Markdown>
               </div>
             ) : (
               <div key={e.id} className="flex gap-2.5 px-1">
                 <i className="fas fa-user-tie mt-1 text-sm text-clay" aria-hidden />
-                <p className="whitespace-pre-wrap text-[0.92rem] leading-relaxed text-ink-soft">{e.text}</p>
+                <Markdown className="text-[0.92rem] leading-relaxed text-ink-soft">{e.text}</Markdown>
               </div>
             )
           })}

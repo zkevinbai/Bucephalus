@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Field, TextArea, Btn, Note, SegmentedControl } from '../toykit'
+import Markdown from './Markdown'
 import { trackEvent } from '../../../utils/analytics'
 import {
   MODELS,
@@ -321,7 +322,7 @@ export default function ClaudeVision() {
 
           {(answer || streaming) && (
             <div className="rounded-2xl border border-line bg-white/70 px-4 py-3 text-[0.95rem] leading-relaxed text-ink">
-              {answer ? <p className="whitespace-pre-wrap">{answer}</p> : <TypingDots />}
+              {answer ? <Markdown>{answer}</Markdown> : <TypingDots />}
             </div>
           )}
 
