@@ -12,6 +12,7 @@ import FlightPath from './tools/FlightPath'
 // Lazy so the Anthropic SDK only downloads when someone opens an AI toy.
 const ClaudeChat = lazy(() => import('./tools/ClaudeChat'))
 const ClaudeAgent = lazy(() => import('./tools/ClaudeAgent'))
+const ClaudeTeam = lazy(() => import('./tools/ClaudeTeam'))
 
 /* The toy registry. Adding a toy is a single entry here:
    - `Component` toys render inside the shared ToyLayout at /toys/:slug
@@ -35,6 +36,15 @@ export const toys = [
     icon: 'fas fa-robot',
     accent: 'text-clay',
     Component: ClaudeAgent,
+  },
+  {
+    slug: 'agent-team',
+    name: 'Agent Team',
+    blurb: 'One lead agent delegates to specialist subagents — a researcher, a writer, a critic — then synthesizes their work, live in your browser.',
+    category: 'AI',
+    icon: 'fas fa-sitemap',
+    accent: 'text-clay',
+    Component: ClaudeTeam,
   },
   {
     slug: 'word-counter',
@@ -130,7 +140,7 @@ export const toys = [
   },
 ]
 
-const CATEGORY_ORDER = ['AI', 'Time zones', 'Text', 'Developer', 'Fun']
+const CATEGORY_ORDER = ['Time zones', 'Text', 'Developer', 'AI', 'Fun']
 
 export function toysByCategory() {
   return CATEGORY_ORDER.filter((c) => toys.some((t) => t.category === c)).map((category) => ({
