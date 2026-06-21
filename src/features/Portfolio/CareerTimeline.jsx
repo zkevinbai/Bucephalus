@@ -100,9 +100,9 @@ const careerEntries = [
     dateRange: '2025 — 2026',
     location: 'San Francisco Bay Area',
     bullets: [
-      'Founding <strong>Forward Deployed Engineer</strong> at Rippling, <strong>first hire</strong>. Helped build the <strong>FDE function</strong> — a Forward Deployed Engineer is part consultant, part product manager, and part software engineer: a <strong>founder-shaped engineer</strong>',
-      "Solved <strong>enterprise problems</strong> for Rippling's <strong>largest and most strategic customers</strong>. If there wasn't a SKU we needed, we invented it. Our north star was the success of our customers on Rippling",
-      'Created the <strong>Slack channel and GitHub repo</strong>, authored the <strong>first FDE SOPs</strong>, completed the <strong>first FDE project</strong>, and wrote the <strong>first 250K lines of FDE code</strong>',
+      '🌱 Founding <strong>Forward Deployed Engineer</strong> at Rippling, <strong>first hire</strong>. Helped build the <strong>FDE function</strong> — part consultant, part product manager, part software engineer: a <strong>founder-shaped engineer</strong> — and grew the team by <strong>interviewing and hiring</strong> FDEs',
+      "🎯 Solved <strong>enterprise problems</strong> for Rippling's <strong>largest and most strategic customers</strong>. If there was a SKU the customer needed that Rippling did not have, we invented it. Our north star was the success of our customers on Rippling",
+      '🛠️ Created the <strong>Slack channel and GitHub repo</strong>, authored the <strong>first FDE SOPs</strong>, and wrote the <strong>first 250K lines of FDE code</strong> — then built <strong>Rippling’s MCP server</strong> and <strong>10+ Skills</strong> to multiply <strong>FDE output</strong> and developer experience',
     ],
   },
   {

@@ -1,3 +1,4 @@
+import { lazy } from 'react'
 import WordCounter from './tools/WordCounter'
 import TextDiff from './tools/TextDiff'
 import JsonFormatter from './tools/JsonFormatter'
@@ -8,11 +9,33 @@ import TicTacToe from './tools/TicTacToe'
 import TimeZonePicker from './tools/TimeZonePicker'
 import FlightPath from './tools/FlightPath'
 
+// Lazy so the Anthropic SDK only downloads when someone opens an AI toy.
+const ClaudeChat = lazy(() => import('./tools/ClaudeChat'))
+const ClaudeAgent = lazy(() => import('./tools/ClaudeAgent'))
+
 /* The toy registry. Adding a toy is a single entry here:
    - `Component` toys render inside the shared ToyLayout at /toys/:slug
    - `path` toys (e.g. the Zodiac) own their full page and route
    - `narrow` toys keep the reading-width column on desktop instead of the full page */
 export const toys = [
+  {
+    slug: 'claude-chat',
+    name: 'Claude Chat',
+    blurb: 'A streaming chat playground for experimenting with Claude — pick a model, set a system prompt, bring your own key.',
+    category: 'AI',
+    icon: 'fas fa-comment-dots',
+    accent: 'text-clay',
+    Component: ClaudeChat,
+  },
+  {
+    slug: 'research-agent',
+    name: 'Research Agent',
+    blurb: 'Give Claude a question and watch it run live web searches, then answer with cited sources — an agent using tools, not just a chat.',
+    category: 'AI',
+    icon: 'fas fa-robot',
+    accent: 'text-clay',
+    Component: ClaudeAgent,
+  },
   {
     slug: 'word-counter',
     name: 'Word & Character Counter',
@@ -107,7 +130,7 @@ export const toys = [
   },
 ]
 
-const CATEGORY_ORDER = ['Text', 'Developer', 'Time zones', 'Fun']
+const CATEGORY_ORDER = ['AI', 'Time zones', 'Text', 'Developer', 'Fun']
 
 export function toysByCategory() {
   return CATEGORY_ORDER.filter((c) => toys.some((t) => t.category === c)).map((category) => ({

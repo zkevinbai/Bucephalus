@@ -4,9 +4,14 @@ import { trackThemeToggle } from '../utils/analytics'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
-  const [dark, setDark] = useState(
-    () => typeof document !== 'undefined' && document.documentElement.classList.contains('dark')
-  )
+  // Start light to match the server-prerendered markup, then sync to the real
+  // theme on mount — keeps hydration clean (the inline script applies the theme
+  // to <html> before React; this just brings the toggle icon in line).
+  const [dark, setDark] = useState(false)
+
+  useEffect(() => {
+    setDark(document.documentElement.classList.contains('dark'))
+  }, [])
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)

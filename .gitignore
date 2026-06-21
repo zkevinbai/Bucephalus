@@ -55,3 +55,6 @@ Thumbs.db
 .cache/
 .parcel-cache/
 .vite/
+
+# SSR prerender output (build artifact)
+dist-server/

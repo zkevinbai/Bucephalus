@@ -28,6 +28,7 @@ Personal site (zkevinbai.com): React 18 + Vite + Tailwind 3 + react-router-dom 6
 
 - Content is data-driven: edit the arrays/data files (`blogData.js`, `toysData.js`, arrays at the top of Portfolio components), not markup, to change content.
 - New toy = component in `src/features/Toys/tools/` + entry in `toysData.js`. Use `toykit.jsx` helpers for consistent UI.
+- `Claude Chat` (`/toys/claude-chat`) calls the Anthropic API directly from the browser (lazy-loaded so the SDK only ships on that page). Its key comes from `VITE_ANTHROPIC_API_KEY` in `.env.local` (local dev only — gitignored, never bundled into the GitHub Pages build) or a key the visitor pastes (kept in `localStorage`). There is no backend; don't commit a key or assume one server-side.
 - `/themes` (Theme Studio) is an intentional easter egg — keep it.
 - Analytics: wrap user-facing interactions with the helpers in `src/utils/analytics.js`; they no-op without gtag.
 

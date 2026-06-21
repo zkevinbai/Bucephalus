@@ -16,9 +16,9 @@ Defined in `src/App.jsx`:
 | `/projects` | `ProjectsPage` | Standalone projects page |
 | `/blog` | `AllBlogs` | Blog index |
 | `/blog/:slug` | `SingleBlog` | One post |
-| `/toys` | `Toys` | Browser-utility index |
+| `/toys` | `Toys` | Index of browser utilities + AI experiments |
 | `/toys/zodiac` | `ChineseZodiac` | Zodiac lookup (a "toy") |
-| `/toys/:slug` | `ToyPage` | One tool |
+| `/toys/:slug` | `ToyPage` | One toy |
 | `/themes` | `Themes` | Theme Studio — intentional easter egg, linked from the footer |
 | `/zodiac` | redirect → `/toys/zodiac` | Backward compat |
 | `*` | redirect → `/` | Catch-all |
@@ -41,7 +41,8 @@ src/
     │                        Projects, Education, Skills, Section (wrapper)
     ├── Blog/                AllBlogs, SingleBlog, blogData.js
     ├── Toys/                Toys index, ToyPage, ToyLayout, toykit.jsx,
-    │                        toysData.js, tools/ (one file per tool)
+    │                        toysData.js, tools/ (one file per toy; Claude Chat
+    │                        calls the Anthropic API directly from the browser)
     ├── ChineseZodiac/       Zodiac feature, zodiacData.js, zodiacUtils.js
     └── Themes/              Theme Studio page, themePresets.js (dark mode vars)
 ```
@@ -51,7 +52,7 @@ src/
 Content is data-driven, no CMS:
 
 - Blog posts live in `src/features/Blog/blogData.js` as HTML strings. Legacy posts carry old inline classes; `SingleBlog.jsx` strips every `class="…"` before rendering and `.prose` in `index.css` styles by tag. New posts can omit inline classes entirely.
-- Toys are registered in `src/features/Toys/toysData.js` (slug, category, component). Adding a tool = new file in `tools/` + one entry there.
+- Toys are registered in `src/features/Toys/toysData.js` (slug, category, component). Adding a toy = new file in `tools/` + one entry there.
 - Career/education/project content lives in arrays at the top of the respective Portfolio components.
 - Zodiac tables live in `zodiacData.js` / `zodiacUtils.js`.
 

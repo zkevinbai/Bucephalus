@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#fbf7f0" />
     <meta name="description" content="Member of Technical Staff at Anthropic — Forward Deployed Engineering, Applied AI, and International Relations." />
+    <meta name="author" content="Kevin Bai" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://zkevinbai.com/" />
 
     <!-- Apply saved theme before paint to avoid a flash. Default is light;
          dark only when the visitor has explicitly opted in (ignore OS setting). -->
@@ -24,6 +27,7 @@
     
     <!-- Open Graph / Facebook / iMessage -->
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://zkevinbai.com/" />
     <meta property="og:site_name" content="Kevin Bai" />
     <meta property="og:title" content="Kevin Bai — Member of Technical Staff, Anthropic" />
@@ -46,7 +50,53 @@
     <meta name="twitter:description" content="Forward Deployed Engineering, Applied AI, and International Relations. Previously Palantir, the United Nations, Berkeley, and Oxford." />
     <meta name="twitter:image" content="https://zkevinbai.com/og-image.jpg?v=2" />
     
-    <title>Kevin Bai</title>
+    <title>Kevin Bai — Member of Technical Staff, Anthropic</title>
+
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+    <!-- Structured data: identity + site. Read by search engines and AI/answer
+         engines to understand who this site is about. Kept in the static HTML so
+         crawlers that don't execute JavaScript still see it. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://zkevinbai.com/#person",
+          "name": "Kevin Bai",
+          "url": "https://zkevinbai.com/",
+          "image": "https://zkevinbai.com/og-image.jpg?v=2",
+          "jobTitle": "Member of Technical Staff",
+          "worksFor": { "@type": "Organization", "name": "Anthropic" },
+          "alumniOf": [
+            { "@type": "CollegeOrUniversity", "name": "University of California, Berkeley" },
+            { "@type": "CollegeOrUniversity", "name": "University of Oxford" }
+          ],
+          "knowsAbout": [
+            "Forward Deployed Engineering",
+            "Applied AI",
+            "Enterprise Software",
+            "International Relations"
+          ],
+          "sameAs": [
+            "https://www.linkedin.com/in/zkevinbai/",
+            "https://github.com/zkevinbai",
+            "https://twitter.com/zkevinbai"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://zkevinbai.com/#website",
+          "url": "https://zkevinbai.com/",
+          "name": "Kevin Bai",
+          "description": "Member of Technical Staff at Anthropic — Forward Deployed Engineering, Applied AI, and International Relations.",
+          "inLanguage": "en",
+          "publisher": { "@id": "https://zkevinbai.com/#person" }
+        }
+      ]
+    }
+    </script>
 
     <!-- Google Fonts: Fraunces (editorial serif) + Inter (sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

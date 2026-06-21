@@ -1,9 +1,22 @@
 import { Link } from 'react-router-dom'
 import Container from '../../components/Container'
-import { toysByCategory } from './toysData'
+import { toys, toysByCategory } from './toysData'
+import { useSeo, collectionJsonLd } from '../../utils/seo'
 
 export default function Toys() {
   const groups = toysByCategory()
+
+  useSeo({
+    title: 'Toys — Kevin Bai',
+    description:
+      'A workshop shelf of little browser tools, AI experiments, and curiosities. Most run entirely on your device; the ones that talk to an API say so.',
+    path: '/toys',
+    jsonLd: collectionJsonLd({
+      name: 'Toys — Kevin Bai',
+      path: '/toys',
+      items: toys.map((t) => ({ name: t.name, path: t.path || `/toys/${t.slug}` })),
+    }),
+  })
 
   return (
     <Container size="page" className="pt-32 pb-8 md:pt-40">
@@ -13,8 +26,8 @@ export default function Toys() {
           Small things I built for fun.
         </h1>
         <p className="mt-5 text-[1.1rem] leading-relaxed text-muted">
-          A workshop shelf of little browser tools and curiosities. Everything runs entirely on
-          your device — nothing you type ever leaves the page.
+          A workshop shelf of little browser tools, AI experiments, and curiosities. Most run
+          entirely on your device; the ones that talk to an API say so.
         </p>
       </header>
 
@@ -30,7 +43,7 @@ export default function Toys() {
                 {category}
               </h2>
               <span className="font-serif text-sm italic text-muted md:mt-1 md:block">
-                {items.length} {items.length === 1 ? 'tool' : 'tools'}
+                {items.length} {items.length === 1 ? 'toy' : 'toys'}
               </span>
             </div>
 
