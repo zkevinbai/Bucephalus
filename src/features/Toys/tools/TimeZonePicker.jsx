@@ -312,19 +312,19 @@ export default function TimeZonePicker() {
       </div>
 
       {/* Readout for the selected instant */}
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-2 sm:gap-3 lg:grid-cols-4">
         {rows.map((c) => {
           const p = partsIn(c.tz, activeInstant)
           return (
-            <div key={c.city} className="rounded-xl border border-line bg-white/60 px-4 py-3">
-              <div className="text-xs font-semibold uppercase tracking-wide text-muted">
+            <div key={c.city} className="rounded-xl border border-line bg-white/60 px-3 py-2.5 sm:px-4 sm:py-3">
+              <div className="truncate text-xs font-semibold uppercase tracking-wide text-muted">
                 {c.city}
               </div>
-              <div className="mt-1 font-serif text-2xl font-semibold tabular-nums text-ink">
+              <div className="mt-1 font-serif text-xl font-semibold tabular-nums text-ink sm:text-2xl">
                 {p.hour % 12 === 0 ? 12 : p.hour % 12}:{p.minute}
-                <span className="ml-1 text-base text-muted">{p.hour < 12 ? 'AM' : 'PM'}</span>
+                <span className="ml-1 text-sm text-muted sm:text-base">{p.hour < 12 ? 'AM' : 'PM'}</span>
               </div>
-              <div className="mt-0.5 text-xs text-muted">
+              <div className="mt-0.5 text-[0.7rem] text-muted sm:text-xs">
                 {p.weekday}, {p.month} {p.day} · {offsetLabel(c.tz, activeInstant)}
               </div>
             </div>
@@ -355,7 +355,7 @@ export default function TimeZonePicker() {
                     : ''
                 }`}
               >
-                <td className="sticky left-0 z-10 w-40 bg-paper/95 px-2 py-2 backdrop-blur">
+                <td className="sticky left-0 z-10 w-28 bg-paper/95 px-2 py-2 backdrop-blur sm:w-40">
                   <div className="flex items-center justify-between gap-1.5">
                     <button
                       onPointerDown={onDragStart(c.city)}
@@ -373,7 +373,7 @@ export default function TimeZonePicker() {
                     </button>
                     <div className="min-w-0 flex-1">
                       <div className="truncate text-sm font-semibold text-ink">{c.city}</div>
-                      <div className="text-[0.7rem] text-muted">
+                      <div className="hidden text-[0.7rem] text-muted sm:block">
                         {offsetLabel(c.tz, activeInstant)}
                       </div>
                     </div>

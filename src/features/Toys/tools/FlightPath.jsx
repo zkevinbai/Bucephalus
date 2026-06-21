@@ -37,6 +37,7 @@ const CITIES = [
 ]
 
 const PRESETS = [
+  ['San Francisco', 'New York'],
   ['San Francisco', 'Tokyo'],
   ['New York', 'London'],
   ['London', 'Singapore'],

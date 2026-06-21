@@ -22,7 +22,15 @@ export function useScrollReveal(key) {
       { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
     )
 
-    els.forEach((el) => io.observe(el))
+    // Anything already on screen at mount reveals immediately — otherwise a tall
+    // viewport leaves a blank dead-zone until the first scroll wakes the observer.
+    // Only below-the-fold elements are handed to the observer to animate on scroll.
+    const vh = window.innerHeight
+    els.forEach((el) => {
+      const r = el.getBoundingClientRect()
+      if (r.top < vh && r.bottom > 0) el.classList.add('in')
+      else io.observe(el)
+    })
     return () => io.disconnect()
   }, [key])
 }
