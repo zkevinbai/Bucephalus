@@ -8,11 +8,14 @@ import SqlFormatter from './tools/SqlFormatter'
 import TicTacToe from './tools/TicTacToe'
 import TimeZonePicker from './tools/TimeZonePicker'
 import FlightPath from './tools/FlightPath'
+import CompCalculator from './tools/CompCalculator'
+import InflationCalculator from './tools/InflationCalculator'
 
 // Lazy so the Anthropic SDK only downloads when someone opens an AI toy.
 const ClaudeChat = lazy(() => import('./tools/ClaudeChat'))
 const ClaudeAgent = lazy(() => import('./tools/ClaudeAgent'))
 const ClaudeTeam = lazy(() => import('./tools/ClaudeTeam'))
+const ClaudeVision = lazy(() => import('./tools/ClaudeVision'))
 
 /* The toy registry. Adding a toy is a single entry here:
    - `Component` toys render inside the shared ToyLayout at /toys/:slug
@@ -45,6 +48,15 @@ export const toys = [
     icon: 'fas fa-sitemap',
     accent: 'text-clay',
     Component: ClaudeTeam,
+  },
+  {
+    slug: 'claude-vision',
+    name: 'Claude Vision',
+    blurb: 'Drop in any image and ask Claude about it — describe a scene, pull text out of a screenshot, read a chart, write alt text.',
+    category: 'AI',
+    icon: 'fas fa-eye',
+    accent: 'text-clay',
+    Component: ClaudeVision,
   },
   {
     slug: 'word-counter',
@@ -111,6 +123,24 @@ export const toys = [
     Component: TimeZonePicker,
   },
   {
+    slug: 'comp',
+    name: 'Comp Calculator',
+    blurb: 'Convert any salary across hourly, weekly, and monthly — then see your estimated take-home pay by state.',
+    category: 'Money',
+    icon: 'fas fa-wallet',
+    accent: 'text-gold',
+    Component: CompCalculator,
+  },
+  {
+    slug: 'inflation',
+    name: 'Inflation Time Machine',
+    blurb: 'See what a dollar from any year is worth today — buying power across a century of CPI.',
+    category: 'Money',
+    icon: 'fas fa-hand-holding-usd',
+    accent: 'text-gold',
+    Component: InflationCalculator,
+  },
+  {
     slug: 'flight-path',
     name: 'Flight Path',
     blurb: 'Pick a route and departure time — watch it arc across the map and land in local time.',
@@ -140,7 +170,7 @@ export const toys = [
   },
 ]
 
-const CATEGORY_ORDER = ['Time zones', 'Text', 'Developer', 'AI', 'Fun']
+const CATEGORY_ORDER = ['Time zones', 'Text', 'Money', 'AI', 'Developer', 'Fun']
 
 export function toysByCategory() {
   return CATEGORY_ORDER.filter((c) => toys.some((t) => t.category === c)).map((category) => ({

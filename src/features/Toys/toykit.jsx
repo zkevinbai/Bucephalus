@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { forwardRef, useLayoutEffect, useRef, useState } from 'react'
 
 /* Small shared building blocks so each toy stays on-brand and uncluttered.
    Everything uses the v2 paper/clay/serif tokens. */
@@ -35,14 +35,18 @@ export function TextArea({ className = '', mono = true, rows = 8, ...props }) {
   )
 }
 
-export function TextInput({ className = '', mono = false, ...props }) {
+export const TextInput = forwardRef(function TextInput(
+  { className = '', mono = false, ...props },
+  ref
+) {
   return (
     <input
+      ref={ref}
       className={`${fieldBase} ${mono ? 'font-mono text-[0.875rem]' : ''} ${className}`}
       {...props}
     />
   )
-}
+})
 
 export function Btn({ variant = 'solid', className = '', ...props }) {
   const styles = {
@@ -138,4 +142,99 @@ export function Note({ tone = 'error', children }) {
   }
   if (!children) return null
   return <p className={`text-sm font-medium ${tones[tone]}`}>{children}</p>
+}
+
+/* ── MoneyInput ──────────────────────────────────────────────────────────────
+   A currency input that shows thousands separators as you type, keeps the caret
+   where it belongs, and reports the parsed number. While focused it owns its
+   text; when blurred it reflects the derived `value` prop. */
+
+// A number → a plain numeric string (no commas), `dp` decimals, trailing zeros dropped.
+const numToStr = (n, dp) => {
+  if (!isFinite(n)) return ''
+  if (dp === 0) return String(Math.round(n))
+  return String(Number(n.toFixed(dp)))
+}
+
+// Keep only digits and a single decimal point, capped at `dp` decimals.
+const cleanNumeric = (str, dp) => {
+  let s = String(str).replace(/[^0-9.]/g, '')
+  const dot = s.indexOf('.')
+  if (dot === -1) return s
+  if (dp === 0) return s.slice(0, dot)
+  const intPart = s.slice(0, dot)
+  const decPart = s.slice(dot + 1).replace(/\./g, '').slice(0, dp)
+  return `${intPart}.${decPart}`
+}
+
+// Add thousands separators to a cleaned numeric string, preserving any decimals.
+const withCommas = (s) => {
+  if (s === '' || s === '.') return s
+  const [intPart, ...rest] = s.split('.')
+  const grouped = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+  return s.includes('.') ? `${grouped}.${rest.join('')}` : grouped
+}
+
+const countDigits = (s, end) => {
+  let n = 0
+  for (let i = 0; i < end; i++) if (s[i] >= '0' && s[i] <= '9') n++
+  return n
+}
+
+// Index in `s` just after the `count`-th digit (for caret restoration).
+const indexAfterDigit = (s, count) => {
+  if (count === 0) {
+    let i = 0
+    while (i < s.length && !(s[i] >= '0' && s[i] <= '9')) i++
+    return i
+  }
+  let seen = 0
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] >= '0' && s[i] <= '9' && ++seen === count) return i + 1
+  }
+  return s.length
+}
+
+export function MoneyInput({ value, dp = 0, onValueChange, className = '' }) {
+  const ref = useRef(null)
+  const caret = useRef(null)
+  const [focused, setFocused] = useState(false)
+  const [draft, setDraft] = useState('')
+
+  useLayoutEffect(() => {
+    if (caret.current != null && ref.current) {
+      ref.current.setSelectionRange(caret.current, caret.current)
+      caret.current = null
+    }
+  })
+
+  const display = focused ? draft : withCommas(numToStr(value, dp))
+
+  const handleChange = (e) => {
+    const el = e.target
+    const digitsBefore = countDigits(el.value, el.selectionStart ?? el.value.length)
+    const cleaned = cleanNumeric(el.value, dp)
+    const formatted = withCommas(cleaned)
+    caret.current = indexAfterDigit(formatted, digitsBefore)
+    setDraft(formatted)
+    onValueChange(cleaned === '' || cleaned === '.' ? 0 : parseFloat(cleaned))
+  }
+
+  return (
+    <div className="relative">
+      <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted">$</span>
+      <TextInput
+        ref={ref}
+        inputMode="decimal"
+        value={display}
+        onChange={handleChange}
+        onFocus={() => {
+          setDraft(withCommas(numToStr(value, dp)))
+          setFocused(true)
+        }}
+        onBlur={() => setFocused(false)}
+        className={`!pl-7 tabular-nums ${className}`}
+      />
+    </div>
+  )
 }
