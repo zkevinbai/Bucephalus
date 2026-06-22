@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Field, TextArea, Btn, Note, SegmentedControl } from '../toykit'
+import Markdown from './Markdown'
 import { trackEvent } from '../../../utils/analytics'
 import {
   MODELS,
@@ -71,7 +72,7 @@ function ResponseBody({ text, thinking, error }) {
           </p>
         </details>
       )}
-      {text && <p className="whitespace-pre-wrap">{text}</p>}
+      {text && <Markdown>{text}</Markdown>}
       {error && <Note tone="error">{error}</Note>}
       {!text && !error && (
         <span className="inline-flex gap-1 text-muted" aria-label="Claude is typing">
