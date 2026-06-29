@@ -21,7 +21,7 @@ export default function AppsIndex() {
   return (
     <Container size="page" className="pt-32 pb-8 md:pt-40">
       <header className="reveal max-w-reading">
-        <div className="flex items-baseline justify-between gap-4">
+        <div className="flex items-baseline gap-3">
           <p className="eyebrow">Apps</p>
           <span className="font-serif text-sm italic text-muted">{toys.length} total</span>
         </div>
