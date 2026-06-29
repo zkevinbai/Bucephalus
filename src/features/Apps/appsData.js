@@ -127,15 +127,6 @@ export const toys = [
     Component: TimeZonePicker,
   },
   {
-    slug: 'currency-converter',
-    name: 'Currency Converter',
-    blurb: 'Convert between 30 world currencies at live European Central Bank rates.',
-    category: 'Money',
-    icon: 'fas fa-coins',
-    accent: 'text-gold',
-    Component: CurrencyConverter,
-  },
-  {
     slug: 'comp',
     name: 'Comp Calculator',
     blurb: 'Convert any salary across hourly, weekly, and monthly — then see your estimated take-home pay by state.',
@@ -143,6 +134,15 @@ export const toys = [
     icon: 'fas fa-wallet',
     accent: 'text-gold',
     Component: CompCalculator,
+  },
+  {
+    slug: 'currency-converter',
+    name: 'Currency Converter',
+    blurb: 'Convert between 30 world currencies at live European Central Bank rates.',
+    category: 'Money',
+    icon: 'fas fa-coins',
+    accent: 'text-gold',
+    Component: CurrencyConverter,
   },
   {
     slug: 'inflation',
