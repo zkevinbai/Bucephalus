@@ -114,27 +114,58 @@ const CHARTS = [
 ]
 
 export default function SizeConverter() {
-  const [catKey, setCatKey] = useState('womens-shoes')
+  const [gender, setGender] = useState('womens')
+  const [type, setType] = useState('shoes')
+  const catKey = `${gender}-${type}`
   const cat = CHARTS.find((c) => c.key === catKey)
   const [rowIdx, setRowIdx] = useState(cat.defaultIdx)
 
-  const pickCat = (key) => {
-    const next = CHARTS.find((c) => c.key === key)
-    setCatKey(key)
-    setRowIdx(next.defaultIdx)
-    trackEvent('toy_size_category', { category: key })
+  // Two axes — gender × garment — combine into the chart key, so the picker
+  // reads as the two questions it actually is instead of four mixed labels.
+  const choose = (g, t) => {
+    setGender(g)
+    setType(t)
+    setRowIdx(CHARTS.find((c) => c.key === `${g}-${t}`).defaultIdx)
+    trackEvent('toy_size_category', { category: `${g}-${t}` })
   }
 
   const row = cat.rows[rowIdx]
 
   return (
     <div className="flex flex-col gap-5">
-      {/* What are you sizing */}
-      <SegmentedControl
-        options={CHARTS.map((c) => ({ value: c.key, label: c.name }))}
-        value={catKey}
-        onChange={pickCat}
-      />
+      {/* What are you sizing — gender × garment */}
+      <div className="flex flex-wrap items-center gap-2.5">
+        <SegmentedControl
+          options={[
+            { value: 'womens', label: "Women's" },
+            { value: 'mens', label: "Men's" },
+          ]}
+          value={gender}
+          onChange={(g) => choose(g, type)}
+        />
+        <SegmentedControl
+          options={[
+            {
+              value: 'shoes',
+              label: (
+                <span className="inline-flex items-center gap-1.5">
+                  <i className="fas fa-shoe-prints" aria-hidden /> Shoes
+                </span>
+              ),
+            },
+            {
+              value: 'clothing',
+              label: (
+                <span className="inline-flex items-center gap-1.5">
+                  <i className="fas fa-tshirt" aria-hidden /> Clothing
+                </span>
+              ),
+            },
+          ]}
+          value={type}
+          onChange={(t) => choose(gender, t)}
+        />
+      </div>
 
       {/* Selected size, stated across every system */}
       <div className="flex flex-wrap items-baseline gap-x-5 gap-y-1.5 rounded-xl border border-line bg-cream/50 px-5 py-4">
