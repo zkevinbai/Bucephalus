@@ -10,6 +10,10 @@ import TimeZonePicker from './tools/TimeZonePicker'
 import FlightPath from './tools/FlightPath'
 import CompCalculator from './tools/CompCalculator'
 import InflationCalculator from './tools/InflationCalculator'
+import UnitConverter from './tools/UnitConverter'
+import CurrencyConverter from './tools/CurrencyConverter'
+import SizeConverter from './tools/SizeConverter'
+import SavingsGrowth from './tools/SavingsGrowth'
 
 // Lazy so the Anthropic SDK only downloads when someone opens an AI toy.
 const ClaudeChat = lazy(() => import('./tools/ClaudeChat'))
@@ -123,6 +127,15 @@ export const toys = [
     Component: TimeZonePicker,
   },
   {
+    slug: 'currency-converter',
+    name: 'Currency Converter',
+    blurb: 'Convert between 30 world currencies at live European Central Bank rates.',
+    category: 'Money',
+    icon: 'fas fa-coins',
+    accent: 'text-gold',
+    Component: CurrencyConverter,
+  },
+  {
     slug: 'comp',
     name: 'Comp Calculator',
     blurb: 'Convert any salary across hourly, weekly, and monthly — then see your estimated take-home pay by state.',
@@ -139,6 +152,33 @@ export const toys = [
     icon: 'fas fa-hand-holding-usd',
     accent: 'text-gold',
     Component: InflationCalculator,
+  },
+  {
+    slug: 'savings-growth',
+    name: 'Savings Growth',
+    blurb: 'See how regular saving compounds — set a rate and watch the balance outgrow what you put in.',
+    category: 'Money',
+    icon: 'fas fa-piggy-bank',
+    accent: 'text-gold',
+    Component: SavingsGrowth,
+  },
+  {
+    slug: 'unit-converter',
+    name: 'Unit Converter',
+    blurb: 'Convert across length, mass, temperature, volume, data, energy, and more — sixteen kinds of unit in one place.',
+    category: 'Convert',
+    icon: 'fas fa-exchange-alt',
+    accent: 'text-ocean',
+    Component: UnitConverter,
+  },
+  {
+    slug: 'size-converter',
+    name: 'Clothing & Shoe Sizes',
+    blurb: 'Convert clothing and shoe sizes across US, UK, and EU — for men and women.',
+    category: 'Convert',
+    icon: 'fas fa-tshirt',
+    accent: 'text-ocean',
+    Component: SizeConverter,
   },
   {
     slug: 'flight-path',
@@ -170,7 +210,7 @@ export const toys = [
   },
 ]
 
-const CATEGORY_ORDER = ['Time zones', 'Text', 'Money', 'AI', 'Developer', 'Fun']
+const CATEGORY_ORDER = ['Time zones', 'Convert', 'Money', 'Text', 'AI', 'Fun', 'Developer']
 
 export function toysByCategory() {
   return CATEGORY_ORDER.filter((c) => toys.some((t) => t.category === c)).map((category) => ({
