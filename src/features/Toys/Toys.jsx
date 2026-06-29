@@ -9,7 +9,7 @@ export default function Toys() {
   useSeo({
     title: 'Apps — Kevin Bai',
     description:
-      'A workshop shelf of apps, AI experiments, and curiosities. Most run entirely on your device; the ones that phone an API say so.',
+      'A workshop shelf of apps, AI experiments, and curiosities. Most run entirely on your device; the ones that call an external API say so.',
     path: '/apps',
     jsonLd: collectionJsonLd({
       name: 'Apps — Kevin Bai',
@@ -30,7 +30,7 @@ export default function Toys() {
         </h1>
         <p className="mt-5 text-[1.1rem] leading-relaxed text-muted">
           A workshop shelf of apps, AI experiments, and curiosities. Most run entirely on your
-          device; the ones that phone an API say so.
+          device; the ones that call an external API say so.
         </p>
       </header>
 
