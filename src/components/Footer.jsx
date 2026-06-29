@@ -50,7 +50,7 @@ export default function Footer() {
             🪄 Curiosities
           </Link>
           <Link
-            to="/toys/zodiac"
+            to="/apps/zodiac"
             onClick={() => trackEasterEgg('zodiac')}
             className="transition-colors hover:text-clay"
           >

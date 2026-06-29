@@ -2,13 +2,13 @@
 // inside the logo chips used in the career timeline and watch the marks resize.
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Container from '../../components/Container'
-import { useSeo } from '../../utils/seo'
-import AnthropicLogo from '../../assets/companies/Anthropic-logo.svg'
-import RipplingLogo from '../../assets/companies/Rippling-logo.png'
-import GlobalityLogo from '../../assets/companies/Globality-logo.png'
-import UNLogo from '../../assets/companies/UN-logo.svg'
-import PalantirLogo from '../../assets/companies/palantir-logo.svg'
+import Container from '../../../components/Container'
+import { useSeo } from '../../../utils/seo'
+import AnthropicLogo from '../../../assets/companies/Anthropic-logo.svg'
+import RipplingLogo from '../../../assets/companies/Rippling-logo.png'
+import GlobalityLogo from '../../../assets/companies/Globality-logo.png'
+import UNLogo from '../../../assets/companies/UN-logo.svg'
+import PalantirLogo from '../../../assets/companies/palantir-logo.svg'
 
 const logos = [
   { name: 'Anthropic', src: AnthropicLogo, bg: '#ffffff' },

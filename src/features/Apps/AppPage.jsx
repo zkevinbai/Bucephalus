@@ -1,14 +1,14 @@
 import { useParams, Link } from 'react-router-dom'
 import { Suspense, useEffect } from 'react'
 import Container from '../../components/Container'
-import ToyLayout from './ToyLayout'
-import { getToy } from './toysData'
+import AppLayout from './AppLayout'
+import { getApp } from './appsData'
 import { trackEvent } from '../../utils/analytics'
 import { useSeo, softwareJsonLd } from '../../utils/seo'
 
-export default function ToyPage() {
+export default function AppPage() {
   const { slug } = useParams()
-  const toy = getToy(slug)
+  const toy = getApp(slug)
 
   useEffect(() => {
     if (toy?.Component) trackEvent('toy_open', { toy_slug: toy.slug, toy_name: toy.name })
@@ -19,18 +19,18 @@ export default function ToyPage() {
       ? {
           title: `${toy.name} — Kevin Bai`,
           description: toy.blurb,
-          path: `/toys/${toy.slug}`,
-          jsonLd: softwareJsonLd({ name: toy.name, description: toy.blurb, path: `/toys/${toy.slug}` }),
+          path: `/apps/${toy.slug}`,
+          jsonLd: softwareJsonLd({ name: toy.name, description: toy.blurb, path: `/apps/${toy.slug}` }),
         }
-      : { title: 'Toy not found — Kevin Bai', path: `/toys/${slug}`, robots: 'noindex, follow' }
+      : { title: 'App not found — Kevin Bai', path: `/apps/${slug}`, robots: 'noindex, follow' }
   )
 
   if (!toy || !toy.Component) {
     return (
       <Container size="reading" className="pt-40 pb-20 text-center">
-        <h1 className="font-serif text-3xl font-semibold text-ink">Toy not found</h1>
-        <Link to="/toys" className="mt-6 inline-block font-medium text-clay-deep hover:text-clay">
-          ← Back to toys
+        <h1 className="font-serif text-3xl font-semibold text-ink">App not found</h1>
+        <Link to="/apps" className="mt-6 inline-block font-medium text-clay-deep hover:text-clay">
+          ← Back to apps
         </Link>
       </Container>
     )
@@ -38,10 +38,10 @@ export default function ToyPage() {
 
   const { Component } = toy
   return (
-    <ToyLayout toy={toy}>
+    <AppLayout toy={toy}>
       <Suspense fallback={<p className="text-sm text-muted">Loading…</p>}>
         <Component />
       </Suspense>
-    </ToyLayout>
+    </AppLayout>
   )
 }
