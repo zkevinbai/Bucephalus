@@ -97,9 +97,9 @@ const CHARTS = [
     // a Western M is an Asian L.
     cols: [
       { key: 'US', label: 'US / Intl' },
+      { key: 'Asia', label: 'Asia' },
       { key: 'EU', label: 'EU' },
       { key: 'Chest', label: 'Chest (in)' },
-      { key: 'Asia', label: 'Asia' },
     ],
     defaultIdx: 2,
     rows: [

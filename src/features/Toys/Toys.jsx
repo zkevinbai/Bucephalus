@@ -21,7 +21,10 @@ export default function Toys() {
   return (
     <Container size="page" className="pt-32 pb-8 md:pt-40">
       <header className="reveal max-w-reading">
-        <p className="eyebrow">Apps</p>
+        <div className="flex items-baseline justify-between gap-4">
+          <p className="eyebrow">Apps</p>
+          <span className="font-serif text-sm italic text-muted">{toys.length} total</span>
+        </div>
         <h1 className="mt-4 font-serif text-[2.6rem] font-semibold leading-[1.06] tracking-[-0.02em] text-ink md:text-6xl">
           Small things I built for fun.
         </h1>
