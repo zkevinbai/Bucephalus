@@ -19,18 +19,18 @@ export default function ToyPage() {
       ? {
           title: `${toy.name} — Kevin Bai`,
           description: toy.blurb,
-          path: `/toys/${toy.slug}`,
-          jsonLd: softwareJsonLd({ name: toy.name, description: toy.blurb, path: `/toys/${toy.slug}` }),
+          path: `/apps/${toy.slug}`,
+          jsonLd: softwareJsonLd({ name: toy.name, description: toy.blurb, path: `/apps/${toy.slug}` }),
         }
-      : { title: 'Toy not found — Kevin Bai', path: `/toys/${slug}`, robots: 'noindex, follow' }
+      : { title: 'App not found — Kevin Bai', path: `/apps/${slug}`, robots: 'noindex, follow' }
   )
 
   if (!toy || !toy.Component) {
     return (
       <Container size="reading" className="pt-40 pb-20 text-center">
-        <h1 className="font-serif text-3xl font-semibold text-ink">Toy not found</h1>
-        <Link to="/toys" className="mt-6 inline-block font-medium text-clay-deep hover:text-clay">
-          ← Back to toys
+        <h1 className="font-serif text-3xl font-semibold text-ink">App not found</h1>
+        <Link to="/apps" className="mt-6 inline-block font-medium text-clay-deep hover:text-clay">
+          ← Back to apps
         </Link>
       </Container>
     )

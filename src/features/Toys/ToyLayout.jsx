@@ -7,10 +7,10 @@ export default function ToyLayout({ toy, children }) {
   return (
     <Container size={toy.narrow ? 'reading' : 'page'} className="pt-28 pb-8 md:pt-36">
       <Link
-        to="/toys"
+        to="/apps"
         className="inline-flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-clay-deep"
       >
-        <span aria-hidden>←</span> Toys
+        <span aria-hidden>←</span> Apps
       </Link>
 
       <header className="mt-8 border-b border-line pb-8">

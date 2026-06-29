@@ -15,11 +15,11 @@ export default function ChineseZodiac() {
   useSeo({
     title: 'Chinese Zodiac — Kevin Bai',
     description: 'Look up any year’s Chinese zodiac animal and element, and what they mean.',
-    path: '/toys/zodiac',
+    path: '/apps/zodiac',
     jsonLd: softwareJsonLd({
       name: 'Chinese Zodiac',
       description: 'Look up any year’s Chinese zodiac animal and element, and what they mean.',
-      path: '/toys/zodiac',
+      path: '/apps/zodiac',
     }),
   })
 
@@ -71,10 +71,10 @@ export default function ChineseZodiac() {
   return (
     <Container size="page" className="pt-28 pb-8 md:pt-36">
       <Link
-        to="/toys"
+        to="/apps"
         className="inline-flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-clay-deep"
       >
-        <span aria-hidden>←</span> Toys
+        <span aria-hidden>←</span> Apps
       </Link>
 
       {selectedYear ? (

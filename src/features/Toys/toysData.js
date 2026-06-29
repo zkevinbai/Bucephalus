@@ -22,7 +22,7 @@ const ClaudeTeam = lazy(() => import('./tools/ClaudeTeam'))
 const ClaudeVision = lazy(() => import('./tools/ClaudeVision'))
 
 /* The toy registry. Adding a toy is a single entry here:
-   - `Component` toys render inside the shared ToyLayout at /toys/:slug
+   - `Component` toys render inside the shared ToyLayout at /apps/:slug
    - `path` toys (e.g. the Zodiac) own their full page and route
    - `narrow` toys keep the reading-width column on desktop instead of the full page */
 export const toys = [
@@ -206,7 +206,7 @@ export const toys = [
     category: 'Fun',
     icon: 'fas fa-dragon',
     accent: 'text-plum',
-    path: '/toys/zodiac',
+    path: '/apps/zodiac',
   },
 ]
 

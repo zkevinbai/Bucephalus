@@ -43,11 +43,11 @@ const staticPages = [
   { path: '/curiosities', priority: '0.4', changefreq: 'yearly' },
 ]
 const toyUrls = toys.map((t) => ({
-  path: t.slug === 'zodiac' ? '/toys/zodiac' : `/toys/${t.slug}`,
+  path: t.slug === 'zodiac' ? '/apps/zodiac' : `/apps/${t.slug}`,
   priority: '0.6',
   changefreq: 'monthly',
 }))
-const toysIndex = [{ path: '/toys', priority: '0.7', changefreq: 'monthly' }]
+const toysIndex = [{ path: '/apps', priority: '0.7', changefreq: 'monthly' }]
 const postUrls = blogPosts.map((p) => ({
   path: `/blog/${p.slug}`,
   priority: '0.7',
@@ -82,14 +82,14 @@ const llms =
   `## Key pages\n\n` +
   `- [Home / about](${SITE}/): who Kevin is, career timeline, education, and skills.\n` +
   `- [Writing](${SITE}/blog): essays on forward deployed engineering, enterprise software, and geopolitics.\n` +
-  `- [Toys](${SITE}/toys): small browser tools and AI experiments.\n` +
+  `- [Apps](${SITE}/apps): small browser apps and AI experiments.\n` +
   `- [Projects](${SITE}/projects): selected work.\n\n` +
   `## Writing\n\n` +
   blogPosts
     .map((p) => `- [${p.title}](${SITE}/blog/${p.slug}): ${p.excerpt}`)
     .join('\n') +
-  `\n\n## Toys\n\n` +
-  toys.map((t) => `- [${t.name}](${SITE}${t.slug === 'zodiac' ? '/toys/zodiac' : `/toys/${t.slug}`}): ${t.blurb}`).join('\n') +
+  `\n\n## Apps\n\n` +
+  toys.map((t) => `- [${t.name}](${SITE}${t.slug === 'zodiac' ? '/apps/zodiac' : `/apps/${t.slug}`}): ${t.blurb}`).join('\n') +
   `\n`
 
 await writeFile(resolve(dist, 'llms.txt'), llms)

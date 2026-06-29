@@ -33,7 +33,7 @@ function ThemePostcard({ t }) {
         <div className="flex gap-3 text-[0.72rem]" style={{ color: t.muted }}>
           <span>Work</span>
           <span>Writing</span>
-          <span style={{ color: t.accent, fontWeight: 600 }}>Toys</span>
+          <span style={{ color: t.accent, fontWeight: 600 }}>Apps</span>
         </div>
       </div>
 

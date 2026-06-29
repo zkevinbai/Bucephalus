@@ -39,7 +39,7 @@ export default function Header() {
   const navLinks = [
     { to: '/', label: 'Work', end: true },
     { to: '/blog', label: 'Writing' },
-    { to: '/toys', label: 'Toys' },
+    { to: '/apps', label: 'Apps' },
   ]
 
   return (

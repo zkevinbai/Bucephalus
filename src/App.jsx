@@ -15,6 +15,13 @@ import LogoSizer from './features/LogoSizer/LogoSizer'
 import { useScrollReveal } from './hooks/useScrollReveal'
 import { trackPageView } from './utils/analytics'
 
+// Map any old /toys/* URL to its /apps/* equivalent so existing links survive.
+function ToysToApps() {
+  const location = useLocation()
+  const target = location.pathname.replace(/^\/toys/, '/apps') + location.search + location.hash
+  return <Navigate to={target} replace />
+}
+
 function RouteEffects() {
   const location = useLocation()
 
@@ -44,14 +51,16 @@ function App() {
         <Routes>
           <Route path="/blog/:slug" element={<SingleBlog />} />
           <Route path="/blog" element={<AllBlogs />} />
-          <Route path="/toys" element={<Toys />} />
-          <Route path="/toys/zodiac" element={<ChineseZodiac />} />
-          <Route path="/toys/:slug" element={<ToyPage />} />
+          <Route path="/apps" element={<Toys />} />
+          <Route path="/apps/zodiac" element={<ChineseZodiac />} />
+          <Route path="/apps/:slug" element={<ToyPage />} />
           <Route path="/themes" element={<Themes />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/curiosities" element={<Curiosities />} />
           <Route path="/logo-sizer" element={<LogoSizer />} />
-          <Route path="/zodiac" element={<Navigate to="/toys/zodiac" replace />} />
+          {/* Legacy redirects: /toys was renamed to /apps. */}
+          <Route path="/toys/*" element={<ToysToApps />} />
+          <Route path="/zodiac" element={<Navigate to="/apps/zodiac" replace />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/" element={<Portfolio />} />
           <Route path="*" element={<Navigate to="/" replace />} />

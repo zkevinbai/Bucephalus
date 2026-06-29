@@ -7,26 +7,26 @@ export default function Toys() {
   const groups = toysByCategory()
 
   useSeo({
-    title: 'Toys — Kevin Bai',
+    title: 'Apps — Kevin Bai',
     description:
-      'A workshop shelf of little browser tools, AI experiments, and curiosities. Most run entirely on your device; the ones that talk to an API say so.',
-    path: '/toys',
+      'A workshop shelf of little browser apps, AI experiments, and curiosities. Most run entirely on your device; the ones that talk to an API say so.',
+    path: '/apps',
     jsonLd: collectionJsonLd({
-      name: 'Toys — Kevin Bai',
-      path: '/toys',
-      items: toys.map((t) => ({ name: t.name, path: t.path || `/toys/${t.slug}` })),
+      name: 'Apps — Kevin Bai',
+      path: '/apps',
+      items: toys.map((t) => ({ name: t.name, path: t.path || `/apps/${t.slug}` })),
     }),
   })
 
   return (
     <Container size="page" className="pt-32 pb-8 md:pt-40">
       <header className="reveal max-w-reading">
-        <p className="eyebrow">Toys</p>
+        <p className="eyebrow">Apps</p>
         <h1 className="mt-4 font-serif text-[2.6rem] font-semibold leading-[1.06] tracking-[-0.02em] text-ink md:text-6xl">
           Small things I built for fun.
         </h1>
         <p className="mt-5 text-[1.1rem] leading-relaxed text-muted">
-          A workshop shelf of little browser tools, AI experiments, and curiosities. Most run
+          A workshop shelf of little browser apps, AI experiments, and curiosities. Most run
           entirely on your device; the ones that talk to an API say so.
         </p>
       </header>
@@ -43,7 +43,7 @@ export default function Toys() {
                 {category}
               </h2>
               <span className="font-serif text-sm italic text-muted md:mt-1 md:block">
-                {items.length} {items.length === 1 ? 'toy' : 'toys'}
+                {items.length} {items.length === 1 ? 'app' : 'apps'}
               </span>
             </div>
 
@@ -52,7 +52,7 @@ export default function Toys() {
               {items.map((toy) => (
                 <Link
                   key={toy.slug}
-                  to={`/toys/${toy.slug}`}
+                  to={`/apps/${toy.slug}`}
                   className="group flex items-start gap-4 rounded-xl border border-line bg-white/60 p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-clay/60 hover:shadow-[0_8px_30px_-12px_rgba(27,23,20,0.18)]"
                 >
                   <span
