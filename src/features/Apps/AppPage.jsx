@@ -1,14 +1,14 @@
 import { useParams, Link } from 'react-router-dom'
 import { Suspense, useEffect } from 'react'
 import Container from '../../components/Container'
-import ToyLayout from './ToyLayout'
-import { getToy } from './toysData'
+import AppLayout from './AppLayout'
+import { getApp } from './appsData'
 import { trackEvent } from '../../utils/analytics'
 import { useSeo, softwareJsonLd } from '../../utils/seo'
 
-export default function ToyPage() {
+export default function AppPage() {
   const { slug } = useParams()
-  const toy = getToy(slug)
+  const toy = getApp(slug)
 
   useEffect(() => {
     if (toy?.Component) trackEvent('toy_open', { toy_slug: toy.slug, toy_name: toy.name })
@@ -38,10 +38,10 @@ export default function ToyPage() {
 
   const { Component } = toy
   return (
-    <ToyLayout toy={toy}>
+    <AppLayout toy={toy}>
       <Suspense fallback={<p className="text-sm text-muted">Loading…</p>}>
         <Component />
       </Suspense>
-    </ToyLayout>
+    </AppLayout>
   )
 }

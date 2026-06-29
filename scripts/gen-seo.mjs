@@ -26,8 +26,8 @@ const esc = (s) =>
 // --- Blog posts (plain-JS module, safe to import) ---------------------------
 const { blogPosts } = await import(resolve(root, 'src/features/Blog/blogData.js'))
 
-// --- Toys (toysData.js imports JSX components, so parse slugs/names from text)
-const toysSrc = await readFile(resolve(root, 'src/features/Toys/toysData.js'), 'utf8')
+// --- Apps (appsData.js imports JSX components, so parse slugs/names from text)
+const toysSrc = await readFile(resolve(root, 'src/features/Apps/appsData.js'), 'utf8')
 const toys = []
 const re = /slug:\s*'([^']+)',\s*\n\s*name:\s*'([^']+)',\s*\n\s*blurb:\s*'([^']*)'/g
 let m

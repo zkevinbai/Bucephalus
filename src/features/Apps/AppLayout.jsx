@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 import Container from '../../components/Container'
 
 /** Shared chrome for an individual toy: back link, serif title, blurb, body.
-    Toys get the full page width on desktop unless they opt out with `narrow`. */
-export default function ToyLayout({ toy, children }) {
+    Apps get the full page width on desktop unless they opt out with `narrow`. */
+export default function AppLayout({ toy, children }) {
   return (
     <Container size={toy.narrow ? 'reading' : 'page'} className="pt-28 pb-8 md:pt-36">
       <Link

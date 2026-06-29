@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
-import Container from '../../components/Container'
+import Container from '../../../components/Container'
 import YearSearch from './YearSearch'
 import YearTable from './YearTable'
 import YearDetail from './YearDetail'
 import { isValidYear, findYearByCombination } from './zodiacUtils'
-import { trackToyUse } from '../../utils/analytics'
-import { useSeo, softwareJsonLd } from '../../utils/seo'
+import { trackToyUse } from '../../../utils/analytics'
+import { useSeo, softwareJsonLd } from '../../../utils/seo'
 
 export default function ChineseZodiac() {
   const [searchParams, setSearchParams] = useSearchParams()

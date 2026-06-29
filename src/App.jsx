@@ -5,13 +5,13 @@ import Footer from './components/Footer'
 import Portfolio from './features/Portfolio/Portfolio'
 import AllBlogs from './features/Blog/AllBlogs'
 import SingleBlog from './features/Blog/SingleBlog'
-import ChineseZodiac from './features/ChineseZodiac/ChineseZodiac'
-import Toys from './features/Toys/Toys'
-import ToyPage from './features/Toys/ToyPage'
-import Themes from './features/Themes/Themes'
+import ChineseZodiac from './features/Apps/ChineseZodiac/ChineseZodiac'
+import AppsIndex from './features/Apps/AppsIndex'
+import AppPage from './features/Apps/AppPage'
+import Themes from './features/Apps/Curiosities/Themes'
 import ProjectsPage from './features/Portfolio/ProjectsPage'
-import Curiosities from './features/Curiosities/Curiosities'
-import LogoSizer from './features/LogoSizer/LogoSizer'
+import Curiosities from './features/Apps/Curiosities/Curiosities'
+import LogoSizer from './features/Apps/Curiosities/LogoSizer'
 import { useScrollReveal } from './hooks/useScrollReveal'
 import { trackPageView } from './utils/analytics'
 
@@ -51,9 +51,9 @@ function App() {
         <Routes>
           <Route path="/blog/:slug" element={<SingleBlog />} />
           <Route path="/blog" element={<AllBlogs />} />
-          <Route path="/apps" element={<Toys />} />
+          <Route path="/apps" element={<AppsIndex />} />
           <Route path="/apps/zodiac" element={<ChineseZodiac />} />
-          <Route path="/apps/:slug" element={<ToyPage />} />
+          <Route path="/apps/:slug" element={<AppPage />} />
           <Route path="/themes" element={<Themes />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/curiosities" element={<Curiosities />} />

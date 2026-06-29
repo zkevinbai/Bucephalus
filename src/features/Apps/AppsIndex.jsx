@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
 import Container from '../../components/Container'
-import { toys, toysByCategory } from './toysData'
+import { toys, appsByCategory } from './appsData'
 import { useSeo, collectionJsonLd } from '../../utils/seo'
 
-export default function Toys() {
-  const groups = toysByCategory()
+export default function AppsIndex() {
+  const groups = appsByCategory()
 
   useSeo({
     title: 'Apps — Kevin Bai',

@@ -1,6 +1,6 @@
-import Container from '../../components/Container'
+import Container from '../../../components/Container'
 import { themes } from './themePresets'
-import { useSeo } from '../../utils/seo'
+import { useSeo } from '../../../utils/seo'
 
 const serif = "'Fraunces', Georgia, serif"
 
