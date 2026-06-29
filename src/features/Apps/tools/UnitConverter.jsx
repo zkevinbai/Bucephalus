@@ -323,22 +323,22 @@ export default function UnitConverter() {
   )
 
   return (
-    <div className="flex flex-col gap-6">
-      {/* Category picker */}
-      <div className="flex flex-wrap gap-1.5">
+    <div className="mx-auto flex w-full max-w-3xl flex-col gap-6">
+      {/* Category picker — one calm rail instead of a wall of bordered pills */}
+      <div className="flex flex-wrap gap-1 rounded-2xl border border-line bg-white/40 p-1.5">
         {CATEGORIES.map((c) => {
           const active = c.key === catKey
           return (
             <button
               key={c.key}
               onClick={() => pickCategory(c.key)}
-              className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-sm font-medium transition-colors ${
+              className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-sm font-medium transition-colors ${
                 active
-                  ? 'border-clay bg-clay text-white'
-                  : 'border-line bg-white/60 text-ink-soft hover:border-clay/60 hover:text-clay-deep'
+                  ? 'bg-clay text-white shadow-sm'
+                  : 'text-ink-soft hover:bg-cream hover:text-clay-deep'
               }`}
             >
-              <i className={`${c.icon} text-xs`} aria-hidden />
+              <i className={`${c.icon} text-xs ${active ? 'opacity-90' : 'text-muted'}`} aria-hidden />
               {c.name}
             </button>
           )
@@ -380,8 +380,8 @@ export default function UnitConverter() {
             <div className="flex flex-col gap-2">
               <Field label="To">
                 <div className="flex items-center gap-2 rounded-xl border border-line bg-cream/50 px-4 py-2.5">
-                  <span className="flex-1 truncate font-serif text-2xl tabular-nums text-ink">
-                    {valid ? resultStr : <span className="text-muted">—</span>}
+                  <span className="flex-1 truncate font-serif text-2xl font-semibold tabular-nums text-clay-deep">
+                    {valid ? resultStr : <span className="font-normal text-muted">—</span>}
                   </span>
                   <CopyButton value={valid ? resultStr : ''} label="" className="!px-2 !py-1" />
                 </div>
@@ -393,8 +393,8 @@ export default function UnitConverter() {
           {!valid && amount.trim() !== '' && <Note tone="error">Enter a number.</Note>}
 
           {valid && unitRate != null && (
-            <p className="text-sm text-muted">
-              1 {fromU.label} = <span className="font-medium text-ink">{fmt(unitRate)}</span> {toU.label}
+            <p className="border-t border-line/60 pt-4 text-center text-sm text-muted">
+              1 {fromU.label} = <span className="font-semibold text-ink">{fmt(unitRate)}</span> {toU.label}
             </p>
           )}
         </>
