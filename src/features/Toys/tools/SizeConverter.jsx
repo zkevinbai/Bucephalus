@@ -44,7 +44,7 @@ const CHARTS = [
       { key: 'EU', label: 'EU' },
       { key: 'CM', label: 'CM' },
     ],
-    defaultIdx: 6,
+    defaultIdx: 9,
     rows: [
       { US: '6', UK: '5.5', EU: '39', CM: '24' },
       { US: '6.5', UK: '6', EU: '39.5', CM: '24.5' },
@@ -114,7 +114,7 @@ const CHARTS = [
 ]
 
 export default function SizeConverter() {
-  const [gender, setGender] = useState('womens')
+  const [gender, setGender] = useState('mens')
   const [type, setType] = useState('shoes')
   const catKey = `${gender}-${type}`
   const cat = CHARTS.find((c) => c.key === catKey)
